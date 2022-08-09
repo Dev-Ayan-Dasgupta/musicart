@@ -7,10 +7,12 @@ class TextLabel extends StatelessWidget {
     Key? key,
     required this.width,
     required this.labelText,
+    required this.fontSize,
   }) : super(key: key);
 
   final double width;
   final String labelText;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class TextLabel extends StatelessWidget {
             labelText,
             style: globalTextStyle.copyWith(
               color: Colors.white,
-              fontSize: 12,
+              fontSize: fontSize,
               fontWeight: FontWeight.bold,
               //backgroundColor: Colors.black,
             ),

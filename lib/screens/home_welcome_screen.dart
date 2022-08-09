@@ -106,9 +106,10 @@ class _HomeWelcomeScreenState extends State<HomeWelcomeScreen> {
                           left: screenWidth * 0.025,
                           top: screenHeight * 0.005,
                         ),
-                        child: const TextLabel(
-                          width: 75,
+                        child: TextLabel(
+                          width: screenWidth * 0.15,
                           labelText: "Top Brands",
+                          fontSize: screenWidth * 0.0225,
                         ),
                       ),
                       Padding(
@@ -154,9 +155,10 @@ class _HomeWelcomeScreenState extends State<HomeWelcomeScreen> {
                         padding: EdgeInsets.only(
                           left: screenWidth * 0.025,
                         ),
-                        child: const TextLabel(
-                          width: 104,
+                        child: TextLabel(
+                          width: screenWidth * 0.2,
                           labelText: "Trending Guitars",
+                          fontSize: screenWidth * 0.0225,
                         ),
                       ),
                       Padding(
@@ -260,9 +262,10 @@ class _HomeWelcomeScreenState extends State<HomeWelcomeScreen> {
                         padding: EdgeInsets.only(
                           left: screenWidth * 0.025,
                         ),
-                        child: const TextLabel(
-                          width: 102,
+                        child: TextLabel(
+                          width: screenWidth * 0.20,
                           labelText: "Trending Drums",
+                          fontSize: screenWidth * 0.0225,
                         ),
                       ),
                       Padding(

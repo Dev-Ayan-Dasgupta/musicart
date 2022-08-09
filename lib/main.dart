@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:musicart/screens/account_screen.dart';
 import 'package:musicart/screens/acoustic_guitars_screen.dart';
+import 'package:musicart/screens/bank_list_screen.dart';
 import 'package:musicart/screens/bass_guitars_screen.dart';
 import 'package:musicart/screens/categories_screen.dart';
 import 'package:musicart/screens/drums_screen.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         "/drums": (context) => const DrumsScreen(),
         "/my-account": (context) => const AccountScreen(),
         "/payments": (context) => const PaymentsScreen(),
+        "/bank-list": (context) => const BankListScreen(),
       },
     );
   }
