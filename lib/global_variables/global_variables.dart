@@ -389,7 +389,7 @@ List<Map<String, dynamic>> cartList = [];
 Map<Map<String, dynamic>, int> cartMap = HashMap();
 
 double cartValue = 0;
-double mycartValue = 0;
+double myCartValue = 0;
 
 List<Category> categoryTileImageUrls = [
   Category(

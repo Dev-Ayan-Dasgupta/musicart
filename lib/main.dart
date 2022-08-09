@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:musicart/screens/account_screen.dart';
 import 'package:musicart/screens/acoustic_guitars_screen.dart';
+import 'package:musicart/screens/add_card_screen.dart';
 import 'package:musicart/screens/bank_list_screen.dart';
 import 'package:musicart/screens/bass_guitars_screen.dart';
 import 'package:musicart/screens/categories_screen.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         "/my-account": (context) => const AccountScreen(),
         "/payments": (context) => const PaymentsScreen(),
         "/bank-list": (context) => const BankListScreen(),
+        "/add-card": (context) => const AddCardScreen(),
       },
     );
   }

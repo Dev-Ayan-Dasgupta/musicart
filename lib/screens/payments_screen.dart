@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:musicart/lists/list_of_banks.dart';
+import 'package:musicart/lists/list_of_cards.dart';
+import 'package:musicart/screens/make_card_payment_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../global_variables/global_variables.dart';
@@ -72,12 +74,56 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                       PaymentsScreenSubTile(
                         screenWidth: screenWidth,
                         screenHeight: screenHeight,
-                        onTap: () {},
-                        onIconTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, "/add-card");
+                        },
+                        onIconTap: () {
+                          Navigator.pushNamed(context, "/add-card");
+                        },
                         text: "Credit/Debit Cards",
                         imgUrl:
                             "https://www.freeiconspng.com/thumbs/credit-card-icon-png/credit-card-black-png-0.png",
                         iconData: Icons.chevron_right_rounded,
+                      ),
+                      SizedBox(
+                        width: screenWidth,
+                        height: screenHeight * 0.06 * myCards.length,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.025),
+                          child: Column(
+                            children: [
+                              Expanded(
+                                child: ListView.builder(
+                                    itemCount: myCards.length,
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return PaymentsScreenSubTile(
+                                          screenWidth: screenWidth * 0.8,
+                                          screenHeight: screenHeight * 0.8,
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        MakeCardPaymentScreen(
+                                                            myCard: myCards[
+                                                                index])));
+                                          },
+                                          onIconTap: () {
+                                            setState(() {
+                                              myCards.remove(myCards[index]);
+                                            });
+                                          },
+                                          text:
+                                              "XXXX XXXX XXXX ${myCards[index].cardNum.substring(myCards[index].cardNum.length - 4, myCards[index].cardNum.length)}",
+                                          imgUrl: myCards[index].providerImgUrl,
+                                          iconData: Icons.more_vert_rounded);
+                                    }),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -230,7 +276,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                       ),
                       SizedBox(
                         width: screenWidth,
-                        height: screenHeight * 0.3,
+                        height: screenHeight * 0.06 * myBanks.length,
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: screenWidth * 0.025),

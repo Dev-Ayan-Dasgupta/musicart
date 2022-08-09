@@ -36,7 +36,7 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
-    mycartValue = computeCartValue(cartValue);
+    myCartValue = computeCartValue(cartValue);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -73,7 +73,7 @@ class _CartScreenState extends State<CartScreen> {
                 ),
                 const Padding(padding: EdgeInsets.only(left: 3)),
                 AnimatedFlipCounter(
-                  value: mycartValue,
+                  value: myCartValue,
                   textStyle: globalTextStyle.copyWith(
                     color: Colors.black,
                     fontSize: 20,
