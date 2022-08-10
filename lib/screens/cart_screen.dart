@@ -53,7 +53,7 @@ class _CartScreenState extends State<CartScreen> {
               "Hey user, this is your cart...",
               style: globalTextStyle.copyWith(
                 color: Colors.black,
-                fontSize: 24,
+                fontSize: screenWidth * 0.03,
                 fontWeight: FontWeight.bold,
               ),
             ),

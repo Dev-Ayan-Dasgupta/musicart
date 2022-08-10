@@ -35,17 +35,18 @@ class _WishListScreenState extends State<WishListScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CustomAppBar(
-              screenWidth: screenWidth,
-              screenHeight: screenHeight,
-              searchBoxController: _searchBoxController,
-              hintText: _hintText),
+            screenWidth: screenWidth,
+            screenHeight: screenHeight,
+            searchBoxController: _searchBoxController,
+            hintText: _hintText,
+          ),
           Padding(
             padding: EdgeInsets.all(screenHeight * 0.015),
             child: Text(
-              "Hey user, this is your cart...",
+              "Hey user, this is your wishlist...",
               style: globalTextStyle.copyWith(
                 color: Colors.black,
-                fontSize: 24,
+                fontSize: screenWidth * 0.03,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -86,7 +87,7 @@ class _WishListScreenState extends State<WishListScreen> {
                                       innerHorizontalSymmetricPadding: 10,
                                       innerVerticalSymmetricPadding: 0,
                                       instrumentDiscount:
-                                          "${(((1 - (instruments[index]["price"] / instruments[index]["mrp"])) * 100).round()).toString()}% off",
+                                          "${(((1 - (wishList[index]["price"] / wishList[index]["mrp"])) * 100).round()).toString()}% off",
                                       onTap: () {
                                         Navigator.push(
                                             context,
@@ -107,14 +108,14 @@ class _WishListScreenState extends State<WishListScreen> {
                                                 .contains(wishList[index]) ==
                                             false) {
                                           setState(() {
-                                            cartList.add(instruments[index]);
-                                            cartMap.addAll(
-                                                {instruments[index]: 1});
+                                            cartList.add(wishList[index]);
+                                            cartMap
+                                                .addAll({wishList[index]: 1});
                                           });
                                         } else {
                                           setState(() {
-                                            cartList.remove(instruments[index]);
-                                            cartMap.remove(instruments[index]);
+                                            cartList.remove(wishList[index]);
+                                            cartMap.remove(wishList[index]);
                                           });
                                         }
                                       },

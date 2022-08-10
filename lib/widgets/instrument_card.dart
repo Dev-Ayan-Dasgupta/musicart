@@ -199,7 +199,7 @@ class _InstrumentCardState extends State<InstrumentCard> {
                       decoration: const BoxDecoration(
                         border: Border(
                           top: BorderSide(color: Colors.grey, width: 0.2),
-                          right: BorderSide(color: Colors.grey, width: 0.2),
+                          // right: BorderSide(color: Colors.grey, width: 0.2),
                         ),
                       ),
                       child: InkWell(
