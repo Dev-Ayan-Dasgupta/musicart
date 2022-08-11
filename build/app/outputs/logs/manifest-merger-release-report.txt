@@ -32,6 +32,7 @@ MERGED from [:path_provider_android] C:\Flutter_Projects\musicart\build\path_pro
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\246793f755122fe14a5802655438cb75\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\31201b32770f183f2e9afb71858ba75b\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\9baafc8faf7ca496894bd197e67f88be\transformed\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ae893b832c725ae41cefb75af7327aef\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\e7b09f39a842df5984e53de23e58c27f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\4776d5ff4ca486a35dfa7b3008192806\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
@@ -105,6 +106,8 @@ MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\31201b32770f183f2e9afb71858ba75b\transformed\material-1.6.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\31201b32770f183f2e9afb71858ba75b\transformed\material-1.6.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\9baafc8faf7ca496894bd197e67f88be\transformed\multidex-2.0.0\AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\9baafc8faf7ca496894bd197e67f88be\transformed\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ae893b832c725ae41cefb75af7327aef\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ae893b832c725ae41cefb75af7327aef\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\e7b09f39a842df5984e53de23e58c27f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41

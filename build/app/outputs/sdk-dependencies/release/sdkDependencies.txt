@@ -775,8 +775,20 @@ library {
   }
 }
 library {
+  maven_library {
+    groupId: "androidx.multidex"
+    artifactId: "multidex"
+    version: "2.0.0"
+  }
   digests {
-    sha256: "\252\261\234\n\"[D \277#\245oH \201(\261 \271\022\374\005\211\034L\317&\307\357k\302\317"
+    sha256: "\300\027\000\t\020r\340\377]\216\302\320\016\254k\217\226\352\030d`\200B^\234\343\306\247\265\366n3"
+  }
+  repo_index {
+  }
+}
+library {
+  digests {
+    sha256: "u\vz\316\264\026\346\f\302\025\334\312\317:\361\024(\367\275\366O;\017\222Dm^\016\264~\"S"
   }
 }
 library_dependencies {
@@ -1090,10 +1102,11 @@ module_dependencies {
   dependency_index: 60
   dependency_index: 61
   dependency_index: 62
+  dependency_index: 63
   dependency_index: 0
   dependency_index: 2
   dependency_index: 32
-  dependency_index: 63
+  dependency_index: 64
 }
 repositories {
   maven_repo {

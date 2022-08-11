@@ -101,6 +101,19 @@
       jars="C:\Users\Ayan Dasgupta\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_release\1.0.0-caaafc5604ee9172293eb84a381be6aadd660317\873145d928b667534f4d388ca742bb06180839f3\x86_64_release-1.0.0-caaafc5604ee9172293eb84a381be6aadd660317.jar"
       resolved="io.flutter:x86_64_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317"/>
   <library
+      name="androidx.multidex:multidex:2.0.0@aar"
+      jars="C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\9baafc8faf7ca496894bd197e67f88be\transformed\multidex-2.0.0\jars\classes.jar"
+      resolved="androidx.multidex:multidex:2.0.0"
+      folder="C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\9baafc8faf7ca496894bd197e67f88be\transformed\multidex-2.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.constraintlayout:constraintlayout:2.0.1@aar"
       jars="C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\4776d5ff4ca486a35dfa7b3008192806\transformed\constraintlayout-2.0.1\jars\classes.jar"
       resolved="androidx.constraintlayout:constraintlayout:2.0.1"
