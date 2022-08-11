@@ -1,4 +1,7 @@
-#Thu Aug 11 13:44:47 IST 2022
+#Thu Aug 11 15:45:39 IST 2022
+base.1=C\:\\Flutter_Projects\\musicart\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
+path.1=classes2.dex
 base.0=C\:\\Flutter_Projects\\musicart\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
 path.0=classes.dex

@@ -29,7 +29,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: widget.screenHeight! * 0.02),
+      padding: EdgeInsets.symmetric(vertical: widget.screenHeight! * 0.05),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -42,7 +42,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 Navigator.pushNamed(context, "/");
               },
               child: Image(
-                image: const AssetImage("../assets/images/logo.png"),
+                image: const AssetImage("./assets/images/logo.png"),
                 height: 40,
                 width: widget.screenWidth! * 0.25,
               ),
