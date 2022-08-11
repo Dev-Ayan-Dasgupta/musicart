@@ -6,6 +6,7 @@ import 'package:musicart/screens/bank_list_screen.dart';
 import 'package:musicart/screens/bass_guitars_screen.dart';
 import 'package:musicart/screens/categories_screen.dart';
 import 'package:musicart/screens/drums_screen.dart';
+import 'package:musicart/screens/order_history_screen.dart';
 import 'package:musicart/screens/payments_screen.dart';
 
 import 'screens/electric_guitar_screen.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         "/payments": (context) => const PaymentsScreen(),
         "/bank-list": (context) => const BankListScreen(),
         "/add-card": (context) => const AddCardScreen(),
+        "/orders-history": (context) => const OrderHistoryScreen(),
       },
     );
   }

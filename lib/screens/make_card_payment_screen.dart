@@ -60,7 +60,17 @@ class _MakeCardPaymentScreenState extends State<MakeCardPaymentScreen> {
                 height: screenHeight * 0.05,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, "/");
+                    ordersList.add(cartList.toList());
+
+                    ordersDate.addAll({(cartList): DateTime.now()});
+                    //cartList.map((e) => DateTime.now());
+                    //ordersDate[cartList.toList()] = DateTime.now();
+
+                    ordersMap.add(Map.of(cartMap));
+
+                    cartList.clear();
+                    cartMap.clear();
+                    Navigator.pushNamed(context, "/orders-history");
                   },
                   style: ElevatedButton.styleFrom(
                       primary: primaryColor,

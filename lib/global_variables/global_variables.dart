@@ -391,6 +391,12 @@ Map<Map<String, dynamic>, int> cartMap = HashMap();
 double cartValue = 0;
 double myCartValue = 0;
 
+List<List<Map<String, dynamic>>> ordersList = [];
+Map<List<Map<String, dynamic>>, DateTime> ordersDate = HashMap();
+List<Map<Map<String, dynamic>, int>> ordersMap = [];
+
+int ordersCount = 0;
+
 List<Category> categoryTileImageUrls = [
   Category(
     "https://images.unsplash.com/photo-1580745089072-032cbde08507?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fGd1aXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
