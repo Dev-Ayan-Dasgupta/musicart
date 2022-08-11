@@ -40,17 +40,19 @@ class _WishListScreenState extends State<WishListScreen> {
             searchBoxController: _searchBoxController,
             hintText: _hintText,
           ),
-          Padding(
-            padding: EdgeInsets.all(screenHeight * 0.015),
-            child: Text(
-              "Hey user, this is your wishlist...",
-              style: globalTextStyle.copyWith(
-                color: Colors.black,
-                fontSize: screenWidth * 0.03,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+          (wishList.isEmpty)
+              ? Text("Wishlist is empty")
+              : Padding(
+                  padding: EdgeInsets.all(screenHeight * 0.015),
+                  child: Text(
+                    "Hey user, this is your wishlist...",
+                    style: globalTextStyle.copyWith(
+                      color: Colors.black,
+                      fontSize: screenWidth * 0.03,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
           SizedBox(
             width: screenWidth,
             height: screenHeight * 0.8,

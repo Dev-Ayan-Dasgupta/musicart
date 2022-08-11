@@ -7,6 +7,7 @@ import 'package:musicart/widgets/text_label.dart';
 import '../global_variables/global_variables.dart';
 import '../widgets/animated_bottom_bar.dart';
 import '../widgets/custom_appbar.dart';
+import '../widgets/custom_radio_button.dart';
 import '../widgets/instrument_card.dart';
 import 'instrument_detail.dart';
 
@@ -44,8 +45,8 @@ void populateGuitarBrandList() {
   guitarBrandList = guitarBrandList.toSet().toList();
 }
 
-double minGuitarPrice = 10000000;
-double maxGuitarPrice = -1;
+double minGuitarPrice = 10000000.0;
+double maxGuitarPrice = -1.0;
 
 void findMinPrice() {
   for (int i = 0; i < guitarList.length; i++) {
@@ -76,8 +77,8 @@ class _ElectricGuitarsScreenState extends State<ElectricGuitarsScreen> {
 
   RangeValues rv = RangeValues(0, 1000000);
 
-  double _animContWidth = 0;
-  double _animContHeight = 0;
+  double _animContWidth = 0.0;
+  double _animContHeight = 0.0;
 
   void changeSearchPrice(double minsp, maxsp) {
     setState(() {
@@ -208,8 +209,7 @@ class _ElectricGuitarsScreenState extends State<ElectricGuitarsScreen> {
                             child: RangeSlider(
                               min: minGuitarPrice,
                               max: maxGuitarPrice,
-                              divisions:
-                                  (maxGuitarPrice - minGuitarPrice).toInt(),
+                              divisions: 45000,
                               values: rv,
                               labels: RangeLabels(rv.start.round().toString(),
                                   rv.end.round().toString()),
@@ -537,51 +537,6 @@ class _ElectricGuitarsScreenState extends State<ElectricGuitarsScreen> {
           },
         ),
       ),
-    );
-  }
-}
-
-class CustomRadioButton extends StatelessWidget {
-  const CustomRadioButton({
-    Key? key,
-    required this.screenWidth,
-    required this.value,
-    required this.groupValue,
-    required this.onChanged,
-    required this.text,
-  }) : super(key: key);
-
-  final double? screenWidth;
-  final String value;
-  final String? groupValue;
-  final Function(String?)? onChanged;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Radio(
-          value: value,
-          groupValue: groupValue,
-          onChanged: onChanged,
-          fillColor: MaterialStateColor.resolveWith((states) => primaryColor),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: screenWidth! * 0.01),
-        ),
-        Text(
-          text,
-          style: globalTextStyle.copyWith(
-            color: primaryColor,
-            fontSize: screenWidth! * 0.02,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: screenWidth! * 0.02),
-        ),
-      ],
     );
   }
 }

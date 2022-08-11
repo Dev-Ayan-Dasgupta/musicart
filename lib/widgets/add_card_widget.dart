@@ -128,6 +128,7 @@ class _AddCardState extends State<AddCard> {
                     ),
                     child: TextField(
                       controller: widget.cardNumController,
+                      keyboardType: TextInputType.number,
                       onChanged: widget.onChanged,
                       cursorColor: tertiaryColor,
                       decoration: const InputDecoration(
@@ -217,6 +218,7 @@ class _AddCardState extends State<AddCard> {
                             ),
                             child: TextField(
                               controller: widget.cvvController,
+                              keyboardType: TextInputType.number,
                               cursorColor: tertiaryColor,
                               obscureText: true,
                               decoration: const InputDecoration(

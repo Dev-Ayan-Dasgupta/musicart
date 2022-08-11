@@ -47,42 +47,66 @@ class _CartScreenState extends State<CartScreen> {
               screenHeight: screenHeight,
               searchBoxController: _searchBoxController,
               hintText: _hintText),
-          Padding(
-            padding: EdgeInsets.all(screenHeight * 0.015),
-            child: Text(
-              "Hey user, this is your cart...",
-              style: globalTextStyle.copyWith(
-                color: Colors.black,
-                fontSize: screenWidth * 0.03,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  "₹",
-                  style: globalTextStyle.copyWith(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+          // Padding(
+          //   padding: EdgeInsets.all(screenHeight * 0.015),
+          //   child: Text(
+          //     "Hey user, this is your cart...",
+          //     style: globalTextStyle.copyWith(
+          //       color: Colors.black,
+          //       fontSize: screenWidth * 0.03,
+          //       fontWeight: FontWeight.bold,
+          //     ),
+          //   ),
+          // ),
+          (cartList.isEmpty)
+              ? Text("Cart is empty")
+              : Padding(
+                  padding: EdgeInsets.only(
+                    right: screenWidth * 0.025,
+                  ),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/payments");
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Container(
+                          width: screenWidth * 0.4,
+                          height: screenHeight * 0.05,
+                          decoration: BoxDecoration(
+                            color: primaryColor,
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(15)),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Checkout    ₹",
+                                style: globalTextStyle.copyWith(
+                                  color: Colors.white,
+                                  fontSize: screenWidth * 0.03,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const Padding(padding: EdgeInsets.only(left: 3)),
+                              AnimatedFlipCounter(
+                                value: myCartValue,
+                                textStyle: globalTextStyle.copyWith(
+                                  color: Colors.white,
+                                  fontSize: screenWidth * 0.03,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                const Padding(padding: EdgeInsets.only(left: 3)),
-                AnimatedFlipCounter(
-                  value: myCartValue,
-                  textStyle: globalTextStyle.copyWith(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
           SizedBox(
             width: screenWidth,
             height: screenHeight * 0.8,

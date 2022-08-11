@@ -97,8 +97,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Guitar",
     "name": "Fender Stratocaster",
     "brand": "Fender",
-    "mrp": 62000,
-    "price": 58900,
+    "mrp": 62000.0,
+    "price": 58900.0,
     "rating": 4.7,
     "reviews": 11,
     "img-url":
@@ -109,8 +109,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Guitar",
     "name": "Squier Bullet Strat",
     "brand": "Fender",
-    "mrp": 17280,
-    "price": 11900,
+    "mrp": 17280.0,
+    "price": 11900.0,
     "rating": 4.5,
     "reviews": 188,
     "img-url":
@@ -121,8 +121,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Guitar",
     "name": "Les Paul Studio LT",
     "brand": "Epiphone",
-    "mrp": 29999,
-    "price": 24604,
+    "mrp": 29999.0,
+    "price": 24604.0,
     "rating": 4.4,
     "reviews": 11,
     "img-url":
@@ -133,8 +133,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Guitar",
     "name": "KX 100 HT",
     "brand": "Cort",
-    "mrp": 21542,
-    "price": 17176,
+    "mrp": 21542.0,
+    "price": 17176.0,
     "rating": 5.0,
     "reviews": 2,
     "img-url":
@@ -145,8 +145,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Guitar",
     "name": "Jet-1",
     "brand": "Aria",
-    "mrp": 15174,
-    "price": 14416,
+    "mrp": 15174.0,
+    "price": 14416.0,
     "rating": 4.0,
     "reviews": 1,
     "img-url":
@@ -157,8 +157,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Bass",
     "name": "Cort Action Bass 4",
     "brand": "Cort",
-    "mrp": 17600,
-    "price": 16720,
+    "mrp": 17600.0,
+    "price": 16720.0,
     "rating": 4.8,
     "reviews": 0,
     "img-url":
@@ -169,8 +169,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Bass",
     "name": "Sqiuer Affinity Jazz 4",
     "brand": "Fender",
-    "mrp": 29240,
-    "price": 27778,
+    "mrp": 29240.0,
+    "price": 27778.0,
     "rating": 5.0,
     "reviews": 2,
     "img-url":
@@ -181,8 +181,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Bass",
     "name": "Fender American Ultra Jazz 4",
     "brand": "Fender",
-    "mrp": 213500,
-    "price": 202825,
+    "mrp": 213500.0,
+    "price": 202825.0,
     "rating": 0.0,
     "reviews": 0,
     "img-url":
@@ -193,8 +193,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Bass",
     "name": "LTD B-154DX Flame",
     "brand": "ESP",
-    "mrp": 31103,
-    "price": 29548,
+    "mrp": 31103.0,
+    "price": 29548.0,
     "rating": 4.0,
     "reviews": 1,
     "img-url":
@@ -205,8 +205,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Bass",
     "name": "Tobias Toby Deluxe",
     "brand": "Epiphone",
-    "mrp": 33499,
-    "price": 27500,
+    "mrp": 33499.0,
+    "price": 27500.0,
     "rating": 5.0,
     "reviews": 9,
     "img-url":
@@ -217,8 +217,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Drums",
     "name": "Stagestar SG52KH5",
     "brand": "Tama",
-    "mrp": 40000,
-    "price": 37360,
+    "mrp": 40000.0,
+    "price": 37360.0,
     "rating": 5.0,
     "reviews": 15,
     "img-url":
@@ -229,8 +229,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Drums",
     "name": "CL50RS Super Star",
     "brand": "Tama",
-    "mrp": 74640,
-    "price": 70908,
+    "mrp": 74640.0,
+    "price": 70908.0,
     "rating": 0.0,
     "reviews": 0,
     "img-url":
@@ -241,8 +241,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Drums",
     "name": "Cafe Racer Series TJ",
     "brand": "Natal",
-    "mrp": 123333,
-    "price": 113415,
+    "mrp": 123333.0,
+    "price": 113415.0,
     "rating": 4.9,
     "reviews": 5,
     "img-url":
@@ -253,9 +253,9 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Drums",
     "name": "Roadshow",
     "brand": "Pearl",
-    "mrp": 48795,
-    "price": 34767,
-    "rating": 0,
+    "mrp": 48795.0,
+    "price": 34767.0,
+    "rating": 0.0,
     "reviews": 0,
     "img-url":
         "https://cdn.shopify.com/s/files/1/0657/6821/products/PRL-RS525SCC-BZM_15ce4492-6c20-4b67-b1b5-02c7b8cbf1db_large.jpg?v=1639788541",
@@ -265,8 +265,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Drums",
     "name": "Tornado",
     "brand": "Mapex",
-    "mrp": 39400,
-    "price": 36000,
+    "mrp": 39400.0,
+    "price": 36000.0,
     "rating": 5.0,
     "reviews": 15,
     "img-url":
@@ -277,8 +277,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Keyboard",
     "name": "PSR-E273",
     "brand": "Yamaha",
-    "mrp": 19770,
-    "price": 8600,
+    "mrp": 19770.0,
+    "price": 8600.0,
     "rating": 4.5,
     "reviews": 54,
     "img-url":
@@ -289,9 +289,9 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Keyboard",
     "name": "Jupiter-XM Rising",
     "brand": "Roland",
-    "mrp": 172959,
-    "price": 164311,
-    "rating": 0,
+    "mrp": 172959.0,
+    "price": 164311.0,
+    "rating": 0.0,
     "reviews": 0,
     "img-url":
         "https://cdn.shopify.com/s/files/1/0657/6821/products/ROL-JUPITERXM_large.jpg?v=1635193010",
@@ -301,9 +301,9 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Keyboard",
     "name": "GP-500 Celviano Grand Hybrid",
     "brand": "Casio",
-    "mrp": 399995,
-    "price": 379995,
-    "rating": 0,
+    "mrp": 399995.0,
+    "price": 379995.0,
+    "rating": 0.0,
     "reviews": 0,
     "img-url":
         "https://cdn.shopify.com/s/files/1/0657/6821/products/CAS-GP500BP_large.jpg?v=1656744416",
@@ -313,9 +313,9 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Keyboard",
     "name": "SPD-30",
     "brand": "Roland",
-    "mrp": 92408,
-    "price": 80788,
-    "rating": 5,
+    "mrp": 92408.0,
+    "price": 80788.0,
+    "rating": 5.0,
     "reviews": 4,
     "img-url":
         "https://cdn.shopify.com/s/files/1/0657/6821/products/YAM-PSREZ300_large.jpg?v=1639815482",
@@ -325,8 +325,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Wind Instrument",
     "name": "HA1000",
     "brand": "Vault",
-    "mrp": 999,
-    "price": 369,
+    "mrp": 999.0,
+    "price": 369.0,
     "rating": 4.4,
     "reviews": 110,
     "img-url":
@@ -337,8 +337,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Wind Instrument",
     "name": "M1105AY Alto",
     "brand": "Havana",
-    "mrp": 31450,
-    "price": 27900,
+    "mrp": 31450.0,
+    "price": 27900.0,
     "rating": 5.0,
     "reviews": 35,
     "img-url":
@@ -349,8 +349,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Wind Instrument",
     "name": "JYCL 1301",
     "brand": "Pluto",
-    "mrp": 12730,
-    "price": 12094,
+    "mrp": 12730.0,
+    "price": 12094.0,
     "rating": 0.0,
     "reviews": 0,
     "img-url":
@@ -361,8 +361,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Wind Instrument",
     "name": "M5210 Bb",
     "brand": "Havana",
-    "mrp": 15225,
-    "price": 14464,
+    "mrp": 15225.0,
+    "price": 14464.0,
     "rating": 5.0,
     "reviews": 2,
     "img-url":
@@ -373,8 +373,8 @@ List<Map<String, dynamic>> instruments = [
     "instrument": "Wind Instrument",
     "name": "Guru Concert Bansuri",
     "brand": "Ultimate",
-    "mrp": 4000,
-    "price": 3500,
+    "mrp": 4000.0,
+    "price": 3500.0,
     "rating": 3.5,
     "reviews": 4,
     "img-url":
@@ -392,8 +392,17 @@ double cartValue = 0;
 double myCartValue = 0;
 
 List<List<Map<String, dynamic>>> ordersList = [];
-Map<List<Map<String, dynamic>>, DateTime> ordersDate = HashMap();
+Map<List<Map<String, dynamic>>, int> ordersDate = HashMap();
 List<Map<Map<String, dynamic>, int>> ordersMap = [];
+
+class OrderDate {
+  List<Map<String, dynamic>> order;
+  DateTime date;
+
+  OrderDate({required this.order, required this.date});
+}
+
+List<OrderDate> orderDate = [];
 
 int ordersCount = 0;
 

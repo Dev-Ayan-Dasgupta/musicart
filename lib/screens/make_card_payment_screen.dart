@@ -61,13 +61,10 @@ class _MakeCardPaymentScreenState extends State<MakeCardPaymentScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     ordersList.add(cartList.toList());
-
-                    ordersDate.addAll({(cartList): DateTime.now()});
-                    //cartList.map((e) => DateTime.now());
-                    //ordersDate[cartList.toList()] = DateTime.now();
-
+                    //ordersDate[cartList.toList()] = 10;
+                    orderDate.add(OrderDate(
+                        order: cartList.toList(), date: DateTime.now()));
                     ordersMap.add(Map.of(cartMap));
-
                     cartList.clear();
                     cartMap.clear();
                     Navigator.pushNamed(context, "/orders-history");

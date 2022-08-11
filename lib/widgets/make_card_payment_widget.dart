@@ -200,6 +200,7 @@ class _MakeCardPaymentState extends State<MakeCardPayment> {
                             ),
                             child: TextField(
                               controller: widget.cvvController,
+                              keyboardType: TextInputType.number,
                               cursorColor: tertiaryColor,
                               obscureText: true,
                               decoration: const InputDecoration(

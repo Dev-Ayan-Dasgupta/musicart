@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:musicart/widgets/custom_appbar.dart';
 
 import '../global_variables/global_variables.dart';
@@ -49,32 +50,77 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text("${ordersDate[ordersList[index]]}"),
+                            // Padding(
+                            //   padding:
+                            //       EdgeInsets.only(top: screenHeight * 0.01),
+                            //   child: Text(
+                            //     "${ordersDate[ordersList[index]]}",
+                            //     style: globalTextStyle.copyWith(
+                            //       color: Colors.grey,
+                            //       fontSize: screenWidth * 0.03,
+                            //       fontWeight: FontWeight.bold,
+                            //     ),
+                            //   ),
+                            // ),
+                            Padding(
+                              padding:
+                                  EdgeInsets.only(top: screenHeight * 0.01),
+                              child: Text(
+                                DateFormat.yMMMMEEEEd()
+                                    .format(orderDate[index].date),
+                                style: globalTextStyle.copyWith(
+                                  color: Colors.grey,
+                                  fontSize: screenWidth * 0.03,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
                             Expanded(
                               child: ListView.builder(
                                   itemCount: ordersList[index].length,
                                   itemBuilder:
                                       (BuildContext context, int index2) {
-                                    return ListTile(
-                                      leading: Image(
-                                          image: NetworkImage(ordersList[index]
-                                              [index2]["img-url"])),
-                                      title: Text(
-                                        ordersList[index][index2]["name"],
-                                        style: globalTextStyle.copyWith(
-                                          color: primaryColor,
+                                    return Padding(
+                                      padding: EdgeInsets.only(
+                                          top: screenHeight * 0.01,
+                                          left: screenWidth * 0.02),
+                                      child: Container(
+                                        width: screenWidth * 0.95,
+                                        height: screenHeight * 0.08,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            width: 0.25,
+                                            color: Colors.grey,
+                                          ),
+                                          borderRadius: const BorderRadius.all(
+                                            Radius.circular(10),
+                                          ),
                                         ),
-                                      ),
-                                      subtitle: Text(
-                                        "${ordersMap[index][ordersList[index][index2]].toString()} units",
-                                        style: globalTextStyle.copyWith(
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                      trailing: Text(
-                                        "₹${ordersList[index][index2]["price"].toString()}",
-                                        style: globalTextStyle.copyWith(
-                                          color: primaryColor,
+                                        child: ListTile(
+                                          leading: Image(
+                                              image: NetworkImage(
+                                                  ordersList[index][index2]
+                                                      ["img-url"])),
+                                          title: Text(
+                                            ordersList[index][index2]["name"],
+                                            style: globalTextStyle.copyWith(
+                                              color: primaryColor,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          subtitle: Text(
+                                            "${ordersMap[index][ordersList[index][index2]].toString()} units",
+                                            style: globalTextStyle.copyWith(
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                          trailing: Text(
+                                            "₹${ordersList[index][index2]["price"].toString()}",
+                                            style: globalTextStyle.copyWith(
+                                              color: primaryColor,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     );
