@@ -65,8 +65,8 @@ class _WishListScreenState extends State<WishListScreen> {
                       key: ValueKey("list $count"),
                       child: GridView.count(
                         crossAxisCount: 2,
-                        crossAxisSpacing: screenWidth * 0.01,
-                        mainAxisSpacing: screenWidth * 0.01,
+                        crossAxisSpacing: screenWidth * 0.025,
+                        mainAxisSpacing: screenWidth * 0.025,
                         childAspectRatio: 0.75,
                         children: List.generate(wishList.length, (index) {
                           return AnimationConfiguration.staggeredGrid(
@@ -76,8 +76,8 @@ class _WishListScreenState extends State<WishListScreen> {
                             child: SlideAnimation(
                               child: FadeInAnimation(
                                   child: InstrumentCard(
-                                      width: (screenWidth * 0.47),
-                                      height: (screenWidth * 0.47) / 0.75,
+                                      width: (screenWidth * 0.46),
+                                      height: (screenWidth * 0.46) / 0.75,
                                       instrumentImageUrl: wishList[index]
                                           ["img-url"],
                                       instrumentName: wishList[index]["name"],
@@ -149,7 +149,7 @@ class _WishListScreenState extends State<WishListScreen> {
         padding: EdgeInsets.symmetric(
             horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
         child: CustomAnimatedBottomBar(
-          containerHeight: 56,
+          containerHeight: screenHeight * 0.06,
           backgroundColor: Colors.black87,
           selectedIndex: _currentIndex,
           showElevation: true,

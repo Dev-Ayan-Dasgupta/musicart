@@ -8,12 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fce4702-388e-4c06-a39f-4124894c9e5e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/global_variables/global_variables.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/global_variables/global_variables.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/drums_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/drums_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/electric_guitar_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/electric_guitar_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/make_card_payment_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/make_card_payment_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/add_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/add_card_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/make_card_payment_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/make_card_payment_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

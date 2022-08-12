@@ -8,6 +8,7 @@ import 'package:musicart/screens/categories_screen.dart';
 import 'package:musicart/screens/drums_screen.dart';
 import 'package:musicart/screens/order_history_screen.dart';
 import 'package:musicart/screens/payments_screen.dart';
+import 'package:musicart/screens/search_instrument_screen.dart';
 
 import 'screens/electric_guitar_screen.dart';
 import 'screens/home_welcome_screen.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Musicart',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
       home: const HomeWelcomeScreen(),
       initialRoute: "/",
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         "/electric-guitars": (context) => const ElectricGuitarsScreen(),
         "/bass-guitars": (context) => const BassGuitarsScreen(),
         "/drums": (context) => const DrumsScreen(),
+        "/search": (context) => const SearchInstrumentScreen(),
         "/my-account": (context) => const AccountScreen(),
         "/payments": (context) => const PaymentsScreen(),
         "/bank-list": (context) => const BankListScreen(),

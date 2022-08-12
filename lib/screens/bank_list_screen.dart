@@ -100,70 +100,41 @@ class _BankListScreenState extends State<BankListScreen> {
           ),
           Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
           //Row of icons of 5 popular banks - START
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              PopularBankTile(
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
-                foregroundImage: NetworkImage(popularBankList[0].bankImgUrl),
-                text: popularBankList[0].bankName,
-                onBankTap: () {
-                  _launchUrl(popularBankList[0].bankUrl);
-                  if (myBanks.contains(popularBankList[0]) == false) {
-                    myBanks.add(popularBankList[0]);
-                  }
-                },
+          SizedBox(
+            width: screenWidth * 0.95,
+            height: screenHeight * 0.1,
+            child: Padding(
+              padding: EdgeInsets.only(left: screenWidth * 0.05),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                      child: ListView.builder(
+                          itemCount: 5,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Padding(
+                              padding:
+                                  EdgeInsets.only(left: screenWidth * 0.05),
+                              child: PopularBankTile(
+                                  screenHeight: screenHeight,
+                                  screenWidth: screenWidth,
+                                  foregroundImage: NetworkImage(
+                                      popularBankList[index].bankImgUrl),
+                                  text: popularBankList[index].bankName,
+                                  onBankTap: () {
+                                    _launchUrl(popularBankList[index].bankUrl);
+                                    if (myBanks
+                                            .contains(popularBankList[index]) ==
+                                        false) {
+                                      myBanks.add(popularBankList[index]);
+                                    }
+                                  }),
+                            );
+                          })),
+                ],
               ),
-              PopularBankTile(
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
-                foregroundImage: NetworkImage(popularBankList[1].bankImgUrl),
-                text: popularBankList[1].bankName,
-                onBankTap: () {
-                  _launchUrl(popularBankList[1].bankUrl);
-                  if (myBanks.contains(popularBankList[1]) == false) {
-                    myBanks.add(popularBankList[1]);
-                  }
-                },
-              ),
-              PopularBankTile(
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
-                foregroundImage: NetworkImage(popularBankList[2].bankImgUrl),
-                text: popularBankList[2].bankName,
-                onBankTap: () {
-                  _launchUrl(popularBankList[2].bankUrl);
-                  if (myBanks.contains(popularBankList[2]) == false) {
-                    myBanks.add(popularBankList[2]);
-                  }
-                },
-              ),
-              PopularBankTile(
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
-                foregroundImage: NetworkImage(popularBankList[3].bankImgUrl),
-                text: popularBankList[3].bankName,
-                onBankTap: () {
-                  _launchUrl(popularBankList[3].bankUrl);
-                  if (myBanks.contains(popularBankList[3]) == false) {
-                    myBanks.add(popularBankList[3]);
-                  }
-                },
-              ),
-              PopularBankTile(
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
-                foregroundImage: NetworkImage(popularBankList[4].bankImgUrl),
-                text: popularBankList[4].bankName,
-                onBankTap: () {
-                  _launchUrl(popularBankList[4].bankUrl);
-                  if (myBanks.contains(popularBankList[4]) == false) {
-                    myBanks.add(popularBankList[4]);
-                  }
-                },
-              ),
-            ],
+            ),
           ),
           //Row of icons of 5 popular banks - END
           Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
@@ -315,7 +286,7 @@ class _BankListScreenState extends State<BankListScreen> {
         padding: EdgeInsets.symmetric(
             horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
         child: CustomAnimatedBottomBar(
-          containerHeight: 56,
+          containerHeight: screenHeight * 0.06,
           backgroundColor: Colors.black87,
           selectedIndex: _currentIndex,
           showElevation: true,

@@ -92,6 +92,18 @@ List<Map<String, dynamic>> brandLogos = [
   },
 ];
 
+void populateSearchedInstruments(String srch) {
+  searchedInstruments.clear();
+  for (int i = 0; i < instruments.length; i++) {
+    if (instruments[i]["name"].toString().toLowerCase().contains(srch) ||
+        instruments[i]["brand"].toString().toLowerCase().contains(srch)) {
+      searchedInstruments.add(instruments[i]);
+    }
+  }
+}
+
+List<Map<String, dynamic>> searchedInstruments = [];
+
 List<Map<String, dynamic>> instruments = [
   {
     "instrument": "Guitar",

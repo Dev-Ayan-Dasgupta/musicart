@@ -84,7 +84,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         padding: EdgeInsets.symmetric(
             horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
         child: CustomAnimatedBottomBar(
-          containerHeight: 56,
+          containerHeight: screenHeight * 0.06,
           backgroundColor: Colors.black87,
           selectedIndex: _currentIndex,
           showElevation: true,

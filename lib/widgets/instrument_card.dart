@@ -186,10 +186,12 @@ class _InstrumentCardState extends State<InstrumentCard> {
                               ? Icon(
                                   Icons.favorite_rounded,
                                   color: Colors.red.shade900,
+                                  size: widget.width * 0.1,
                                 )
-                              : const Icon(
+                              : Icon(
                                   Icons.favorite_border_rounded,
                                   color: Colors.black87,
+                                  size: widget.width * 0.1,
                                 ),
                         ),
                       ),
@@ -213,11 +215,15 @@ class _InstrumentCardState extends State<InstrumentCard> {
                           padding: EdgeInsets.symmetric(
                               vertical: widget.height * 0.0125),
                           child: (cartList.contains(widget.instrument))
-                              ? Icon(Icons.shopping_cart_rounded,
-                                  color: Colors.blue.shade900)
-                              : const Icon(
+                              ? Icon(
+                                  Icons.shopping_cart_rounded,
+                                  color: Colors.blue.shade900,
+                                  size: widget.width * 0.1,
+                                )
+                              : Icon(
                                   Icons.shopping_cart_outlined,
                                   color: Colors.black87,
+                                  size: widget.width * 0.1,
                                 ),
                         ),
                       ),

@@ -34,9 +34,22 @@ class _CustomAppBarState extends State<CustomAppBar> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
+            padding: EdgeInsets.only(left: widget.screenWidth! * 0.025),
+            child: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back_ios_rounded,
+                color: Colors.black,
+                size: widget.screenWidth! * 0.05,
+              ),
+            ),
+          ),
+          Padding(
             padding: EdgeInsets.only(
                 left: widget.screenWidth! * 0.025,
-                right: widget.screenWidth! * 0.19),
+                right: widget.screenWidth! * 0.33),
             child: InkWell(
               onTap: () {
                 Navigator.pushNamed(context, "/");
@@ -50,13 +63,25 @@ class _CustomAppBarState extends State<CustomAppBar> {
           ),
           Padding(
             padding: EdgeInsets.only(right: widget.screenWidth! * 0.025),
-            child: SearchWidget(
-              width: widget.screenWidth! * 0.3,
-              onChanged: (p0) {},
-              searchController: widget._searchBoxController,
-              onTap: () {},
-              hintText: widget._hintText,
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, "/search");
+              },
+              child: Icon(
+                Icons.search_rounded,
+                color: Colors.black,
+                size: widget.screenWidth! * 0.08,
+              ),
             ),
+            // SearchWidget(
+            //   width: widget.screenWidth! * 0.3,
+            //   onChanged: (p0) {},
+            //   searchController: widget._searchBoxController,
+            //   onTap: () {
+            //     Navigator.pushNamed(context, "/search");
+            //   },
+            //   hintText: widget._hintText,
+            // ),
           ),
           Padding(
             padding: EdgeInsets.only(right: widget.screenWidth! * 0.025),

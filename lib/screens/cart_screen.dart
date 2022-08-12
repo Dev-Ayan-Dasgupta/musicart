@@ -62,7 +62,7 @@ class _CartScreenState extends State<CartScreen> {
               ? Text("Cart is empty")
               : Padding(
                   padding: EdgeInsets.only(
-                    right: screenWidth * 0.025,
+                    right: screenWidth * 0.04,
                   ),
                   child: InkWell(
                     onTap: () {
@@ -180,7 +180,7 @@ class _CartScreenState extends State<CartScreen> {
                                           cartList[index],
                                           (value) =>
                                               cartMap[cartList[index]]! + 1);
-                                      count++;
+                                      //count++;
                                     });
                                   },
                                   onReduceTap: () {
@@ -195,7 +195,7 @@ class _CartScreenState extends State<CartScreen> {
                                       //   cartMap.remove(cartList[index]);
                                       //   cartList.remove(cartList[index]);
                                       // }
-                                      count++;
+                                      //count++;
                                     });
                                   },
                                   width: screenWidth * 0.95,
@@ -227,7 +227,7 @@ class _CartScreenState extends State<CartScreen> {
         padding: EdgeInsets.symmetric(
             horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
         child: CustomAnimatedBottomBar(
-          containerHeight: 56,
+          containerHeight: screenHeight * 0.06,
           backgroundColor: Colors.black87,
           selectedIndex: _currentIndex,
           showElevation: true,

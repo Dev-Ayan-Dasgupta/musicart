@@ -158,7 +158,9 @@ class _AccountScreenState extends State<AccountScreen> {
             text1: "Order History",
             text2: "Address Book",
             text3: "Share the app",
-            onTap1: () {},
+            onTap1: () {
+              Navigator.pushNamed(context, "/orders-history");
+            },
             onTap2: () {},
             onTap3: () {},
           ),

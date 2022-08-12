@@ -26,7 +26,7 @@ class PopularBankTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CircleAvatar(foregroundImage: foregroundImage),
-          Padding(padding: EdgeInsets.only(top: screenHeight! * 0.01)),
+          //Padding(padding: EdgeInsets.only(top: screenHeight! * 0.00)),
           Text(
             text,
             style: globalTextStyle.copyWith(
