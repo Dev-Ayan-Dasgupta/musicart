@@ -52,7 +52,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 right: widget.screenWidth! * 0.33),
             child: InkWell(
               onTap: () {
-                Navigator.pushNamed(context, "/");
+                Navigator.pushNamed(context, "/home");
               },
               child: Image(
                 image: const AssetImage("./assets/images/logo.png"),
@@ -87,10 +87,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             padding: EdgeInsets.only(right: widget.screenWidth! * 0.025),
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const WishListScreen()));
+                Navigator.pushNamed(context, "/wishlist");
               },
               child: Stack(
                 children: [
@@ -135,10 +132,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             padding: EdgeInsets.only(right: widget.screenWidth! * 0.025),
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const CartScreen()));
+                Navigator.pushNamed(context, "/cart");
               },
               child: Stack(
                 children: [

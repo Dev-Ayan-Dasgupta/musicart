@@ -62,7 +62,7 @@ class CustomAnimatedBottomBar extends StatelessWidget {
                 onTap: () {
                   onItemSelected(index);
                   if (index == 0) {
-                    Navigator.pushNamed(context, "/");
+                    Navigator.pushNamed(context, "/home");
                   }
                   if (index == 1) {
                     Navigator.pushNamed(context, "/categories");

@@ -92,7 +92,7 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                   child: InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, "/payments");
+                      Navigator.pushNamed(context, "/select-address");
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,

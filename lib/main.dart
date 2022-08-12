@@ -4,11 +4,16 @@ import 'package:musicart/screens/acoustic_guitars_screen.dart';
 import 'package:musicart/screens/add_card_screen.dart';
 import 'package:musicart/screens/bank_list_screen.dart';
 import 'package:musicart/screens/bass_guitars_screen.dart';
+import 'package:musicart/screens/cart_screen.dart';
 import 'package:musicart/screens/categories_screen.dart';
+import 'package:musicart/screens/choose_address.dart';
+import 'package:musicart/screens/create_address.dart';
 import 'package:musicart/screens/drums_screen.dart';
 import 'package:musicart/screens/order_history_screen.dart';
 import 'package:musicart/screens/payments_screen.dart';
 import 'package:musicart/screens/search_instrument_screen.dart';
+import 'package:musicart/screens/splash_screen.dart';
+import 'package:musicart/screens/wishlist_screen.dart';
 
 import 'screens/electric_guitar_screen.dart';
 import 'screens/home_welcome_screen.dart';
@@ -31,9 +36,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: const HomeWelcomeScreen(),
+      home: const SplashScreen(),
       initialRoute: "/",
       routes: {
+        "/home": (context) => const HomeWelcomeScreen(),
         // "/": (context) => const HomeWelcomeScreen(),
         "/categories": (context) => const CategoriesScreen(),
         // "/instrumentDetail": (context) => const InstrumentDetail(),
@@ -42,11 +48,15 @@ class MyApp extends StatelessWidget {
         "/bass-guitars": (context) => const BassGuitarsScreen(),
         "/drums": (context) => const DrumsScreen(),
         "/search": (context) => const SearchInstrumentScreen(),
+        "/wishlist": (context) => const WishListScreen(),
+        "/cart": (context) => const CartScreen(),
         "/my-account": (context) => const AccountScreen(),
         "/payments": (context) => const PaymentsScreen(),
         "/bank-list": (context) => const BankListScreen(),
         "/add-card": (context) => const AddCardScreen(),
         "/orders-history": (context) => const OrderHistoryScreen(),
+        "/select-address": (context) => const ChooseAddressScreen(),
+        "/add-address": (context) => const CreateAddressScreen(),
       },
     );
   }

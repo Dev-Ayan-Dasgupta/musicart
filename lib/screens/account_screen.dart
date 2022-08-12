@@ -161,7 +161,9 @@ class _AccountScreenState extends State<AccountScreen> {
             onTap1: () {
               Navigator.pushNamed(context, "/orders-history");
             },
-            onTap2: () {},
+            onTap2: () {
+              Navigator.pushNamed(context, "/select-address");
+            },
             onTap3: () {},
           ),
           Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
@@ -192,7 +194,7 @@ class _AccountScreenState extends State<AccountScreen> {
         padding: EdgeInsets.symmetric(
             horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
         child: CustomAnimatedBottomBar(
-          containerHeight: 56,
+          containerHeight: screenHeight * 0.06,
           backgroundColor: Colors.black87,
           selectedIndex: _currentIndex,
           showElevation: true,
