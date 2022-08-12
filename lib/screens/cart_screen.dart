@@ -59,7 +59,30 @@ class _CartScreenState extends State<CartScreen> {
           //   ),
           // ),
           (cartList.isEmpty)
-              ? Text("Cart is empty")
+              ? Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: screenHeight * 0.2,
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          "../assets/images/empty_cart.png",
+                          width: screenWidth * 0.33,
+                          height: screenWidth * 0.33,
+                        ),
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
+                    Text(
+                      "Nothing in the cart, browse our products and add them here.",
+                      style: globalTextStyle.copyWith(
+                        color: Colors.grey,
+                        fontSize: screenWidth * 0.025,
+                      ),
+                    ),
+                  ],
+                )
               : Padding(
                   padding: EdgeInsets.only(
                     right: screenWidth * 0.04,

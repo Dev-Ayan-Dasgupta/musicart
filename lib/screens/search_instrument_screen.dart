@@ -73,7 +73,8 @@ class _SearchInstrumentScreenState extends State<SearchInstrumentScreen> {
                           color: Colors.grey, fontSize: screenWidth * 0.025),
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: "Search for products or brands...",
+                        hintText:
+                            "Search for instruments, products or brands...",
                         hintStyle: globalTextStyle.copyWith(
                             color: Colors.grey, fontSize: screenWidth * 0.025),
                         suffixIcon: IconButton(

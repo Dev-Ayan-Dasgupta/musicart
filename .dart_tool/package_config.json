@@ -128,6 +128,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_svg",
+      "rootUri": "file:///C:/Users/Ayan%20Dasgupta/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_svg-1.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///C:/src/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -208,6 +214,18 @@
     {
       "name": "path",
       "rootUri": "file:///C:/Users/Ayan%20Dasgupta/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path-1.8.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_drawing",
+      "rootUri": "file:///C:/Users/Ayan%20Dasgupta/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path_drawing-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///C:/Users/Ayan%20Dasgupta/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path_parsing-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -410,7 +428,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-08-11T10:07:30.959287Z",
+  "generated": "2022-08-12T10:43:47.213829Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }

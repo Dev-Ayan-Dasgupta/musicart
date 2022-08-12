@@ -186,235 +186,225 @@ class _DrumsScreenState extends State<DrumsScreen> {
             ],
           ),
           Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
-          (isSortFilter)
-              ? AnimatedContainer(
-                  duration: const Duration(milliseconds: 375),
-                  width: _animContWidth,
-                  height: _animContHeight,
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "₹ $minDrumPrice",
-                            style: globalTextStyle.copyWith(
-                              color: primaryColor,
-                              fontSize: screenWidth * 0.025,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(
-                            width: screenWidth * 0.7,
-                            child: RangeSlider(
-                              min: minDrumPrice,
-                              max: maxDrumPrice,
-                              divisions: 45000,
-                              values: rv,
-                              labels: RangeLabels(rv.start.round().toString(),
-                                  rv.end.round().toString()),
-                              activeColor: primaryColor,
-                              inactiveColor: Colors.grey,
-                              onChanged: (values) {
-                                setState(() {
-                                  rv = values;
-                                  populatefilteredDrums(rv.start, rv.end);
-                                  count++;
-                                });
-                              },
-                            ),
-                          ),
-                          Text(
-                            "₹ $maxDrumPrice",
-                            style: globalTextStyle.copyWith(
-                              color: primaryColor,
-                              fontSize: screenWidth * 0.025,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 1000),
+            curve: Curves.easeInOutExpo,
+            width: _animContWidth,
+            height: _animContHeight,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "₹ $minDrumPrice",
+                      style: globalTextStyle.copyWith(
+                        color: primaryColor,
+                        fontSize: screenWidth * 0.025,
+                        fontWeight: FontWeight.bold,
                       ),
-                      Padding(
-                          padding: EdgeInsets.only(top: screenHeight * 0.02)),
-                      SizedBox(
-                        height: screenHeight * 0.025,
-                        width: screenWidth * 0.9,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Expanded(
-                                child: ListView.builder(
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount: drumBrandList.length,
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      return Padding(
-                                        padding: EdgeInsets.only(
-                                            right: screenWidth * 0.02),
-                                        child: InkWell(
-                                          onTap: () {
-                                            if (!selectedDrumBrands.contains(
-                                                drumBrandList[index])) {
-                                              setState(() {
-                                                selectedDrumBrands
-                                                    .add(drumBrandList[index]);
+                    ),
+                    SizedBox(
+                      width: screenWidth * 0.7,
+                      child: RangeSlider(
+                        min: minDrumPrice,
+                        max: maxDrumPrice,
+                        divisions: (maxDrumPrice - minDrumPrice).toInt(),
+                        values: rv,
+                        labels: RangeLabels(rv.start.round().toString(),
+                            rv.end.round().toString()),
+                        activeColor: primaryColor,
+                        inactiveColor: Colors.grey,
+                        onChanged: (values) {
+                          setState(() {
+                            rv = values;
+                            populatefilteredDrums(rv.start, rv.end);
+                            count++;
+                          });
+                        },
+                      ),
+                    ),
+                    Text(
+                      "₹ $maxDrumPrice",
+                      style: globalTextStyle.copyWith(
+                        color: primaryColor,
+                        fontSize: screenWidth * 0.025,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
+                SizedBox(
+                  height: screenHeight * 0.025,
+                  width: screenWidth * 0.9,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Expanded(
+                          child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: drumBrandList.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Padding(
+                                  padding: EdgeInsets.only(
+                                      right: screenWidth * 0.02),
+                                  child: InkWell(
+                                    onTap: () {
+                                      if (!selectedDrumBrands
+                                          .contains(drumBrandList[index])) {
+                                        setState(() {
+                                          selectedDrumBrands
+                                              .add(drumBrandList[index]);
 
-                                                populatefilteredDrums(
-                                                    rv.start, rv.end);
-                                                count++;
-                                              });
-                                            } else {
-                                              setState(() {
-                                                selectedDrumBrands.remove(
-                                                    drumBrandList[index]);
+                                          populatefilteredDrums(
+                                              rv.start, rv.end);
+                                          count++;
+                                        });
+                                      } else {
+                                        setState(() {
+                                          selectedDrumBrands
+                                              .remove(drumBrandList[index]);
 
-                                                populatefilteredDrums(
-                                                    rv.start, rv.end);
+                                          populatefilteredDrums(
+                                              rv.start, rv.end);
 
-                                                count++;
-                                              });
-                                            }
-                                          },
-                                          child: Container(
-                                            width: screenWidth * 0.2,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  (!selectedDrumBrands.contains(
-                                                          drumBrandList[index]))
-                                                      ? Colors.grey.shade200
-                                                      : primaryColor,
-                                              borderRadius:
-                                                  const BorderRadius.all(
-                                                      Radius.circular(10)),
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                drumBrandList[index],
-                                                style: globalTextStyle.copyWith(
-                                                  color: (!selectedDrumBrands
-                                                          .contains(
-                                                              drumBrandList[
-                                                                  index]))
-                                                      ? primaryColor
-                                                      : tertiaryColor,
-                                                  fontSize: screenWidth * 0.02,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                            ),
+                                          count++;
+                                        });
+                                      }
+                                    },
+                                    child: Container(
+                                      width: screenWidth * 0.2,
+                                      decoration: BoxDecoration(
+                                        color: (!selectedDrumBrands
+                                                .contains(drumBrandList[index]))
+                                            ? Colors.grey.shade200
+                                            : primaryColor,
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(10)),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          drumBrandList[index],
+                                          style: globalTextStyle.copyWith(
+                                            color:
+                                                (!selectedDrumBrands.contains(
+                                                        drumBrandList[index]))
+                                                    ? primaryColor
+                                                    : tertiaryColor,
+                                            fontSize: screenWidth * 0.02,
+                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
-                                      );
-                                    }))
-                          ],
-                        ),
-                      ),
-                      Padding(
-                          padding: EdgeInsets.only(top: screenHeight * 0.02)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CustomRadioButton(
-                            screenWidth: screenWidth,
-                            value: "relevance",
-                            groupValue: sortCriterion,
-                            onChanged: (value) {
-                              setState(() {
-                                sortCriterion = value.toString();
-                                drumList.sort(
-                                    (a, b) => a["brand"].compareTo(b["brand"]));
-                                populatefilteredDrums(rv.start, rv.end);
-                                count++;
-                              });
-                            },
-                            text: "Relevance",
-                          ),
-                          CustomRadioButton(
-                            screenWidth: screenWidth,
-                            value: "low to high",
-                            groupValue: sortCriterion,
-                            onChanged: (value) {
-                              setState(() {
-                                sortCriterion = value.toString();
-                                drumList.sort(
-                                    (a, b) => a["price"].compareTo(b["price"]));
-                                populatefilteredDrums(rv.start, rv.end);
-                                count++;
-                              });
-                            },
-                            text: "Low to High",
-                          ),
-                          CustomRadioButton(
-                            screenWidth: screenWidth,
-                            value: "high to low",
-                            groupValue: sortCriterion,
-                            onChanged: (value) {
-                              setState(() {
-                                sortCriterion = value.toString();
-                                drumList.sort(
-                                    (a, b) => b["price"].compareTo(a["price"]));
-                                populatefilteredDrums(rv.start, rv.end);
-                                count++;
-                              });
-                            },
-                            text: "High to Low",
-                          ),
-                          CustomRadioButton(
-                            screenWidth: screenWidth,
-                            value: "max discount",
-                            groupValue: sortCriterion,
-                            onChanged: (value) {
-                              setState(() {
-                                sortCriterion = value.toString();
-                                drumList.sort((a, b) => (a["price"] / a["mrp"])
-                                    .compareTo((b["price"] / b["mrp"])));
-                                populatefilteredDrums(rv.start, rv.end);
-                                count++;
-                              });
-                            },
-                            text: "Max Discount",
-                          ),
-                        ],
-                      ),
-                      Padding(
-                          padding: EdgeInsets.only(top: screenHeight * 0.02)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Padding(
-                            padding:
-                                EdgeInsets.only(right: screenWidth * 0.025),
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  selectedDrumBrands.clear();
-                                  rv = RangeValues(minDrumPrice, maxDrumPrice);
-                                  populatefilteredDrums(rv.start, rv.end);
-                                  count++;
-                                });
-                              },
-                              child: Text(
-                                "Clear filters",
-                                style: globalTextStyle.copyWith(
-                                  color: primaryColor,
-                                  fontSize: screenWidth * 0.02,
-                                  fontWeight: FontWeight.bold,
-                                  decoration: TextDecoration.underline,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                          padding: EdgeInsets.only(top: screenHeight * 0.02)),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }))
                     ],
                   ),
-                )
-              : const SizedBox(),
+                ),
+                Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomRadioButton(
+                      screenWidth: screenWidth,
+                      value: "relevance",
+                      groupValue: sortCriterion,
+                      onChanged: (value) {
+                        setState(() {
+                          sortCriterion = value.toString();
+                          drumList
+                              .sort((a, b) => a["brand"].compareTo(b["brand"]));
+                          populatefilteredDrums(rv.start, rv.end);
+                          count++;
+                        });
+                      },
+                      text: "Relevance",
+                    ),
+                    CustomRadioButton(
+                      screenWidth: screenWidth,
+                      value: "low to high",
+                      groupValue: sortCriterion,
+                      onChanged: (value) {
+                        setState(() {
+                          sortCriterion = value.toString();
+                          drumList
+                              .sort((a, b) => a["price"].compareTo(b["price"]));
+                          populatefilteredDrums(rv.start, rv.end);
+                          count++;
+                        });
+                      },
+                      text: "Low to High",
+                    ),
+                    CustomRadioButton(
+                      screenWidth: screenWidth,
+                      value: "high to low",
+                      groupValue: sortCriterion,
+                      onChanged: (value) {
+                        setState(() {
+                          sortCriterion = value.toString();
+                          drumList
+                              .sort((a, b) => b["price"].compareTo(a["price"]));
+                          populatefilteredDrums(rv.start, rv.end);
+                          count++;
+                        });
+                      },
+                      text: "High to Low",
+                    ),
+                    CustomRadioButton(
+                      screenWidth: screenWidth,
+                      value: "max discount",
+                      groupValue: sortCriterion,
+                      onChanged: (value) {
+                        setState(() {
+                          sortCriterion = value.toString();
+                          drumList.sort((a, b) => (a["price"] / a["mrp"])
+                              .compareTo((b["price"] / b["mrp"])));
+                          populatefilteredDrums(rv.start, rv.end);
+                          count++;
+                        });
+                      },
+                      text: "Max Discount",
+                    ),
+                  ],
+                ),
+                Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(right: screenWidth * 0.025),
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            selectedDrumBrands.clear();
+                            rv = RangeValues(minDrumPrice, maxDrumPrice);
+                            populatefilteredDrums(rv.start, rv.end);
+                            count++;
+                          });
+                        },
+                        child: Text(
+                          "Clear filters",
+                          style: globalTextStyle.copyWith(
+                            color: primaryColor,
+                            fontSize: screenWidth * 0.02,
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
+              ],
+            ),
+          ),
           SizedBox(
             width: screenWidth,
-            height: (isSortFilter) ? screenHeight * 0.615 : screenHeight * 0.8,
+            height: (isSortFilter) ? screenHeight * 0.55 : screenHeight * 0.76,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
               child: Column(

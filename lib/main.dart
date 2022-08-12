@@ -13,7 +13,7 @@ import 'package:musicart/screens/search_instrument_screen.dart';
 import 'screens/electric_guitar_screen.dart';
 import 'screens/home_welcome_screen.dart';
 //import '/screens/screen2.dart';
-import '/screens/screen_two.dart';
+//import '/screens/screen_two.dart';
 
 void main() {
   runApp(const MyApp());

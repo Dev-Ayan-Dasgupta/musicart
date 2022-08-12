@@ -41,7 +41,30 @@ class _WishListScreenState extends State<WishListScreen> {
             hintText: _hintText,
           ),
           (wishList.isEmpty)
-              ? Text("Wishlist is empty")
+              ? Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: screenHeight * 0.2,
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          "../assets/images/empty_wishlist.png",
+                          width: screenWidth * 0.33,
+                          height: screenWidth * 0.33,
+                        ),
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
+                    Text(
+                      "Nothing in wishlist, browse our products and add them here.",
+                      style: globalTextStyle.copyWith(
+                        color: Colors.grey,
+                        fontSize: screenWidth * 0.025,
+                      ),
+                    ),
+                  ],
+                )
               : Padding(
                   padding: EdgeInsets.all(screenHeight * 0.015),
                   child: Text(

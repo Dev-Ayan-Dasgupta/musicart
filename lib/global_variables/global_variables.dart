@@ -96,7 +96,8 @@ void populateSearchedInstruments(String srch) {
   searchedInstruments.clear();
   for (int i = 0; i < instruments.length; i++) {
     if (instruments[i]["name"].toString().toLowerCase().contains(srch) ||
-        instruments[i]["brand"].toString().toLowerCase().contains(srch)) {
+        instruments[i]["brand"].toString().toLowerCase().contains(srch) ||
+        instruments[i]["instrument"].toString().toLowerCase().contains(srch)) {
       searchedInstruments.add(instruments[i]);
     }
   }
