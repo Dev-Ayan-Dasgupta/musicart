@@ -90,8 +90,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            WishListScreen(mywishList: wishList[0])));
+                        builder: (context) => const WishListScreen()));
               },
               child: Stack(
                 children: [
@@ -139,8 +138,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            CartScreen(mycartList: cartList)));
+                        builder: (context) => const CartScreen()));
               },
               child: Stack(
                 children: [

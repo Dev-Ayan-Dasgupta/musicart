@@ -10,10 +10,10 @@ import 'instrument_detail.dart';
 class WishListScreen extends StatefulWidget {
   const WishListScreen({
     Key? key,
-    required this.mywishList,
+    //required this.mywishList,
   }) : super(key: key);
 
-  final Map<String, dynamic> mywishList;
+  //final Map<String, dynamic> mywishList;
 
   @override
   State<WishListScreen> createState() => _WishListScreenState();

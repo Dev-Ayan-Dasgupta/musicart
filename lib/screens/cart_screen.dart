@@ -11,9 +11,12 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 class CartScreen extends StatefulWidget {
-  const CartScreen({Key? key, required this.mycartList}) : super(key: key);
+  const CartScreen({
+    Key? key,
+    //required this.mycartList,
+  }) : super(key: key);
 
-  final List<Map<String, dynamic>> mycartList;
+  //final List<Map<String, dynamic>> mycartList;
 
   @override
   State<CartScreen> createState() => _CartScreenState();
