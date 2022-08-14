@@ -6,12 +6,18 @@
 // ignore_for_file: lines_longer_than_80_chars
 // ignore_for_file: depend_on_referenced_packages
 
+import 'package:geolocator_web/geolocator_web.dart';
+import 'package:google_maps_flutter_web/google_maps_flutter_web.dart';
+import 'package:location_web/location_web.dart';
 import 'package:url_launcher_web/url_launcher_web.dart';
 
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 // ignore: public_member_api_docs
 void registerPlugins(Registrar registrar) {
+  GeolocatorPlugin.registerWith(registrar);
+  GoogleMapsPlugin.registerWith(registrar);
+  LocationWebPlugin.registerWith(registrar);
   UrlLauncherPlugin.registerWith(registrar);
   registrar.registerMessageHandler();
 }

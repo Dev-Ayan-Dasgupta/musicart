@@ -4,6 +4,7 @@ import 'package:animated_flip_counter/animated_flip_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:musicart/lists/list_of_addresses.dart';
+import 'package:musicart/screens/edit_address.dart';
 import 'package:musicart/widgets/choose_address_card.dart';
 import 'package:musicart/widgets/custom_appbar.dart';
 
@@ -36,51 +37,75 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
             hintText: _hintText,
           ),
           (cartList.isNotEmpty)
-              ? Padding(
-                  padding: EdgeInsets.only(
-                    right: screenWidth * 0.04,
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/payments");
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Container(
-                          width: screenWidth * 0.4,
-                          height: screenHeight * 0.05,
-                          decoration: BoxDecoration(
-                            color: primaryColor,
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(15)),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Checkout    ₹",
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    (currentAddress != null)
+                        ? InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(context, "/select-address");
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.04,
+                              ),
+                              child: Text(
+                                currentAddress!.addressLine1,
                                 style: globalTextStyle.copyWith(
-                                  color: Colors.white,
-                                  fontSize: screenWidth * 0.03,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                    color: primaryColor,
+                                    fontSize: screenWidth * 0.015),
                               ),
-                              const Padding(padding: EdgeInsets.only(left: 3)),
-                              AnimatedFlipCounter(
-                                value: myCartValue,
-                                textStyle: globalTextStyle.copyWith(
-                                  color: Colors.white,
-                                  fontSize: screenWidth * 0.03,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            ),
+                          )
+                        : const SizedBox(),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        right: screenWidth * 0.04,
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, "/payments");
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                              width: screenWidth * 0.4,
+                              height: screenHeight * 0.05,
+                              decoration: BoxDecoration(
+                                color: primaryColor,
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(15)),
                               ),
-                            ],
-                          ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Checkout    ₹",
+                                    style: globalTextStyle.copyWith(
+                                      color: Colors.white,
+                                      fontSize: screenWidth * 0.03,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const Padding(
+                                      padding: EdgeInsets.only(left: 3)),
+                                  AnimatedFlipCounter(
+                                    value: myCartValue,
+                                    textStyle: globalTextStyle.copyWith(
+                                      color: Colors.white,
+                                      fontSize: screenWidth * 0.03,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
+                  ],
                 )
               : const SizedBox(),
           SizedBox(
@@ -122,7 +147,17 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
                                       count++;
                                     });
                                   },
-                                  onEditTap: () {},
+                                  onEditTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                EditAddressScreen(
+                                                  editingAddress:
+                                                      myAddresses[index],
+                                                  editingIndex: index,
+                                                )));
+                                  },
                                   onDeleteTap: () {
                                     setState(() {
                                       myAddresses.remove(myAddresses[index]);

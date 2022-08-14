@@ -61,35 +61,7 @@ class _BankListScreenState extends State<BankListScreen> {
             searchBoxController: _searchBoxController,
             hintText: _hintText,
           ),
-          // Padding(padding: EdgeInsets.only(top: screenWidth * 0.02)),
-          // Padding(
-          //   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-          //   child: InkWell(
-          //     onTap: () {
-          //       Navigator.pushNamed(context, "/payments");
-          //       //Navigator.pop(context);
-          //     },
-          //     child: Row(
-          //       mainAxisAlignment: MainAxisAlignment.start,
-          //       children: [
-          //         Icon(
-          //           Icons.arrow_back_rounded,
-          //           size: screenWidth * 0.045,
-          //           color: gv.primaryColor,
-          //         ),
-          //         Padding(padding: EdgeInsets.only(left: screenWidth * 0.02)),
-          //         Text(
-          //           "Back",
-          //           style: gv.globalTextStyle.copyWith(
-          //               color: gv.primaryColor,
-          //               fontSize: screenWidth * 0.03,
-          //               fontWeight: FontWeight.bold),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
-          // Padding(padding: EdgeInsets.only(top: screenWidth * 0.025)),
+
           Padding(
             padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
             child: TextLabel(

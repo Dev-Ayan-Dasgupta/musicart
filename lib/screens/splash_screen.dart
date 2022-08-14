@@ -70,7 +70,7 @@ class _SplashScreenState extends State<SplashScreen>
                 height: _imageHeightAnimation.value,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("../assets/images/logo.png"),
+                    image: AssetImage("./assets/images/logo.png"),
                     fit: BoxFit.fill,
                     invertColors: true,
                   ),

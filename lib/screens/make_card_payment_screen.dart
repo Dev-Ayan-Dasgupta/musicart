@@ -1,8 +1,10 @@
+import 'package:animated_flip_counter/animated_flip_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:musicart/models/card_object.dart';
 import 'package:musicart/widgets/make_card_payment_widget.dart';
 
 import '../global_variables/global_variables.dart';
+import '../lists/list_of_addresses.dart';
 import '../widgets/animated_bottom_bar.dart';
 import '../widgets/custom_appbar.dart';
 
@@ -37,6 +39,78 @@ class _MakeCardPaymentScreenState extends State<MakeCardPaymentScreen> {
             searchBoxController: _searchBoxController,
             hintText: _hintText,
           ),
+          (cartList.isNotEmpty)
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    (currentAddress != null)
+                        ? InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(context, "/select-address");
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.04,
+                              ),
+                              child: Text(
+                                currentAddress!.addressLine1,
+                                style: globalTextStyle.copyWith(
+                                    color: primaryColor,
+                                    fontSize: screenWidth * 0.015),
+                              ),
+                            ),
+                          )
+                        : const SizedBox(),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        right: screenWidth * 0.04,
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, "/payments");
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                              width: screenWidth * 0.4,
+                              height: screenHeight * 0.05,
+                              decoration: BoxDecoration(
+                                color: primaryColor,
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(15)),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Checkout    ₹",
+                                    style: globalTextStyle.copyWith(
+                                      color: Colors.white,
+                                      fontSize: screenWidth * 0.03,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const Padding(
+                                      padding: EdgeInsets.only(left: 3)),
+                                  AnimatedFlipCounter(
+                                    value: myCartValue,
+                                    textStyle: globalTextStyle.copyWith(
+                                      color: Colors.white,
+                                      fontSize: screenWidth * 0.03,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              : const SizedBox(),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,

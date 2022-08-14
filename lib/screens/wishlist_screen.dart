@@ -49,7 +49,7 @@ class _WishListScreenState extends State<WishListScreen> {
                       ),
                       child: Center(
                         child: Image.asset(
-                          "../assets/images/empty_wishlist.png",
+                          "./assets/images/empty_wishlist.png",
                           width: screenWidth * 0.33,
                           height: screenWidth * 0.33,
                         ),

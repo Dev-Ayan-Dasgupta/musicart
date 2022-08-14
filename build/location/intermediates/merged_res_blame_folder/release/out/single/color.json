@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Flutter_Projects\\musicart\\build\\location\\intermediates\\merged_res\\release\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\9749b261d53dd4f07e7aa2975de6b3c5\\transformed\\jetified-play-services-base-16.0.1\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Flutter_Projects\\musicart\\build\\location\\intermediates\\merged_res\\release\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\9749b261d53dd4f07e7aa2975de6b3c5\\transformed\\jetified-play-services-base-16.0.1\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\Flutter_Projects\\musicart\\build\\location\\intermediates\\merged_res\\release\\color\\common_google_signin_btn_tint.xml",
+        "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\9749b261d53dd4f07e7aa2975de6b3c5\\transformed\\jetified-play-services-base-16.0.1\\res\\color\\common_google_signin_btn_tint.xml"
+    }
+]

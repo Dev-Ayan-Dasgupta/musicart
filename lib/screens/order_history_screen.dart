@@ -43,7 +43,7 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                       ),
                       child: Center(
                         child: SvgPicture.asset(
-                          "../assets/images/empty_order_history.svg",
+                          "./assets/images/empty_order_history.svg",
                           width: screenWidth * 0.33,
                           height: screenWidth * 0.33,
                         ),

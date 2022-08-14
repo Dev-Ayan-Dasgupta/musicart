@@ -1,6 +1,7 @@
 import 'package:animated_flip_counter/animated_flip_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:musicart/lists/list_of_addresses.dart';
 import 'package:musicart/screens/instrument_detail.dart';
 import 'package:musicart/widgets/cart_card.dart';
 
@@ -70,7 +71,7 @@ class _CartScreenState extends State<CartScreen> {
                       ),
                       child: Center(
                         child: Image.asset(
-                          "../assets/images/empty_cart.png",
+                          "./assets/images/empty_cart.png",
                           width: screenWidth * 0.33,
                           height: screenWidth * 0.33,
                         ),
@@ -86,51 +87,75 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ],
                 )
-              : Padding(
-                  padding: EdgeInsets.only(
-                    right: screenWidth * 0.04,
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/select-address");
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Container(
-                          width: screenWidth * 0.4,
-                          height: screenHeight * 0.05,
-                          decoration: BoxDecoration(
-                            color: primaryColor,
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(15)),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Checkout    ₹",
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    (currentAddress != null)
+                        ? InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(context, "/select-address");
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.04,
+                              ),
+                              child: Text(
+                                currentAddress!.addressLine1,
                                 style: globalTextStyle.copyWith(
-                                  color: Colors.white,
-                                  fontSize: screenWidth * 0.03,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                    color: primaryColor,
+                                    fontSize: screenWidth * 0.015),
                               ),
-                              const Padding(padding: EdgeInsets.only(left: 3)),
-                              AnimatedFlipCounter(
-                                value: myCartValue,
-                                textStyle: globalTextStyle.copyWith(
-                                  color: Colors.white,
-                                  fontSize: screenWidth * 0.03,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            ),
+                          )
+                        : const SizedBox(),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        right: screenWidth * 0.04,
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, "/select-address");
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                              width: screenWidth * 0.4,
+                              height: screenHeight * 0.05,
+                              decoration: BoxDecoration(
+                                color: primaryColor,
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(15)),
                               ),
-                            ],
-                          ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Checkout    ₹",
+                                    style: globalTextStyle.copyWith(
+                                      color: Colors.white,
+                                      fontSize: screenWidth * 0.03,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const Padding(
+                                      padding: EdgeInsets.only(left: 3)),
+                                  AnimatedFlipCounter(
+                                    value: myCartValue,
+                                    textStyle: globalTextStyle.copyWith(
+                                      color: Colors.white,
+                                      fontSize: screenWidth * 0.03,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
           Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
           SizedBox(

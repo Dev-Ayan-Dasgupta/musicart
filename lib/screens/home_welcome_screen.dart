@@ -170,7 +170,7 @@ class _HomeWelcomeScreenState extends State<HomeWelcomeScreen> {
                         padding: EdgeInsets.symmetric(
                             horizontal: screenWidth * 0.025),
                         child: SizedBox(
-                          height: screenWidth * 0.45 / 0.75,
+                          height: screenWidth * 0.4 / 0.75,
                           child: Row(
                             children: [
                               Expanded(
@@ -183,8 +183,8 @@ class _HomeWelcomeScreenState extends State<HomeWelcomeScreen> {
                                   itemBuilder:
                                       (BuildContext context, int index) {
                                     return InstrumentCard(
-                                      width: screenWidth * 0.45,
-                                      height: screenWidth * 0.45 / 0.75,
+                                      width: screenWidth * 0.4,
+                                      height: screenWidth * 0.4 / 0.75,
                                       instrumentImageUrl: instruments[index]
                                           ["img-url"],
                                       instrumentName: instruments[index]
