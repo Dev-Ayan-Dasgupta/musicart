@@ -167,7 +167,7 @@ class _ElectricGuitarsScreenState extends State<ElectricGuitarsScreen> {
                     setState(() {
                       if (!isSortFilter) {
                         _animContWidth = screenWidth * 0.95;
-                        _animContHeight = screenHeight * 0.205;
+                        _animContHeight = screenHeight * 0.236;
                       } else {
                         _animContWidth = 0;
                         _animContHeight = 0;

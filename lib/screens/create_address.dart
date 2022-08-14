@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart' as gc;
 import 'package:geolocator/geolocator.dart' as gl;
@@ -36,28 +38,34 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
   final TextEditingController _pinCodeController = TextEditingController();
 
   late LocationData _currentPosition;
-  // late String _address, _dateTime;
+  final gl.LocationSettings locationSettings = gl.LocationSettings(
+    accuracy: gl.LocationAccuracy.high,
+    distanceFilter: 100,
+  );
+
   late GoogleMapController mapController;
   late Marker marker;
   Location location = Location();
-  String location2 = 'Null, Press Button';
-  String Address = 'search';
+  //String location2 = 'Null, Press Button';
+  //String address = 'Locate me';
 
   late GoogleMapController _controller;
   LatLng _initialcameraposition = LatLng(0.5937, 0.9629);
+  LatLng _initialcameraposition2 = LatLng(0.5937, 0.9629);
 
   @override
   void initState() {
     super.initState();
+
     getLoc();
   }
 
-  void _onMapCreated(GoogleMapController _cntlr) {
-    _controller = _cntlr;
+  void _onMapCreated(GoogleMapController cntlr) {
+    _controller = cntlr;
     location.onLocationChanged.listen((l) {
       _controller.animateCamera(
         CameraUpdate.newCameraPosition(
-          CameraPosition(target: LatLng(l.latitude!, l.longitude!), zoom: 15),
+          CameraPosition(target: LatLng(l.latitude!, l.longitude!), zoom: 17),
         ),
       );
     });
@@ -365,85 +373,83 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
                     ],
                   ),
                   Padding(padding: EdgeInsets.only(top: screenWidth * 0.025)),
-                  SizedBox(
-                    width: screenWidth * 0.5,
-                    height: screenHeight * 0.05,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        myAddresses.add(
-                          AddressObject(
-                            personName: _personNameController.text,
-                            addressLine1: _addressLine1Controller.text,
-                            addressLine2: _addressLine2Controller.text,
-                            landmark: _landmarkController.text,
-                            city: _cityController.text,
-                            state: _stateController.text,
-                            pinCode: _pinCodeController.text,
-                            isCurrentAddress: false,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: screenWidth * 0.5,
+                        height: screenHeight * 0.05,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            myAddresses.add(
+                              AddressObject(
+                                personName: _personNameController.text,
+                                addressLine1: _addressLine1Controller.text,
+                                addressLine2: _addressLine2Controller.text,
+                                landmark: _landmarkController.text,
+                                city: _cityController.text,
+                                state: _stateController.text,
+                                pinCode: _pinCodeController.text,
+                                isCurrentAddress: false,
+                              ),
+                            );
+                            Navigator.pushNamed(context, "/select-address");
+                          },
+                          style: ElevatedButton.styleFrom(
+                              primary: primaryColor,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30))),
+                          child: Text(
+                            "Add Address",
+                            style: globalTextStyle.copyWith(
+                              color: tertiaryColor,
+                              fontSize: screenWidth * 0.025,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        );
-                        Navigator.pushNamed(context, "/select-address");
-                      },
-                      style: ElevatedButton.styleFrom(
-                          primary: primaryColor,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30))),
-                      child: Text(
-                        "Add Address",
-                        style: globalTextStyle.copyWith(
-                          color: tertiaryColor,
-                          fontSize: screenWidth * 0.025,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ),
+                      InkWell(
+                        onTap: () async {
+                          gl.Position position =
+                              await _getGeoLocationPosition();
+                          // location2 =
+                          //     'Lat: ${position.latitude} , Long: ${position.longitude}';
+                          getAddressFromLatLong(position);
+                        },
+                        child: Row(
+                          children: [
+                            Text("Locate me ",
+                                style: globalTextStyle.copyWith(
+                                    color: primaryColor,
+                                    fontSize: screenWidth * 0.025)),
+                            SizedBox(width: screenWidth * 0.025),
+                            const Icon(Icons.location_searching_rounded),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                  IconButton(
-                      onPressed: () async {
-                        gl.Position position = await _getGeoLocationPosition();
-                        location2 =
-                            'Lat: ${position.latitude} , Long: ${position.longitude}';
-                        GetAddressFromLatLong(position);
-                      },
-                      icon: Icon(Icons.location_searching_rounded)),
-                  Text(location2),
-                  SizedBox(height: 2),
-                  Text("$Address"),
-                  Container(
+                  SizedBox(height: screenHeight * 0.02),
+                  SizedBox(
                     width: screenWidth,
-                    height: screenHeight * 0.2,
+                    height: screenHeight * 0.225,
                     child: GoogleMap(
                       initialCameraPosition: CameraPosition(
                         target: _initialcameraposition,
-                        zoom: 15,
+                        zoom: 17,
                       ),
                       mapType: MapType.normal,
                       onMapCreated: _onMapCreated,
+                      markers: Set<Marker>.of(<Marker>[
+                        Marker(
+                            draggable: true,
+                            markerId: MarkerId("1"),
+                            position: LatLng(0, 0)),
+                      ]),
                       myLocationButtonEnabled: true,
                     ),
                   ),
-                  // const SizedBox(
-                  //   height: 3,
-                  // ),
-                  // if (_currentPosition != null)
-                  //   Text(
-                  //     "Latitude: ${_currentPosition.latitude}, Longitude: ${_currentPosition.longitude}",
-                  //     style: TextStyle(
-                  //         fontSize: screenWidth * 0.03,
-                  //         color: Colors.black,
-                  //         fontWeight: FontWeight.bold),
-                  //   ),
-                  // const SizedBox(
-                  //   height: 3,
-                  // ),
-                  // if (_address != null)
-                  //   Text(
-                  //     "Address: $_address",
-                  //     style: TextStyle(
-                  //       fontSize: screenWidth * 0.025,
-                  //       color: Colors.white,
-                  //     ),
-                  //   ),
                 ],
               ),
             ),
@@ -470,6 +476,19 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
       ),
     );
   }
+
+  // void _updatePosition(CameraPosition _position) {
+  //   gl.Position newMarkerPosition = gl.Position(
+  //       latitude: _position.target.latitude,
+  //       longitude: _position.target.longitude);
+  //   Marker marker = markers["1"];
+
+  //   setState(() {
+  //     markers["1"] = marker.copyWith(
+  //         positionParam:
+  //             LatLng(newMarkerPosition.latitude, newMarkerPosition.longitude));
+  //   });
+  // }
 
   Future<gl.Position> _getGeoLocationPosition() async {
     bool serviceEnabled;
@@ -505,61 +524,51 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
         desiredAccuracy: gl.LocationAccuracy.high);
   }
 
-  Future<void> GetAddressFromLatLong(gl.Position position) async {
+  Future<void> getAddressFromLatLong(gl.Position position) async {
     List<gc.Placemark> placemarks = await gc.placemarkFromCoordinates(
         position.latitude, position.longitude);
     print(placemarks);
     gc.Placemark place = placemarks[0];
-    Address =
-        '${place.street}, ${place.subLocality}, ${place.locality}, ${place.postalCode}, ${place.country}';
+    //address =
+    '${place.street}, ${place.subThoroughfare}, ${place.thoroughfare}, ${place.subLocality}, ${place.locality}, ${place.subAdministrativeArea}, ${place.administrativeArea}, ${place.postalCode}, ${place.country}';
+    _addressLine1Controller.text = "${place.street}, ${place.subThoroughfare}";
+    _addressLine2Controller.text = "${place.thoroughfare}";
+    _landmarkController.text = "${place.subThoroughfare}";
+    _cityController.text = "${place.subLocality}";
+    _stateController.text = "${place.administrativeArea}";
+    _pinCodeController.text = "${place.postalCode}";
   }
 
   getLoc() async {
-    bool _serviceEnabled;
-    PermissionStatus _permissionGranted;
-    _serviceEnabled = await location.serviceEnabled();
-    if (!_serviceEnabled) {
-      _serviceEnabled = await location.requestService();
-      if (!_serviceEnabled) {
+    bool serviceEnabled;
+    PermissionStatus permissionGranted;
+    serviceEnabled = await location.serviceEnabled();
+    if (!serviceEnabled) {
+      serviceEnabled = await location.requestService();
+      if (!serviceEnabled) {
         return;
       }
     }
-    _permissionGranted = await location.hasPermission();
-    if (_permissionGranted == PermissionStatus.denied) {
-      _permissionGranted = await location.requestPermission();
-      if (_permissionGranted != PermissionStatus.granted) {
+    permissionGranted = await location.hasPermission();
+    if (permissionGranted == PermissionStatus.denied) {
+      permissionGranted = await location.requestPermission();
+      if (permissionGranted != PermissionStatus.granted) {
         return;
       }
     }
 
-    _currentPosition = await location.getLocation();
     _initialcameraposition =
         LatLng(_currentPosition.latitude!, _currentPosition.longitude!);
-    // _initialcameraposition = LatLng(22.57, 88.36);
+
     location.onLocationChanged.listen((LocationData currentLocation) {
       print("${currentLocation.longitude} : ${currentLocation.longitude}");
       setState(() {
         _currentPosition = currentLocation;
         _initialcameraposition =
             LatLng(_currentPosition.latitude!, _currentPosition.longitude!);
-        // _initialcameraposition = LatLng(22.57, 88.36);
 
         DateTime now = DateTime.now();
-        //_dateTime = DateFormat('EEE d MMM kk:mm:ss ').format(now);
-        // _getAddress(_currentPosition.latitude!, _currentPosition.longitude!)
-        //     .then((value) {
-        //   setState(() {
-        //     _address = "${value.first.addressLine}";
-        //   });
-        // });
       });
     });
   }
-
-  // // Future<List<Address>> _getAddress(double lat, double lang) async {
-  // //   final coordinates = new Coordinates(lat, lang);
-  // //   List<Address> add =
-  // //       await gmaps.Geocoder.local.findAddressesFromCoordinates(coordinates);
-  // //   return add;
-  // }
 }

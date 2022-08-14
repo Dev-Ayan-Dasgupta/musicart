@@ -111,7 +111,7 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
           SizedBox(
             width: screenWidth * 0.95,
             height: min(
-                screenHeight * 0.7, screenHeight * 0.21 * myAddresses.length),
+                screenHeight * 0.7, screenHeight * 0.23 * myAddresses.length),
             child: Column(
               children: [
                 Expanded(
@@ -127,7 +127,7 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
                             child: FadeInAnimation(
                               child: ChooseAddressCard(
                                   width: screenWidth * 0.90,
-                                  height: screenHeight * 0.165,
+                                  height: screenHeight * 0.155,
                                   isCurrentAddress:
                                       myAddresses[index].isCurrentAddress,
                                   addressPersonName:
