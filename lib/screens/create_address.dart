@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:geocoding/geocoding.dart' as gc;
-import 'package:geolocator/geolocator.dart' as gl;
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:intl/intl.dart';
@@ -12,8 +12,6 @@ import 'package:musicart/models/address_object.dart';
 import 'package:musicart/widgets/custom_appbar.dart';
 
 import '../widgets/animated_bottom_bar.dart';
-
-import 'package:location/location.dart';
 
 //import 'dart:hmtl';
 
@@ -37,38 +35,79 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
   final TextEditingController _stateController = TextEditingController();
   final TextEditingController _pinCodeController = TextEditingController();
 
-  late LocationData _currentPosition;
-  final gl.LocationSettings locationSettings = gl.LocationSettings(
-    accuracy: gl.LocationAccuracy.high,
-    distanceFilter: 100,
+  GoogleMapController? _googleMapController;
+  CameraPosition _cameraPosition = CameraPosition(target: LatLng(0, 0));
+  LatLng _latlong = LatLng(0, 0);
+
+  Future<Position> getCurrentLocation() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    serviceEnabled =
+        await GeolocatorPlatform.instance.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      await GeolocatorPlatform.instance.openLocationSettings();
+      return Future.error('Location services are disabled.');
+    }
+
+    permission = await GeolocatorPlatform.instance.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await GeolocatorPlatform.instance.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('Location permissions are denied');
+      }
+    }
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error(
+          'Location permissions are permanently denied, we cannot request permissions.');
+    }
+
+    position = await GeolocatorPlatform.instance.getCurrentPosition(
+        locationSettings:
+            const LocationSettings(accuracy: LocationAccuracy.high));
+
+    setState(() {
+      _latlong = LatLng(position.latitude, position.longitude);
+      _googleMapController!.animateCamera(CameraUpdate.newCameraPosition(
+          CameraPosition(target: _latlong, zoom: 15)));
+      //getAddress();
+    });
+
+    return position;
+  }
+
+  Position position = Position(
+    longitude: 0,
+    latitude: 0,
+    timestamp: DateTime.now(),
+    accuracy: 0,
+    altitude: 0,
+    heading: 0,
+    speed: 0,
+    speedAccuracy: 0,
   );
 
-  late GoogleMapController mapController;
-  late Marker marker;
-  Location location = Location();
-  //String location2 = 'Null, Press Button';
-  //String address = 'Locate me';
+  List<Placemark>? placeMarks;
 
-  late GoogleMapController _controller;
-  LatLng _initialcameraposition = LatLng(0.5937, 0.9629);
-  LatLng _initialcameraposition2 = LatLng(0.5937, 0.9629);
+  getAddress() async {
+    placeMarks =
+        await placemarkFromCoordinates(_latlong.latitude, _latlong.longitude);
+    Placemark placemark = placeMarks![0];
+    // _addressController.text =
+    //     "${placemark.street}, ${placemark.subLocality}, ${placemark.locality}, ${placemark.subAdministrativeArea}, ${placemark.postalCode}, ${placemark.country}";
+    _addressLine1Controller.text =
+        "${placemark.street}, ${placemark.subThoroughfare}";
+    _addressLine2Controller.text = "${placemark.thoroughfare}";
+    _landmarkController.text = "${placemark.subThoroughfare}";
+    _cityController.text = "${placemark.subLocality}";
+    _stateController.text = "${placemark.administrativeArea}";
+    _pinCodeController.text = "${placemark.postalCode}";
+  }
 
   @override
   void initState() {
     super.initState();
-
-    getLoc();
-  }
-
-  void _onMapCreated(GoogleMapController cntlr) {
-    _controller = cntlr;
-    location.onLocationChanged.listen((l) {
-      _controller.animateCamera(
-        CameraUpdate.newCameraPosition(
-          CameraPosition(target: LatLng(l.latitude!, l.longitude!), zoom: 17),
-        ),
-      );
-    });
+    getCurrentLocation();
   }
 
   @override
@@ -411,11 +450,18 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
                       ),
                       InkWell(
                         onTap: () async {
-                          gl.Position position =
-                              await _getGeoLocationPosition();
-                          // location2 =
-                          //     'Lat: ${position.latitude} , Long: ${position.longitude}';
-                          getAddressFromLatLong(position);
+                          position = await GeolocatorPlatform.instance
+                              .getCurrentPosition(
+                                  locationSettings: const LocationSettings(
+                                      accuracy: LocationAccuracy.high));
+                          setState(() {
+                            _latlong =
+                                LatLng(position.latitude, position.longitude);
+                            _googleMapController!.animateCamera(
+                                CameraUpdate.newCameraPosition(CameraPosition(
+                                    target: _latlong, zoom: 15)));
+                            getAddress();
+                          });
                         },
                         child: Row(
                           children: [
@@ -435,19 +481,33 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
                     width: screenWidth,
                     height: screenHeight * 0.225,
                     child: GoogleMap(
-                      initialCameraPosition: CameraPosition(
-                        target: _initialcameraposition,
-                        zoom: 17,
-                      ),
-                      mapType: MapType.normal,
-                      onMapCreated: _onMapCreated,
+                      initialCameraPosition: _cameraPosition,
+                      onMapCreated: (controller) {
+                        setState(() {
+                          _googleMapController = controller;
+                        });
+                      },
                       markers: Set<Marker>.of(<Marker>[
                         Marker(
-                            draggable: true,
-                            markerId: MarkerId("1"),
-                            position: LatLng(0, 0)),
+                          markerId: MarkerId("1"),
+                          position: _latlong,
+                          icon: BitmapDescriptor.defaultMarkerWithHue(
+                              BitmapDescriptor.hueRed),
+                        ),
                       ]),
-                      myLocationButtonEnabled: true,
+                      onCameraMove: (CameraPosition cameraposition) async {
+                        _cameraPosition = cameraposition;
+                        _latlong = LatLng(cameraposition.target.latitude,
+                            cameraposition.target.longitude);
+                        getAddress();
+
+                        setState(() {
+                          print("${_latlong.latitude}, ${_latlong.longitude}");
+                          //print(_addressController.text);
+
+                          //getMovedAddress(cameraposition);
+                        });
+                      },
                     ),
                   ),
                 ],
@@ -476,6 +536,7 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
       ),
     );
   }
+}
 
   // void _updatePosition(CameraPosition _position) {
   //   gl.Position newMarkerPosition = gl.Position(
@@ -490,85 +551,8 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
   //   });
   // }
 
-  Future<gl.Position> _getGeoLocationPosition() async {
-    bool serviceEnabled;
-    gl.LocationPermission permission;
+  
 
-    // Test if location services are enabled.
-    serviceEnabled = await gl.Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      // Location services are not enabled don't continue
-      // accessing the position and request users of the
-      // App to enable the location services.
-      await gl.Geolocator.openLocationSettings();
-      return Future.error('Location services are disabled.');
-    }
+  
 
-    permission = await gl.Geolocator.checkPermission();
-    if (permission == gl.LocationPermission.denied) {
-      permission = await gl.Geolocator.requestPermission();
-      if (permission == gl.LocationPermission.denied) {
-        return Future.error('Location permissions are denied');
-      }
-    }
-
-    if (permission == gl.LocationPermission.deniedForever) {
-      // Permissions are denied forever, handle appropriately.
-      return Future.error(
-          'Location permissions are permanently denied, we cannot request permissions.');
-    }
-
-    // When we reach here, permissions are granted and we can
-    // continue accessing the position of the device.
-    return await gl.Geolocator.getCurrentPosition(
-        desiredAccuracy: gl.LocationAccuracy.high);
-  }
-
-  Future<void> getAddressFromLatLong(gl.Position position) async {
-    List<gc.Placemark> placemarks = await gc.placemarkFromCoordinates(
-        position.latitude, position.longitude);
-    print(placemarks);
-    gc.Placemark place = placemarks[0];
-    //address =
-    '${place.street}, ${place.subThoroughfare}, ${place.thoroughfare}, ${place.subLocality}, ${place.locality}, ${place.subAdministrativeArea}, ${place.administrativeArea}, ${place.postalCode}, ${place.country}';
-    _addressLine1Controller.text = "${place.street}, ${place.subThoroughfare}";
-    _addressLine2Controller.text = "${place.thoroughfare}";
-    _landmarkController.text = "${place.subThoroughfare}";
-    _cityController.text = "${place.subLocality}";
-    _stateController.text = "${place.administrativeArea}";
-    _pinCodeController.text = "${place.postalCode}";
-  }
-
-  getLoc() async {
-    bool serviceEnabled;
-    PermissionStatus permissionGranted;
-    serviceEnabled = await location.serviceEnabled();
-    if (!serviceEnabled) {
-      serviceEnabled = await location.requestService();
-      if (!serviceEnabled) {
-        return;
-      }
-    }
-    permissionGranted = await location.hasPermission();
-    if (permissionGranted == PermissionStatus.denied) {
-      permissionGranted = await location.requestPermission();
-      if (permissionGranted != PermissionStatus.granted) {
-        return;
-      }
-    }
-
-    _initialcameraposition =
-        LatLng(_currentPosition.latitude!, _currentPosition.longitude!);
-
-    location.onLocationChanged.listen((LocationData currentLocation) {
-      print("${currentLocation.longitude} : ${currentLocation.longitude}");
-      setState(() {
-        _currentPosition = currentLocation;
-        _initialcameraposition =
-            LatLng(_currentPosition.latitude!, _currentPosition.longitude!);
-
-        DateTime now = DateTime.now();
-      });
-    });
-  }
-}
+  
