@@ -22,12 +22,12 @@
 14    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 14-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:6:5-84
 14-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:6:22-82
-15    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-15-->[:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-81
-15-->[:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:9:22-78
-16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->[:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:10:5-79
-16-->[:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:10:22-76
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:7:5-78
+15-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:7:22-76
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:8:5-80
+16-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:8:22-78
 17
 18    <uses-feature
 18-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:26:5-28:35
@@ -47,36 +47,36 @@
 27
 28    <application
 29        android:name="android.app.Application"
-29-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:9:9-42
+29-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:11:9-42
 30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 30-->[androidx.core:core:1.6.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\acbce933e4b464a5224ed377a62db1f5\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 31        android:icon="@mipmap/launcher_icon"
-31-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:10:9-45
+31-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:12:9-45
 32        android:label="musicart" >
-32-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:8:9-33
+32-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:10:9-33
 33        <meta-data
-33-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:11:9-12:73
+33-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:13:9-14:73
 34            android:name="com.google.android.geo.API_KEY"
-34-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:11:20-65
+34-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:13:20-65
 35            android:value="AIzaSyBg7EhgUTy9ehFRh3dsF8T3R7PsBlQG1Hg" />
-35-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:12:16-71
+35-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:14:16-71
 36
 37        <activity
-37-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:13:9-34:20
+37-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:15:9-36:20
 38            android:name="com.example.musicart.MainActivity"
-38-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:14:13-41
+38-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:16:13-41
 39            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-39-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:18:13-163
+39-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:20:13-163
 40            android:exported="true"
-40-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:15:13-36
+40-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:17:13-36
 41            android:hardwareAccelerated="true"
-41-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:19:13-47
+41-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:21:13-47
 42            android:launchMode="singleTop"
-42-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:16:13-43
+42-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:18:13-43
 43            android:theme="@style/LaunchTheme"
-43-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:17:13-47
+43-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:19:13-47
 44            android:windowSoftInputMode="adjustResize" >
-44-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:20:13-55
+44-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:22:13-55
 45
 46            <!--
 47                 Specifies an Android theme to apply to this Activity as soon as
@@ -85,21 +85,21 @@
 50                 to determine the Window background behind the Flutter UI.
 51            -->
 52            <meta-data
-52-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:25:13-28:17
+52-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:27:13-30:17
 53                android:name="io.flutter.embedding.android.NormalTheme"
-53-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:26:15-70
+53-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:28:15-70
 54                android:resource="@style/NormalTheme" />
-54-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:27:15-52
+54-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:29:15-52
 55
 56            <intent-filter>
-56-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:30:13-33:29
+56-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:32:13-35:29
 57                <action android:name="android.intent.action.MAIN" />
-57-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:31:17-68
-57-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:31:25-66
+57-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:33:17-68
+57-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:33:25-66
 58
 59                <category android:name="android.intent.category.LAUNCHER" />
-59-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:32:17-76
-59-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:32:27-74
+59-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:34:17-76
+59-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:34:27-74
 60            </intent-filter>
 61        </activity>
 62        <!--
@@ -107,11 +107,11 @@
 64             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 65        -->
 66        <meta-data
-66-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:37:9-39:33
+66-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:39:9-41:33
 67            android:name="flutterEmbedding"
-67-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:38:13-44
+67-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:40:13-44
 68            android:value="2" />
-68-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:39:13-30
+68-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:41:13-30
 69
 70        <service
 70-->[:geolocator_android] C:\Flutter_Projects\musicart\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:12:9-16:56
@@ -133,51 +133,40 @@
 79            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 79-->[:url_launcher_android] C:\Flutter_Projects\musicart\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-71
 80
-81        <service
-81-->[:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:13:9-17:56
-82            android:name="com.lyokone.location.FlutterLocationService"
-82-->[:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-71
-83            android:enabled="true"
-83-->[:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-35
-84            android:exported="false"
-84-->[:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-37
-85            android:foregroundServiceType="location" />
-85-->[:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:17:13-53
-86
+81        <uses-library
+81-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+82            android:name="androidx.window.extensions"
+82-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+83            android:required="false" />
+83-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+84        <uses-library
+84-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+85            android:name="androidx.window.sidecar"
+85-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+86            android:required="false" /> <!-- Needs to be explicitly declared on P+ -->
+86-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
 87        <uses-library
-87-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-88            android:name="androidx.window.extensions"
-88-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+87-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
+88            android:name="org.apache.http.legacy"
+88-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:40:13-50
 89            android:required="false" />
-89-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-90        <uses-library
-90-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-91            android:name="androidx.window.sidecar"
-91-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-92            android:required="false" /> <!-- Needs to be explicitly declared on P+ -->
-92-->[androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-93        <uses-library
-93-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
-94            android:name="org.apache.http.legacy"
-94-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:40:13-50
-95            android:required="false" />
-95-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:41:13-37
-96
-97        <activity
-97-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-98            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-98-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-99            android:exported="false"
-99-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-100            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-100-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-101
-102        <meta-data
-102-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\601d4158b382ad9f634d3bbb23a34c83\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
-103            android:name="com.google.android.gms.version"
-103-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\601d4158b382ad9f634d3bbb23a34c83\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
-104            android:value="@integer/google_play_services_version" />
-104-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\601d4158b382ad9f634d3bbb23a34c83\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
-105    </application>
-106
-107</manifest>
+89-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:41:13-37
+90
+91        <activity
+91-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+92            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+92-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+93            android:exported="false"
+93-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+94            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+94-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+95
+96        <meta-data
+96-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\601d4158b382ad9f634d3bbb23a34c83\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+97            android:name="com.google.android.gms.version"
+97-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\601d4158b382ad9f634d3bbb23a34c83\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+98            android:value="@integer/google_play_services_version" />
+98-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\601d4158b382ad9f634d3bbb23a34c83\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+99    </application>
+100
+101</manifest>

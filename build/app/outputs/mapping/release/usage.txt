@@ -4562,21 +4562,6 @@ androidx.core.R$styleable:
     private void <init>()
 androidx.core.R
 androidx.core.accessibilityservice.AccessibilityServiceInfoCompat
-androidx.core.animation.AnimatorKt$addListener$1
-androidx.core.animation.AnimatorKt$addListener$2
-androidx.core.animation.AnimatorKt$addListener$3
-androidx.core.animation.AnimatorKt$addListener$4
-androidx.core.animation.AnimatorKt$addListener$listener$1
-androidx.core.animation.AnimatorKt$addPauseListener$1
-androidx.core.animation.AnimatorKt$addPauseListener$2
-androidx.core.animation.AnimatorKt$addPauseListener$listener$1
-androidx.core.animation.AnimatorKt$doOnCancel$$inlined$addListener$1
-androidx.core.animation.AnimatorKt$doOnEnd$$inlined$addListener$1
-androidx.core.animation.AnimatorKt$doOnPause$$inlined$addPauseListener$1
-androidx.core.animation.AnimatorKt$doOnRepeat$$inlined$addListener$1
-androidx.core.animation.AnimatorKt$doOnResume$$inlined$addPauseListener$1
-androidx.core.animation.AnimatorKt$doOnStart$$inlined$addListener$1
-androidx.core.animation.AnimatorKt
 androidx.core.app.ActivityCompat$Api30Impl
 androidx.core.app.ActivityCompat$SharedElementCallback21Impl$1
 androidx.core.app.ActivityCompat$SharedElementCallback21Impl
@@ -4730,6 +4715,8 @@ androidx.core.app.NotificationCompat$Builder:
     public androidx.core.app.NotificationCompat$Builder setBubbleMetadata(androidx.core.app.NotificationCompat$BubbleMetadata)
     public androidx.core.app.NotificationCompat$Builder setCategory(java.lang.String)
     public androidx.core.app.NotificationCompat$Builder setChronometerCountDown(boolean)
+    public androidx.core.app.NotificationCompat$Builder setColor(int)
+    public androidx.core.app.NotificationCompat$Builder setColorized(boolean)
     public androidx.core.app.NotificationCompat$Builder setContent(android.widget.RemoteViews)
     public androidx.core.app.NotificationCompat$Builder setContentInfo(java.lang.CharSequence)
     public androidx.core.app.NotificationCompat$Builder setCustomBigContentView(android.widget.RemoteViews)
@@ -4762,6 +4749,7 @@ androidx.core.app.NotificationCompat$Builder:
     public androidx.core.app.NotificationCompat$Builder setSortKey(java.lang.String)
     public androidx.core.app.NotificationCompat$Builder setSound(android.net.Uri)
     public androidx.core.app.NotificationCompat$Builder setSound(android.net.Uri,int)
+    public androidx.core.app.NotificationCompat$Builder setSubText(java.lang.CharSequence)
     public androidx.core.app.NotificationCompat$Builder setTicker(java.lang.CharSequence,android.widget.RemoteViews)
     public androidx.core.app.NotificationCompat$Builder setTimeoutAfter(long)
     public androidx.core.app.NotificationCompat$Builder setUsesChronometer(boolean)
@@ -5104,7 +5092,6 @@ androidx.core.app.TaskStackBuilder:
     public android.app.PendingIntent getPendingIntent(int,int,android.os.Bundle)
 androidx.core.content.ContentProviderCompat
 androidx.core.content.ContentResolverCompat
-androidx.core.content.ContentValuesKt
 androidx.core.content.ContextCompat$Api16Impl:
     private void <init>()
 androidx.core.content.ContextCompat$Api19Impl
@@ -5136,7 +5123,6 @@ androidx.core.content.ContextCompat:
     public static boolean startActivities(android.content.Context,android.content.Intent[])
     public static void startActivity(android.content.Context,android.content.Intent,android.os.Bundle)
     public static void startForegroundService(android.content.Context,android.content.Intent)
-androidx.core.content.ContextKt
 androidx.core.content.FileProvider$PathStrategy
 androidx.core.content.FileProvider$SimplePathStrategy
 androidx.core.content.FileProvider
@@ -5164,7 +5150,6 @@ androidx.core.content.PermissionChecker:
 androidx.core.content.SharedPreferencesCompat$EditorCompat$Helper
 androidx.core.content.SharedPreferencesCompat$EditorCompat
 androidx.core.content.SharedPreferencesCompat
-androidx.core.content.SharedPreferencesKt
 androidx.core.content.pm.ActivityInfoCompat
 androidx.core.content.pm.PackageInfoCompat$Api28Impl
 androidx.core.content.pm.PackageInfoCompat
@@ -5224,7 +5209,6 @@ androidx.core.content.res.ResourcesCompat:
     public static int getColor(android.content.res.Resources,int,android.content.res.Resources$Theme)
     public static android.graphics.drawable.Drawable getDrawableForDensity(android.content.res.Resources,int,int,android.content.res.Resources$Theme)
     public static float getFloat(android.content.res.Resources,int)
-androidx.core.content.res.TypedArrayKt
 androidx.core.content.res.TypedArrayUtils:
     private static final java.lang.String NAMESPACE
     private void <init>()
@@ -5236,19 +5220,14 @@ androidx.core.content.res.TypedArrayUtils:
     public static java.lang.String getString(android.content.res.TypedArray,int,int)
     public static java.lang.CharSequence getText(android.content.res.TypedArray,int,int)
     public static java.lang.CharSequence[] getTextArray(android.content.res.TypedArray,int,int)
-androidx.core.database.CursorKt
 androidx.core.database.CursorWindowCompat
 androidx.core.database.DatabaseUtilsCompat
 androidx.core.database.sqlite.SQLiteCursorCompat
-androidx.core.database.sqlite.SQLiteDatabaseKt
 androidx.core.graphics.BitmapCompat
-androidx.core.graphics.BitmapKt
 androidx.core.graphics.BlendModeColorFilterCompat
 androidx.core.graphics.BlendModeCompat
 androidx.core.graphics.BlendModeUtils$1
 androidx.core.graphics.BlendModeUtils
-androidx.core.graphics.CanvasKt
-androidx.core.graphics.ColorKt
 androidx.core.graphics.ColorUtils:
     private static final int MIN_ALPHA_SEARCH_MAX_ITERATIONS
     private static final int MIN_ALPHA_SEARCH_PRECISION
@@ -5278,31 +5257,18 @@ androidx.core.graphics.ColorUtils:
     private static int constrain(int,int,int)
     public static double distanceEuclidean(double[],double[])
     private static double pivotXyzComponent(double)
-androidx.core.graphics.ImageDecoderKt$decodeBitmap$1
-androidx.core.graphics.ImageDecoderKt$decodeDrawable$1
-androidx.core.graphics.ImageDecoderKt
 androidx.core.graphics.Insets:
     public static androidx.core.graphics.Insets add(androidx.core.graphics.Insets,androidx.core.graphics.Insets)
     public static androidx.core.graphics.Insets min(androidx.core.graphics.Insets,androidx.core.graphics.Insets)
     public static androidx.core.graphics.Insets subtract(androidx.core.graphics.Insets,androidx.core.graphics.Insets)
     public static androidx.core.graphics.Insets wrap(android.graphics.Insets)
-androidx.core.graphics.MatrixKt
 androidx.core.graphics.PaintCompat
-androidx.core.graphics.PaintKt
-androidx.core.graphics.PathKt
 androidx.core.graphics.PathParser:
     private static final java.lang.String LOGTAG
     private void <init>()
     public static boolean interpolatePathDataNodes(androidx.core.graphics.PathParser$PathDataNode[],androidx.core.graphics.PathParser$PathDataNode[],androidx.core.graphics.PathParser$PathDataNode[],float)
 androidx.core.graphics.PathSegment
 androidx.core.graphics.PathUtils
-androidx.core.graphics.PictureKt
-androidx.core.graphics.PointKt
-androidx.core.graphics.PorterDuffKt
-androidx.core.graphics.RectKt
-androidx.core.graphics.RegionKt$iterator$1
-androidx.core.graphics.RegionKt
-androidx.core.graphics.ShaderKt
 androidx.core.graphics.TypefaceCompat:
     private void <init>()
     public static void clearCache()
@@ -5336,12 +5302,9 @@ androidx.core.graphics.TypefaceCompatUtil:
     private static final java.lang.String CACHE_FILE_PREFIX
     private static final java.lang.String TAG
     private void <init>()
-androidx.core.graphics.drawable.BitmapDrawableKt
-androidx.core.graphics.drawable.ColorDrawableKt
 androidx.core.graphics.drawable.DrawableCompat:
     private static final java.lang.String TAG
     private void <init>()
-androidx.core.graphics.drawable.DrawableKt
 androidx.core.graphics.drawable.IconCompat$IconType
 androidx.core.graphics.drawable.IconCompat:
     private static final float ADAPTIVE_ICON_INSET_FACTOR
@@ -5388,7 +5351,6 @@ androidx.core.graphics.drawable.IconCompat:
     public androidx.core.graphics.drawable.IconCompat setTintList(android.content.res.ColorStateList)
     public androidx.core.graphics.drawable.IconCompat setTintMode(android.graphics.PorterDuff$Mode)
     public android.os.Bundle toBundle()
-androidx.core.graphics.drawable.IconKt
 androidx.core.graphics.drawable.RoundedBitmapDrawable21
 androidx.core.graphics.drawable.RoundedBitmapDrawable
 androidx.core.graphics.drawable.RoundedBitmapDrawableFactory$DefaultRoundedBitmapDrawable
@@ -5421,17 +5383,6 @@ androidx.core.internal.view.SupportMenuItem:
     public abstract boolean requiresOverflow()
     public synthetic bridge android.view.MenuItem setContentDescription(java.lang.CharSequence)
     public synthetic bridge android.view.MenuItem setTooltipText(java.lang.CharSequence)
-androidx.core.ktx.R$attr
-androidx.core.ktx.R$color
-androidx.core.ktx.R$dimen
-androidx.core.ktx.R$drawable
-androidx.core.ktx.R$id
-androidx.core.ktx.R$integer
-androidx.core.ktx.R$layout
-androidx.core.ktx.R$string
-androidx.core.ktx.R$style
-androidx.core.ktx.R$styleable
-androidx.core.ktx.R
 androidx.core.location.GnssStatusCompat$Callback
 androidx.core.location.GnssStatusCompat$ConstellationType
 androidx.core.location.GnssStatusCompat
@@ -5440,7 +5391,6 @@ androidx.core.location.GpsStatusWrapper
 androidx.core.location.LocationCompat$Api17Impl
 androidx.core.location.LocationCompat$Api18Impl
 androidx.core.location.LocationCompat
-androidx.core.location.LocationKt
 androidx.core.location.LocationManagerCompat$1
 androidx.core.location.LocationManagerCompat$2
 androidx.core.location.LocationManagerCompat$3
@@ -5475,7 +5425,6 @@ androidx.core.net.MailTo
 androidx.core.net.ParseException
 androidx.core.net.TrafficStatsCompat
 androidx.core.net.UriCompat
-androidx.core.net.UriKt
 androidx.core.os.BuildCompat$PrereleaseSdkCheck
 androidx.core.os.BuildCompat:
     private void <init>()
@@ -5488,7 +5437,6 @@ androidx.core.os.BuildCompat:
     public static boolean isAtLeastQ()
     public static boolean isAtLeastS()
     public static boolean isAtLeastT()
-androidx.core.os.BundleKt
 androidx.core.os.CancellationSignal:
     public java.lang.Object getCancellationSignalObject()
     public void throwIfCanceled()
@@ -5500,9 +5448,6 @@ androidx.core.os.ExecutorCompat:
 androidx.core.os.HandlerCompat$Api28Impl
 androidx.core.os.HandlerCompat$Api29Impl
 androidx.core.os.HandlerCompat
-androidx.core.os.HandlerKt$postAtTime$runnable$1
-androidx.core.os.HandlerKt$postDelayed$runnable$1
-androidx.core.os.HandlerKt
 androidx.core.os.LocaleListCompat:
     public static androidx.core.os.LocaleListCompat forLanguageTags(java.lang.String)
     public static androidx.core.os.LocaleListCompat getAdjustedDefault()
@@ -5545,7 +5490,6 @@ androidx.core.os.ParcelCompat
 androidx.core.os.ParcelableCompat$ParcelableCompatCreatorHoneycombMR2
 androidx.core.os.ParcelableCompat
 androidx.core.os.ParcelableCompatCreatorCallbacks
-androidx.core.os.PersistableBundleKt
 androidx.core.os.ProcessCompat$Api16Impl
 androidx.core.os.ProcessCompat$Api17Impl
 androidx.core.os.ProcessCompat$Api24Impl
@@ -5557,7 +5501,6 @@ androidx.core.os.TraceCompat:
     public static void endAsyncSection(java.lang.String,int)
     public static boolean isEnabled()
     public static void setCounter(java.lang.String,int)
-androidx.core.os.TraceKt
 androidx.core.os.UserHandleCompat$Api24Impl
 androidx.core.os.UserHandleCompat
 androidx.core.os.UserManagerCompat
@@ -5647,13 +5590,10 @@ androidx.core.text.BidiFormatter:
     public java.lang.CharSequence unicodeWrap(java.lang.CharSequence,boolean)
     public java.lang.String unicodeWrap(java.lang.String,androidx.core.text.TextDirectionHeuristicCompat)
     public java.lang.String unicodeWrap(java.lang.String,boolean)
-androidx.core.text.CharSequenceKt
 androidx.core.text.HtmlCompat
-androidx.core.text.HtmlKt
 androidx.core.text.ICUCompat:
     private static final java.lang.String TAG
     private void <init>()
-androidx.core.text.LocaleKt
 androidx.core.text.PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback
 androidx.core.text.PrecomputedTextCompat$PrecomputedTextFutureTask
 androidx.core.text.PrecomputedTextCompat:
@@ -5666,10 +5606,6 @@ androidx.core.text.PrecomputedTextCompat:
     public int getParagraphEnd(int)
     public int getParagraphStart(int)
     public static java.util.concurrent.Future getTextFuture(java.lang.CharSequence,androidx.core.text.PrecomputedTextCompat$Params,java.util.concurrent.Executor)
-androidx.core.text.SpannableStringBuilderKt
-androidx.core.text.SpannableStringKt
-androidx.core.text.SpannedStringKt
-androidx.core.text.StringKt
 androidx.core.text.TextDirectionHeuristicCompat:
     public abstract boolean isRtl(char[],int,int)
 androidx.core.text.TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl:
@@ -5690,31 +5626,9 @@ androidx.core.text.util.LinkifyCompat$1
 androidx.core.text.util.LinkifyCompat$LinkSpec
 androidx.core.text.util.LinkifyCompat$LinkifyMask
 androidx.core.text.util.LinkifyCompat
-androidx.core.transition.TransitionKt$addListener$1
-androidx.core.transition.TransitionKt$addListener$2
-androidx.core.transition.TransitionKt$addListener$3
-androidx.core.transition.TransitionKt$addListener$4
-androidx.core.transition.TransitionKt$addListener$5
-androidx.core.transition.TransitionKt$addListener$listener$1
-androidx.core.transition.TransitionKt$doOnCancel$$inlined$addListener$1
-androidx.core.transition.TransitionKt$doOnEnd$$inlined$addListener$1
-androidx.core.transition.TransitionKt$doOnPause$$inlined$addListener$1
-androidx.core.transition.TransitionKt$doOnResume$$inlined$addListener$1
-androidx.core.transition.TransitionKt$doOnStart$$inlined$addListener$1
-androidx.core.transition.TransitionKt
 androidx.core.util.AtomicFile
-androidx.core.util.AtomicFileKt
 androidx.core.util.DebugUtils:
     private void <init>()
-androidx.core.util.HalfKt
-androidx.core.util.LongSparseArrayKt$keyIterator$1
-androidx.core.util.LongSparseArrayKt$valueIterator$1
-androidx.core.util.LongSparseArrayKt
-androidx.core.util.LruCacheKt$lruCache$1
-androidx.core.util.LruCacheKt$lruCache$2
-androidx.core.util.LruCacheKt$lruCache$3
-androidx.core.util.LruCacheKt$lruCache$4
-androidx.core.util.LruCacheKt
 androidx.core.util.ObjectsCompat:
     private void <init>()
     public static int hashCode(java.lang.Object)
@@ -5724,7 +5638,6 @@ androidx.core.util.ObjectsCompat:
 androidx.core.util.Pair:
     public void <init>(java.lang.Object,java.lang.Object)
     public static androidx.core.util.Pair create(java.lang.Object,java.lang.Object)
-androidx.core.util.PairKt
 androidx.core.util.PatternsCompat
 androidx.core.util.Pools
 androidx.core.util.Preconditions:
@@ -5739,21 +5652,6 @@ androidx.core.util.Preconditions:
     public static java.lang.CharSequence checkStringNotEmpty(java.lang.CharSequence,java.lang.Object)
     public static varargs java.lang.CharSequence checkStringNotEmpty(java.lang.CharSequence,java.lang.String,java.lang.Object[])
 androidx.core.util.Predicate
-androidx.core.util.RangeKt$toClosedRange$1
-androidx.core.util.RangeKt
-androidx.core.util.SizeKt
-androidx.core.util.SparseArrayKt$keyIterator$1
-androidx.core.util.SparseArrayKt$valueIterator$1
-androidx.core.util.SparseArrayKt
-androidx.core.util.SparseBooleanArrayKt$keyIterator$1
-androidx.core.util.SparseBooleanArrayKt$valueIterator$1
-androidx.core.util.SparseBooleanArrayKt
-androidx.core.util.SparseIntArrayKt$keyIterator$1
-androidx.core.util.SparseIntArrayKt$valueIterator$1
-androidx.core.util.SparseIntArrayKt
-androidx.core.util.SparseLongArrayKt$keyIterator$1
-androidx.core.util.SparseLongArrayKt$valueIterator$1
-androidx.core.util.SparseLongArrayKt
 androidx.core.util.Supplier
 androidx.core.util.TimeUtils
 androidx.core.view.ActionProvider$SubUiVisibilityListener:
@@ -5839,9 +5737,6 @@ androidx.core.view.MenuItemCompat:
     public static android.view.MenuItem setOnActionExpandListener(android.view.MenuItem,androidx.core.view.MenuItemCompat$OnActionExpandListener)
     public static void setShortcut(android.view.MenuItem,char,char,int,int)
     public static void setShowAsAction(android.view.MenuItem,int)
-androidx.core.view.MenuKt$children$1
-androidx.core.view.MenuKt$iterator$1
-androidx.core.view.MenuKt
 androidx.core.view.MotionEventCompat:
     public static final int ACTION_HOVER_ENTER
     public static final int ACTION_HOVER_EXIT
@@ -6120,17 +6015,6 @@ androidx.core.view.ViewGroupCompat:
     public static void setLayoutMode(android.view.ViewGroup,int)
     public static void setMotionEventSplittingEnabled(android.view.ViewGroup,boolean)
     public static void setTransitionGroup(android.view.ViewGroup,boolean)
-androidx.core.view.ViewGroupKt$children$1
-androidx.core.view.ViewGroupKt$iterator$1
-androidx.core.view.ViewGroupKt
-androidx.core.view.ViewKt$doOnAttach$1
-androidx.core.view.ViewKt$doOnDetach$1
-androidx.core.view.ViewKt$doOnLayout$$inlined$doOnNextLayout$1
-androidx.core.view.ViewKt$doOnNextLayout$1
-androidx.core.view.ViewKt$doOnPreDraw$1
-androidx.core.view.ViewKt$postDelayed$runnable$1
-androidx.core.view.ViewKt$postOnAnimationDelayed$runnable$1
-androidx.core.view.ViewKt
 androidx.core.view.ViewParentCompat:
     private static final java.lang.String TAG
     private static int[] sTempNestedScrollConsumed
@@ -6738,14 +6622,6 @@ androidx.core.widget.TextViewCompat:
     public static void setCompoundDrawablesRelativeWithIntrinsicBounds(android.widget.TextView,android.graphics.drawable.Drawable,android.graphics.drawable.Drawable,android.graphics.drawable.Drawable,android.graphics.drawable.Drawable)
     public static void setCustomSelectionActionModeCallback(android.widget.TextView,android.view.ActionMode$Callback)
     public static android.view.ActionMode$Callback unwrapCustomSelectionActionModeCallback(android.view.ActionMode$Callback)
-androidx.core.widget.TextViewKt$addTextChangedListener$1
-androidx.core.widget.TextViewKt$addTextChangedListener$2
-androidx.core.widget.TextViewKt$addTextChangedListener$3
-androidx.core.widget.TextViewKt$addTextChangedListener$textWatcher$1
-androidx.core.widget.TextViewKt$doAfterTextChanged$$inlined$addTextChangedListener$1
-androidx.core.widget.TextViewKt$doBeforeTextChanged$$inlined$addTextChangedListener$1
-androidx.core.widget.TextViewKt$doOnTextChanged$$inlined$addTextChangedListener$1
-androidx.core.widget.TextViewKt
 androidx.core.widget.TextViewOnReceiveContentListener$Api16Impl
 androidx.core.widget.TextViewOnReceiveContentListener$ApiImpl
 androidx.core.widget.TextViewOnReceiveContentListener
@@ -9092,7 +8968,11 @@ com.google.android.gms.common.api.CommonStatusCodes:
     public static final int TIMEOUT
     protected void <init>()
 com.google.android.gms.common.api.DataBufferResponse
+com.google.android.gms.common.api.GoogleApi$Settings$Builder:
+    public com.google.android.gms.common.api.GoogleApi$Settings$Builder setLooper(android.os.Looper)
 com.google.android.gms.common.api.GoogleApi:
+    public void <init>(android.app.Activity,com.google.android.gms.common.api.Api,com.google.android.gms.common.api.Api$ApiOptions,com.google.android.gms.common.api.GoogleApi$Settings)
+    public void <init>(android.app.Activity,com.google.android.gms.common.api.Api,com.google.android.gms.common.api.Api$ApiOptions,com.google.android.gms.common.api.internal.StatusExceptionMapper)
     public void <init>(android.content.Context,com.google.android.gms.common.api.Api,com.google.android.gms.common.api.Api$ApiOptions,android.os.Looper,com.google.android.gms.common.api.internal.StatusExceptionMapper)
     protected com.google.android.gms.tasks.Task disconnectService()
     public com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl doBestEffortWrite(com.google.android.gms.common.api.internal.BaseImplementation$ApiMethodImpl)
@@ -10163,6 +10043,7 @@ com.google.android.gms.location.FusedLocationProviderApi:
     public abstract com.google.android.gms.common.api.PendingResult setMockMode(com.google.android.gms.common.api.GoogleApiClient,boolean)
 com.google.android.gms.location.FusedLocationProviderClient:
     public static final java.lang.String KEY_VERTICAL_ACCURACY
+    public void <init>(android.app.Activity)
     public com.google.android.gms.tasks.Task flushLocations()
     public com.google.android.gms.tasks.Task getLocationAvailability()
     public com.google.android.gms.tasks.Task removeLocationUpdates(android.app.PendingIntent)
@@ -10189,6 +10070,7 @@ com.google.android.gms.location.LocationRequest:
     public static final int PRIORITY_HIGH_ACCURACY
     public static final int PRIORITY_LOW_POWER
     public static final int PRIORITY_NO_POWER
+    public static com.google.android.gms.location.LocationRequest create()
     public final long getExpirationTime()
     public final long getFastestInterval()
     public final long getInterval()
@@ -10206,8 +10088,10 @@ com.google.android.gms.location.LocationResult:
     public static boolean hasResult(android.content.Intent)
 com.google.android.gms.location.LocationServices:
     private void <init>()
+    public static com.google.android.gms.location.FusedLocationProviderClient getFusedLocationProviderClient(android.app.Activity)
     public static com.google.android.gms.location.GeofencingClient getGeofencingClient(android.app.Activity)
     public static com.google.android.gms.location.GeofencingClient getGeofencingClient(android.content.Context)
+    public static com.google.android.gms.location.SettingsClient getSettingsClient(android.app.Activity)
     public static com.google.android.gms.internal.location.zzaz zza(com.google.android.gms.common.api.GoogleApiClient)
 com.google.android.gms.location.LocationSettingsRequest$Builder:
     public final com.google.android.gms.location.LocationSettingsRequest$Builder addAllLocationRequests(java.util.Collection)
@@ -10220,6 +10104,8 @@ com.google.android.gms.location.LocationSettingsStates:
 com.google.android.gms.location.LocationSettingsStatusCodes
 com.google.android.gms.location.LocationStatusCodes
 com.google.android.gms.location.R
+com.google.android.gms.location.SettingsClient:
+    public void <init>(android.app.Activity)
 com.google.android.gms.location.places.PlaceReport
 com.google.android.gms.location.places.zza
 com.google.android.gms.location.zza
@@ -10699,7 +10585,9 @@ com.google.android.gms.tasks.Task:
     public com.google.android.gms.tasks.Task addOnCanceledListener(com.google.android.gms.tasks.OnCanceledListener)
     public com.google.android.gms.tasks.Task addOnCanceledListener(java.util.concurrent.Executor,com.google.android.gms.tasks.OnCanceledListener)
     public com.google.android.gms.tasks.Task addOnCompleteListener(android.app.Activity,com.google.android.gms.tasks.OnCompleteListener)
+    public abstract com.google.android.gms.tasks.Task addOnFailureListener(android.app.Activity,com.google.android.gms.tasks.OnFailureListener)
     public abstract com.google.android.gms.tasks.Task addOnFailureListener(java.util.concurrent.Executor,com.google.android.gms.tasks.OnFailureListener)
+    public abstract com.google.android.gms.tasks.Task addOnSuccessListener(android.app.Activity,com.google.android.gms.tasks.OnSuccessListener)
     public abstract com.google.android.gms.tasks.Task addOnSuccessListener(java.util.concurrent.Executor,com.google.android.gms.tasks.OnSuccessListener)
     public com.google.android.gms.tasks.Task continueWithTask(com.google.android.gms.tasks.Continuation)
     public com.google.android.gms.tasks.Task continueWithTask(java.util.concurrent.Executor,com.google.android.gms.tasks.Continuation)
@@ -10720,18 +10608,31 @@ com.google.android.gms.tasks.zzad
 com.google.android.gms.tasks.zzae
 com.google.android.gms.tasks.zzaf
 com.google.android.gms.tasks.zzb
+com.google.android.gms.tasks.zzd:
+    public final void zzc()
 com.google.android.gms.tasks.zze
 com.google.android.gms.tasks.zzf
 com.google.android.gms.tasks.zzg
 com.google.android.gms.tasks.zzh
+com.google.android.gms.tasks.zzj:
+    public final void zzc()
+com.google.android.gms.tasks.zzl:
+    public final void zzc()
+com.google.android.gms.tasks.zzn:
+    public final void zzc()
 com.google.android.gms.tasks.zzo
 com.google.android.gms.tasks.zzp
+com.google.android.gms.tasks.zzq:
+    public abstract void zzc()
 com.google.android.gms.tasks.zzs
+com.google.android.gms.tasks.zzv
 com.google.android.gms.tasks.zzw:
     public final com.google.android.gms.tasks.Task addOnCanceledListener(android.app.Activity,com.google.android.gms.tasks.OnCanceledListener)
     public final com.google.android.gms.tasks.Task addOnCanceledListener(com.google.android.gms.tasks.OnCanceledListener)
     public final com.google.android.gms.tasks.Task addOnCanceledListener(java.util.concurrent.Executor,com.google.android.gms.tasks.OnCanceledListener)
     public final com.google.android.gms.tasks.Task addOnCompleteListener(android.app.Activity,com.google.android.gms.tasks.OnCompleteListener)
+    public final com.google.android.gms.tasks.Task addOnFailureListener(android.app.Activity,com.google.android.gms.tasks.OnFailureListener)
+    public final com.google.android.gms.tasks.Task addOnSuccessListener(android.app.Activity,com.google.android.gms.tasks.OnSuccessListener)
     public final com.google.android.gms.tasks.Task continueWithTask(com.google.android.gms.tasks.Continuation)
     public final com.google.android.gms.tasks.Task continueWithTask(java.util.concurrent.Executor,com.google.android.gms.tasks.Continuation)
     public final java.lang.Object getResult(java.lang.Class)
@@ -19452,48 +19353,6 @@ com.google.j2objc.annotations.WeakOuter
 com.google.thirdparty.publicsuffix.PublicSuffixPatterns
 com.google.thirdparty.publicsuffix.PublicSuffixType
 com.google.thirdparty.publicsuffix.TrieParser
-com.lyokone.location.BuildConfig
-com.lyokone.location.FlutterLocation:
-    private static final int GPS_ENABLE_REQUEST
-    private static final int REQUEST_CHECK_SETTINGS
-    private static final int REQUEST_PERMISSIONS_REQUEST_CODE
-    private static final java.lang.String TAG
-com.lyokone.location.FlutterLocationService:
-    private static final java.lang.String CHANNEL_ID
-    private static final int ONGOING_NOTIFICATION_ID
-    private static final int REQUEST_PERMISSIONS_REQUEST_CODE
-    private static final java.lang.String TAG
-    public final io.flutter.plugin.common.MethodChannel$Result getResult()
-com.lyokone.location.FlutterLocationServiceKt
-com.lyokone.location.LocationPlugin:
-    private static final java.lang.String TAG
-com.lyokone.location.MethodCallHandlerImpl:
-    private static final java.lang.String METHOD_CHANNEL_NAME
-    private static final java.lang.String TAG
-com.lyokone.location.NotificationOptions:
-    public final java.lang.String component1()
-    public final java.lang.String component2()
-    public final java.lang.String component3()
-    public final java.lang.String component4()
-    public final java.lang.String component5()
-    public final java.lang.Integer component6()
-    public final boolean component7()
-    public final com.lyokone.location.NotificationOptions copy(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,boolean)
-    public static synthetic com.lyokone.location.NotificationOptions copy$default(com.lyokone.location.NotificationOptions,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,boolean,int,java.lang.Object)
-com.lyokone.location.R$attr
-com.lyokone.location.R$color
-com.lyokone.location.R$dimen
-com.lyokone.location.R$drawable
-com.lyokone.location.R$id
-com.lyokone.location.R$integer
-com.lyokone.location.R$layout
-com.lyokone.location.R$string
-com.lyokone.location.R$style
-com.lyokone.location.R$styleable
-com.lyokone.location.R
-com.lyokone.location.StreamHandlerImpl:
-    private static final java.lang.String STREAM_CHANNEL_NAME
-    private static final java.lang.String TAG
 io.flutter.BuildConfig
 io.flutter.FlutterInjector$Builder:
     public io.flutter.FlutterInjector$Builder setDeferredComponentManager(io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager)
@@ -22781,6 +22640,7 @@ kotlin.collections.MapsKt__MapsKt:
     public static final java.util.Map mapKeys(java.util.Map,kotlin.jvm.functions.Function1)
     public static final java.util.Map mapKeysTo(java.util.Map,java.util.Map,kotlin.jvm.functions.Function1)
     private static final java.util.Map mapOf()
+    public static final varargs java.util.Map mapOf(kotlin.Pair[])
     public static final java.util.Map mapValues(java.util.Map,kotlin.jvm.functions.Function1)
     public static final java.util.Map mapValuesTo(java.util.Map,java.util.Map,kotlin.jvm.functions.Function1)
     public static final java.util.Map minus(java.util.Map,java.lang.Iterable)
@@ -22806,6 +22666,7 @@ kotlin.collections.MapsKt__MapsKt:
     private static final void plusAssign(java.util.Map,kotlin.sequences.Sequence)
     private static final void plusAssign(java.util.Map,kotlin.Pair[])
     public static final void putAll(java.util.Map,kotlin.sequences.Sequence)
+    public static final void putAll(java.util.Map,kotlin.Pair[])
     private static final java.lang.Object remove(java.util.Map,java.lang.Object)
     private static final void set(java.util.Map,java.lang.Object,java.lang.Object)
     public static final java.util.Map toMap(java.util.Map)
@@ -22813,6 +22674,7 @@ kotlin.collections.MapsKt__MapsKt:
     public static final java.util.Map toMap(kotlin.sequences.Sequence)
     public static final java.util.Map toMap(kotlin.sequences.Sequence,java.util.Map)
     public static final java.util.Map toMap(kotlin.Pair[])
+    public static final java.util.Map toMap(kotlin.Pair[],java.util.Map)
     public static final java.util.Map toMutableMap(java.util.Map)
     private static final kotlin.Pair toPair(java.util.Map$Entry)
 kotlin.collections.MapsKt___MapsKt:

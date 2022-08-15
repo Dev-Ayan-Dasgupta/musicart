@@ -3,7 +3,6 @@
 -keep class com.baseflow.geolocator.GeolocatorLocationService { <init>(); }
 -keep class com.example.musicart.MainActivity { <init>(); }
 -keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(); }
--keep class com.lyokone.location.FlutterLocationService { <init>(); }
 -keep class io.flutter.plugins.urllauncher.WebViewActivity { <init>(); }
 -keep class android.widget.Space { <init>(android.content.Context, android.util.AttributeSet); }
 

@@ -1,22 +1,20 @@
 -- Merging decision tree log ---
 application
-INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:7:4-40:19
+INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:9:4-42:19
 MERGED from [:geolocator_android] C:\Flutter_Projects\musicart\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-17:19
 MERGED from [:geolocator_android] C:\Flutter_Projects\musicart\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-17:19
 MERGED from [:url_launcher_android] C:\Flutter_Projects\musicart\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-14:19
 MERGED from [:url_launcher_android] C:\Flutter_Projects\musicart\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-14:19
-MERGED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:12:5-18:19
-MERGED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:12:5-18:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\31201b32770f183f2e9afb71858ba75b\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\31201b32770f183f2e9afb71858ba75b\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
-MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\5c6674025aa166b1f070d7413d5e9fd9\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\5c6674025aa166b1f070d7413d5e9fd9\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\4776d5ff4ca486a35dfa7b3008192806\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\4776d5ff4ca486a35dfa7b3008192806\transformed\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:36:5-42:19
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\5c6674025aa166b1f070d7413d5e9fd9\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\5c6674025aa166b1f070d7413d5e9fd9\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\0b07e692b4bf15a3460e3b02599db299\transformed\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
@@ -32,36 +30,34 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ay
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\acbce933e4b464a5224ed377a62db1f5\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:8:9-33
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:10:9-33
 	android:icon
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:10:9-45
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:12:9-45
 	android:name
 		INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:9:9-42
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:11:9-42
 manifest
-ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-41:12
-INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-41:12
-INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-41:12
-INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-41:12
-MERGED from [:geolocator_android] C:\Flutter_Projects\musicart\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-19:12
+ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-43:12
+INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-43:12
+INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-43:12
+INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-43:12
 MERGED from [:google_maps_flutter] C:\Flutter_Projects\musicart\build\google_maps_flutter\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
 MERGED from [:flutter_plugin_android_lifecycle] C:\Flutter_Projects\musicart\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
+MERGED from [:geolocator_android] C:\Flutter_Projects\musicart\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-19:12
 MERGED from [:geocoding] C:\Flutter_Projects\musicart\build\geocoding\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
 MERGED from [:url_launcher_android] C:\Flutter_Projects\musicart\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-16:12
 MERGED from [:path_provider_android] C:\Flutter_Projects\musicart\build\path_provider_android\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
-MERGED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-20:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\246793f755122fe14a5802655438cb75\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\31201b32770f183f2e9afb71858ba75b\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
-MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\5c6674025aa166b1f070d7413d5e9fd9\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:2:1-9:12
-MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\7660afef8b404e841080548748cb4e9a\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ae893b832c725ae41cefb75af7327aef\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\e7b09f39a842df5984e53de23e58c27f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\4776d5ff4ca486a35dfa7b3008192806\transformed\constraintlayout-2.0.1\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\c5e6066e343a23cadf0e84126bc54229\transformed\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ef93a1ba37f75189a2233e6e5c6dbde1\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\0524663abfa43c71322819f8b68635f2\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:17:1-44:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\c564864b85a0960493dadaf97ef781d3\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\5c6674025aa166b1f070d7413d5e9fd9\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\0b07e692b4bf15a3460e3b02599db299\transformed\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-tasks:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\67879e22102fb65217d23e347f5e9c0d\transformed\jetified-play-services-tasks-18.0.1\AndroidManifest.xml:2:1-6:12
@@ -71,6 +67,7 @@ MERGED from [androidx.transition:transition:1.2.0] C:\Users\Ayan Dasgupta\.gradl
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\1a6b49a7565f5d0e1ac3d34bef6eabb2\transformed\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\eba3ac105ce1a200b5302334a4f79c0c\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\86da411e3ef3e48ed679a69941c8410e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\0524663abfa43c71322819f8b68635f2\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\045d2e69ed718df502093495707de7d0\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\90a44ec6ceb48a2c7bed4c03a44c987b\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\59d865491d3f6e48595a287cad0f33e5\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -78,7 +75,6 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ayan Dasg
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\906f41b23948e23cf276f1b1ba5ed41e\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\8a16c5c68ea2956dd9f85c674b19fa39\transformed\jetified-activity-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.6.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\acbce933e4b464a5224ed377a62db1f5\transformed\core-1.6.0\AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ae893b832c725ae41cefb75af7327aef\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\025f0ebb178f72f967988fd890b9b9c6\transformed\lifecycle-runtime-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\783a29f2dac4e1ce698a256c6ff38912\transformed\jetified-lifecycle-viewmodel-savedstate-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\4d571c0d2420042bbe5204d312a62bb2\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
@@ -94,20 +90,20 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\e9ca322f243d3b7ed3a19622385d8532\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\274a6366c1fa82a9cda5f98fe858df07\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\58e3540d7f5a5bac6af9a8f8fab44363\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-41:12
-INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-41:12
-INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-41:12
+INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-43:12
+INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-43:12
+INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-43:12
 	package
 		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:2:5-35
 		INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-41:12
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-43:12
 		INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-41:12
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:1-43:12
 		INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:1:11-69
@@ -133,34 +129,38 @@ uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
 ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:6:5-84
 	android:name
 		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:6:22-82
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:7:5-78
+	android:name
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:8:22-78
 uses-sdk
 INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
-MERGED from [:geolocator_android] C:\Flutter_Projects\musicart\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
-MERGED from [:geolocator_android] C:\Flutter_Projects\musicart\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:google_maps_flutter] C:\Flutter_Projects\musicart\build\google_maps_flutter\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:google_maps_flutter] C:\Flutter_Projects\musicart\build\google_maps_flutter\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] C:\Flutter_Projects\musicart\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] C:\Flutter_Projects\musicart\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:geolocator_android] C:\Flutter_Projects\musicart\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:geolocator_android] C:\Flutter_Projects\musicart\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:geocoding] C:\Flutter_Projects\musicart\build\geocoding\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:geocoding] C:\Flutter_Projects\musicart\build\geocoding\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:url_launcher_android] C:\Flutter_Projects\musicart\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:url_launcher_android] C:\Flutter_Projects\musicart\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] C:\Flutter_Projects\musicart\build\path_provider_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] C:\Flutter_Projects\musicart\build\path_provider_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
-MERGED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
-MERGED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\246793f755122fe14a5802655438cb75\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\246793f755122fe14a5802655438cb75\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\31201b32770f183f2e9afb71858ba75b\transformed\material-1.6.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\31201b32770f183f2e9afb71858ba75b\transformed\material-1.6.1\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\5c6674025aa166b1f070d7413d5e9fd9\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\5c6674025aa166b1f070d7413d5e9fd9\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:5:5-44
-MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\7660afef8b404e841080548748cb4e9a\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\7660afef8b404e841080548748cb4e9a\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ae893b832c725ae41cefb75af7327aef\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ae893b832c725ae41cefb75af7327aef\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\e7b09f39a842df5984e53de23e58c27f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\e7b09f39a842df5984e53de23e58c27f\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\4776d5ff4ca486a35dfa7b3008192806\transformed\constraintlayout-2.0.1\AndroidManifest.xml:5:5-7:41
@@ -169,12 +169,12 @@ MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Ayan Dasgupta\.gradle\
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\c5e6066e343a23cadf0e84126bc54229\transformed\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ef93a1ba37f75189a2233e6e5c6dbde1\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ef93a1ba37f75189a2233e6e5c6dbde1\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\0524663abfa43c71322819f8b68635f2\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\0524663abfa43c71322819f8b68635f2\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\42e8e193afdde6a89d257fba9624cf99\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\c564864b85a0960493dadaf97ef781d3\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\c564864b85a0960493dadaf97ef781d3\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\5c6674025aa166b1f070d7413d5e9fd9\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\5c6674025aa166b1f070d7413d5e9fd9\transformed\jetified-play-services-location-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\0b07e692b4bf15a3460e3b02599db299\transformed\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
@@ -193,6 +193,8 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Aya
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\eba3ac105ce1a200b5302334a4f79c0c\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\86da411e3ef3e48ed679a69941c8410e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\86da411e3ef3e48ed679a69941c8410e\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\0524663abfa43c71322819f8b68635f2\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\0524663abfa43c71322819f8b68635f2\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\045d2e69ed718df502093495707de7d0\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\045d2e69ed718df502093495707de7d0\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\90a44ec6ceb48a2c7bed4c03a44c987b\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -207,8 +209,6 @@ MERGED from [androidx.activity:activity:1.1.0] C:\Users\Ayan Dasgupta\.gradle\ca
 MERGED from [androidx.activity:activity:1.1.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\8a16c5c68ea2956dd9f85c674b19fa39\transformed\jetified-activity-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.6.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\acbce933e4b464a5224ed377a62db1f5\transformed\core-1.6.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.6.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\acbce933e4b464a5224ed377a62db1f5\transformed\core-1.6.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ae893b832c725ae41cefb75af7327aef\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\ae893b832c725ae41cefb75af7327aef\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\025f0ebb178f72f967988fd890b9b9c6\transformed\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\025f0ebb178f72f967988fd890b9b9c6\transformed\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\783a29f2dac4e1ce698a256c6ff38912\transformed\jetified-lifecycle-viewmodel-savedstate-2.2.0\AndroidManifest.xml:20:5-22:41
@@ -250,49 +250,49 @@ INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.
 		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:11:9-12:73
+ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:13:9-14:73
 	android:value
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:12:16-71
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:14:16-71
 	android:name
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:11:20-65
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:13:20-65
 activity#com.example.musicart.MainActivity
-ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:13:9-34:20
+ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:15:9-36:20
 	android:launchMode
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:16:13-43
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:18:13-43
 	android:hardwareAccelerated
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:19:13-47
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:21:13-47
 	android:windowSoftInputMode
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:20:13-55
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:22:13-55
 	android:exported
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:15:13-36
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:17:13-36
 	android:configChanges
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:18:13-163
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:20:13-163
 	android:theme
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:17:13-47
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:19:13-47
 	android:name
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:14:13-41
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:16:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:25:13-28:17
+ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:27:13-30:17
 	android:resource
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:27:15-52
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:29:15-52
 	android:name
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:26:15-70
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:28:15-70
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:30:13-33:29
+ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:32:13-35:29
 action#android.intent.action.MAIN
-ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:31:17-68
+ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:33:17-68
 	android:name
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:31:25-66
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:32:17-76
+ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:34:17-76
 	android:name
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:32:27-74
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:34:27-74
 meta-data#flutterEmbedding
-ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:37:9-39:33
+ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:39:9-41:33
 	android:value
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:39:13-30
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:41:13-30
 	android:name
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:38:13-44
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:40:13-44
 service#com.baseflow.geolocator.GeolocatorLocationService
 ADDED from [:geolocator_android] C:\Flutter_Projects\musicart\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:12:9-16:56
 	android:enabled
@@ -311,24 +311,6 @@ ADDED from [:url_launcher_android] C:\Flutter_Projects\musicart\build\url_launch
 		ADDED from [:url_launcher_android] C:\Flutter_Projects\musicart\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-71
 	android:name
 		ADDED from [:url_launcher_android] C:\Flutter_Projects\musicart\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-74
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-81
-	android:name
-		ADDED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:9:22-78
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:10:5-79
-	android:name
-		ADDED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:10:22-76
-service#com.lyokone.location.FlutterLocationService
-ADDED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:13:9-17:56
-	android:enabled
-		ADDED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-35
-	android:exported
-		ADDED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-37
-	android:foregroundServiceType
-		ADDED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:17:13-53
-	android:name
-		ADDED from [:location] C:\Flutter_Projects\musicart\build\location\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-71
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 	android:required
