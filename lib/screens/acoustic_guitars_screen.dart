@@ -10,8 +10,10 @@ class AcousticGuitarsScreen extends StatefulWidget {
 class _AcousticGuitarsScreenState extends State<AcousticGuitarsScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("This is Acoustic Guitars Screen"),
+    return const SafeArea(
+      child: Scaffold(
+        body: Text("This is Acoustic Guitars Screen"),
+      ),
     );
   }
 }

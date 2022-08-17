@@ -8,6 +8,8 @@ class AddressObject {
   String state;
   String pinCode;
   bool isCurrentAddress;
+  double latitude;
+  double longitude;
   AddressObject({
     required this.personName,
     //this.type,
@@ -18,5 +20,7 @@ class AddressObject {
     required this.state,
     required this.pinCode,
     required this.isCurrentAddress,
+    required this.latitude,
+    required this.longitude,
   });
 }

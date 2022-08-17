@@ -54,57 +54,59 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: Container(
-        width: screenWidth,
-        height: screenHeight,
-        color: primaryColor,
-        child: Center(
-          child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: screenHeight * 0.4),
-              ),
-              Container(
-                width: _imageWidthAnimation.value,
-                height: _imageHeightAnimation.value,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("./assets/images/logo.png"),
-                    fit: BoxFit.fill,
-                    invertColors: true,
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          width: screenWidth,
+          height: screenHeight,
+          color: primaryColor,
+          child: Center(
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: screenHeight * 0.4),
+                ),
+                Container(
+                  width: _imageWidthAnimation.value,
+                  height: _imageHeightAnimation.value,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("./assets/images/logo.png"),
+                      fit: BoxFit.fill,
+                      invertColors: true,
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: screenHeight * 0.033),
-              ),
-              Stack(
-                children: [
-                  Container(
-                    width: 120,
-                    height: 3,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
+                Padding(
+                  padding: EdgeInsets.only(top: screenHeight * 0.033),
+                ),
+                Stack(
+                  children: [
+                    Container(
+                      width: 120,
+                      height: 3,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        color: Colors.grey,
                       ),
-                      color: Colors.grey,
                     ),
-                  ),
-                  Container(
-                    width: _progressLengthAnimation.value,
-                    height: 3,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
+                    Container(
+                      width: _progressLengthAnimation.value,
+                      height: 3,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        color: Colors.white,
                       ),
-                      color: Colors.white,
+                      //color: Colors.white,
                     ),
-                    //color: Colors.white,
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

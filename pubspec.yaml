@@ -46,6 +46,11 @@ dependencies:
   geolocator: ^9.0.1
   geocoding: ^2.0.4
   google_maps_flutter_web: ^0.4.0+1
+  firebase_core: ^1.20.1
+  firebase_auth: ^3.6.3
+  google_sign_in: ^5.4.1
+  flutter_facebook_auth: ^4.3.4+2
+  provider: ^6.0.3
 
 dev_dependencies:
   flutter_test:
@@ -91,6 +96,9 @@ flutter:
     - assets/images/empty_cart.png
     - assets/images/empty_wishlist.png
     - assets/images/empty_order_history.svg
+    - assets/images/sign_up.png
+    - assets/images/sign_in.png
+    - assets/images/forgot_password.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

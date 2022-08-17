@@ -29,161 +29,164 @@ class _WishListScreenState extends State<WishListScreen> {
   Widget build(BuildContext context) {
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CustomAppBar(
-            screenWidth: screenWidth,
-            screenHeight: screenHeight,
-            searchBoxController: _searchBoxController,
-            hintText: _hintText,
-          ),
-          (wishList.isEmpty)
-              ? Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: screenHeight * 0.2,
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CustomAppBar(
+              screenWidth: screenWidth,
+              screenHeight: screenHeight,
+              searchBoxController: _searchBoxController,
+              hintText: _hintText,
+            ),
+            (wishList.isEmpty)
+                ? Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: screenHeight * 0.2,
+                        ),
+                        child: Center(
+                          child: Image.asset(
+                            "./assets/images/empty_wishlist.png",
+                            width: screenWidth * 0.33,
+                            height: screenWidth * 0.33,
+                          ),
+                        ),
                       ),
-                      child: Center(
-                        child: Image.asset(
-                          "./assets/images/empty_wishlist.png",
-                          width: screenWidth * 0.33,
-                          height: screenWidth * 0.33,
+                      Padding(
+                          padding: EdgeInsets.only(top: screenHeight * 0.02)),
+                      Text(
+                        "Nothing in wishlist, browse our products and add them here.",
+                        style: globalTextStyle.copyWith(
+                          color: Colors.grey,
+                          fontSize: screenWidth * 0.025,
+                        ),
+                      ),
+                    ],
+                  )
+                : Padding(
+                    padding: EdgeInsets.all(screenHeight * 0.015),
+                    child: Text(
+                      "Hey user, this is your wishlist...",
+                      style: globalTextStyle.copyWith(
+                        color: Colors.black,
+                        fontSize: screenWidth * 0.03,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+            SizedBox(
+              width: screenWidth,
+              height: screenHeight * 0.8,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: AnimationLimiter(
+                        key: ValueKey("list $count"),
+                        child: GridView.count(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: screenWidth * 0.025,
+                          mainAxisSpacing: screenWidth * 0.025,
+                          childAspectRatio: 0.75,
+                          children: List.generate(wishList.length, (index) {
+                            return AnimationConfiguration.staggeredGrid(
+                              position: index,
+                              columnCount: 2,
+                              duration: const Duration(milliseconds: 375),
+                              child: SlideAnimation(
+                                child: FadeInAnimation(
+                                    child: InstrumentCard(
+                                        width: (screenWidth * 0.46),
+                                        height: (screenWidth * 0.46) / 0.75,
+                                        instrumentImageUrl: wishList[index]
+                                            ["img-url"],
+                                        instrumentName: wishList[index]["name"],
+                                        instrumentMrp:
+                                            "₹${wishList[index]["mrp"].toString()}",
+                                        instrumentPrice:
+                                            "₹${wishList[index]["price"].toString()}",
+                                        paddingRight: 0,
+                                        innerHorizontalSymmetricPadding: 10,
+                                        innerVerticalSymmetricPadding: 0,
+                                        instrumentDiscount:
+                                            "${(((1 - (wishList[index]["price"] / wishList[index]["mrp"])) * 100).round()).toString()}% off",
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      InstrumentDetail(
+                                                          instrument: wishList[
+                                                              index])));
+                                        },
+                                        onWishTap: () {
+                                          setState(() {
+                                            wishList.remove(wishList[index]);
+                                            count++;
+                                          });
+                                        },
+                                        onCartTap: () {
+                                          if (cartList
+                                                  .contains(wishList[index]) ==
+                                              false) {
+                                            setState(() {
+                                              cartList.add(wishList[index]);
+                                              cartMap
+                                                  .addAll({wishList[index]: 1});
+                                            });
+                                          } else {
+                                            setState(() {
+                                              cartList.remove(wishList[index]);
+                                              cartMap.remove(wishList[index]);
+                                            });
+                                          }
+                                        },
+                                        isWishlisted:
+                                            (wishList.contains(wishList[index]))
+                                                ? true
+                                                : false,
+                                        isCarted:
+                                            (cartList.contains(wishList[index]))
+                                                ? true
+                                                : false,
+                                        instrument: wishList[index])),
+                              ),
+                            );
+                          }),
                         ),
                       ),
                     ),
-                    Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
-                    Text(
-                      "Nothing in wishlist, browse our products and add them here.",
-                      style: globalTextStyle.copyWith(
-                        color: Colors.grey,
-                        fontSize: screenWidth * 0.025,
-                      ),
-                    ),
+                    Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: screenHeight * 0.025)),
                   ],
-                )
-              : Padding(
-                  padding: EdgeInsets.all(screenHeight * 0.015),
-                  child: Text(
-                    "Hey user, this is your wishlist...",
-                    style: globalTextStyle.copyWith(
-                      color: Colors.black,
-                      fontSize: screenWidth * 0.03,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
                 ),
-          SizedBox(
-            width: screenWidth,
-            height: screenHeight * 0.8,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: AnimationLimiter(
-                      key: ValueKey("list $count"),
-                      child: GridView.count(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: screenWidth * 0.025,
-                        mainAxisSpacing: screenWidth * 0.025,
-                        childAspectRatio: 0.75,
-                        children: List.generate(wishList.length, (index) {
-                          return AnimationConfiguration.staggeredGrid(
-                            position: index,
-                            columnCount: 2,
-                            duration: const Duration(milliseconds: 375),
-                            child: SlideAnimation(
-                              child: FadeInAnimation(
-                                  child: InstrumentCard(
-                                      width: (screenWidth * 0.46),
-                                      height: (screenWidth * 0.46) / 0.75,
-                                      instrumentImageUrl: wishList[index]
-                                          ["img-url"],
-                                      instrumentName: wishList[index]["name"],
-                                      instrumentMrp:
-                                          "₹${wishList[index]["mrp"].toString()}",
-                                      instrumentPrice:
-                                          "₹${wishList[index]["price"].toString()}",
-                                      paddingRight: 0,
-                                      innerHorizontalSymmetricPadding: 10,
-                                      innerVerticalSymmetricPadding: 0,
-                                      instrumentDiscount:
-                                          "${(((1 - (wishList[index]["price"] / wishList[index]["mrp"])) * 100).round()).toString()}% off",
-                                      onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    InstrumentDetail(
-                                                        instrument:
-                                                            wishList[index])));
-                                      },
-                                      onWishTap: () {
-                                        setState(() {
-                                          wishList.remove(wishList[index]);
-                                          count++;
-                                        });
-                                      },
-                                      onCartTap: () {
-                                        if (cartList
-                                                .contains(wishList[index]) ==
-                                            false) {
-                                          setState(() {
-                                            cartList.add(wishList[index]);
-                                            cartMap
-                                                .addAll({wishList[index]: 1});
-                                          });
-                                        } else {
-                                          setState(() {
-                                            cartList.remove(wishList[index]);
-                                            cartMap.remove(wishList[index]);
-                                          });
-                                        }
-                                      },
-                                      isWishlisted:
-                                          (wishList.contains(wishList[index]))
-                                              ? true
-                                              : false,
-                                      isCarted:
-                                          (cartList.contains(wishList[index]))
-                                              ? true
-                                              : false,
-                                      instrument: wishList[index])),
-                            ),
-                          );
-                        }),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: screenHeight * 0.025)),
-                ],
               ),
             ),
+          ],
+        ),
+        bottomNavigationBar: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
+          child: CustomAnimatedBottomBar(
+            containerHeight: screenHeight * 0.06,
+            backgroundColor: Colors.black87,
+            selectedIndex: _currentIndex,
+            showElevation: true,
+            itemCornerRadius: 10,
+            curve: Curves.easeIn,
+            items: navBarItems,
+            onItemSelected: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
           ),
-        ],
-      ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
-        child: CustomAnimatedBottomBar(
-          containerHeight: screenHeight * 0.06,
-          backgroundColor: Colors.black87,
-          selectedIndex: _currentIndex,
-          showElevation: true,
-          itemCornerRadius: 10,
-          curve: Curves.easeIn,
-          items: navBarItems,
-          onItemSelected: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
         ),
       ),
     );

@@ -48,309 +48,315 @@ class _HomeWelcomeScreenState extends State<HomeWelcomeScreen> {
       });
     }
 
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(
-            screenWidth: screenWidth,
-            screenHeight: screenHeight,
-            searchBoxController: _searchBoxController,
-            hintText: _hintText,
-          ),
-          SizedBox(
-            width: screenWidth,
-            height: screenHeight,
-            child: Column(
-              children: [
-                Expanded(
-                  child: ListView(
-                    children: [
-                      // Padding(
-                      //     padding: EdgeInsets.only(top: screenHeight * 0.01)),
-                      CarouselSlider(
-                        items: carouselImageList.map<Widget>((i) {
-                          return Builder(
-                            builder: (BuildContext context) {
-                              return Container(
-                                width: screenWidth * 0.95,
-                                decoration: BoxDecoration(
-                                  image:
-                                      DecorationImage(image: NetworkImage(i)),
-                                ),
-                              );
-                            },
-                          );
-                        }).toList(),
-                        options: CarouselOptions(
-                            height: screenHeight * 0.25,
-                            aspectRatio: 16 / 9,
-                            autoPlay: true,
-                            autoPlayInterval: const Duration(seconds: 5),
-                            initialPage: 0,
-                            viewportFraction: 1,
-                            onPageChanged: (index, timed) {
-                              setState(() {
-                                _currentCarouselIndex = index;
-                              });
-                            }),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: indicators(
-                            carouselImageList.length, _currentCarouselIndex),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: screenWidth * 0.025,
-                          top: screenHeight * 0.005,
-                        ),
-                        child: TextLabel(
-                          width: screenWidth * 0.15,
-                          labelText: "Top Brands",
-                          fontSize: screenWidth * 0.0225,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: screenWidth * 0.025,
-                            top: screenWidth * 0.025),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth * 0.025),
-                        child: SizedBox(
-                          height: screenHeight * 0.1,
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: ListView.builder(
-                                  itemCount: brandLogos.length,
-                                  scrollDirection: Axis.horizontal,
-                                  //shrinkWrap: true,
-                                  physics:
-                                      const AlwaysScrollableScrollPhysics(),
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return BrandLogoCard(
-                                        width: screenWidth * 0.33,
-                                        height: screenHeight * 0.18,
-                                        brandImageUrl: brandLogos[index]
-                                            ["img-url"],
-                                        paddingRight: screenWidth * 0.015);
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: screenWidth * 0.025,
-                            top: screenWidth * 0.025),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: screenWidth * 0.025,
-                        ),
-                        child: TextLabel(
-                          width: screenWidth * 0.2,
-                          labelText: "Trending Guitars",
-                          fontSize: screenWidth * 0.0225,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: screenWidth * 0.025,
-                            top: screenWidth * 0.025),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth * 0.025),
-                        child: SizedBox(
-                          height: screenWidth * 0.4 / 0.75,
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: ListView.builder(
-                                  itemCount: instruments.length,
-                                  scrollDirection: Axis.horizontal,
-                                  //shrinkWrap: true,
-                                  physics:
-                                      const AlwaysScrollableScrollPhysics(),
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return InstrumentCard(
-                                      width: screenWidth * 0.4,
-                                      height: screenWidth * 0.4 / 0.75,
-                                      instrumentImageUrl: instruments[index]
-                                          ["img-url"],
-                                      instrumentName: instruments[index]
-                                          ["name"],
-                                      instrumentMrp:
-                                          "₹${instruments[index]["mrp"].toString()}",
-                                      instrumentPrice:
-                                          "₹${instruments[index]["price"].toString()}",
-                                      paddingRight: screenHeight * 0.015,
-                                      innerHorizontalSymmetricPadding:
-                                          screenWidth * 0.025,
-                                      innerVerticalSymmetricPadding:
-                                          screenHeight * 0.00,
-                                      instrumentDiscount:
-                                          "${(((1 - (instruments[index]["price"] / instruments[index]["mrp"])) * 100).round()).toString()}% off",
-                                      onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    InstrumentDetail(
-                                                        instrument: instruments[
-                                                            index])));
-                                      },
-                                      onWishTap: () {
-                                        if (wishList
-                                            .contains(instruments[index])) {
-                                          setState(() {
-                                            wishList.remove(instruments[index]);
-                                          });
-                                        } else {
-                                          setState(() {
-                                            wishList.add(instruments[index]);
-                                          });
-                                        }
-                                      },
-                                      onCartTap: () {
-                                        if (cartList
-                                            .contains(instruments[index])) {
-                                          setState(() {
-                                            cartList.remove(instruments[index]);
-                                            cartMap.remove(instruments[index]);
-                                          });
-                                        } else {
-                                          setState(() {
-                                            cartList.add(instruments[index]);
-                                            cartMap.addAll(
-                                                {instruments[index]: 1});
-                                          });
-                                        }
-                                      },
-                                      isWishlisted: (wishList
-                                              .contains(instruments[index]))
-                                          ? true
-                                          : false,
-                                      isCarted: (cartList
-                                              .contains(instruments[index]))
-                                          ? true
-                                          : false,
-                                      instrument: instruments[index],
-                                    );
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: screenWidth * 0.025,
-                            top: screenWidth * 0.025),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: screenWidth * 0.025,
-                        ),
-                        child: TextLabel(
-                          width: screenWidth * 0.20,
-                          labelText: "Trending Drums",
-                          fontSize: screenWidth * 0.0225,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: screenWidth * 0.025,
-                            top: screenWidth * 0.025),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth * 0.025),
-                        child: SizedBox(
-                          height: screenHeight * 0.4,
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: ListView.builder(
-                                  itemCount: instruments.length,
-                                  scrollDirection: Axis.horizontal,
-                                  //shrinkWrap: true,
-                                  physics:
-                                      const AlwaysScrollableScrollPhysics(),
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return InstrumentCard(
-                                      width: screenWidth * 0.4,
-                                      height: screenHeight * 0.4,
-                                      instrumentImageUrl: instruments[index]
-                                          ["img-url"],
-                                      instrumentName: instruments[index]
-                                          ["name"],
-                                      instrumentMrp:
-                                          instruments[index]["mrp"].toString(),
-                                      instrumentPrice: instruments[index]
-                                              ["price"]
-                                          .toString(),
-                                      paddingRight: screenHeight * 0.015,
-                                      innerHorizontalSymmetricPadding:
-                                          screenWidth * 0.025,
-                                      innerVerticalSymmetricPadding:
-                                          screenHeight * 0.00,
-                                      instrumentDiscount: "Hello",
-                                      onTap: () {},
-                                      onWishTap: () {},
-                                      onCartTap: () {},
-                                      isWishlisted: (wishList
-                                              .contains(instruments[index]))
-                                          ? true
-                                          : false,
-                                      isCarted: (cartList
-                                              .contains(instruments[index]))
-                                          ? true
-                                          : false,
-                                      instrument: instruments[index],
-                                    );
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomAppBar(
+              screenWidth: screenWidth,
+              screenHeight: screenHeight,
+              searchBoxController: _searchBoxController,
+              hintText: _hintText,
             ),
+            SizedBox(
+              width: screenWidth,
+              height: screenHeight,
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListView(
+                      children: [
+                        // Padding(
+                        //     padding: EdgeInsets.only(top: screenHeight * 0.01)),
+                        CarouselSlider(
+                          items: carouselImageList.map<Widget>((i) {
+                            return Builder(
+                              builder: (BuildContext context) {
+                                return Container(
+                                  width: screenWidth * 0.95,
+                                  decoration: BoxDecoration(
+                                    image:
+                                        DecorationImage(image: NetworkImage(i)),
+                                  ),
+                                );
+                              },
+                            );
+                          }).toList(),
+                          options: CarouselOptions(
+                              height: screenHeight * 0.25,
+                              aspectRatio: 16 / 9,
+                              autoPlay: true,
+                              autoPlayInterval: const Duration(seconds: 5),
+                              initialPage: 0,
+                              viewportFraction: 1,
+                              onPageChanged: (index, timed) {
+                                setState(() {
+                                  _currentCarouselIndex = index;
+                                });
+                              }),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: indicators(
+                              carouselImageList.length, _currentCarouselIndex),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: screenWidth * 0.025,
+                            top: screenHeight * 0.005,
+                          ),
+                          child: TextLabel(
+                            width: screenWidth * 0.15,
+                            labelText: "Top Brands",
+                            fontSize: screenWidth * 0.0225,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: screenWidth * 0.025,
+                              top: screenWidth * 0.025),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.025),
+                          child: SizedBox(
+                            height: screenHeight * 0.1,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: ListView.builder(
+                                    itemCount: brandLogos.length,
+                                    scrollDirection: Axis.horizontal,
+                                    //shrinkWrap: true,
+                                    physics:
+                                        const AlwaysScrollableScrollPhysics(),
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return BrandLogoCard(
+                                          width: screenWidth * 0.33,
+                                          height: screenHeight * 0.18,
+                                          brandImageUrl: brandLogos[index]
+                                              ["img-url"],
+                                          paddingRight: screenWidth * 0.015);
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: screenWidth * 0.025,
+                              top: screenWidth * 0.025),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: screenWidth * 0.025,
+                          ),
+                          child: TextLabel(
+                            width: screenWidth * 0.2,
+                            labelText: "Trending Guitars",
+                            fontSize: screenWidth * 0.0225,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: screenWidth * 0.025,
+                              top: screenWidth * 0.025),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.025),
+                          child: SizedBox(
+                            height: screenWidth * 0.4 / 0.75,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: ListView.builder(
+                                    itemCount: instruments.length,
+                                    scrollDirection: Axis.horizontal,
+                                    //shrinkWrap: true,
+                                    physics:
+                                        const AlwaysScrollableScrollPhysics(),
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return InstrumentCard(
+                                        width: screenWidth * 0.4,
+                                        height: screenWidth * 0.4 / 0.75,
+                                        instrumentImageUrl: instruments[index]
+                                            ["img-url"],
+                                        instrumentName: instruments[index]
+                                            ["name"],
+                                        instrumentMrp:
+                                            "₹${instruments[index]["mrp"].toString()}",
+                                        instrumentPrice:
+                                            "₹${instruments[index]["price"].toString()}",
+                                        paddingRight: screenHeight * 0.015,
+                                        innerHorizontalSymmetricPadding:
+                                            screenWidth * 0.025,
+                                        innerVerticalSymmetricPadding:
+                                            screenHeight * 0.00,
+                                        instrumentDiscount:
+                                            "${(((1 - (instruments[index]["price"] / instruments[index]["mrp"])) * 100).round()).toString()}% off",
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      InstrumentDetail(
+                                                          instrument:
+                                                              instruments[
+                                                                  index])));
+                                        },
+                                        onWishTap: () {
+                                          if (wishList
+                                              .contains(instruments[index])) {
+                                            setState(() {
+                                              wishList
+                                                  .remove(instruments[index]);
+                                            });
+                                          } else {
+                                            setState(() {
+                                              wishList.add(instruments[index]);
+                                            });
+                                          }
+                                        },
+                                        onCartTap: () {
+                                          if (cartList
+                                              .contains(instruments[index])) {
+                                            setState(() {
+                                              cartList
+                                                  .remove(instruments[index]);
+                                              cartMap
+                                                  .remove(instruments[index]);
+                                            });
+                                          } else {
+                                            setState(() {
+                                              cartList.add(instruments[index]);
+                                              cartMap.addAll(
+                                                  {instruments[index]: 1});
+                                            });
+                                          }
+                                        },
+                                        isWishlisted: (wishList
+                                                .contains(instruments[index]))
+                                            ? true
+                                            : false,
+                                        isCarted: (cartList
+                                                .contains(instruments[index]))
+                                            ? true
+                                            : false,
+                                        instrument: instruments[index],
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: screenWidth * 0.025,
+                              top: screenWidth * 0.025),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: screenWidth * 0.025,
+                          ),
+                          child: TextLabel(
+                            width: screenWidth * 0.20,
+                            labelText: "Trending Drums",
+                            fontSize: screenWidth * 0.0225,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: screenWidth * 0.025,
+                              top: screenWidth * 0.025),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.025),
+                          child: SizedBox(
+                            height: screenHeight * 0.4,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: ListView.builder(
+                                    itemCount: instruments.length,
+                                    scrollDirection: Axis.horizontal,
+                                    //shrinkWrap: true,
+                                    physics:
+                                        const AlwaysScrollableScrollPhysics(),
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return InstrumentCard(
+                                        width: screenWidth * 0.4,
+                                        height: screenHeight * 0.4,
+                                        instrumentImageUrl: instruments[index]
+                                            ["img-url"],
+                                        instrumentName: instruments[index]
+                                            ["name"],
+                                        instrumentMrp: instruments[index]["mrp"]
+                                            .toString(),
+                                        instrumentPrice: instruments[index]
+                                                ["price"]
+                                            .toString(),
+                                        paddingRight: screenHeight * 0.015,
+                                        innerHorizontalSymmetricPadding:
+                                            screenWidth * 0.025,
+                                        innerVerticalSymmetricPadding:
+                                            screenHeight * 0.00,
+                                        instrumentDiscount: "Hello",
+                                        onTap: () {},
+                                        onWishTap: () {},
+                                        onCartTap: () {},
+                                        isWishlisted: (wishList
+                                                .contains(instruments[index]))
+                                            ? true
+                                            : false,
+                                        isCarted: (cartList
+                                                .contains(instruments[index]))
+                                            ? true
+                                            : false,
+                                        instrument: instruments[index],
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        bottomNavigationBar: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
+          child: CustomAnimatedBottomBar(
+            containerHeight: screenHeight * 0.06,
+            backgroundColor: Colors.black87,
+            selectedIndex: _currentIndex,
+            showElevation: true,
+            itemCornerRadius: 10,
+            curve: Curves.easeIn,
+            items: navBarItems,
+            onItemSelected: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
           ),
-        ],
-      ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
-        child: CustomAnimatedBottomBar(
-          containerHeight: screenHeight * 0.06,
-          backgroundColor: Colors.black87,
-          selectedIndex: _currentIndex,
-          showElevation: true,
-          itemCornerRadius: 10,
-          curve: Curves.easeIn,
-          items: navBarItems,
-          onItemSelected: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
         ),
       ),
     );

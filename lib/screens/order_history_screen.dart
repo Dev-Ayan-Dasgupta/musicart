@@ -23,175 +23,180 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
   Widget build(BuildContext context) {
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(
-            screenWidth: screenWidth,
-            screenHeight: screenHeight,
-            searchBoxController: _searchBoxController,
-            hintText: _hintText,
-          ),
-          (ordersList.isEmpty)
-              ? Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: screenHeight * 0.2,
-                      ),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          "./assets/images/empty_order_history.svg",
-                          width: screenWidth * 0.33,
-                          height: screenWidth * 0.33,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                        padding: EdgeInsets.only(top: screenHeight * 0.025)),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: screenWidth * 0.05, right: screenWidth * 0.05),
-                      child: Text(
-                        "You haven't ordered anything to us yet, please browse products and order them.",
-                        style: globalTextStyle.copyWith(
-                          color: Colors.grey,
-                          fontSize: screenWidth * 0.025,
-                        ),
-                      ),
-                    ),
-                  ],
-                )
-              : SizedBox(
-                  width: screenWidth * 0.95,
-                  height: screenHeight * 0.8,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomAppBar(
+              screenWidth: screenWidth,
+              screenHeight: screenHeight,
+              searchBoxController: _searchBoxController,
+              hintText: _hintText,
+            ),
+            (ordersList.isEmpty)
+                ? Column(
                     children: [
-                      Expanded(
-                        child: ListView.builder(
-                          itemCount: ordersList.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return SizedBox(
-                              width: screenWidth * 0.95,
-                              height: screenHeight *
-                                  0.11 *
-                                  ordersList[index].length,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  // Padding(
-                                  //   padding:
-                                  //       EdgeInsets.only(top: screenHeight * 0.01),
-                                  //   child: Text(
-                                  //     "${ordersDate[ordersList[index]]}",
-                                  //     style: globalTextStyle.copyWith(
-                                  //       color: Colors.grey,
-                                  //       fontSize: screenWidth * 0.03,
-                                  //       fontWeight: FontWeight.bold,
-                                  //     ),
-                                  //   ),
-                                  // ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        top: screenHeight * 0.01),
-                                    child: Text(
-                                      DateFormat.yMMMMEEEEd()
-                                          .format(orderDate[index].date),
-                                      style: globalTextStyle.copyWith(
-                                        color: Colors.grey,
-                                        fontSize: screenWidth * 0.03,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: ListView.builder(
-                                        itemCount: ordersList[index].length,
-                                        itemBuilder:
-                                            (BuildContext context, int index2) {
-                                          return Padding(
-                                            padding: EdgeInsets.only(
-                                                top: screenHeight * 0.01,
-                                                left: screenWidth * 0.02),
-                                            child: Container(
-                                              width: screenWidth * 0.95,
-                                              height: screenHeight * 0.08,
-                                              decoration: BoxDecoration(
-                                                border: Border.all(
-                                                  width: 0.25,
-                                                  color: Colors.grey,
-                                                ),
-                                                borderRadius:
-                                                    const BorderRadius.all(
-                                                  Radius.circular(10),
-                                                ),
-                                              ),
-                                              child: ListTile(
-                                                leading: Image(
-                                                    image: NetworkImage(
-                                                        ordersList[index]
-                                                                [index2]
-                                                            ["img-url"])),
-                                                title: Text(
-                                                  ordersList[index][index2]
-                                                      ["name"],
-                                                  style:
-                                                      globalTextStyle.copyWith(
-                                                    color: primaryColor,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                                subtitle: Text(
-                                                  "${ordersMap[index][ordersList[index][index2]].toString()} units",
-                                                  style:
-                                                      globalTextStyle.copyWith(
-                                                    color: Colors.grey,
-                                                  ),
-                                                ),
-                                                trailing: Text(
-                                                  "₹${ordersList[index][index2]["price"].toString()}",
-                                                  style:
-                                                      globalTextStyle.copyWith(
-                                                    color: primaryColor,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        }),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: screenHeight * 0.2,
+                        ),
+                        child: Center(
+                          child: SvgPicture.asset(
+                            "./assets/images/empty_order_history.svg",
+                            width: screenWidth * 0.33,
+                            height: screenWidth * 0.33,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(top: screenHeight * 0.025)),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: screenWidth * 0.05,
+                            right: screenWidth * 0.05),
+                        child: Text(
+                          "You haven't ordered anything to us yet, please browse products and order them.",
+                          style: globalTextStyle.copyWith(
+                            color: Colors.grey,
+                            fontSize: screenWidth * 0.025,
+                          ),
                         ),
                       ),
                     ],
+                  )
+                : SizedBox(
+                    width: screenWidth * 0.95,
+                    height: screenHeight * 0.8,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: ListView.builder(
+                            itemCount: ordersList.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return SizedBox(
+                                width: screenWidth * 0.95,
+                                height: screenHeight *
+                                    0.11 *
+                                    ordersList[index].length,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    // Padding(
+                                    //   padding:
+                                    //       EdgeInsets.only(top: screenHeight * 0.01),
+                                    //   child: Text(
+                                    //     "${ordersDate[ordersList[index]]}",
+                                    //     style: globalTextStyle.copyWith(
+                                    //       color: Colors.grey,
+                                    //       fontSize: screenWidth * 0.03,
+                                    //       fontWeight: FontWeight.bold,
+                                    //     ),
+                                    //   ),
+                                    // ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          top: screenHeight * 0.01),
+                                      child: Text(
+                                        DateFormat.yMMMMEEEEd()
+                                            .format(orderDate[index].date),
+                                        style: globalTextStyle.copyWith(
+                                          color: Colors.grey,
+                                          fontSize: screenWidth * 0.03,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: ListView.builder(
+                                          itemCount: ordersList[index].length,
+                                          itemBuilder: (BuildContext context,
+                                              int index2) {
+                                            return Padding(
+                                              padding: EdgeInsets.only(
+                                                  top: screenHeight * 0.01,
+                                                  left: screenWidth * 0.02),
+                                              child: Container(
+                                                width: screenWidth * 0.95,
+                                                height: screenHeight * 0.08,
+                                                decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                    width: 0.25,
+                                                    color: Colors.grey,
+                                                  ),
+                                                  borderRadius:
+                                                      const BorderRadius.all(
+                                                    Radius.circular(10),
+                                                  ),
+                                                ),
+                                                child: ListTile(
+                                                  leading: Image(
+                                                      image: NetworkImage(
+                                                          ordersList[index]
+                                                                  [index2]
+                                                              ["img-url"])),
+                                                  title: Text(
+                                                    ordersList[index][index2]
+                                                        ["name"],
+                                                    style: globalTextStyle
+                                                        .copyWith(
+                                                      color: primaryColor,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                  subtitle: Text(
+                                                    "${ordersMap[index][ordersList[index][index2]].toString()} units",
+                                                    style: globalTextStyle
+                                                        .copyWith(
+                                                      color: Colors.grey,
+                                                    ),
+                                                  ),
+                                                  trailing: Text(
+                                                    "₹${ordersList[index][index2]["price"].toString()}",
+                                                    style: globalTextStyle
+                                                        .copyWith(
+                                                      color: primaryColor,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          }),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-        ],
-      ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
-        child: CustomAnimatedBottomBar(
-          containerHeight: screenHeight * 0.06,
-          backgroundColor: Colors.black87,
-          selectedIndex: _currentIndex,
-          showElevation: true,
-          itemCornerRadius: 10,
-          curve: Curves.easeIn,
-          items: navBarItems,
-          onItemSelected: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
+          ],
+        ),
+        bottomNavigationBar: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
+          child: CustomAnimatedBottomBar(
+            containerHeight: screenHeight * 0.06,
+            backgroundColor: Colors.black87,
+            selectedIndex: _currentIndex,
+            showElevation: true,
+            itemCornerRadius: 10,
+            curve: Curves.easeIn,
+            items: navBarItems,
+            onItemSelected: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+          ),
         ),
       ),
     );

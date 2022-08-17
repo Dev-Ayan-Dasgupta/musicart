@@ -139,392 +139,397 @@ class _ElectricGuitarsScreenState extends State<ElectricGuitarsScreen> {
   Widget build(BuildContext context) {
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CustomAppBar(
-            screenWidth: screenWidth,
-            screenHeight: screenHeight,
-            searchBoxController: _searchBoxController,
-            hintText: _hintText,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: screenWidth * 0.025),
-                child: TextLabel(
-                    width: screenWidth * 0.125,
-                    labelText: "Guitars",
-                    fontSize: screenWidth * 0.025),
-              ),
-              Padding(
-                padding: EdgeInsets.only(right: screenWidth * 0.025),
-                child: InkWell(
-                  onTap: () {
-                    setState(() {
-                      if (!isSortFilter) {
-                        _animContWidth = screenWidth * 0.95;
-                        _animContHeight = screenHeight * 0.236;
-                      } else {
-                        _animContWidth = 0;
-                        _animContHeight = 0;
-                      }
-                      isSortFilter = !isSortFilter;
-                    });
-                  },
-                  child: Icon(
-                    Icons.sort_rounded,
-                    size: screenWidth * 0.05,
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CustomAppBar(
+              screenWidth: screenWidth,
+              screenHeight: screenHeight,
+              searchBoxController: _searchBoxController,
+              hintText: _hintText,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: screenWidth * 0.025),
+                  child: TextLabel(
+                      width: screenWidth * 0.125,
+                      labelText: "Guitars",
+                      fontSize: screenWidth * 0.025),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: screenWidth * 0.025),
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        if (!isSortFilter) {
+                          _animContWidth = screenWidth * 0.95;
+                          _animContHeight = screenHeight * 0.236;
+                        } else {
+                          _animContWidth = 0;
+                          _animContHeight = 0;
+                        }
+                        isSortFilter = !isSortFilter;
+                      });
+                    },
+                    child: Icon(
+                      Icons.sort_rounded,
+                      size: screenWidth * 0.05,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
-          // (isSortFilter)
-          //     ?
-          AnimatedContainer(
-            duration: const Duration(milliseconds: 1000),
-            curve: Curves.easeInOutExpo,
-            width: _animContWidth,
-            height: _animContHeight,
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "₹ $minGuitarPrice",
-                      style: globalTextStyle.copyWith(
-                        color: primaryColor,
-                        fontSize: screenWidth * 0.025,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(
-                      width: screenWidth * 0.7,
-                      child: RangeSlider(
-                        min: minGuitarPrice,
-                        max: maxGuitarPrice,
-                        divisions: (maxGuitarPrice - minGuitarPrice).toInt(),
-                        values: rv,
-                        labels: RangeLabels(rv.start.round().toString(),
-                            rv.end.round().toString()),
-                        activeColor: primaryColor,
-                        inactiveColor: Colors.grey,
-                        onChanged: (values) {
-                          setState(() {
-                            rv = values;
-                            populateFilteredGuitars(rv.start, rv.end);
-                            count++;
-                          });
-                        },
-                      ),
-                    ),
-                    Text(
-                      "₹ $maxGuitarPrice",
-                      style: globalTextStyle.copyWith(
-                        color: primaryColor,
-                        fontSize: screenWidth * 0.025,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
-                SizedBox(
-                  height: screenHeight * 0.025,
-                  width: screenWidth * 0.9,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+              ],
+            ),
+            Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
+            // (isSortFilter)
+            //     ?
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 1000),
+              curve: Curves.easeInOutExpo,
+              width: _animContWidth,
+              height: _animContHeight,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(
-                          child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: guitarBrandList.length,
-                              itemBuilder: (BuildContext context, int index) {
-                                return Padding(
-                                  padding: EdgeInsets.only(
-                                      right: screenWidth * 0.02),
-                                  child: InkWell(
-                                    onTap: () {
-                                      if (!selectedBrands
-                                          .contains(guitarBrandList[index])) {
-                                        setState(() {
-                                          selectedBrands
-                                              .add(guitarBrandList[index]);
+                      Text(
+                        "₹ $minGuitarPrice",
+                        style: globalTextStyle.copyWith(
+                          color: primaryColor,
+                          fontSize: screenWidth * 0.025,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenWidth * 0.7,
+                        child: RangeSlider(
+                          min: minGuitarPrice,
+                          max: maxGuitarPrice,
+                          divisions: (maxGuitarPrice - minGuitarPrice).toInt(),
+                          values: rv,
+                          labels: RangeLabels(rv.start.round().toString(),
+                              rv.end.round().toString()),
+                          activeColor: primaryColor,
+                          inactiveColor: Colors.grey,
+                          onChanged: (values) {
+                            setState(() {
+                              rv = values;
+                              populateFilteredGuitars(rv.start, rv.end);
+                              count++;
+                            });
+                          },
+                        ),
+                      ),
+                      Text(
+                        "₹ $maxGuitarPrice",
+                        style: globalTextStyle.copyWith(
+                          color: primaryColor,
+                          fontSize: screenWidth * 0.025,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
+                  SizedBox(
+                    height: screenHeight * 0.025,
+                    width: screenWidth * 0.9,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Expanded(
+                            child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: guitarBrandList.length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Padding(
+                                    padding: EdgeInsets.only(
+                                        right: screenWidth * 0.02),
+                                    child: InkWell(
+                                      onTap: () {
+                                        if (!selectedBrands
+                                            .contains(guitarBrandList[index])) {
+                                          setState(() {
+                                            selectedBrands
+                                                .add(guitarBrandList[index]);
 
-                                          populateFilteredGuitars(
-                                              rv.start, rv.end);
-                                          count++;
-                                        });
-                                      } else {
-                                        setState(() {
-                                          selectedBrands
-                                              .remove(guitarBrandList[index]);
+                                            populateFilteredGuitars(
+                                                rv.start, rv.end);
+                                            count++;
+                                          });
+                                        } else {
+                                          setState(() {
+                                            selectedBrands
+                                                .remove(guitarBrandList[index]);
 
-                                          populateFilteredGuitars(
-                                              rv.start, rv.end);
+                                            populateFilteredGuitars(
+                                                rv.start, rv.end);
 
-                                          count++;
-                                        });
-                                      }
-                                    },
-                                    child: Container(
-                                      width: screenWidth * 0.2,
-                                      decoration: BoxDecoration(
-                                        color: (!selectedBrands.contains(
-                                                guitarBrandList[index]))
-                                            ? Colors.grey.shade200
-                                            : primaryColor,
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(10)),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          guitarBrandList[index],
-                                          style: globalTextStyle.copyWith(
-                                            color: (!selectedBrands.contains(
-                                                    guitarBrandList[index]))
-                                                ? primaryColor
-                                                : tertiaryColor,
-                                            fontSize: screenWidth * 0.02,
-                                            fontWeight: FontWeight.bold,
+                                            count++;
+                                          });
+                                        }
+                                      },
+                                      child: Container(
+                                        width: screenWidth * 0.2,
+                                        decoration: BoxDecoration(
+                                          color: (!selectedBrands.contains(
+                                                  guitarBrandList[index]))
+                                              ? Colors.grey.shade200
+                                              : primaryColor,
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(10)),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            guitarBrandList[index],
+                                            style: globalTextStyle.copyWith(
+                                              color: (!selectedBrands.contains(
+                                                      guitarBrandList[index]))
+                                                  ? primaryColor
+                                                  : tertiaryColor,
+                                              fontSize: screenWidth * 0.02,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                );
-                              }))
-                    ],
+                                  );
+                                }))
+                      ],
+                    ),
                   ),
-                ),
-                Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomRadioButton(
-                      screenWidth: screenWidth,
-                      value: "relevance",
-                      groupValue: sortCriterion,
-                      onChanged: (value) {
-                        setState(() {
-                          sortCriterion = value.toString();
-                          guitarList
-                              .sort((a, b) => a["brand"].compareTo(b["brand"]));
-                          populateFilteredGuitars(rv.start, rv.end);
-                          count++;
-                        });
-                      },
-                      text: "Relevance",
-                    ),
-                    CustomRadioButton(
-                      screenWidth: screenWidth,
-                      value: "low to high",
-                      groupValue: sortCriterion,
-                      onChanged: (value) {
-                        setState(() {
-                          sortCriterion = value.toString();
-                          guitarList
-                              .sort((a, b) => a["price"].compareTo(b["price"]));
-                          populateFilteredGuitars(rv.start, rv.end);
-                          count++;
-                        });
-                      },
-                      text: "Low to High",
-                    ),
-                    CustomRadioButton(
-                      screenWidth: screenWidth,
-                      value: "high to low",
-                      groupValue: sortCriterion,
-                      onChanged: (value) {
-                        setState(() {
-                          sortCriterion = value.toString();
-                          guitarList
-                              .sort((a, b) => b["price"].compareTo(a["price"]));
-                          populateFilteredGuitars(rv.start, rv.end);
-                          count++;
-                        });
-                      },
-                      text: "High to Low",
-                    ),
-                    CustomRadioButton(
-                      screenWidth: screenWidth,
-                      value: "max discount",
-                      groupValue: sortCriterion,
-                      onChanged: (value) {
-                        setState(() {
-                          sortCriterion = value.toString();
-                          guitarList.sort((a, b) => (a["price"] / a["mrp"])
-                              .compareTo((b["price"] / b["mrp"])));
-                          populateFilteredGuitars(rv.start, rv.end);
-                          count++;
-                        });
-                      },
-                      text: "Max Discount",
-                    ),
-                  ],
-                ),
-                Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(right: screenWidth * 0.025),
-                      child: InkWell(
-                        onTap: () {
+                  Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomRadioButton(
+                        screenWidth: screenWidth,
+                        value: "relevance",
+                        groupValue: sortCriterion,
+                        onChanged: (value) {
                           setState(() {
-                            selectedBrands.clear();
-                            rv = RangeValues(minGuitarPrice, maxGuitarPrice);
+                            sortCriterion = value.toString();
+                            guitarList.sort(
+                                (a, b) => a["brand"].compareTo(b["brand"]));
                             populateFilteredGuitars(rv.start, rv.end);
                             count++;
                           });
                         },
-                        child: Text(
-                          "Clear filters",
-                          style: globalTextStyle.copyWith(
-                            color: primaryColor,
-                            fontSize: screenWidth * 0.02,
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline,
+                        text: "Relevance",
+                      ),
+                      CustomRadioButton(
+                        screenWidth: screenWidth,
+                        value: "low to high",
+                        groupValue: sortCriterion,
+                        onChanged: (value) {
+                          setState(() {
+                            sortCriterion = value.toString();
+                            guitarList.sort(
+                                (a, b) => a["price"].compareTo(b["price"]));
+                            populateFilteredGuitars(rv.start, rv.end);
+                            count++;
+                          });
+                        },
+                        text: "Low to High",
+                      ),
+                      CustomRadioButton(
+                        screenWidth: screenWidth,
+                        value: "high to low",
+                        groupValue: sortCriterion,
+                        onChanged: (value) {
+                          setState(() {
+                            sortCriterion = value.toString();
+                            guitarList.sort(
+                                (a, b) => b["price"].compareTo(a["price"]));
+                            populateFilteredGuitars(rv.start, rv.end);
+                            count++;
+                          });
+                        },
+                        text: "High to Low",
+                      ),
+                      CustomRadioButton(
+                        screenWidth: screenWidth,
+                        value: "max discount",
+                        groupValue: sortCriterion,
+                        onChanged: (value) {
+                          setState(() {
+                            sortCriterion = value.toString();
+                            guitarList.sort((a, b) => (a["price"] / a["mrp"])
+                                .compareTo((b["price"] / b["mrp"])));
+                            populateFilteredGuitars(rv.start, rv.end);
+                            count++;
+                          });
+                        },
+                        text: "Max Discount",
+                      ),
+                    ],
+                  ),
+                  Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: screenWidth * 0.025),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              selectedBrands.clear();
+                              rv = RangeValues(minGuitarPrice, maxGuitarPrice);
+                              populateFilteredGuitars(rv.start, rv.end);
+                              count++;
+                            });
+                          },
+                          child: Text(
+                            "Clear filters",
+                            style: globalTextStyle.copyWith(
+                              color: primaryColor,
+                              fontSize: screenWidth * 0.02,
+                              fontWeight: FontWeight.bold,
+                              decoration: TextDecoration.underline,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
-              ],
-            ),
-          ),
-          //   )
-          // : const SizedBox(),
-          SizedBox(
-            width: screenWidth,
-            height: (isSortFilter) ? screenHeight * 0.55 : screenHeight * 0.765,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: AnimationLimiter(
-                      key: ValueKey("list $count"),
-                      child: GridView.count(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: screenWidth * 0.025,
-                        mainAxisSpacing: screenWidth * 0.025,
-                        childAspectRatio: 0.75,
-                        children:
-                            List.generate(filteredGuitars.length, (index) {
-                          return AnimationConfiguration.staggeredGrid(
-                            position: index,
-                            columnCount: 2,
-                            duration: const Duration(milliseconds: 375),
-                            child: SlideAnimation(
-                              child: FadeInAnimation(
-                                child: InstrumentCard(
-                                    width: (screenWidth * 0.46),
-                                    height: (screenWidth * 0.46) / 0.75,
-                                    instrumentImageUrl: filteredGuitars[index]
-                                        ["img-url"],
-                                    instrumentName: filteredGuitars[index]
-                                        ["name"],
-                                    instrumentMrp:
-                                        "₹${filteredGuitars[index]["mrp"].toString()}",
-                                    instrumentPrice:
-                                        "₹${filteredGuitars[index]["price"].toString()}",
-                                    paddingRight: 0,
-                                    innerHorizontalSymmetricPadding: 10,
-                                    innerVerticalSymmetricPadding: 0,
-                                    instrumentDiscount:
-                                        "${(((1 - (filteredGuitars[index]["price"] / filteredGuitars[index]["mrp"])) * 100).round()).toString()}% off",
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  InstrumentDetail(
-                                                      instrument:
-                                                          filteredGuitars[
-                                                              index])));
-                                    },
-                                    onWishTap: () {
-                                      if (wishList
-                                          .contains(filteredGuitars[index])) {
-                                        setState(() {
-                                          wishList
-                                              .remove(filteredGuitars[index]);
-                                          //count++;
-                                        });
-                                      } else {
-                                        setState(() {
-                                          wishList.add(filteredGuitars[index]);
-                                        });
-                                      }
-                                    },
-                                    onCartTap: () {
-                                      if (cartList.contains(
-                                              filteredGuitars[index]) ==
-                                          false) {
-                                        setState(() {
-                                          cartList.add(filteredGuitars[index]);
-                                          cartMap.addAll(
-                                              {filteredGuitars[index]: 1});
-                                        });
-                                      } else {
-                                        setState(() {
-                                          cartList
-                                              .remove(filteredGuitars[index]);
-                                          cartMap
-                                              .remove(filteredGuitars[index]);
-                                        });
-                                      }
-                                    },
-                                    isWishlisted: (wishList
-                                            .contains(filteredGuitars[index]))
-                                        ? true
-                                        : false,
-                                    isCarted: (cartList
-                                            .contains(filteredGuitars[index]))
-                                        ? true
-                                        : false,
-                                    instrument: filteredGuitars[index]),
-                              ),
-                            ),
-                          );
-                        }),
-                      ),
-                    ),
+                    ],
                   ),
-                  Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: screenHeight * 0.025)),
+                  Padding(padding: EdgeInsets.only(top: screenHeight * 0.02)),
                 ],
               ),
             ),
+            //   )
+            // : const SizedBox(),
+            SizedBox(
+              width: screenWidth,
+              height:
+                  (isSortFilter) ? screenHeight * 0.55 : screenHeight * 0.765,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: AnimationLimiter(
+                        key: ValueKey("list $count"),
+                        child: GridView.count(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: screenWidth * 0.025,
+                          mainAxisSpacing: screenWidth * 0.025,
+                          childAspectRatio: 0.75,
+                          children:
+                              List.generate(filteredGuitars.length, (index) {
+                            return AnimationConfiguration.staggeredGrid(
+                              position: index,
+                              columnCount: 2,
+                              duration: const Duration(milliseconds: 375),
+                              child: SlideAnimation(
+                                child: FadeInAnimation(
+                                  child: InstrumentCard(
+                                      width: (screenWidth * 0.46),
+                                      height: (screenWidth * 0.46) / 0.75,
+                                      instrumentImageUrl: filteredGuitars[index]
+                                          ["img-url"],
+                                      instrumentName: filteredGuitars[index]
+                                          ["name"],
+                                      instrumentMrp:
+                                          "₹${filteredGuitars[index]["mrp"].toString()}",
+                                      instrumentPrice:
+                                          "₹${filteredGuitars[index]["price"].toString()}",
+                                      paddingRight: 0,
+                                      innerHorizontalSymmetricPadding: 10,
+                                      innerVerticalSymmetricPadding: 0,
+                                      instrumentDiscount:
+                                          "${(((1 - (filteredGuitars[index]["price"] / filteredGuitars[index]["mrp"])) * 100).round()).toString()}% off",
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    InstrumentDetail(
+                                                        instrument:
+                                                            filteredGuitars[
+                                                                index])));
+                                      },
+                                      onWishTap: () {
+                                        if (wishList
+                                            .contains(filteredGuitars[index])) {
+                                          setState(() {
+                                            wishList
+                                                .remove(filteredGuitars[index]);
+                                            //count++;
+                                          });
+                                        } else {
+                                          setState(() {
+                                            wishList
+                                                .add(filteredGuitars[index]);
+                                          });
+                                        }
+                                      },
+                                      onCartTap: () {
+                                        if (cartList.contains(
+                                                filteredGuitars[index]) ==
+                                            false) {
+                                          setState(() {
+                                            cartList
+                                                .add(filteredGuitars[index]);
+                                            cartMap.addAll(
+                                                {filteredGuitars[index]: 1});
+                                          });
+                                        } else {
+                                          setState(() {
+                                            cartList
+                                                .remove(filteredGuitars[index]);
+                                            cartMap
+                                                .remove(filteredGuitars[index]);
+                                          });
+                                        }
+                                      },
+                                      isWishlisted: (wishList
+                                              .contains(filteredGuitars[index]))
+                                          ? true
+                                          : false,
+                                      isCarted: (cartList
+                                              .contains(filteredGuitars[index]))
+                                          ? true
+                                          : false,
+                                      instrument: filteredGuitars[index]),
+                                ),
+                              ),
+                            );
+                          }),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: screenHeight * 0.025)),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+        bottomNavigationBar: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
+          child: CustomAnimatedBottomBar(
+            containerHeight: screenHeight * 0.06,
+            backgroundColor: Colors.black87,
+            selectedIndex: _currentIndex,
+            showElevation: true,
+            itemCornerRadius: 10,
+            curve: Curves.easeIn,
+            items: navBarItems,
+            onItemSelected: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
           ),
-        ],
-      ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: screenWidth * 0.025, vertical: screenHeight * 0.015),
-        child: CustomAnimatedBottomBar(
-          containerHeight: screenHeight * 0.06,
-          backgroundColor: Colors.black87,
-          selectedIndex: _currentIndex,
-          showElevation: true,
-          itemCornerRadius: 10,
-          curve: Curves.easeIn,
-          items: navBarItems,
-          onItemSelected: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
         ),
       ),
     );

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:musicart/screens/cart_screen.dart';
-import 'package:musicart/widgets/search_widget.dart';
 
 import '../global_variables/global_variables.dart';
-import '../screens/wishlist_screen.dart';
 
 class CustomAppBar extends StatefulWidget {
   const CustomAppBar({
@@ -29,7 +26,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: widget.screenHeight! * 0.05),
+      padding: EdgeInsets.symmetric(vertical: widget.screenHeight! * 0.025),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

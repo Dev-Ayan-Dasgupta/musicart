@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "53409692171",
+    "project_id": "musicart-753ec",
+    "storage_bucket": "musicart-753ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53409692171:android:7a1bd6a4ef07de7e07a50e",
+        "android_client_info": {
+          "package_name": "com.example.musicart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53409692171-0fncrmpovi148ad5rl3kdb7spilasttn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.musicart",
+            "certificate_hash": "5786cda2b69aec70b296f97ebd05aedf85fe1703"
+          }
+        },
+        {
+          "client_id": "53409692171-6liqehhdos51vbhp3d787at916ob9u13.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc6LDCAKL0n4E4R6Fe6kaKhJy7bzCWgcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53409692171-6liqehhdos51vbhp3d787at916ob9u13.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "53409692171-qrcai1clae1s93qnjjdb78t9dmfl2t08.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.musicart"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
