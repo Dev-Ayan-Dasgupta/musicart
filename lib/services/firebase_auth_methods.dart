@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:musicart/global_variables/global_variables.dart';
 
 import '../utils/show_snackbar.dart';
 
@@ -12,6 +13,9 @@ class FirebaseAuthMethods {
 
   //STATE PERSISTANCE
   Stream<User?> get authState => FirebaseAuth.instance.authStateChanges();
+
+  //GET USER
+  User? get user => _auth.currentUser;
 
   //SIGN UP EMAIL
   Future<void> signUpWithEmail({

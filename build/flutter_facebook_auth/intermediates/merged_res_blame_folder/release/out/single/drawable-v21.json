@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Flutter_Projects\\musicart\\build\\flutter_facebook_auth\\intermediates\\merged_res\\release\\drawable-v21\\abc_list_divider_material.xml",
+        "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\5cd960781a6a1948b7b0e7aa56175b49\\transformed\\appcompat-1.1.0\\res\\drawable-v21\\abc_list_divider_material.xml"
+    },
+    {
+        "merged": "C:\\Flutter_Projects\\musicart\\build\\flutter_facebook_auth\\intermediates\\merged_res\\release\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\5cd960781a6a1948b7b0e7aa56175b49\\transformed\\appcompat-1.1.0\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\Flutter_Projects\\musicart\\build\\flutter_facebook_auth\\intermediates\\merged_res\\release\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\5cd960781a6a1948b7b0e7aa56175b49\\transformed\\appcompat-1.1.0\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Flutter_Projects\\musicart\\build\\flutter_facebook_auth\\intermediates\\merged_res\\release\\drawable-v21\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\5cd960781a6a1948b7b0e7aa56175b49\\transformed\\appcompat-1.1.0\\res\\drawable-v21\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "C:\\Flutter_Projects\\musicart\\build\\flutter_facebook_auth\\intermediates\\merged_res\\release\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "C:\\Flutter_Projects\\musicart\\build\\flutter_facebook_auth\\intermediates\\merged_res\\release\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\5cd960781a6a1948b7b0e7aa56175b49\\transformed\\appcompat-1.1.0\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    }
+]

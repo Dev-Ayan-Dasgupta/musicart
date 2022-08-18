@@ -92,12 +92,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 isObscured: true,
                 onChanged: (p0) {
                   setState(() {
-                    //password = p0;
                     getPasswordStatus(p0);
-                    passwordStatus = passwordStatus;
-                    passwordStrength = passwordStrength;
-                    print(
-                        "$passwordStatus, $passwordStrength, ${_passwordController.text}, $p0");
                   });
                 },
               ),
@@ -131,14 +126,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 isObscured: true,
                 onChanged: (p0) {
                   setState(() {
-                    //confirmPassword = p0;
                     passwordsMatch =
                         doPasswordsMatch(p0, _passwordController.text);
                     passwordsMatchStatus = (passwordsMatch)
                         ? "Passwords match"
                         : "Passwords do not match";
-                    print(
-                        "$p0, ${_passwordController.text}, $passwordsMatchStatus, $passwordsMatch");
                   });
                 },
               ),

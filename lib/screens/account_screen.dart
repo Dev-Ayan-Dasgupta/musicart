@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:musicart/global_variables/global_variables.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/account_screen_info_list.dart';
 import '../widgets/animated_bottom_bar.dart';
 import '../widgets/custom_appbar.dart';
+import '../services/firebase_auth_methods.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({Key? key}) : super(key: key);
@@ -16,8 +19,29 @@ class _AccountScreenState extends State<AccountScreen> {
   final TextEditingController _searchBoxController = TextEditingController();
   final String _hintText = "Search instruments...";
   int _currentIndex = 3;
+
   @override
   Widget build(BuildContext context) {
+    final currUser = context.read<FirebaseAuthMethods>().user;
+
+    if (currUser == null) {
+      userName = "Guest";
+      isSignedIn = false;
+    } else {
+      if (!currUser.isAnonymous && currUser.phoneNumber == null) {
+        userName = currUser.email!;
+        isSignedIn = true;
+      }
+      if (currUser.phoneNumber != null) {
+        userName = currUser.phoneNumber!;
+        isSignedIn = true;
+      }
+      if (currUser.isAnonymous) {
+        userName = "Anon";
+        isSignedIn = true;
+      }
+    }
+
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -38,14 +62,14 @@ class _AccountScreenState extends State<AccountScreen> {
                 text: TextSpan(
                   text: "Hey ",
                   style: globalTextStyle.copyWith(
-                    fontSize: screenWidth * 0.04,
+                    fontSize: screenWidth * 0.03,
                     color: primaryColor,
                   ),
                   children: [
                     TextSpan(
-                      text: "User, ",
+                      text: "$userName, ",
                       style: globalTextStyle.copyWith(
-                        fontSize: screenWidth * 0.05,
+                        fontSize: screenWidth * 0.04,
                         fontWeight: FontWeight.bold,
                         color: primaryColor,
                       ),
@@ -184,11 +208,13 @@ class _AccountScreenState extends State<AccountScreen> {
               iconData3: Icons.power_settings_new_rounded,
               text1: "About",
               text2: "Rate us on Play Store",
-              text3: "Logout",
+              text3: (isSignedIn) ? "Logout" : "Login",
               onTap1: () {},
               onTap2: () {},
               onTap3: () {
-                Navigator.pushNamed(context, "/sign-in");
+                (isSignedIn)
+                    ? {context.read<FirebaseAuthMethods>().signOut(context)}
+                    : Navigator.pushNamed(context, "/sign-in");
               },
             )
           ],

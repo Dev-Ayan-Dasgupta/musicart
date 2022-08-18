@@ -1,15 +1,25 @@
 import 'dart:collection';
 
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/animated_bottom_bar.dart';
+
+//import '../services/firebase_auth_methods.dart';
+//import 'package:provider/provider.dart';
 
 TextStyle globalTextStyle = GoogleFonts.lato();
 
 Color primaryColor = Colors.black;
 Color secondaryColor = Colors.black54;
 Color tertiaryColor = Colors.white70;
+
+String userName = "Guest";
+
+bool isSignedIn = false;
+
+//final User user = FirebaseAuthMethods(FirebaseAuth.instance).user;
 
 List<BottomNavyBarItem> navBarItems = [
   BottomNavyBarItem(

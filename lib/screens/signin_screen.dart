@@ -97,6 +97,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           borderRadius: BorderRadius.circular(5))),
                   onPressed: () {
                     signInUser();
+                    Navigator.pushNamed(context, "/home");
                   },
                   child: Text(
                     "Sign in",
@@ -129,6 +130,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       context
                           .read<FirebaseAuthMethods>()
                           .loginWithGoogle(context);
+                      //Navigator.pushNamed(context, "/home");
+                      //Navigator.pop(context);
                     },
                     url:
                         "https://cdn.icon-icons.com/icons2/2631/PNG/512/google_search_new_logo_icon_159150.png",
@@ -143,6 +146,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       context
                           .read<FirebaseAuthMethods>()
                           .loginWithFacebook(context);
+                      //Navigator.pushNamed(context, "/home");
                     },
                     url:
                         "https://seeklogo.com/images/F/facebook-icon-circle-logo-09F32F61FF-seeklogo.com.png",
