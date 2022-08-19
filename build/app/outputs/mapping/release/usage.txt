@@ -15050,54 +15050,46 @@ com.google.android.gms.internal.maps.zzy:
     public final void zzv(int)
     public final void zzw(java.util.List)
     public final void zzy(com.google.android.gms.dynamic.IObjectWrapper)
-com.google.android.gms.internal.safetynet.zze:
-    public void zza(com.google.android.gms.common.api.Status,com.google.android.gms.safetynet.zza)
-com.google.android.gms.internal.safetynet.zzi:
-    public abstract void zza(com.google.android.gms.internal.safetynet.zzg)
-    public abstract void zza(com.google.android.gms.internal.safetynet.zzg,java.lang.String)
-    public abstract void zza(com.google.android.gms.internal.safetynet.zzg,java.lang.String,int[],int,java.lang.String)
-    public abstract void zzb()
-    public abstract void zzb(com.google.android.gms.internal.safetynet.zzg)
-    public abstract void zzc(com.google.android.gms.internal.safetynet.zzg)
-    public abstract void zzd(com.google.android.gms.internal.safetynet.zzg)
-com.google.android.gms.internal.safetynet.zzj:
-    public final void zza(com.google.android.gms.internal.safetynet.zzg)
-    public final void zza(com.google.android.gms.internal.safetynet.zzg,java.lang.String)
-    public final void zza(com.google.android.gms.internal.safetynet.zzg,java.lang.String,int[],int,java.lang.String)
-    public final void zzb()
-    public final void zzb(com.google.android.gms.internal.safetynet.zzg)
-    public final void zzc(com.google.android.gms.internal.safetynet.zzg)
+com.google.android.gms.internal.safetynet.zzaa
+com.google.android.gms.internal.safetynet.zzab
+com.google.android.gms.internal.safetynet.zzac
+com.google.android.gms.internal.safetynet.zzad
+com.google.android.gms.internal.safetynet.zzae:
+    public final com.google.android.gms.common.api.PendingResult attest(com.google.android.gms.common.api.GoogleApiClient,byte[])
+    public final com.google.android.gms.common.api.PendingResult enableVerifyApps(com.google.android.gms.common.api.GoogleApiClient)
+    public final com.google.android.gms.common.api.PendingResult isVerifyAppsEnabled(com.google.android.gms.common.api.GoogleApiClient)
+    public final boolean isVerifyAppsEnabled(android.content.Context)
+    public final com.google.android.gms.common.api.PendingResult listHarmfulApps(com.google.android.gms.common.api.GoogleApiClient)
+    public final varargs com.google.android.gms.common.api.PendingResult lookupUri(com.google.android.gms.common.api.GoogleApiClient,java.lang.String,java.lang.String,int[])
+    public final com.google.android.gms.common.api.PendingResult lookupUri(com.google.android.gms.common.api.GoogleApiClient,java.util.List,java.lang.String)
+    public final com.google.android.gms.common.api.PendingResult verifyWithRecaptcha(com.google.android.gms.common.api.GoogleApiClient,java.lang.String)
+    public static varargs com.google.android.gms.common.api.PendingResult zzb(com.google.android.gms.common.api.GoogleApiClient,java.lang.String,int,java.lang.String,int[])
+com.google.android.gms.internal.safetynet.zzaf:
+    public final void zzq(com.google.android.gms.internal.safetynet.zzg,java.util.List,int,java.lang.String,java.lang.String)
+com.google.android.gms.internal.safetynet.zzd:
+    public void zzd(com.google.android.gms.common.api.Status,com.google.android.gms.safetynet.zza)
+com.google.android.gms.internal.safetynet.zzh:
     public final void zzd(com.google.android.gms.internal.safetynet.zzg)
-com.google.android.gms.internal.safetynet.zzk$zzc
-com.google.android.gms.internal.safetynet.zzk$zzd
-com.google.android.gms.internal.safetynet.zzk$zze
-com.google.android.gms.internal.safetynet.zzk$zzf
-com.google.android.gms.internal.safetynet.zzk$zzg
-com.google.android.gms.internal.safetynet.zzk$zzh
-com.google.android.gms.internal.safetynet.zzk$zzi
-com.google.android.gms.internal.safetynet.zzk$zzj
-com.google.android.gms.internal.safetynet.zzk:
-    public com.google.android.gms.common.api.PendingResult attest(com.google.android.gms.common.api.GoogleApiClient,byte[])
-    public com.google.android.gms.common.api.PendingResult enableVerifyApps(com.google.android.gms.common.api.GoogleApiClient)
-    public com.google.android.gms.common.api.PendingResult isVerifyAppsEnabled(com.google.android.gms.common.api.GoogleApiClient)
-    public boolean isVerifyAppsEnabled(android.content.Context)
-    public com.google.android.gms.common.api.PendingResult listHarmfulApps(com.google.android.gms.common.api.GoogleApiClient)
-    public varargs com.google.android.gms.common.api.PendingResult lookupUri(com.google.android.gms.common.api.GoogleApiClient,java.lang.String,java.lang.String,int[])
-    public com.google.android.gms.common.api.PendingResult lookupUri(com.google.android.gms.common.api.GoogleApiClient,java.util.List,java.lang.String)
-    public com.google.android.gms.common.api.PendingResult verifyWithRecaptcha(com.google.android.gms.common.api.GoogleApiClient,java.lang.String)
-    public static varargs com.google.android.gms.common.api.PendingResult zza(com.google.android.gms.common.api.GoogleApiClient,java.lang.String,int,java.lang.String,int[])
+    public final void zze(com.google.android.gms.internal.safetynet.zzg)
+    public final void zzf(com.google.android.gms.internal.safetynet.zzg)
+    public final void zzg(com.google.android.gms.internal.safetynet.zzg)
+    public final void zzh(com.google.android.gms.internal.safetynet.zzg,java.lang.String,int[],int,java.lang.String)
+    public final void zzi()
+    public final void zzj(com.google.android.gms.internal.safetynet.zzg,java.lang.String)
+com.google.android.gms.internal.safetynet.zzj
+com.google.android.gms.internal.safetynet.zzk
+com.google.android.gms.internal.safetynet.zzl
 com.google.android.gms.internal.safetynet.zzm
 com.google.android.gms.internal.safetynet.zzn
 com.google.android.gms.internal.safetynet.zzo
-com.google.android.gms.internal.safetynet.zzp
-com.google.android.gms.internal.safetynet.zzq
-com.google.android.gms.internal.safetynet.zzr
+com.google.android.gms.internal.safetynet.zzs
 com.google.android.gms.internal.safetynet.zzt
 com.google.android.gms.internal.safetynet.zzu
 com.google.android.gms.internal.safetynet.zzv
 com.google.android.gms.internal.safetynet.zzw
-com.google.android.gms.internal.safetynet.zzx:
-    public final void zza(com.google.android.gms.internal.safetynet.zzg,java.util.List,int,java.lang.String,java.lang.String)
+com.google.android.gms.internal.safetynet.zzx
+com.google.android.gms.internal.safetynet.zzy
+com.google.android.gms.internal.safetynet.zzz
 com.google.android.gms.internal.tasks.zza:
     public void <init>()
 com.google.android.gms.location.ActivityRecognition$zza
@@ -15650,21 +15642,21 @@ com.google.android.gms.safetynet.SafeBrowsingData:
     public void <init>(long,byte[])
     public void <init>(java.lang.String)
     public void <init>(java.lang.String,com.google.android.gms.common.data.DataHolder)
-    public byte[] getBlacklists()
-    public void setBlacklists(byte[])
+    public byte[] getSerializedLists()
+    public void setSerializedLists(byte[])
     public void setTempDir(java.io.File)
 com.google.android.gms.safetynet.SafeBrowsingThreat
 com.google.android.gms.safetynet.SafetyNet:
     private void <init>()
     public static com.google.android.gms.safetynet.SafetyNetClient getClient(android.app.Activity)
 com.google.android.gms.safetynet.SafetyNetApi$HarmfulAppsResponse
+com.google.android.gms.safetynet.SafetyNetApi$HarmfulAppsResult
 com.google.android.gms.safetynet.SafetyNetApi$RecaptchaTokenResponse
 com.google.android.gms.safetynet.SafetyNetApi$RecaptchaTokenResult
 com.google.android.gms.safetynet.SafetyNetApi$SafeBrowsingResponse
 com.google.android.gms.safetynet.SafetyNetApi$SafeBrowsingResult
 com.google.android.gms.safetynet.SafetyNetApi$VerifyAppsUserResponse
-com.google.android.gms.safetynet.SafetyNetApi$zzb
-com.google.android.gms.safetynet.SafetyNetApi$zzc
+com.google.android.gms.safetynet.SafetyNetApi$VerifyAppsUserResult
 com.google.android.gms.safetynet.SafetyNetApi:
     public abstract com.google.android.gms.common.api.PendingResult attest(com.google.android.gms.common.api.GoogleApiClient,byte[])
     public abstract com.google.android.gms.common.api.PendingResult enableVerifyApps(com.google.android.gms.common.api.GoogleApiClient)
@@ -15675,6 +15667,7 @@ com.google.android.gms.safetynet.SafetyNetApi:
     public abstract com.google.android.gms.common.api.PendingResult lookupUri(com.google.android.gms.common.api.GoogleApiClient,java.util.List,java.lang.String)
     public abstract com.google.android.gms.common.api.PendingResult verifyWithRecaptcha(com.google.android.gms.common.api.GoogleApiClient,java.lang.String)
 com.google.android.gms.safetynet.SafetyNetClient:
+    public static final synthetic int zza
     void <init>(android.app.Activity)
     public com.google.android.gms.tasks.Task enableVerifyApps()
     public com.google.android.gms.tasks.Task initSafeBrowsing()
@@ -15686,10 +15679,12 @@ com.google.android.gms.safetynet.SafetyNetClient:
 com.google.android.gms.safetynet.SafetyNetStatusCodes
 com.google.android.gms.safetynet.VerifyAppsConstants
 com.google.android.gms.safetynet.zzf:
-    public final java.lang.String getTokenResult()
+    public final java.lang.String zza()
 com.google.android.gms.safetynet.zzl
 com.google.android.gms.safetynet.zzm
 com.google.android.gms.safetynet.zzn
+com.google.android.gms.safetynet.zzo
+com.google.android.gms.safetynet.zzp
 com.google.android.gms.security.ProviderInstaller$ProviderInstallListener
 com.google.android.gms.security.ProviderInstaller
 com.google.android.gms.security.zza
@@ -15726,7 +15721,6 @@ com.google.android.gms.tasks.TaskExecutors:
 com.google.android.gms.tasks.Tasks:
     private void <init>()
     public static java.lang.Object await(com.google.android.gms.tasks.Task,long,java.util.concurrent.TimeUnit)
-    public static com.google.android.gms.tasks.Task call(java.util.concurrent.Callable)
     public static com.google.android.gms.tasks.Task forCanceled()
     public static com.google.android.gms.tasks.Task whenAll(java.util.Collection)
     public static varargs com.google.android.gms.tasks.Task whenAll(com.google.android.gms.tasks.Task[])
@@ -24628,9 +24622,6 @@ com.google.firebase.FirebaseCommonRegistrar:
     private static final java.lang.String MIN_SDK
     private static final java.lang.String TARGET_SDK
 com.google.firebase.FirebaseError
-com.google.firebase.FirebaseException:
-    protected void <init>()
-    public void <init>(java.lang.String,java.lang.Throwable)
 com.google.firebase.FirebaseExceptionMapper
 com.google.firebase.FirebaseOptions$Builder:
     public void <init>(com.google.firebase.FirebaseOptions)
@@ -24663,6 +24654,159 @@ com.google.firebase.R$styleable
 com.google.firebase.R
 com.google.firebase.annotations.DeferredApi
 com.google.firebase.annotations.PublicApi
+com.google.firebase.appcheck.AppCheckTokenResult:
+    public abstract com.google.firebase.FirebaseException getError()
+com.google.firebase.appcheck.BuildConfig
+com.google.firebase.appcheck.FirebaseAppCheck:
+    public abstract com.google.android.gms.tasks.Task getAppCheckToken(boolean)
+    public static com.google.firebase.appcheck.FirebaseAppCheck getInstance()
+    public abstract void installAppCheckProviderFactory(com.google.firebase.appcheck.AppCheckProviderFactory,boolean)
+com.google.firebase.appcheck.R$attr
+com.google.firebase.appcheck.R$color
+com.google.firebase.appcheck.R$dimen
+com.google.firebase.appcheck.R$drawable
+com.google.firebase.appcheck.R$id
+com.google.firebase.appcheck.R$integer
+com.google.firebase.appcheck.R$layout
+com.google.firebase.appcheck.R$raw
+com.google.firebase.appcheck.R$string
+com.google.firebase.appcheck.R$style
+com.google.firebase.appcheck.R$styleable
+com.google.firebase.appcheck.R
+com.google.firebase.appcheck.debug.BuildConfig
+com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
+com.google.firebase.appcheck.debug.R$attr
+com.google.firebase.appcheck.debug.R$color
+com.google.firebase.appcheck.debug.R$dimen
+com.google.firebase.appcheck.debug.R$drawable
+com.google.firebase.appcheck.debug.R$id
+com.google.firebase.appcheck.debug.R$integer
+com.google.firebase.appcheck.debug.R$layout
+com.google.firebase.appcheck.debug.R$raw
+com.google.firebase.appcheck.debug.R$string
+com.google.firebase.appcheck.debug.R$style
+com.google.firebase.appcheck.debug.R$styleable
+com.google.firebase.appcheck.debug.R
+com.google.firebase.appcheck.debug.internal.DebugAppCheckProvider$1
+com.google.firebase.appcheck.debug.internal.DebugAppCheckProvider$2
+com.google.firebase.appcheck.debug.internal.DebugAppCheckProvider
+com.google.firebase.appcheck.debug.internal.ExchangeDebugTokenRequest
+com.google.firebase.appcheck.debug.internal.StorageHelper
+com.google.firebase.appcheck.internal.AppCheckTokenResponse:
+    static final java.lang.String TIME_TO_LIVE_KEY
+    static final java.lang.String TOKEN_KEY
+com.google.firebase.appcheck.internal.DefaultAppCheckToken:
+    static final java.lang.String EXPIRATION_TIME_KEY
+    static final java.lang.String EXPIRES_IN_MILLIS_KEY
+    static final java.lang.String ISSUED_AT_KEY
+    private static final long ONE_SECOND_MILLIS
+    static final java.lang.String RECEIVED_AT_TIMESTAMP_KEY
+    static final java.lang.String TOKEN_KEY
+com.google.firebase.appcheck.internal.DefaultAppCheckTokenResult:
+    static final java.lang.String DUMMY_TOKEN
+    public com.google.firebase.FirebaseException getError()
+com.google.firebase.appcheck.internal.DefaultFirebaseAppCheck:
+    private static final long BUFFER_TIME_MILLIS
+    public void addAppCheckTokenListener(com.google.firebase.appcheck.interop.AppCheckTokenListener)
+    public com.google.android.gms.tasks.Task getAppCheckToken(boolean)
+    public com.google.firebase.appcheck.AppCheckProviderFactory getInstalledAppCheckProviderFactory()
+    public void removeAppCheckTokenListener(com.google.firebase.appcheck.interop.AppCheckTokenListener)
+    public void resetAppCheckState()
+com.google.firebase.appcheck.internal.DefaultTokenRefresher:
+    static final long INITIAL_DELAY_SECONDS
+    static final long MAX_DELAY_SECONDS
+    private static final long UNSET_DELAY
+com.google.firebase.appcheck.internal.HttpErrorResponse:
+    static final java.lang.String CODE_KEY
+    static final java.lang.String ERROR_KEY
+    static final java.lang.String MESSAGE_KEY
+com.google.firebase.appcheck.internal.NetworkClient$AttestationTokenType
+com.google.firebase.appcheck.internal.NetworkClient:
+    private static final java.lang.String APPLICATION_JSON
+    private static final java.lang.String CONTENT_TYPE
+    public static final int DEBUG
+    private static final java.lang.String DEBUG_EXCHANGE_URL_TEMPLATE
+    public static final int PLAY_INTEGRITY
+    private static final java.lang.String PLAY_INTEGRITY_CHALLENGE_URL_TEMPLATE
+    private static final java.lang.String PLAY_INTEGRITY_EXCHANGE_URL_TEMPLATE
+    public static final int SAFETY_NET
+    private static final java.lang.String SAFETY_NET_EXCHANGE_URL_TEMPLATE
+    public static final int UNKNOWN
+    private static final java.lang.String UTF_8
+    static final java.lang.String X_ANDROID_CERT
+    static final java.lang.String X_ANDROID_PACKAGE
+    static final java.lang.String X_FIREBASE_CLIENT
+    public java.lang.String generatePlayIntegrityChallenge(byte[],com.google.firebase.appcheck.internal.RetryManager)
+com.google.firebase.appcheck.internal.RetryManager:
+    static final int BAD_REQUEST_ERROR_CODE
+    private static final int EXPONENTIAL
+    static final int FORBIDDEN_ERROR_CODE
+    static final long MAX_EXP_BACKOFF_MILLIS
+    private static final double MAX_JITTER_MULTIPLIER
+    static final int NOT_FOUND_ERROR_CODE
+    private static final int ONE_DAY
+    static final long ONE_DAY_MILLIS
+    static final long ONE_SECOND_MILLIS
+    static final long UNSET_RETRY_TIME
+    void <init>(com.google.firebase.appcheck.internal.util.Clock)
+    long getNextRetryTimeMillis()
+com.google.firebase.appcheck.internal.StorageHelper:
+    static final java.lang.String PREFS_TEMPLATE
+    static final java.lang.String TOKEN_KEY
+    static final java.lang.String TOKEN_TYPE_KEY
+com.google.firebase.appcheck.internal.TokenRefreshManager:
+    private static final long FIVE_MINUTES_IN_MILLIS
+    private static final long REFRESH_BUFFER_ABSOLUTE_MILLIS
+    private static final double REFRESH_BUFFER_FRACTION
+    private static final long UNSET_REFRESH_TIME
+com.google.firebase.appcheck.internal.util.Logger:
+    public static final java.lang.String TAG
+    public void i(java.lang.String)
+    public void i(java.lang.String,java.lang.Throwable)
+    public void log(int,java.lang.String)
+    public void log(int,java.lang.String,boolean)
+    public void v(java.lang.String)
+    public void v(java.lang.String,java.lang.Throwable)
+    public void w(java.lang.String)
+    public void w(java.lang.String,java.lang.Throwable)
+com.google.firebase.appcheck.internal.util.TokenParser:
+    public void <init>()
+com.google.firebase.appcheck.interop.BuildConfig
+com.google.firebase.appcheck.interop.InternalAppCheckTokenProvider:
+    public abstract void addAppCheckTokenListener(com.google.firebase.appcheck.interop.AppCheckTokenListener)
+    public abstract void removeAppCheckTokenListener(com.google.firebase.appcheck.interop.AppCheckTokenListener)
+com.google.firebase.appcheck.interop.R$attr
+com.google.firebase.appcheck.interop.R$color
+com.google.firebase.appcheck.interop.R$dimen
+com.google.firebase.appcheck.interop.R$drawable
+com.google.firebase.appcheck.interop.R$id
+com.google.firebase.appcheck.interop.R$integer
+com.google.firebase.appcheck.interop.R$layout
+com.google.firebase.appcheck.interop.R$raw
+com.google.firebase.appcheck.interop.R$string
+com.google.firebase.appcheck.interop.R$style
+com.google.firebase.appcheck.interop.R$styleable
+com.google.firebase.appcheck.interop.R
+com.google.firebase.appcheck.safetynet.BuildConfig
+com.google.firebase.appcheck.safetynet.R$attr
+com.google.firebase.appcheck.safetynet.R$color
+com.google.firebase.appcheck.safetynet.R$dimen
+com.google.firebase.appcheck.safetynet.R$drawable
+com.google.firebase.appcheck.safetynet.R$id
+com.google.firebase.appcheck.safetynet.R$integer
+com.google.firebase.appcheck.safetynet.R$layout
+com.google.firebase.appcheck.safetynet.R$raw
+com.google.firebase.appcheck.safetynet.R$string
+com.google.firebase.appcheck.safetynet.R$style
+com.google.firebase.appcheck.safetynet.R$styleable
+com.google.firebase.appcheck.safetynet.R
+com.google.firebase.appcheck.safetynet.internal.ExchangeSafetyNetTokenRequest:
+    static final java.lang.String SAFETY_NET_TOKEN_KEY
+com.google.firebase.appcheck.safetynet.internal.SafetyNetAppCheckProvider:
+    private static final java.lang.String NONCE
+    private static final java.lang.String UTF_8
+    void <init>(com.google.firebase.FirebaseApp,com.google.android.gms.safetynet.SafetyNetClient,com.google.firebase.appcheck.internal.NetworkClient,java.util.concurrent.ExecutorService,com.google.firebase.appcheck.internal.RetryManager)
+    com.google.android.gms.tasks.Task getSafetyNetClientTask()
 com.google.firebase.auth.ActionCodeMultiFactorInfo:
     public abstract com.google.firebase.auth.MultiFactorInfo getMultiFactorInfo()
 com.google.firebase.auth.ActionCodeResult$ActionDataKey
@@ -24810,7 +24954,6 @@ com.google.firebase.auth.zze:
 com.google.firebase.auth.zzu
 com.google.firebase.components.BuildConfig
 com.google.firebase.components.Component$Builder:
-    public com.google.firebase.components.Component$Builder alwaysEager()
     public com.google.firebase.components.Component$Builder publishes(java.lang.Class)
 com.google.firebase.components.Component:
     public boolean isLazy()
@@ -24835,7 +24978,6 @@ com.google.firebase.components.CycleDetector:
 com.google.firebase.components.Dependency:
     public static com.google.firebase.components.Dependency deferred(java.lang.Class)
     public static com.google.firebase.components.Dependency optional(java.lang.Class)
-    public static com.google.firebase.components.Dependency optionalProvider(java.lang.Class)
     public static com.google.firebase.components.Dependency setOfProvider(java.lang.Class)
 com.google.firebase.components.DependencyCycleException:
     public java.util.List getComponentsInCycle()
@@ -25948,6 +26090,21 @@ io.flutter.plugin.platform.PlatformViewWrapper:
     public android.graphics.SurfaceTexture getTexture()
 io.flutter.plugin.platform.PlatformViewsController:
     private static final java.lang.String TAG
+io.flutter.plugins.firebase.appcheck.BuildConfig
+io.flutter.plugins.firebase.appcheck.FlutterFirebaseAppCheckPlugin:
+    private static final java.lang.String METHOD_CHANNEL_NAME
+io.flutter.plugins.firebase.appcheck.R$attr
+io.flutter.plugins.firebase.appcheck.R$color
+io.flutter.plugins.firebase.appcheck.R$dimen
+io.flutter.plugins.firebase.appcheck.R$drawable
+io.flutter.plugins.firebase.appcheck.R$id
+io.flutter.plugins.firebase.appcheck.R$integer
+io.flutter.plugins.firebase.appcheck.R$layout
+io.flutter.plugins.firebase.appcheck.R$raw
+io.flutter.plugins.firebase.appcheck.R$string
+io.flutter.plugins.firebase.appcheck.R$style
+io.flutter.plugins.firebase.appcheck.R$styleable
+io.flutter.plugins.firebase.appcheck.R
 io.flutter.plugins.firebase.auth.BuildConfig
 io.flutter.plugins.firebase.auth.Constants
 io.flutter.plugins.firebase.auth.FlutterFirebaseAuthPlugin:
@@ -32619,11 +32776,8 @@ com.google.android.gms.internal.firebase-auth-api.zzzz
 com.google.android.gms.internal.location.zzb:
     private static com.google.android.gms.internal.location.zzd zzc
 com.google.android.gms.internal.location.zzd
-com.google.android.gms.internal.safetynet.zzb:
-    private static com.google.android.gms.internal.safetynet.zzd zzc
-com.google.android.gms.internal.safetynet.zzd
-com.google.android.gms.internal.safetynet.zzk:
-    private static final java.lang.String TAG
+com.google.android.gms.internal.safetynet.zzae:
+    private static final java.lang.String zza
 com.google.android.gms.maps.internal.zzca:
     public void <init>()
 com.google.android.material.appbar.AppBarLayout$BaseBehavior$BaseDragCallback

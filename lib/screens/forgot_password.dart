@@ -22,6 +22,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           .sendPasswordResetEmail(email: _emailController.text.trim());
 
       showSnackBar(context, "Password reset email sent");
+      Navigator.pushNamed(context, "/sign-in");
     } on FirebaseAuthException catch (e) {
       showSnackBar(context, e.message!);
     }
@@ -69,7 +70,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               borderRadius: BorderRadius.circular(5))),
                       onPressed: () {
                         resetPassword();
-                        Navigator.pushNamed(context, "sign-in");
+                        //Navigator.pushNamed(context, "/sign-in");
                       },
                       child: Text(
                         "Reset password",

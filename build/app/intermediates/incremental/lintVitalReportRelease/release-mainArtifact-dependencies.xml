@@ -1,8 +1,11 @@
 <dependencies>
   <compile
-      roots="__local_aars__:C:\Flutter_Projects\musicart\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,C:\Flutter_Projects\musicart\android@@:firebase_auth::release,C:\Flutter_Projects\musicart\android@@:firebase_core::release,C:\Flutter_Projects\musicart\android@@:geolocator_android::release,C:\Flutter_Projects\musicart\android@@:flutter_plugin_android_lifecycle::release,C:\Flutter_Projects\musicart\android@@:google_maps_flutter::release,C:\Flutter_Projects\musicart\android@@:geocoding::release,C:\Flutter_Projects\musicart\android@@:url_launcher_android::release,C:\Flutter_Projects\musicart\android@@:path_provider_android::release,C:\Flutter_Projects\musicart\android@@:smart_auth::release,C:\Flutter_Projects\musicart\android@@:google_sign_in_android::release,C:\Flutter_Projects\musicart\android@@:flutter_facebook_auth::release,io.flutter:flutter_embedding_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10@jar,com.google.android.material:material:1.6.1@aar,io.flutter:armeabi_v7a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,io.flutter:arm64_v8a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,io.flutter:x86_64_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar,androidx.dynamicanimation:dynamicanimation:1.0.0@aar,androidx.constraintlayout:constraintlayout:2.0.1@aar,androidx.appcompat:appcompat:1.2.0@aar,androidx.viewpager2:viewpager2:1.0.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.recyclerview:recyclerview:1.1.0@aar,androidx.transition:transition:1.2.0@aar,androidx.appcompat:appcompat-resources:1.2.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.drawerlayout:drawerlayout:1.1.1@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.1.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.2.0@aar,androidx.core:core:1.6.0@aar,androidx.core:core:1.6.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.cardview:cardview:1.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.3.0@aar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-common:2.3.0@jar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.documentfile:documentfile:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.annotation:annotation:1.2.0@jar,androidx.annotation:annotation-experimental:1.1.0@aar,androidx.tracing:tracing:1.0.0@aar,org.jetbrains.kotlin:kotlin-stdlib:1.6.10@jar,org.jetbrains:annotations:13.0@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10@jar,androidx.constraintlayout:constraintlayout-solver:2.0.1@jar">
+      roots="__local_aars__:C:\Flutter_Projects\musicart\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,C:\Flutter_Projects\musicart\android@@:firebase_app_check::release,C:\Flutter_Projects\musicart\android@@:firebase_auth::release,C:\Flutter_Projects\musicart\android@@:firebase_core::release,C:\Flutter_Projects\musicart\android@@:geolocator_android::release,C:\Flutter_Projects\musicart\android@@:flutter_plugin_android_lifecycle::release,C:\Flutter_Projects\musicart\android@@:google_maps_flutter::release,C:\Flutter_Projects\musicart\android@@:url_launcher_android::release,C:\Flutter_Projects\musicart\android@@:path_provider_android::release,C:\Flutter_Projects\musicart\android@@:smart_auth::release,C:\Flutter_Projects\musicart\android@@:google_sign_in_android::release,C:\Flutter_Projects\musicart\android@@:flutter_facebook_auth::release,C:\Flutter_Projects\musicart\android@@:geocoding::release,io.flutter:flutter_embedding_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10@jar,com.google.android.material:material:1.6.1@aar,androidx.browser:browser:1.4.0@aar,com.google.firebase:firebase-appcheck-safetynet:16.0.0@aar,io.flutter:armeabi_v7a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,io.flutter:arm64_v8a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,io.flutter:x86_64_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,com.google.android.gms:play-services-safetynet:18.0.0@aar,com.google.firebase:firebase-appcheck:16.0.0@aar,com.google.firebase:firebase-appcheck-interop:16.0.0@aar,com.google.android.gms:play-services-base:18.0.1@aar,androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar,androidx.dynamicanimation:dynamicanimation:1.0.0@aar,androidx.constraintlayout:constraintlayout:2.0.1@aar,androidx.appcompat:appcompat:1.2.0@aar,androidx.viewpager2:viewpager2:1.0.0@aar,com.google.firebase:firebase-common:20.1.1@aar,com.google.android.gms:play-services-tasks:18.0.1@aar,com.google.android.gms:play-services-basement:18.0.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.recyclerview:recyclerview:1.1.0@aar,androidx.transition:transition:1.2.0@aar,androidx.appcompat:appcompat-resources:1.2.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.drawerlayout:drawerlayout:1.1.1@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.1.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.2.0@aar,androidx.core:core:1.6.0@aar,androidx.core:core:1.6.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.cardview:cardview:1.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.3.0@aar,com.google.firebase:firebase-components:17.0.0@aar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-common:2.3.0@jar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.documentfile:documentfile:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.annotation:annotation:1.2.0@jar,androidx.annotation:annotation-experimental:1.1.0@aar,androidx.tracing:tracing:1.0.0@aar,com.google.firebase:firebase-annotations:16.0.0@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,org.jetbrains.kotlin:kotlin-stdlib:1.6.10@jar,org.jetbrains:annotations:13.0@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10@jar,androidx.constraintlayout:constraintlayout-solver:2.0.1@jar">
     <dependency
         name="__local_aars__:C:\Flutter_Projects\musicart\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"/>
+    <dependency
+        name="C:\Flutter_Projects\musicart\android@@:firebase_app_check::release"
+        simpleName="io.flutter.plugins.firebase.appcheck:firebase_app_check"/>
     <dependency
         name="C:\Flutter_Projects\musicart\android@@:firebase_auth::release"
         simpleName="io.flutter.plugins.firebase.auth:firebase_auth"/>
@@ -19,9 +22,6 @@
         name="C:\Flutter_Projects\musicart\android@@:google_maps_flutter::release"
         simpleName="io.flutter.plugins.googlemaps:google_maps_flutter"/>
     <dependency
-        name="C:\Flutter_Projects\musicart\android@@:geocoding::release"
-        simpleName="com.baseflow.geocoding:geocoding"/>
-    <dependency
         name="C:\Flutter_Projects\musicart\android@@:url_launcher_android::release"
         simpleName="io.flutter.plugins.urllauncher:url_launcher_android"/>
     <dependency
@@ -36,6 +36,9 @@
     <dependency
         name="C:\Flutter_Projects\musicart\android@@:flutter_facebook_auth::release"
         simpleName="app.meedu.flutter_facebook_auth:flutter_facebook_auth"/>
+    <dependency
+        name="C:\Flutter_Projects\musicart\android@@:geocoding::release"
+        simpleName="com.baseflow.geocoding:geocoding"/>
     <dependency
         name="io.flutter:flutter_embedding_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar"/>
     <dependency
@@ -53,11 +56,23 @@
     <dependency
         name="com.google.android.material:material:1.6.1@aar"/>
     <dependency
+        name="androidx.browser:browser:1.4.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-appcheck-safetynet:16.0.0@aar"/>
+    <dependency
         name="io.flutter:armeabi_v7a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar"/>
     <dependency
         name="io.flutter:arm64_v8a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar"/>
     <dependency
         name="io.flutter:x86_64_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar"/>
+    <dependency
+        name="com.google.android.gms:play-services-safetynet:18.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-appcheck:16.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-appcheck-interop:16.0.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-base:18.0.1@aar"/>
     <dependency
         name="androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar"/>
     <dependency
@@ -68,6 +83,12 @@
         name="androidx.appcompat:appcompat:1.2.0@aar"/>
     <dependency
         name="androidx.viewpager2:viewpager2:1.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-common:20.1.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-tasks:18.0.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-basement:18.0.0@aar"/>
     <dependency
         name="androidx.fragment:fragment:1.3.0@aar"/>
     <dependency
@@ -103,6 +124,8 @@
     <dependency
         name="androidx.lifecycle:lifecycle-runtime:2.3.0@aar"/>
     <dependency
+        name="com.google.firebase:firebase-components:17.0.0@aar"/>
+    <dependency
         name="androidx.lifecycle:lifecycle-common-java8:2.2.0@jar"/>
     <dependency
         name="androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0@aar"/>
@@ -137,6 +160,10 @@
     <dependency
         name="androidx.tracing:tracing:1.0.0@aar"/>
     <dependency
+        name="com.google.firebase:firebase-annotations:16.0.0@jar"/>
+    <dependency
+        name="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar"/>
+    <dependency
         name="org.jetbrains.kotlin:kotlin-stdlib:1.6.10@jar"/>
     <dependency
         name="org.jetbrains:annotations:13.0@jar"/>
@@ -146,9 +173,12 @@
         name="androidx.constraintlayout:constraintlayout-solver:2.0.1@jar"/>
   </compile>
   <package
-      roots="__local_aars__:C:\Flutter_Projects\musicart\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,C:\Flutter_Projects\musicart\android@@:firebase_auth::release,C:\Flutter_Projects\musicart\android@@:firebase_core::release,C:\Flutter_Projects\musicart\android@@:geolocator_android::release,C:\Flutter_Projects\musicart\android@@:google_maps_flutter::release,C:\Flutter_Projects\musicart\android@@:flutter_plugin_android_lifecycle::release,C:\Flutter_Projects\musicart\android@@:geocoding::release,C:\Flutter_Projects\musicart\android@@:url_launcher_android::release,C:\Flutter_Projects\musicart\android@@:path_provider_android::release,C:\Flutter_Projects\musicart\android@@:smart_auth::release,C:\Flutter_Projects\musicart\android@@:google_sign_in_android::release,C:\Flutter_Projects\musicart\android@@:flutter_facebook_auth::release,io.flutter:flutter_embedding_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10@jar,com.google.android.material:material:1.6.1@aar,io.flutter:armeabi_v7a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,io.flutter:arm64_v8a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,io.flutter:x86_64_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,com.google.firebase:firebase-auth:21.0.6@aar,com.google.firebase:firebase-auth-interop:20.0.0@aar,com.google.firebase:firebase-common:20.1.1@aar,com.facebook.android:facebook-login:14.1.0@aar,com.facebook.android:facebook-common:14.1.0@aar,androidx.cardview:cardview:1.0.0@aar,androidx.legacy:legacy-support-v4:1.0.0@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar,androidx.constraintlayout:constraintlayout:2.0.1@aar,androidx.appcompat:appcompat:1.2.0@aar,androidx.drawerlayout:drawerlayout:1.1.1@aar,androidx.transition:transition:1.2.0@aar,androidx.appcompat:appcompat-resources:1.2.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.viewpager2:viewpager2:1.0.0@aar,androidx.dynamicanimation:dynamicanimation:1.0.0@aar,com.google.android.gms:play-services-location:17.0.0@aar,com.google.android.gms:play-services-maps:18.0.2@aar,com.google.android.gms:play-services-auth:20.1.0@aar,com.google.android.gms:play-services-auth-api-phone:18.0.1@aar,com.google.android.gms:play-services-auth-base:18.0.1@aar,com.google.android.gms:play-services-safetynet:17.0.0@aar,com.google.android.gms:play-services-base:18.0.1@aar,com.google.android.gms:play-services-places-placereport:17.0.0@aar,com.google.android.gms:play-services-tasks:18.0.1@aar,com.google.android.gms:play-services-basement:18.0.0@aar,com.facebook.android:facebook-core:14.1.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.loader:loader:1.0.0@aar,androidx.recyclerview:recyclerview:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.1.0@aar,androidx.browser:browser:1.4.0@aar,androidx.browser:browser:1.4.0@aar,com.facebook.android:facebook-bolts:14.1.0@aar,androidx.core:core-ktx:1.3.2@aar,androidx.activity:activity:1.2.0@aar,androidx.media:media:1.0.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.core:core:1.6.0@aar,androidx.core:core:1.6.0@aar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.tracing:tracing:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar,com.google.firebase:firebase-components:17.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.concurrent:concurrent-futures:1.0.0@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.lifecycle:lifecycle-common:2.3.0@jar,androidx.arch.core:core-common:2.1.0@jar,androidx.annotation:annotation:1.2.0@jar,com.google.guava:guava:28.1-android@jar,org.jetbrains.kotlin:kotlin-stdlib:1.6.10@jar,androidx.annotation:annotation-experimental:1.1.0@aar,com.google.guava:failureaccess:1.0.1@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,com.google.code.findbugs:jsr305:3.0.2@jar,org.checkerframework:checker-compat-qual:2.5.5@jar,com.google.errorprone:error_prone_annotations:2.3.2@jar,com.google.j2objc:j2objc-annotations:1.3@jar,org.codehaus.mojo:animal-sniffer-annotations:1.18@jar,org.jetbrains:annotations:13.0@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10@jar,androidx.constraintlayout:constraintlayout-solver:2.0.1@jar,com.android.installreferrer:installreferrer:1.0@aar,com.google.zxing:core:3.3.3@jar,com.google.firebase:firebase-annotations:16.0.0@jar">
+      roots="__local_aars__:C:\Flutter_Projects\musicart\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,C:\Flutter_Projects\musicart\android@@:firebase_app_check::release,C:\Flutter_Projects\musicart\android@@:firebase_auth::release,C:\Flutter_Projects\musicart\android@@:firebase_core::release,C:\Flutter_Projects\musicart\android@@:geolocator_android::release,C:\Flutter_Projects\musicart\android@@:google_maps_flutter::release,C:\Flutter_Projects\musicart\android@@:flutter_plugin_android_lifecycle::release,C:\Flutter_Projects\musicart\android@@:url_launcher_android::release,C:\Flutter_Projects\musicart\android@@:path_provider_android::release,C:\Flutter_Projects\musicart\android@@:smart_auth::release,C:\Flutter_Projects\musicart\android@@:google_sign_in_android::release,C:\Flutter_Projects\musicart\android@@:flutter_facebook_auth::release,C:\Flutter_Projects\musicart\android@@:geocoding::release,io.flutter:flutter_embedding_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10@jar,com.google.android.material:material:1.6.1@aar,com.google.firebase:firebase-auth:21.0.6@aar,com.facebook.android:facebook-login:14.1.0@aar,com.facebook.android:facebook-common:14.1.0@aar,androidx.browser:browser:1.4.0@aar,androidx.browser:browser:1.4.0@aar,com.google.firebase:firebase-appcheck-safetynet:16.0.0@aar,io.flutter:armeabi_v7a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,io.flutter:arm64_v8a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,io.flutter:x86_64_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar,com.google.firebase:firebase-appcheck-debug:16.0.0@aar,com.google.firebase:firebase-appcheck:16.0.0@aar,com.google.firebase:firebase-appcheck-interop:16.0.0@aar,com.google.firebase:firebase-auth-interop:20.0.0@aar,com.google.firebase:firebase-common:20.1.1@aar,androidx.cardview:cardview:1.0.0@aar,androidx.legacy:legacy-support-v4:1.0.0@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar,androidx.constraintlayout:constraintlayout:2.0.1@aar,androidx.appcompat:appcompat:1.2.0@aar,androidx.drawerlayout:drawerlayout:1.1.1@aar,androidx.transition:transition:1.2.0@aar,androidx.appcompat:appcompat-resources:1.2.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.viewpager2:viewpager2:1.0.0@aar,androidx.dynamicanimation:dynamicanimation:1.0.0@aar,com.google.android.gms:play-services-location:17.0.0@aar,com.google.android.gms:play-services-maps:18.0.2@aar,com.google.android.gms:play-services-auth:20.1.0@aar,com.google.android.gms:play-services-auth-api-phone:18.0.1@aar,com.google.android.gms:play-services-safetynet:18.0.0@aar,com.google.android.gms:play-services-auth-base:18.0.1@aar,com.google.android.gms:play-services-base:18.0.1@aar,com.google.android.gms:play-services-tasks:18.0.1@aar,com.google.android.gms:play-services-places-placereport:17.0.0@aar,com.google.android.gms:play-services-basement:18.0.0@aar,com.facebook.android:facebook-core:14.1.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.loader:loader:1.0.0@aar,androidx.recyclerview:recyclerview:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.1.0@aar,com.facebook.android:facebook-bolts:14.1.0@aar,androidx.core:core-ktx:1.3.2@aar,androidx.activity:activity:1.2.0@aar,androidx.media:media:1.0.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.core:core:1.6.0@aar,androidx.core:core:1.6.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.concurrent:concurrent-futures:1.0.0@jar,androidx.interpolator:interpolator:1.0.0@aar,com.google.firebase:firebase-components:17.0.0@aar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.tracing:tracing:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.lifecycle:lifecycle-common:2.3.0@jar,androidx.arch.core:core-common:2.1.0@jar,androidx.annotation:annotation:1.2.0@jar,com.google.guava:guava:28.1-android@jar,org.jetbrains.kotlin:kotlin-stdlib:1.6.10@jar,androidx.annotation:annotation-experimental:1.1.0@aar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,com.google.guava:failureaccess:1.0.1@jar,com.google.code.findbugs:jsr305:3.0.2@jar,org.checkerframework:checker-compat-qual:2.5.5@jar,com.google.errorprone:error_prone_annotations:2.3.2@jar,com.google.j2objc:j2objc-annotations:1.3@jar,org.codehaus.mojo:animal-sniffer-annotations:1.18@jar,org.jetbrains:annotations:13.0@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10@jar,androidx.constraintlayout:constraintlayout-solver:2.0.1@jar,com.google.firebase:firebase-annotations:16.0.0@jar,com.android.installreferrer:installreferrer:1.0@aar,com.google.zxing:core:3.3.3@jar">
     <dependency
         name="__local_aars__:C:\Flutter_Projects\musicart\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"/>
+    <dependency
+        name="C:\Flutter_Projects\musicart\android@@:firebase_app_check::release"
+        simpleName="io.flutter.plugins.firebase.appcheck:firebase_app_check"/>
     <dependency
         name="C:\Flutter_Projects\musicart\android@@:firebase_auth::release"
         simpleName="io.flutter.plugins.firebase.auth:firebase_auth"/>
@@ -165,9 +195,6 @@
         name="C:\Flutter_Projects\musicart\android@@:flutter_plugin_android_lifecycle::release"
         simpleName="io.flutter.plugins.flutter_plugin_android_lifecycle:flutter_plugin_android_lifecycle"/>
     <dependency
-        name="C:\Flutter_Projects\musicart\android@@:geocoding::release"
-        simpleName="com.baseflow.geocoding:geocoding"/>
-    <dependency
         name="C:\Flutter_Projects\musicart\android@@:url_launcher_android::release"
         simpleName="io.flutter.plugins.urllauncher:url_launcher_android"/>
     <dependency
@@ -182,6 +209,9 @@
     <dependency
         name="C:\Flutter_Projects\musicart\android@@:flutter_facebook_auth::release"
         simpleName="app.meedu.flutter_facebook_auth:flutter_facebook_auth"/>
+    <dependency
+        name="C:\Flutter_Projects\musicart\android@@:geocoding::release"
+        simpleName="com.baseflow.geocoding:geocoding"/>
     <dependency
         name="io.flutter:flutter_embedding_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar"/>
     <dependency
@@ -199,21 +229,31 @@
     <dependency
         name="com.google.android.material:material:1.6.1@aar"/>
     <dependency
+        name="com.google.firebase:firebase-auth:21.0.6@aar"/>
+    <dependency
+        name="com.facebook.android:facebook-login:14.1.0@aar"/>
+    <dependency
+        name="com.facebook.android:facebook-common:14.1.0@aar"/>
+    <dependency
+        name="androidx.browser:browser:1.4.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-appcheck-safetynet:16.0.0@aar"/>
+    <dependency
         name="io.flutter:armeabi_v7a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar"/>
     <dependency
         name="io.flutter:arm64_v8a_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar"/>
     <dependency
         name="io.flutter:x86_64_release:1.0.0-caaafc5604ee9172293eb84a381be6aadd660317@jar"/>
     <dependency
-        name="com.google.firebase:firebase-auth:21.0.6@aar"/>
+        name="com.google.firebase:firebase-appcheck-debug:16.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-appcheck:16.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-appcheck-interop:16.0.0@aar"/>
     <dependency
         name="com.google.firebase:firebase-auth-interop:20.0.0@aar"/>
     <dependency
         name="com.google.firebase:firebase-common:20.1.1@aar"/>
-    <dependency
-        name="com.facebook.android:facebook-login:14.1.0@aar"/>
-    <dependency
-        name="com.facebook.android:facebook-common:14.1.0@aar"/>
     <dependency
         name="androidx.cardview:cardview:1.0.0@aar"/>
     <dependency
@@ -249,15 +289,15 @@
     <dependency
         name="com.google.android.gms:play-services-auth-api-phone:18.0.1@aar"/>
     <dependency
-        name="com.google.android.gms:play-services-auth-base:18.0.1@aar"/>
+        name="com.google.android.gms:play-services-safetynet:18.0.0@aar"/>
     <dependency
-        name="com.google.android.gms:play-services-safetynet:17.0.0@aar"/>
+        name="com.google.android.gms:play-services-auth-base:18.0.1@aar"/>
     <dependency
         name="com.google.android.gms:play-services-base:18.0.1@aar"/>
     <dependency
-        name="com.google.android.gms:play-services-places-placereport:17.0.0@aar"/>
-    <dependency
         name="com.google.android.gms:play-services-tasks:18.0.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-places-placereport:17.0.0@aar"/>
     <dependency
         name="com.google.android.gms:play-services-basement:18.0.0@aar"/>
     <dependency
@@ -277,8 +317,6 @@
     <dependency
         name="androidx.customview:customview:1.1.0@aar"/>
     <dependency
-        name="androidx.browser:browser:1.4.0@aar"/>
-    <dependency
         name="com.facebook.android:facebook-bolts:14.1.0@aar"/>
     <dependency
         name="androidx.core:core-ktx:1.3.2@aar"/>
@@ -293,27 +331,27 @@
     <dependency
         name="androidx.core:core:1.6.0@aar"/>
     <dependency
-        name="androidx.lifecycle:lifecycle-common-java8:2.2.0@jar"/>
-    <dependency
-        name="androidx.tracing:tracing:1.0.0@aar"/>
-    <dependency
         name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"/>
     <dependency
         name="androidx.collection:collection:1.1.0@jar"/>
     <dependency
-        name="androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar"/>
+        name="androidx.concurrent:concurrent-futures:1.0.0@jar"/>
+    <dependency
+        name="androidx.interpolator:interpolator:1.0.0@aar"/>
     <dependency
         name="com.google.firebase:firebase-components:17.0.0@aar"/>
+    <dependency
+        name="androidx.lifecycle:lifecycle-common-java8:2.2.0@jar"/>
+    <dependency
+        name="androidx.tracing:tracing:1.0.0@aar"/>
+    <dependency
+        name="androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar"/>
     <dependency
         name="androidx.cursoradapter:cursoradapter:1.0.0@aar"/>
     <dependency
         name="androidx.documentfile:documentfile:1.0.0@aar"/>
     <dependency
         name="androidx.print:print:1.0.0@aar"/>
-    <dependency
-        name="androidx.concurrent:concurrent-futures:1.0.0@jar"/>
-    <dependency
-        name="androidx.interpolator:interpolator:1.0.0@aar"/>
     <dependency
         name="androidx.lifecycle:lifecycle-runtime:2.3.0@aar"/>
     <dependency
@@ -341,9 +379,9 @@
     <dependency
         name="androidx.annotation:annotation-experimental:1.1.0@aar"/>
     <dependency
-        name="com.google.guava:failureaccess:1.0.1@jar"/>
-    <dependency
         name="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar"/>
+    <dependency
+        name="com.google.guava:failureaccess:1.0.1@jar"/>
     <dependency
         name="com.google.code.findbugs:jsr305:3.0.2@jar"/>
     <dependency
@@ -361,10 +399,10 @@
     <dependency
         name="androidx.constraintlayout:constraintlayout-solver:2.0.1@jar"/>
     <dependency
+        name="com.google.firebase:firebase-annotations:16.0.0@jar"/>
+    <dependency
         name="com.android.installreferrer:installreferrer:1.0@aar"/>
     <dependency
         name="com.google.zxing:core:3.3.3@jar"/>
-    <dependency
-        name="com.google.firebase:firebase-annotations:16.0.0@jar"/>
   </package>
 </dependencies>

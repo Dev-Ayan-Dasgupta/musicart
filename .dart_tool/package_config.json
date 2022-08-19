@@ -110,6 +110,24 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "firebase_app_check",
+      "rootUri": "file:///C:/Users/Ayan%20Dasgupta/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_app_check-0.0.6+20",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
+      "name": "firebase_app_check_platform_interface",
+      "rootUri": "file:///C:/Users/Ayan%20Dasgupta/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_app_check_platform_interface-0.0.4+14",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
+      "name": "firebase_app_check_web",
+      "rootUri": "file:///C:/Users/Ayan%20Dasgupta/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_app_check_web-0.0.6+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
       "name": "firebase_auth",
       "rootUri": "file:///C:/Users/Ayan%20Dasgupta/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_auth-3.6.3",
       "packageUri": "lib/",
@@ -650,7 +668,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-08-18T16:56:03.315232Z",
+  "generated": "2022-08-19T10:39:07.015634Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }
