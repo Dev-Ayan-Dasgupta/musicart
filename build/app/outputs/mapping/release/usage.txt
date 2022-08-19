@@ -13130,8 +13130,6 @@ com.google.android.gms.auth.account.zzf
 com.google.android.gms.auth.account.zzg
 com.google.android.gms.auth.api.Auth$AuthCredentialsOptions$Builder:
     public com.google.android.gms.auth.api.Auth$AuthCredentialsOptions$Builder forceEnableSaveDialog()
-com.google.android.gms.auth.api.Auth$AuthCredentialsOptions:
-    public final java.lang.String zbd()
 com.google.android.gms.auth.api.Auth:
     private void <init>()
 com.google.android.gms.auth.api.AuthProxy:
@@ -13181,39 +13179,48 @@ com.google.android.gms.auth.api.accounttransfer.zzu
 com.google.android.gms.auth.api.accounttransfer.zzv
 com.google.android.gms.auth.api.accounttransfer.zzw
 com.google.android.gms.auth.api.accounttransfer.zzx
-com.google.android.gms.auth.api.credentials.Credential$Builder
-com.google.android.gms.auth.api.credentials.Credential
-com.google.android.gms.auth.api.credentials.CredentialPickerConfig$Builder
+com.google.android.gms.auth.api.credentials.Credential$Builder:
+    public void <init>(com.google.android.gms.auth.api.credentials.Credential)
+com.google.android.gms.auth.api.credentials.Credential:
+    public static final java.lang.String EXTRA_KEY
+    static synthetic bridge android.net.Uri zba(com.google.android.gms.auth.api.credentials.Credential)
+    static synthetic bridge java.lang.String zbb(com.google.android.gms.auth.api.credentials.Credential)
+    static synthetic bridge java.lang.String zbc(com.google.android.gms.auth.api.credentials.Credential)
+    static synthetic bridge java.lang.String zbd(com.google.android.gms.auth.api.credentials.Credential)
+    static synthetic bridge java.lang.String zbe(com.google.android.gms.auth.api.credentials.Credential)
+    static synthetic bridge java.lang.String zbf(com.google.android.gms.auth.api.credentials.Credential)
+    static synthetic bridge java.lang.String zbg(com.google.android.gms.auth.api.credentials.Credential)
+    static synthetic bridge java.util.List zbh(com.google.android.gms.auth.api.credentials.Credential)
+com.google.android.gms.auth.api.credentials.CredentialPickerConfig$Builder:
+    public com.google.android.gms.auth.api.credentials.CredentialPickerConfig$Builder setForNewAccount(boolean)
+    public com.google.android.gms.auth.api.credentials.CredentialPickerConfig$Builder setPrompt(int)
 com.google.android.gms.auth.api.credentials.CredentialPickerConfig$Prompt
-com.google.android.gms.auth.api.credentials.CredentialPickerConfig
-com.google.android.gms.auth.api.credentials.CredentialRequest$Builder
-com.google.android.gms.auth.api.credentials.CredentialRequest
-com.google.android.gms.auth.api.credentials.CredentialRequestResponse
-com.google.android.gms.auth.api.credentials.CredentialRequestResult
-com.google.android.gms.auth.api.credentials.Credentials
+com.google.android.gms.auth.api.credentials.CredentialRequest$Builder:
+    public com.google.android.gms.auth.api.credentials.CredentialRequest$Builder setCredentialHintPickerConfig(com.google.android.gms.auth.api.credentials.CredentialPickerConfig)
+    public com.google.android.gms.auth.api.credentials.CredentialRequest$Builder setCredentialPickerConfig(com.google.android.gms.auth.api.credentials.CredentialPickerConfig)
+    public com.google.android.gms.auth.api.credentials.CredentialRequest$Builder setSupportsPasswordLogin(boolean)
+com.google.android.gms.auth.api.credentials.CredentialRequest:
+    public java.util.Set getAccountTypesSet()
+    public boolean getSupportsPasswordLogin()
+com.google.android.gms.auth.api.credentials.Credentials:
+    public void <init>()
+    public static com.google.android.gms.auth.api.credentials.CredentialsClient getClient(android.app.Activity)
+    public static com.google.android.gms.auth.api.credentials.CredentialsClient getClient(android.app.Activity,com.google.android.gms.auth.api.credentials.CredentialsOptions)
+    public static com.google.android.gms.auth.api.credentials.CredentialsClient getClient(android.content.Context,com.google.android.gms.auth.api.credentials.CredentialsOptions)
 com.google.android.gms.auth.api.credentials.CredentialsApi:
     public static final int ACTIVITY_RESULT_ADD_ACCOUNT
     public static final int ACTIVITY_RESULT_NO_HINTS_AVAILABLE
     public static final int ACTIVITY_RESULT_OTHER_ACCOUNT
     public static final int CREDENTIAL_PICKER_REQUEST_CODE
-    public abstract com.google.android.gms.common.api.PendingResult delete(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.auth.api.credentials.Credential)
     public abstract com.google.android.gms.common.api.PendingResult disableAutoSignIn(com.google.android.gms.common.api.GoogleApiClient)
     public abstract android.app.PendingIntent getHintPickerIntent(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.auth.api.credentials.HintRequest)
-    public abstract com.google.android.gms.common.api.PendingResult request(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.auth.api.credentials.CredentialRequest)
-    public abstract com.google.android.gms.common.api.PendingResult save(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.auth.api.credentials.Credential)
-com.google.android.gms.auth.api.credentials.CredentialsClient
-com.google.android.gms.auth.api.credentials.CredentialsOptions$Builder
-com.google.android.gms.auth.api.credentials.CredentialsOptions
-com.google.android.gms.auth.api.credentials.HintRequest$Builder
-com.google.android.gms.auth.api.credentials.HintRequest
-com.google.android.gms.auth.api.credentials.IdToken
+com.google.android.gms.auth.api.credentials.CredentialsClient:
+    void <init>(android.app.Activity,com.google.android.gms.auth.api.Auth$AuthCredentialsOptions)
+    public com.google.android.gms.tasks.Task disableAutoSignIn()
+com.google.android.gms.auth.api.credentials.CredentialsOptions$Builder:
+    public final synthetic bridge com.google.android.gms.auth.api.Auth$AuthCredentialsOptions$Builder forceEnableSaveDialog()
+    public com.google.android.gms.auth.api.credentials.CredentialsOptions$Builder forceEnableSaveDialog()
 com.google.android.gms.auth.api.credentials.IdentityProviders
-com.google.android.gms.auth.api.credentials.zba
-com.google.android.gms.auth.api.credentials.zbb
-com.google.android.gms.auth.api.credentials.zbc
-com.google.android.gms.auth.api.credentials.zbd
-com.google.android.gms.auth.api.credentials.zbe
-com.google.android.gms.auth.api.credentials.zbf
 com.google.android.gms.auth.api.identity.BeginSignInRequest$Builder
 com.google.android.gms.auth.api.identity.BeginSignInRequest$GoogleIdTokenRequestOptions$Builder
 com.google.android.gms.auth.api.identity.BeginSignInRequest$GoogleIdTokenRequestOptions
@@ -13222,6 +13229,8 @@ com.google.android.gms.auth.api.identity.BeginSignInRequest$PasswordRequestOptio
 com.google.android.gms.auth.api.identity.BeginSignInRequest
 com.google.android.gms.auth.api.identity.BeginSignInResult
 com.google.android.gms.auth.api.identity.CredentialSavingClient
+com.google.android.gms.auth.api.identity.GetPhoneNumberHintIntentRequest$Builder
+com.google.android.gms.auth.api.identity.GetPhoneNumberHintIntentRequest
 com.google.android.gms.auth.api.identity.GetSignInIntentRequest$Builder
 com.google.android.gms.auth.api.identity.GetSignInIntentRequest
 com.google.android.gms.auth.api.identity.Identity
@@ -13247,6 +13256,8 @@ com.google.android.gms.auth.api.identity.zbj
 com.google.android.gms.auth.api.identity.zbk
 com.google.android.gms.auth.api.identity.zbl
 com.google.android.gms.auth.api.identity.zbm
+com.google.android.gms.auth.api.identity.zbn
+com.google.android.gms.auth.api.identity.zbo
 com.google.android.gms.auth.api.phone.R
 com.google.android.gms.auth.api.phone.SmsCodeAutofillClient$PermissionState
 com.google.android.gms.auth.api.phone.SmsCodeAutofillClient
@@ -13264,7 +13275,6 @@ com.google.android.gms.auth.api.phone.SmsRetriever:
 com.google.android.gms.auth.api.phone.SmsRetrieverApi
 com.google.android.gms.auth.api.phone.SmsRetrieverClient:
     public void <init>(android.app.Activity)
-    public abstract com.google.android.gms.tasks.Task startSmsUserConsent(java.lang.String)
 com.google.android.gms.auth.api.phone.SmsRetrieverStatusCodes
 com.google.android.gms.auth.api.proxy.AuthApiStatusCodes
 com.google.android.gms.auth.api.proxy.ProxyApi$ProxyResult
@@ -13325,9 +13335,6 @@ com.google.android.gms.auth.api.signin.internal.zbd:
 com.google.android.gms.auth.api.signin.internal.zbe:
     public final android.content.Intent getSignInIntent()
     public final boolean providesSignIn()
-com.google.android.gms.auth.api.signin.zba:
-    static final synthetic int[] zba
-    static void <clinit>()
 com.google.android.gms.auth.api.signin.zbb:
     private void <init>()
 com.google.android.gms.auth.api.zbb:
@@ -14357,10 +14364,8 @@ com.google.android.gms.dynamic.zza
 com.google.android.gms.dynamite.DynamiteModule:
     public static int getRemoteVersion(android.content.Context,java.lang.String)
     public android.os.IBinder instantiate(java.lang.String)
-com.google.android.gms.internal.auth-api-phone.zzaa
 com.google.android.gms.internal.auth-api-phone.zzab:
     public void <init>(android.app.Activity)
-    public final com.google.android.gms.tasks.Task startSmsUserConsent(java.lang.String)
 com.google.android.gms.internal.auth-api-phone.zzc:
     public static boolean zzc(android.os.Parcel)
 com.google.android.gms.internal.auth-api-phone.zzd
@@ -14372,7 +14377,6 @@ com.google.android.gms.internal.auth-api-phone.zzh:
     public final void zzd(java.lang.String,com.google.android.gms.internal.auth-api-phone.zzg)
     public final void zze(com.google.android.gms.common.api.internal.IStatusCallback)
     public final void zzf(com.google.android.gms.common.api.internal.IStatusCallback)
-    public final void zzh(java.lang.String,com.google.android.gms.internal.auth-api-phone.zzj)
 com.google.android.gms.internal.auth-api-phone.zzk
 com.google.android.gms.internal.auth-api-phone.zzl
 com.google.android.gms.internal.auth-api-phone.zzm
@@ -14385,7 +14389,6 @@ com.google.android.gms.internal.auth-api-phone.zzs
 com.google.android.gms.internal.auth-api-phone.zzt
 com.google.android.gms.internal.auth-api-phone.zzu
 com.google.android.gms.internal.auth-api-phone.zzv
-com.google.android.gms.internal.auth-api-phone.zzy
 com.google.android.gms.internal.auth-api.zbaa
 com.google.android.gms.internal.auth-api.zbab
 com.google.android.gms.internal.auth-api.zbac
@@ -14409,36 +14412,20 @@ com.google.android.gms.internal.auth-api.zbat
 com.google.android.gms.internal.auth-api.zbau
 com.google.android.gms.internal.auth-api.zbav
 com.google.android.gms.internal.auth-api.zbaw
+com.google.android.gms.internal.auth-api.zbax
 com.google.android.gms.internal.auth-api.zbay
-com.google.android.gms.internal.auth-api.zbd
-com.google.android.gms.internal.auth-api.zbe
-com.google.android.gms.internal.auth-api.zbf
-com.google.android.gms.internal.auth-api.zbg
-com.google.android.gms.internal.auth-api.zbh
-com.google.android.gms.internal.auth-api.zbi
+com.google.android.gms.internal.auth-api.zbaz
+com.google.android.gms.internal.auth-api.zbba
+com.google.android.gms.internal.auth-api.zbd:
+    public void zbc(com.google.android.gms.common.api.Status)
 com.google.android.gms.internal.auth-api.zbj
-com.google.android.gms.internal.auth-api.zbk
 com.google.android.gms.internal.auth-api.zbl:
-    public final com.google.android.gms.common.api.PendingResult delete(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.auth.api.credentials.Credential)
     public final com.google.android.gms.common.api.PendingResult disableAutoSignIn(com.google.android.gms.common.api.GoogleApiClient)
     public final android.app.PendingIntent getHintPickerIntent(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.auth.api.credentials.HintRequest)
-    public final com.google.android.gms.common.api.PendingResult request(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.auth.api.credentials.CredentialRequest)
-    public final com.google.android.gms.common.api.PendingResult save(com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.auth.api.credentials.Credential)
-com.google.android.gms.internal.auth-api.zbm
-com.google.android.gms.internal.auth-api.zbn
 com.google.android.gms.internal.auth-api.zbo:
     final com.google.android.gms.auth.api.Auth$AuthCredentialsOptions zba()
-com.google.android.gms.internal.auth-api.zbp
-com.google.android.gms.internal.auth-api.zbq
-com.google.android.gms.internal.auth-api.zbr
-com.google.android.gms.internal.auth-api.zbs
 com.google.android.gms.internal.auth-api.zbt:
-    public final void zbc(com.google.android.gms.internal.auth-api.zbs,com.google.android.gms.internal.auth-api.zbp)
-    public final void zbd(com.google.android.gms.internal.auth-api.zbs,com.google.android.gms.auth.api.credentials.CredentialRequest)
-    public final void zbe(com.google.android.gms.internal.auth-api.zbs,com.google.android.gms.internal.auth-api.zbu)
     public final void zbf(com.google.android.gms.internal.auth-api.zbs)
-com.google.android.gms.internal.auth-api.zbu
-com.google.android.gms.internal.auth-api.zbv
 com.google.android.gms.internal.auth-api.zbw
 com.google.android.gms.internal.auth-api.zbx
 com.google.android.gms.internal.auth-api.zby
@@ -25438,6 +25425,32 @@ com.google.zxing.qrcode.encoder.QRCode:
     public int getMaskPattern()
     public com.google.zxing.qrcode.decoder.Mode getMode()
     public com.google.zxing.qrcode.decoder.Version getVersion()
+fman.ge.smart_auth.AppSignatureHelper$Companion:
+    public final java.lang.String getTAG()
+fman.ge.smart_auth.AppSignatureHelper:
+    private static final java.lang.String HASH_TYPE
+    private static final int NUM_BASE64_CHAR
+    private static final int NUM_HASHED_BYTES
+    public static final synthetic java.lang.String access$getTAG$cp()
+fman.ge.smart_auth.BuildConfig
+fman.ge.smart_auth.R$anim
+fman.ge.smart_auth.R$animator
+fman.ge.smart_auth.R$attr
+fman.ge.smart_auth.R$color
+fman.ge.smart_auth.R$dimen
+fman.ge.smart_auth.R$drawable
+fman.ge.smart_auth.R$id
+fman.ge.smart_auth.R$integer
+fman.ge.smart_auth.R$layout
+fman.ge.smart_auth.R$string
+fman.ge.smart_auth.R$style
+fman.ge.smart_auth.R$styleable
+fman.ge.smart_auth.R
+fman.ge.smart_auth.SmartAuthPlugin:
+    private static final int GET_CREDENTIAL_REQUEST
+    private static final int HINT_REQUEST
+    private static final int SAVE_CREDENTIAL_REQUEST
+    private static final int USER_CONSENT_REQUEST
 io.flutter.BuildConfig
 io.flutter.FlutterInjector$Builder:
     public io.flutter.FlutterInjector$Builder setDeferredComponentManager(io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager)
@@ -28582,7 +28595,6 @@ kotlin.collections.CollectionsKt___CollectionsKt:
     public static final void forEach(java.lang.Iterable,kotlin.jvm.functions.Function1)
     public static final void forEachIndexed(java.lang.Iterable,kotlin.jvm.functions.Function2)
     private static final java.lang.Object getOrElse(java.util.List,int,kotlin.jvm.functions.Function1)
-    public static final java.lang.Object getOrNull(java.util.List,int)
     public static final java.util.Map groupBy(java.lang.Iterable,kotlin.jvm.functions.Function1)
     public static final java.util.Map groupBy(java.lang.Iterable,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1)
     public static final java.util.Map groupByTo(java.lang.Iterable,java.util.Map,kotlin.jvm.functions.Function1)

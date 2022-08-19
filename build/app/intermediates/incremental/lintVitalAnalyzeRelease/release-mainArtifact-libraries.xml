@@ -108,6 +108,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="C:\Flutter_Projects\musicart\android@@:smart_auth::release"
+      jars="C:\Flutter_Projects\musicart\build\smart_auth\.transforms\5dc5e32130c07fd1c1eabd23e2fc8a71\transformed\out\jars\classes.jar"
+      resolved="fman.ge.smart_auth:smart_auth:unspecified"
+      folder="C:\Flutter_Projects\musicart\build\smart_auth\.transforms\5dc5e32130c07fd1c1eabd23e2fc8a71\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="C:\Flutter_Projects\musicart\android@@:google_sign_in_android::release"
       jars="C:\Flutter_Projects\musicart\build\google_sign_in_android\.transforms\408d49e8ca2f0aa3ede676c03382aeed\transformed\out\jars\classes.jar"
       resolved="io.flutter.plugins.googlesignin:google_sign_in_android:unspecified"
@@ -800,10 +813,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.android.gms:play-services-auth:20.0.1@aar"
-      jars="C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\9d5ce699c81f146c39aea3d75757161d\transformed\jetified-play-services-auth-20.0.1\jars\classes.jar"
-      resolved="com.google.android.gms:play-services-auth:20.0.1"
-      folder="C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\9d5ce699c81f146c39aea3d75757161d\transformed\jetified-play-services-auth-20.0.1"
+      name="com.google.android.gms:play-services-auth:20.1.0@aar"
+      jars="C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\87b66fbc4102b6b73e9917292c412064\transformed\jetified-play-services-auth-20.1.0\jars\classes.jar"
+      resolved="com.google.android.gms:play-services-auth:20.1.0"
+      folder="C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\87b66fbc4102b6b73e9917292c412064\transformed\jetified-play-services-auth-20.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

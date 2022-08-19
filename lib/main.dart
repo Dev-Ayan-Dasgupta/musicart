@@ -17,6 +17,7 @@ import 'package:musicart/screens/drums_screen.dart';
 import 'package:musicart/screens/forgot_password.dart';
 import 'package:musicart/screens/order_history_screen.dart';
 import 'package:musicart/screens/payments_screen.dart';
+import 'package:musicart/screens/phone_signin_screen.dart';
 import 'package:musicart/screens/search_instrument_screen.dart';
 import 'package:musicart/screens/signup_screen.dart';
 import 'package:musicart/screens/splash_screen.dart';
@@ -40,6 +41,8 @@ void main() async {
   runApp(const MyApp());
 }
 
+final navigatorKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -58,6 +61,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        navigatorKey: navigatorKey,
         title: 'Musicart',
         theme: ThemeData(
           primarySwatch: Colors.grey,
@@ -86,6 +90,7 @@ class MyApp extends StatelessWidget {
           "/sign-up": (context) => const SignUpScreen(),
           "/sign-in": (context) => const SignInScreen(),
           "/forgot-password": (context) => const ForgotPasswordScreen(),
+          "/phone-signin": (context) => const PhoneSigninScreen(),
         },
       ),
     );

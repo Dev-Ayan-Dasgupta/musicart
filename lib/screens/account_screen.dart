@@ -77,7 +77,7 @@ class _AccountScreenState extends State<AccountScreen> {
                     TextSpan(
                       text: "this is your account screen",
                       style: globalTextStyle.copyWith(
-                        fontSize: screenWidth * 0.04,
+                        fontSize: screenWidth * 0.03,
                         color: primaryColor,
                       ),
                     ),

@@ -9,6 +9,7 @@ class CustomTextField extends StatefulWidget {
     required this.textEditingController,
     required this.hintText,
     this.keyboardType,
+    required this.iconData,
   }) : super(key: key);
 
   final double width;
@@ -16,6 +17,7 @@ class CustomTextField extends StatefulWidget {
   final TextEditingController textEditingController;
   final String hintText;
   final TextInputType? keyboardType;
+  final IconData iconData;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -39,7 +41,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: widget.width * 0.04),
             child: Icon(
-              Icons.email_rounded,
+              widget.iconData,
               color: Colors.grey,
               size: widget.width * 0.04,
             ),

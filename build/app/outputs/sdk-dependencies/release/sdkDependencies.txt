@@ -712,10 +712,10 @@ library {
   maven_library {
     groupId: "com.google.android.gms"
     artifactId: "play-services-auth"
-    version: "20.0.1"
+    version: "20.1.0"
   }
   digests {
-    sha256: "\306\177w\244\207p\006 Z\035\'\2075\202\342\270\237U\222\321/\227\202\251\307\302u\222\nb\317\325"
+    sha256: "\375ng\225\221\257\v\222\222\354\310K\234\250[\271a\t\004\004x\331\264be5\245\r\032\237\367N"
   }
   repo_index {
   }
@@ -1150,7 +1150,7 @@ library {
 }
 library {
   digests {
-    sha256: "\371\372~b\256\312\036\016:A~\206\265\260 \037\333\315cP*l\023\304\024V[\213\336\005;Z"
+    sha256: "\321\214\324\305/\301\324\003e\234n\211O\263\037m\245\254Fe\373\335\345\253\361ku\300\311R\314\233"
   }
 }
 library_dependencies {
@@ -1680,6 +1680,7 @@ module_dependencies {
   dependency_index: 1
   dependency_index: 51
   dependency_index: 58
+  dependency_index: 27
   dependency_index: 60
   dependency_index: 94
 }
@@ -1706,6 +1707,16 @@ repositories {
 repositories {
   maven_repo {
     url: "https://jcenter.bintray.com/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://dl.google.com/dl/android/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://repo.maven.apache.org/maven2/"
   }
 }
 repositories {

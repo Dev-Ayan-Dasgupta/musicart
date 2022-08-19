@@ -26,8 +26,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void signUpUser() async {
     context.read<FirebaseAuthMethods>().signUpWithEmail(
-        email: _emailController.text,
-        password: _passwordController.text,
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
         context: context);
   }
 
@@ -80,6 +80,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: screenWidth * 0.8 / 6.8,
                 textEditingController: _emailController,
                 hintText: "Enter your email",
+                iconData: Icons.email_rounded,
               ),
               SizedBox(
                 height: screenHeight * 0.02,

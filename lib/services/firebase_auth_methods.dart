@@ -108,6 +108,27 @@ class FirebaseAuthMethods {
     }
   }
 
+  //PHONE SIGNIN
+  phoneLogin(BuildContext context, String? phoneNumber,
+      String verificationCode) async {
+    await FirebaseAuth.instance.verifyPhoneNumber(
+      phoneNumber: phoneNumber,
+      verificationCompleted: (PhoneAuthCredential credential) async {
+        await FirebaseAuth.instance.signInWithCredential(credential);
+      },
+      verificationFailed: (FirebaseAuthException e) {
+        showSnackBar(context, e.message!);
+      },
+      codeSent: (String verificationID, int? resendToken) {
+        verificationCode = verificationID;
+      },
+      codeAutoRetrievalTimeout: (String verificationID) {
+        //verificationCode = verificationID;
+      },
+      timeout: const Duration(seconds: 120),
+    );
+  }
+
   //ANONYMOUS SIGN IN
   Future<void> loginAnonymously(BuildContext context) async {
     try {
