@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:musicart/global_variables/global_variables.dart';
@@ -42,6 +44,36 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
       },
       timeout: const Duration(seconds: 120),
     );
+  }
+
+  late Timer _timer;
+  int start = 60;
+  String resendMessage = "";
+  //bool timerStarted = false;
+
+  void startTimer() {
+    const oneSec = Duration(seconds: 1);
+    _timer = Timer.periodic(oneSec, (Timer timer) {
+      if (start == 0) {
+        setState(() {
+          _timer.cancel();
+          (start == 0)
+              ? resendMessage = "Haven't received OTP? Resend."
+              : (start >= 10)
+                  ? resendMessage = " Resend OTP in 00:$start"
+                  : resendMessage = " Resend OTP in 00:0$start";
+        });
+      } else {
+        setState(() {
+          start--;
+          (start == 0)
+              ? resendMessage = "Haven't received OTP? Resend."
+              : (start >= 10)
+                  ? resendMessage = " Resend OTP in 00:$start"
+                  : resendMessage = " Resend OTP in 00:0$start";
+        });
+      }
+    });
   }
 
   @override
@@ -89,13 +121,16 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
                             borderRadius: BorderRadius.circular(5))),
                     onPressed: () {
                       phoneLogin(context, "+91${_phoneController.text}");
-                      // context.read<FirebaseAuthMethods>().phoneLogin(
-                      //     context, "+91${_phoneController.text}", verificationCode);
+
                       setState(() {
                         phn = _phoneController.text;
                       });
 
-                      //Navigator.pushNamed(context, "/home");
+                      if (start == 0) {
+                        start = 60;
+                      }
+
+                      startTimer();
                     },
                     child: Text(
                       "Generate OTP",
@@ -138,13 +173,9 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
                   androidSmsAutofillMethod:
                       AndroidSmsAutofillMethod.smsUserConsentApi,
                   controller: _otpController,
-                  onChanged: (pin) {
-                    print(_otpController.text);
-                    print(verificationCode);
-                  },
+                  onChanged: (pin) {},
                   onSubmitted: (pin) async {
                     try {
-                      print(verificationCode);
                       await FirebaseAuth.instance.signInWithCredential(
                           PhoneAuthProvider.credential(
                               verificationId: verificationCode, smsCode: pin));
@@ -166,7 +197,6 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
                             borderRadius: BorderRadius.circular(5))),
                     onPressed: () async {
                       try {
-                        print(verificationCode);
                         await FirebaseAuth.instance
                             .signInWithCredential(PhoneAuthProvider.credential(
                           verificationId: verificationCode,
@@ -191,9 +221,23 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
                   height: screenHeight * 0.02,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    if (start == 0) {
+                      phoneLogin(context, "+91${_phoneController.text}");
+
+                      setState(() {
+                        phn = _phoneController.text;
+                      });
+
+                      if (start == 0) {
+                        start = 60;
+                      }
+
+                      startTimer();
+                    }
+                  },
                   child: Text(
-                    "Haven't received OTP? Resend.",
+                    resendMessage,
                     style: globalTextStyle.copyWith(
                       color: Colors.blueGrey,
                       fontSize: screenWidth * 0.03,
