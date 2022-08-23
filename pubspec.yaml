@@ -53,6 +53,7 @@ dependencies:
   provider: ^6.0.3
   pinput: ^2.2.12
   firebase_app_check: ^0.0.6+20
+  cloud_firestore: ^3.4.5
 
 dev_dependencies:
   flutter_test:

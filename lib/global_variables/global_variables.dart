@@ -19,6 +19,8 @@ String userName = "Guest";
 
 bool isSignedIn = false;
 
+bool isWishEmpty = true;
+
 //final User user = FirebaseAuthMethods(FirebaseAuth.instance).user;
 
 List<BottomNavyBarItem> navBarItems = [
@@ -406,7 +408,7 @@ List<Map<String, dynamic>> instruments = [
   },
 ];
 
-List<Map<String, dynamic>> wishList = [];
+List<dynamic> wishList = [];
 List<Map<String, dynamic>> cartList = [];
 
 Map<Map<String, dynamic>, int> cartMap = HashMap();

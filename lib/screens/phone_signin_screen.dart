@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:musicart/global_variables/global_variables.dart';
@@ -10,6 +11,8 @@ import 'package:musicart/widgets/custom_divider.dart';
 import 'package:musicart/widgets/custom_textfield.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
+
+import '../models/customer_model.dart';
 
 class PhoneSigninScreen extends StatefulWidget {
   const PhoneSigninScreen({Key? key}) : super(key: key);
@@ -176,9 +179,25 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
                   onChanged: (pin) {},
                   onSubmitted: (pin) async {
                     try {
-                      await FirebaseAuth.instance.signInWithCredential(
-                          PhoneAuthProvider.credential(
+                      UserCredential cred = await FirebaseAuth.instance
+                          .signInWithCredential(PhoneAuthProvider.credential(
                               verificationId: verificationCode, smsCode: pin));
+
+                      Customer customer = Customer(
+                        uid: cred.user!.uid,
+                        username: cred.user!.phoneNumber!,
+                        cart: [],
+                        wish: [],
+                        orders: [],
+                        cards: [],
+                        banks: [],
+                        addresses: [],
+                      );
+
+                      await FirebaseFirestore.instance
+                          .collection('customers')
+                          .doc(cred.user!.uid)
+                          .set(customer.toJson());
                     } catch (e) {
                       showSnackBar(context, e.toString());
                     }
@@ -197,11 +216,27 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
                             borderRadius: BorderRadius.circular(5))),
                     onPressed: () async {
                       try {
-                        await FirebaseAuth.instance
+                        UserCredential cred = await FirebaseAuth.instance
                             .signInWithCredential(PhoneAuthProvider.credential(
                           verificationId: verificationCode,
                           smsCode: _otpController.text,
                         ));
+
+                        Customer customer = Customer(
+                          uid: cred.user!.uid,
+                          username: cred.user!.email!,
+                          cart: [],
+                          wish: [],
+                          orders: [],
+                          cards: [],
+                          banks: [],
+                          addresses: [],
+                        );
+
+                        await FirebaseFirestore.instance
+                            .collection('customers')
+                            .doc(cred.user!.uid)
+                            .set(customer.toJson());
                       } catch (e) {
                         showSnackBar(context, e.toString());
                       }

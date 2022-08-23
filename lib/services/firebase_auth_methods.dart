@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:musicart/global_variables/global_variables.dart';
 
+import '../models/customer_model.dart';
 import '../utils/show_snackbar.dart';
 
 class FirebaseAuthMethods {
@@ -24,11 +26,25 @@ class FirebaseAuthMethods {
     required BuildContext context,
   }) async {
     try {
-      // final credential = await _auth.createUserWithEmailAndPassword(
-      //     email: email, password: password);
-      await _auth.createUserWithEmailAndPassword(
+      UserCredential cred = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
-      //await credential.user!.sendEmailVerification();
+
+      Customer customer = Customer(
+        uid: cred.user!.uid,
+        username: cred.user!.email!,
+        cart: [],
+        wish: [],
+        orders: [],
+        cards: [],
+        banks: [],
+        addresses: [],
+      );
+
+      await FirebaseFirestore.instance
+          .collection('customers')
+          .doc(cred.user!.uid)
+          .set(customer.toJson());
+
       await sendEmailVerification(context);
     } on FirebaseAuthException catch (e) {
       showSnackBar(context, e.message!);
@@ -83,8 +99,24 @@ class FirebaseAuthMethods {
           final credential = GoogleAuthProvider.credential(
               accessToken: googleAuth?.accessToken,
               idToken: googleAuth?.idToken);
-          UserCredential userCredential =
-              await _auth.signInWithCredential(credential);
+          UserCredential cred = await _auth.signInWithCredential(credential);
+
+          Customer customer = Customer(
+            uid: cred.user!.uid,
+            username: cred.user!.email!,
+            cart: [],
+            wish: [],
+            orders: [],
+            cards: [],
+            banks: [],
+            addresses: [],
+          );
+
+          await FirebaseFirestore.instance
+              .collection('customers')
+              .doc(cred.user!.uid)
+              .set(customer.toJson());
+
           //if we want to SignUp with Google (not SignIn)
           // if (userCredential.user != null) {
           //   if (userCredential.additionalUserInfo!.isNewUser) {}

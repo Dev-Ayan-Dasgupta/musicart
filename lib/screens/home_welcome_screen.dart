@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:musicart/screens/instrument_detail.dart';
 import 'package:musicart/screens/wishlist_screen.dart';
@@ -6,10 +7,12 @@ import 'package:musicart/widgets/brand_logo_card.dart';
 import 'package:musicart/widgets/instrument_card.dart';
 import 'package:musicart/widgets/search_widget.dart';
 import 'package:musicart/widgets/text_label.dart';
+import 'package:provider/provider.dart';
 
 import '../global_variables/global_variables.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+import '../services/firebase_auth_methods.dart';
 import '../widgets/custom_appbar.dart';
 
 class HomeWelcomeScreen extends StatefulWidget {
@@ -25,8 +28,30 @@ class _HomeWelcomeScreenState extends State<HomeWelcomeScreen> {
   int _currentIndex = 0;
   int _currentCarouselIndex = 0;
 
+  final Stream<QuerySnapshot> instrumentsStream =
+      FirebaseFirestore.instance.collection("instrument").snapshots();
+
+  final List storedInstruments = [];
+  List customerWishlist = [];
+
   @override
   Widget build(BuildContext context) {
+    final currUser = context.read<FirebaseAuthMethods>().user;
+    Future<List> generateFutureCustomerWishlist() async {
+      return FirebaseFirestore.instance
+          .collection('customers')
+          .doc(currUser!.uid)
+          .get()
+          .then((value) => value.get('wish'));
+    }
+
+    void generateCustomerWishList() async {
+      customerWishlist = await generateFutureCustomerWishlist();
+    }
+
+    generateCustomerWishList();
+    wishList = customerWishlist;
+
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
     List<Widget> indicators(imagesLength, currentIndex) {
@@ -172,89 +197,182 @@ class _HomeWelcomeScreenState extends State<HomeWelcomeScreen> {
                               horizontal: screenWidth * 0.025),
                           child: SizedBox(
                             height: screenWidth * 0.4 / 0.75,
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: ListView.builder(
-                                    itemCount: instruments.length,
-                                    scrollDirection: Axis.horizontal,
-                                    //shrinkWrap: true,
-                                    physics:
-                                        const AlwaysScrollableScrollPhysics(),
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      return InstrumentCard(
-                                        width: screenWidth * 0.4,
-                                        height: screenWidth * 0.4 / 0.75,
-                                        instrumentImageUrl: instruments[index]
-                                            ["img-url"],
-                                        instrumentName: instruments[index]
-                                            ["name"],
-                                        instrumentMrp:
-                                            "₹${instruments[index]["mrp"].toString()}",
-                                        instrumentPrice:
-                                            "₹${instruments[index]["price"].toString()}",
-                                        paddingRight: screenHeight * 0.015,
-                                        innerHorizontalSymmetricPadding:
-                                            screenWidth * 0.025,
-                                        innerVerticalSymmetricPadding:
-                                            screenHeight * 0.00,
-                                        instrumentDiscount:
-                                            "${(((1 - (instruments[index]["price"] / instruments[index]["mrp"])) * 100).round()).toString()}% off",
-                                        onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      InstrumentDetail(
-                                                          instrument:
-                                                              instruments[
-                                                                  index])));
+                            child: StreamBuilder<QuerySnapshot>(
+                              stream: instrumentsStream,
+                              builder: (BuildContext context,
+                                  AsyncSnapshot<QuerySnapshot> snapshot) {
+                                if (snapshot.hasError) {
+                                  print("Someting went wrong");
+                                }
+                                if (snapshot.connectionState ==
+                                    ConnectionState.waiting) {
+                                  return const Center(
+                                    child: CircularProgressIndicator(),
+                                  );
+                                }
+
+                                storedInstruments.clear();
+                                snapshot.data!.docs
+                                    .map((DocumentSnapshot document) {
+                                  Map a =
+                                      document.data() as Map<String, dynamic>;
+                                  storedInstruments.add(a);
+                                }).toList();
+
+                                return Row(
+                                  children: [
+                                    Expanded(
+                                      child: ListView.builder(
+                                        itemCount: storedInstruments.length,
+                                        scrollDirection: Axis.horizontal,
+                                        //shrinkWrap: true,
+                                        physics:
+                                            const AlwaysScrollableScrollPhysics(),
+                                        itemBuilder:
+                                            (BuildContext context, int index) {
+                                          return InstrumentCard(
+                                            width: screenWidth * 0.4,
+                                            height: screenWidth * 0.4 / 0.75,
+                                            instrumentImageUrl:
+                                                storedInstruments[index]
+                                                    ["img-url"],
+                                            instrumentName:
+                                                storedInstruments[index]
+                                                    ["name"],
+                                            instrumentMrp:
+                                                "₹${storedInstruments[index]["mrp"].toString()}",
+                                            instrumentPrice:
+                                                "₹${storedInstruments[index]["price"].toString()}",
+                                            paddingRight: screenHeight * 0.015,
+                                            innerHorizontalSymmetricPadding:
+                                                screenWidth * 0.025,
+                                            innerVerticalSymmetricPadding:
+                                                screenHeight * 0.00,
+                                            instrumentDiscount:
+                                                "${(((1 - (storedInstruments[index]["price"] / storedInstruments[index]["mrp"])) * 100).round()).toString()}% off",
+                                            onTap: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          InstrumentDetail(
+                                                              instrument:
+                                                                  storedInstruments[
+                                                                      index])));
+                                            },
+                                            onWishTap: () async {
+                                              bool check = false;
+                                              for (int i = 0;
+                                                  i < customerWishlist.length;
+                                                  i++) {
+                                                if (customerWishlist[i]
+                                                        ["iid"] ==
+                                                    storedInstruments[index]
+                                                        ["iid"]) {
+                                                  check = true;
+                                                  break;
+                                                }
+                                              }
+                                              // bool check =
+                                              //     customerWishlist.contains(
+                                              //         storedInstruments[index]);
+                                              // print(check);
+                                              // print(customerWishlist);
+                                              // print(storedInstruments[index]);
+
+                                              if (check) {
+                                                setState(() {
+                                                  for (int i = 0;
+                                                      i <
+                                                          customerWishlist
+                                                              .length;
+                                                      i++) {
+                                                    if (customerWishlist[i]
+                                                            ["iid"] ==
+                                                        storedInstruments[index]
+                                                            ["iid"]) {
+                                                      customerWishlist.remove(
+                                                          customerWishlist[i]);
+                                                      break;
+                                                    }
+                                                  }
+                                                  // customerWishlist.remove(
+                                                  //     storedInstruments[index]);
+
+                                                  FirebaseFirestore.instance
+                                                      .collection('customers')
+                                                      .doc(currUser!.uid)
+                                                      .update({
+                                                    "wish": customerWishlist
+                                                  });
+                                                });
+                                              } else {
+                                                setState(() {
+                                                  customerWishlist.add(
+                                                      storedInstruments[index]);
+
+                                                  FirebaseFirestore.instance
+                                                      .collection('customers')
+                                                      .doc(currUser!.uid)
+                                                      .update({
+                                                    "wish": customerWishlist
+                                                  });
+                                                });
+                                              }
+
+                                              //print(wishList);
+
+                                              // if (wishList.contains(
+                                              //     storedInstruments[index])) {
+                                              //   setState(() {
+                                              //     wishList.remove(
+                                              //         storedInstruments[
+                                              //             index]);
+                                              //   });
+                                              // } else {
+                                              //   setState(() {
+                                              //     wishList.add(
+                                              //         storedInstruments[
+                                              //             index]);
+                                              //   });
+                                              // }
+                                            },
+                                            onCartTap: () {
+                                              if (cartList.contains(
+                                                  instruments[index])) {
+                                                setState(() {
+                                                  cartList.remove(
+                                                      instruments[index]);
+                                                  cartMap.remove(
+                                                      instruments[index]);
+                                                });
+                                              } else {
+                                                setState(() {
+                                                  cartList
+                                                      .add(instruments[index]);
+                                                  cartMap.addAll(
+                                                      {instruments[index]: 1});
+                                                });
+                                              }
+                                            },
+                                            isWishlisted: (wishList.contains(
+                                                    instruments[index]))
+                                                ? true
+                                                : false,
+                                            isCarted: (cartList.contains(
+                                                    instruments[index]))
+                                                ? true
+                                                : false,
+                                            instrument:
+                                                storedInstruments[index],
+                                            //wishIcon: ,
+                                          );
                                         },
-                                        onWishTap: () {
-                                          if (wishList
-                                              .contains(instruments[index])) {
-                                            setState(() {
-                                              wishList
-                                                  .remove(instruments[index]);
-                                            });
-                                          } else {
-                                            setState(() {
-                                              wishList.add(instruments[index]);
-                                            });
-                                          }
-                                        },
-                                        onCartTap: () {
-                                          if (cartList
-                                              .contains(instruments[index])) {
-                                            setState(() {
-                                              cartList
-                                                  .remove(instruments[index]);
-                                              cartMap
-                                                  .remove(instruments[index]);
-                                            });
-                                          } else {
-                                            setState(() {
-                                              cartList.add(instruments[index]);
-                                              cartMap.addAll(
-                                                  {instruments[index]: 1});
-                                            });
-                                          }
-                                        },
-                                        isWishlisted: (wishList
-                                                .contains(instruments[index]))
-                                            ? true
-                                            : false,
-                                        isCarted: (cartList
-                                                .contains(instruments[index]))
-                                            ? true
-                                            : false,
-                                        instrument: instruments[index],
-                                      );
-                                    },
-                                  ),
-                                ),
-                              ],
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
                             ),
                           ),
                         ),

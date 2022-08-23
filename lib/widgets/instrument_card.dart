@@ -20,6 +20,7 @@ class InstrumentCard extends StatefulWidget {
     required this.isWishlisted,
     required this.isCarted,
     required this.instrument,
+    //required this.wishIcon,
   }) : super(key: key);
 
   final double width;
@@ -38,6 +39,7 @@ class InstrumentCard extends StatefulWidget {
   final bool isWishlisted;
   final bool isCarted;
   final Map<String, dynamic> instrument;
+  //final Icon wishIcon;
 
   @override
   State<InstrumentCard> createState() => _InstrumentCardState();
@@ -53,8 +55,24 @@ class _InstrumentCardState extends State<InstrumentCard> {
     isCarted = widget.isCarted;
   }
 
+  bool isWished = false;
+
   @override
   Widget build(BuildContext context) {
+    int i = 0;
+    for (i = 0; i < wishList.length; i++) {
+      if (wishList.isNotEmpty) {
+        if (wishList[i]["iid"] == widget.instrument["iid"]) {
+          break;
+        }
+      }
+    }
+    if (i == wishList.length) {
+      isWished = false;
+    } else {
+      isWished = true;
+    }
+
     return InkWell(
       onTap: widget.onTap,
       child: Padding(
@@ -182,7 +200,7 @@ class _InstrumentCardState extends State<InstrumentCard> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               vertical: widget.height * 0.0125),
-                          child: (wishList.contains(widget.instrument))
+                          child: (isWished)
                               ? Icon(
                                   Icons.favorite_rounded,
                                   color: Colors.red.shade900,
