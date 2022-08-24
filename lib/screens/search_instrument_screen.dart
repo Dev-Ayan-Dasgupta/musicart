@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:provider/provider.dart';
 
 import '../global_variables/global_variables.dart';
+import '../services/firebase_auth_methods.dart';
 import '../widgets/animated_bottom_bar.dart';
 import '../widgets/instrument_card.dart';
 import 'instrument_detail.dart';
@@ -20,8 +23,82 @@ class _SearchInstrumentScreenState extends State<SearchInstrumentScreen> {
   String searchInstrument = "";
   int count = 0;
 
+  List customerWishlist = [];
+  List customerCartlist = [];
+  List customerCartMap = [];
+  double customerCartValue = 0;
+
   @override
   Widget build(BuildContext context) {
+    final currUser = context.read<FirebaseAuthMethods>().user;
+    Future<List> generateFutureCustomerWishlist() async {
+      return FirebaseFirestore.instance
+          .collection('customers')
+          .doc(currUser!.uid)
+          .get()
+          .then((value) => value.get('wish'));
+    }
+
+    void generateCustomerWishList() async {
+      customerWishlist = await generateFutureCustomerWishlist();
+    }
+
+    generateCustomerWishList();
+    //wishList = customerWishlist;
+
+    Future<List> generateFutureCustomerCartlist() async {
+      return FirebaseFirestore.instance
+          .collection('customers')
+          .doc(currUser!.uid)
+          .get()
+          .then((value) => value.get('cart'));
+    }
+
+    void generateCustomerCartList() async {
+      customerCartlist = await generateFutureCustomerCartlist();
+    }
+
+    generateCustomerCartList();
+    //cartList = customerCartlist;
+
+    Future<List> generateFutureCustomerCartMap() async {
+      return FirebaseFirestore.instance
+          .collection('customers')
+          .doc(currUser!.uid)
+          .get()
+          .then((value) => value.get('cartMap'));
+    }
+
+    void generateCustomerCartMap() async {
+      customerCartMap = await generateFutureCustomerCartMap();
+    }
+
+    generateCustomerCartMap();
+    // cartMap = customerCartMap;
+
+    Future<double> generateFutureCustomerCartValue() async {
+      return FirebaseFirestore.instance
+          .collection('customers')
+          .doc(currUser!.uid)
+          .get()
+          .then((value) => value.get('cartValue'));
+    }
+
+    void generateCustomerCartValue() async {
+      customerCartValue = await generateFutureCustomerCartValue();
+    }
+
+    generateCustomerCartValue();
+    //myCartValue = customerCartValue;
+
+    double computeCartValue() {
+      double cV = 0;
+      for (int i = 0; i < customerCartlist.length; i++) {
+        cV = cV + (customerCartlist[i]["price"] * customerCartMap[i]);
+      }
+      return cV;
+    }
+
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -153,37 +230,145 @@ class _SearchInstrumentScreenState extends State<SearchInstrumentScreen> {
                                                               searchedInstruments[
                                                                   index])));
                                         },
-                                        onWishTap: () {
-                                          if (wishList.contains(
-                                              searchedInstruments[index])) {
-                                            setState(() {
-                                              wishList.remove(
-                                                  searchedInstruments[index]);
-                                            });
-                                          } else {
-                                            setState(() {
-                                              wishList.add(
-                                                  searchedInstruments[index]);
-                                            });
+                                        onWishTap: () async {
+                                          bool check = false;
+
+                                          for (int i = 0;
+                                              i < customerWishlist.length;
+                                              i++) {
+                                            if (customerWishlist[i]["iid"] ==
+                                                searchedInstruments[index]
+                                                    ["iid"]) {
+                                              check = true;
+                                              break;
+                                            }
                                           }
-                                        },
-                                        onCartTap: () {
-                                          if (cartList.contains(
-                                                  searchedInstruments[index]) ==
-                                              false) {
+
+                                          if (check) {
                                             setState(() {
-                                              cartList.add(
-                                                  searchedInstruments[index]);
-                                              cartMap.addAll({
-                                                searchedInstruments[index]: 1
+                                              for (int i = 0;
+                                                  i < customerWishlist.length;
+                                                  i++) {
+                                                if (customerWishlist[i]
+                                                        ["iid"] ==
+                                                    searchedInstruments[index]
+                                                        ["iid"]) {
+                                                  customerWishlist.remove(
+                                                      customerWishlist[i]);
+                                                  break;
+                                                }
+                                              }
+
+                                              wishList = customerWishlist;
+
+                                              FirebaseFirestore.instance
+                                                  .collection('customers')
+                                                  .doc(currUser!.uid)
+                                                  .update({
+                                                "wish": customerWishlist
                                               });
                                             });
                                           } else {
                                             setState(() {
-                                              cartList.remove(
+                                              customerWishlist.add(
                                                   searchedInstruments[index]);
-                                              cartMap.remove(
+
+                                              wishList = customerWishlist;
+
+                                              FirebaseFirestore.instance
+                                                  .collection('customers')
+                                                  .doc(currUser!.uid)
+                                                  .update({
+                                                "wish": customerWishlist
+                                              });
+                                            });
+                                          }
+                                        },
+                                        onCartTap: () async {
+                                          bool check = false;
+                                          for (int i = 0;
+                                              i < customerCartlist.length;
+                                              i++) {
+                                            if (customerCartlist[i]["iid"] ==
+                                                searchedInstruments[index]
+                                                    ["iid"]) {
+                                              check = true;
+                                              break;
+                                            }
+                                          }
+
+                                          if (check) {
+                                            setState(() {
+                                              for (int i = 0;
+                                                  i < customerCartlist.length;
+                                                  i++) {
+                                                if (customerCartlist[i]
+                                                        ["iid"] ==
+                                                    searchedInstruments[index]
+                                                        ["iid"]) {
+                                                  customerCartlist.remove(
+                                                      customerCartlist[i]);
+                                                  customerCartMap.removeAt(i);
+                                                  customerCartValue =
+                                                      computeCartValue();
+                                                  myCartValue =
+                                                      customerCartValue;
+                                                  break;
+                                                }
+                                              }
+
+                                              cartList = customerCartlist;
+                                              cartMap = customerCartMap;
+
+                                              FirebaseFirestore.instance
+                                                  .collection('customers')
+                                                  .doc(currUser!.uid)
+                                                  .update({
+                                                "cart": customerCartlist
+                                              });
+                                              FirebaseFirestore.instance
+                                                  .collection('customers')
+                                                  .doc(currUser.uid)
+                                                  .update({
+                                                "cartMap": customerCartMap
+                                              });
+                                              FirebaseFirestore.instance
+                                                  .collection('customers')
+                                                  .doc(currUser.uid)
+                                                  .update({
+                                                "cartValue": customerCartValue
+                                              });
+                                            });
+                                          } else {
+                                            setState(() {
+                                              customerCartlist.add(
                                                   searchedInstruments[index]);
+                                              customerCartMap.add(1);
+                                              customerCartValue =
+                                                  computeCartValue();
+                                              myCartValue = customerCartValue;
+
+                                              cartList = customerCartlist;
+                                              cartMap = customerCartMap;
+
+                                              FirebaseFirestore.instance
+                                                  .collection('customers')
+                                                  .doc(currUser!.uid)
+                                                  .update({
+                                                "cart": customerCartlist
+                                              });
+                                              FirebaseFirestore.instance
+                                                  .collection('customers')
+                                                  .doc(currUser.uid)
+                                                  .update({
+                                                "cartMap": customerCartMap
+                                              });
+                                              FirebaseFirestore.instance
+                                                  .collection('customers')
+                                                  .doc(currUser.uid)
+                                                  .update({
+                                                "cartValue": customerCartValue
+                                              });
                                             });
                                           }
                                         },

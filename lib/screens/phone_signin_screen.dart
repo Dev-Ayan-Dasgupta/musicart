@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:collection';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -187,6 +188,8 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
                         uid: cred.user!.uid,
                         username: cred.user!.phoneNumber!,
                         cart: [],
+                        cartMap: [],
+                        cartValue: 0.0,
                         wish: [],
                         orders: [],
                         cards: [],
@@ -226,6 +229,8 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
                           uid: cred.user!.uid,
                           username: cred.user!.email!,
                           cart: [],
+                          cartMap: [],
+                          cartValue: 0.0,
                           wish: [],
                           orders: [],
                           cards: [],

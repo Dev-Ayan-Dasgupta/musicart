@@ -139,7 +139,7 @@ class _MakeCardPaymentScreenState extends State<MakeCardPaymentScreen> {
                       //ordersDate[cartList.toList()] = 10;
                       orderDate.add(OrderDate(
                           order: cartList.toList(), date: DateTime.now()));
-                      ordersMap.add(Map.of(cartMap));
+                      //ordersMap.add(Map.of(cartMap));
                       cartList.clear();
                       cartMap.clear();
                       Navigator.pushNamed(context, "/orders-history");

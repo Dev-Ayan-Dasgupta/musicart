@@ -41,8 +41,22 @@ class CartCard extends StatefulWidget {
 }
 
 class _CartCardState extends State<CartCard> {
+  bool isWished_ = false;
   @override
   Widget build(BuildContext context) {
+    int i = 0;
+    for (i = 0; i < wishList.length; i++) {
+      if (wishList.isNotEmpty) {
+        if (wishList[i]["iid"] == widget.instrument["iid"]) {
+          break;
+        }
+      }
+    }
+    if (i == wishList.length) {
+      isWished_ = false;
+    } else {
+      isWished_ = true;
+    }
     return SizedBox(
       width: widget.width * 0.95,
       height: widget.height * 0.16,
@@ -86,7 +100,7 @@ class _CartCardState extends State<CartCard> {
                     padding: EdgeInsets.only(left: widget.width * 0.005),
                     child: InkWell(
                       onTap: widget.onMoveToWishlist,
-                      child: (wishList.contains(widget.instrument))
+                      child: (isWished_)
                           ? Icon(
                               Icons.favorite_rounded,
                               color: Colors.red.shade900,

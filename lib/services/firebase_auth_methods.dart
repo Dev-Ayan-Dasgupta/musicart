@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +35,8 @@ class FirebaseAuthMethods {
         uid: cred.user!.uid,
         username: cred.user!.email!,
         cart: [],
+        cartMap: [],
+        cartValue: 0.0,
         wish: [],
         orders: [],
         cards: [],
@@ -105,6 +109,8 @@ class FirebaseAuthMethods {
             uid: cred.user!.uid,
             username: cred.user!.email!,
             cart: [],
+            cartMap: [],
+            cartValue: 0.0,
             wish: [],
             orders: [],
             cards: [],

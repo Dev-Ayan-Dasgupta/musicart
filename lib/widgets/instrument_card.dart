@@ -20,7 +20,6 @@ class InstrumentCard extends StatefulWidget {
     required this.isWishlisted,
     required this.isCarted,
     required this.instrument,
-    //required this.wishIcon,
   }) : super(key: key);
 
   final double width;
@@ -39,7 +38,6 @@ class InstrumentCard extends StatefulWidget {
   final bool isWishlisted;
   final bool isCarted;
   final Map<String, dynamic> instrument;
-  //final Icon wishIcon;
 
   @override
   State<InstrumentCard> createState() => _InstrumentCardState();
@@ -55,7 +53,8 @@ class _InstrumentCardState extends State<InstrumentCard> {
     isCarted = widget.isCarted;
   }
 
-  bool isWished = false;
+  bool isWished_ = false;
+  bool isCarted_ = false;
 
   @override
   Widget build(BuildContext context) {
@@ -68,9 +67,23 @@ class _InstrumentCardState extends State<InstrumentCard> {
       }
     }
     if (i == wishList.length) {
-      isWished = false;
+      isWished_ = false;
     } else {
-      isWished = true;
+      isWished_ = true;
+    }
+
+    int j = 0;
+    for (j = 0; j < cartList.length; j++) {
+      if (cartList.isNotEmpty) {
+        if (cartList[j]["iid"] == widget.instrument["iid"]) {
+          break;
+        }
+      }
+    }
+    if (j == cartList.length) {
+      isCarted_ = false;
+    } else {
+      isCarted_ = true;
     }
 
     return InkWell(
@@ -200,7 +213,7 @@ class _InstrumentCardState extends State<InstrumentCard> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               vertical: widget.height * 0.0125),
-                          child: (isWished)
+                          child: (isWished_)
                               ? Icon(
                                   Icons.favorite_rounded,
                                   color: Colors.red.shade900,
@@ -232,7 +245,7 @@ class _InstrumentCardState extends State<InstrumentCard> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               vertical: widget.height * 0.0125),
-                          child: (cartList.contains(widget.instrument))
+                          child: (isCarted_)
                               ? Icon(
                                   Icons.shopping_cart_rounded,
                                   color: Colors.blue.shade900,
