@@ -1,10 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:musicart/lists/list_of_cards.dart';
 import 'package:musicart/models/card_object.dart';
 import 'package:musicart/widgets/add_card_widget.dart';
 import 'package:musicart/widgets/custom_appbar.dart';
+import 'package:provider/provider.dart';
 
 import '../global_variables/global_variables.dart';
+import '../services/firebase_auth_methods.dart';
 import '../widgets/animated_bottom_bar.dart';
 
 class AddCardScreen extends StatefulWidget {
@@ -18,6 +21,9 @@ class _AddCardScreenState extends State<AddCardScreen> {
   final TextEditingController _searchBoxController = TextEditingController();
   final String _hintText = "Search instruments...";
   int _currentIndex = 3;
+
+  List customerCards = [];
+
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _cardNumController = TextEditingController();
   final TextEditingController _expiryDateController = TextEditingController();
@@ -38,6 +44,22 @@ class _AddCardScreenState extends State<AddCardScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final currUser = context.read<FirebaseAuthMethods>().user;
+    Future<List> generateFutureCustomerCards() async {
+      return FirebaseFirestore.instance
+          .collection('customers')
+          .doc(currUser!.uid)
+          .get()
+          .then((value) => value.get('cards'));
+    }
+
+    void generateCustomerCards() async {
+      customerCards = await generateFutureCustomerCards();
+    }
+
+    generateCustomerCards();
+    myCards = customerCards;
+
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
     String firstDigit = "";
@@ -94,7 +116,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
                   height: screenHeight * 0.05,
                   child: ElevatedButton(
                     onPressed: () {
-                      myCards.add(
+                      customerCards.add(
                         CardObject(
                           ownerName: _nameController.text,
                           cardNum: _cardNumController.text,
@@ -107,8 +129,13 @@ class _AddCardScreenState extends State<AddCardScreen> {
                           providerImgUrl: getCardProviderUrl(
                             _cardNumController.text.substring(0, 1),
                           ),
-                        ),
+                        ).toJsonCards(),
                       );
+                      myCards = customerCards;
+                      FirebaseFirestore.instance
+                          .collection('customers')
+                          .doc(currUser!.uid)
+                          .update({"cards": customerCards});
                       Navigator.pushNamed(context, "/payments");
                     },
                     style: ElevatedButton.styleFrom(

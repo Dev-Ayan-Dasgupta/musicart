@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -10,7 +11,9 @@ import 'package:musicart/global_variables/global_variables.dart';
 import 'package:musicart/lists/list_of_addresses.dart';
 import 'package:musicart/models/address_object.dart';
 import 'package:musicart/widgets/custom_appbar.dart';
+import 'package:provider/provider.dart';
 
+import '../services/firebase_auth_methods.dart';
 import '../widgets/animated_bottom_bar.dart';
 
 //import 'dart:hmtl';
@@ -26,6 +29,8 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
   final TextEditingController _searchBoxController = TextEditingController();
   final String _hintText = "Search instruments...";
   int _currentIndex = 3;
+
+  List customerAddresses = [];
 
   final TextEditingController _personNameController = TextEditingController();
   final TextEditingController _addressLine1Controller = TextEditingController();
@@ -112,6 +117,22 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final currUser = context.read<FirebaseAuthMethods>().user;
+    Future<List> generateFutureCustomerAddresses() async {
+      return FirebaseFirestore.instance
+          .collection('customers')
+          .doc(currUser!.uid)
+          .get()
+          .then((value) => value.get('addresses'));
+    }
+
+    void generateCustomerAddresses() async {
+      customerAddresses = await generateFutureCustomerAddresses();
+    }
+
+    generateCustomerAddresses();
+    myAddresses = customerAddresses;
+
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -433,7 +454,7 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
                           height: screenHeight * 0.05,
                           child: ElevatedButton(
                             onPressed: () {
-                              myAddresses.add(
+                              customerAddresses.add(
                                 AddressObject(
                                   personName: _personNameController.text,
                                   addressLine1: _addressLine1Controller.text,
@@ -445,8 +466,13 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
                                   isCurrentAddress: false,
                                   latitude: _latlong.latitude,
                                   longitude: _latlong.longitude,
-                                ),
+                                ).toJsonAddresses(),
                               );
+                              myAddresses = customerAddresses;
+                              FirebaseFirestore.instance
+                                  .collection('customers')
+                                  .doc(currUser!.uid)
+                                  .update({"addresses": customerAddresses});
                               Navigator.pushNamed(context, "/select-address");
                             },
                             style: ElevatedButton.styleFrom(

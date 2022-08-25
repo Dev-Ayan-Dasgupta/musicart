@@ -8,4 +8,12 @@ class BankObject {
     required this.bankUrl,
     required this.bankImgUrl,
   });
+
+  Map<String, dynamic> toJsonBank() {
+    return {
+      "bankName": bankName,
+      "bankUrl": bankUrl,
+      "bankImgUrl": bankImgUrl,
+    };
+  }
 }

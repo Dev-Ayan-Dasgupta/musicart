@@ -1,14 +1,17 @@
 import 'dart:math';
 
 import 'package:animated_flip_counter/animated_flip_counter.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:musicart/lists/list_of_addresses.dart';
 import 'package:musicart/screens/edit_address.dart';
 import 'package:musicart/widgets/choose_address_card.dart';
 import 'package:musicart/widgets/custom_appbar.dart';
+import 'package:provider/provider.dart';
 
 import '../global_variables/global_variables.dart';
+import '../services/firebase_auth_methods.dart';
 import '../widgets/animated_bottom_bar.dart';
 
 class ChooseAddressScreen extends StatefulWidget {
@@ -23,8 +26,27 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
   final String _hintText = "Search instruments...";
   int _currentIndex = 3;
   int count = 0;
+
+  List customerAddresses = [];
   @override
   Widget build(BuildContext context) {
+    final currUser = context.read<FirebaseAuthMethods>().user;
+    Future<List> generateFutureCustomerAddresses() async {
+      return FirebaseFirestore.instance
+          .collection('customers')
+          .doc(currUser!.uid)
+          .get()
+          .then((value) => value.get('addresses'));
+    }
+
+    void generateCustomerAddresses() async {
+      myAddresses = await generateFutureCustomerAddresses();
+    }
+
+    generateCustomerAddresses();
+    //myAddresses = customerAddresses;
+    customerAddresses = myAddresses;
+
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -36,6 +58,15 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
               screenHeight: screenHeight,
               searchBoxController: _searchBoxController,
               hintText: _hintText,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                print(myAddresses.length);
+                print(myAddresses);
+                print(customerAddresses.length);
+                print(customerAddresses);
+              },
+              child: const Text("Test"),
             ),
             (cartList.isNotEmpty)
                 ? Row(
@@ -129,24 +160,42 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
                                 child: ChooseAddressCard(
                                     width: screenWidth * 0.90,
                                     height: screenHeight * 0.155,
-                                    isCurrentAddress:
-                                        myAddresses[index].isCurrentAddress,
-                                    addressPersonName:
-                                        myAddresses[index].personName,
-                                    addressLine1:
-                                        myAddresses[index].addressLine1,
-                                    addressLine2:
-                                        myAddresses[index].addressLine2,
-                                    landmark: myAddresses[index].landmark,
-                                    city: myAddresses[index].city,
-                                    state: myAddresses[index].state,
-                                    pinCode: myAddresses[index].pinCode,
+                                    isCurrentAddress: myAddresses[index]
+                                        ["isCurrentAddress"],
+                                    addressPersonName: myAddresses[index]
+                                        ["personName"],
+                                    addressLine1: myAddresses[index]
+                                        ["addressLine1"],
+                                    addressLine2: myAddresses[index]
+                                        ["addressLine2"],
+                                    landmark: myAddresses[index]["landmark"],
+                                    city: myAddresses[index]["city"],
+                                    state: myAddresses[index]["state"],
+                                    pinCode: myAddresses[index]["pinCode"],
                                     onTap: () {
                                       setState(() {
-                                        myAddresses[index].isCurrentAddress =
-                                            true;
-                                        setOtherAddressesToFalse(
-                                            myAddresses[index]);
+                                        for (int i = 0;
+                                            i < myAddresses.length;
+                                            i++) {
+                                          if (i == index) {
+                                            myAddresses[index]
+                                                ["isCurrentAddress"] = true;
+                                            customerAddresses = myAddresses;
+                                          } else {
+                                            myAddresses[i]["isCurrentAddress"] =
+                                                false;
+                                            customerAddresses = myAddresses;
+                                          }
+                                        }
+                                        FirebaseFirestore.instance
+                                            .collection('customers')
+                                            .doc(currUser!.uid)
+                                            .update({
+                                          "addresses": customerAddresses
+                                        });
+
+                                        // setOtherAddressesToFalse(
+                                        //     myAddresses[index]);
                                         count++;
                                       });
                                     },
@@ -164,6 +213,14 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
                                     onDeleteTap: () {
                                       setState(() {
                                         myAddresses.remove(myAddresses[index]);
+                                        customerAddresses = myAddresses;
+                                        FirebaseFirestore.instance
+                                            .collection('customers')
+                                            .doc(currUser!.uid)
+                                            .update({
+                                          "addresses": customerAddresses
+                                        });
+                                        //myAddresses.remove(myAddresses[index]);
                                         count++;
                                       });
                                     }),

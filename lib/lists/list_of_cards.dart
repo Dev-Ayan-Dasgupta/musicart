@@ -1,6 +1,6 @@
 import '../models/card_object.dart';
 
-List<CardObject> myCards = [];
+List myCards = [];
 
 List<String> cardProviderUrls = [
   "https://logos-world.net/wp-content/uploads/2020/04/Visa-Emblem.jpg",

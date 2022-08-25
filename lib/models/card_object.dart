@@ -14,4 +14,15 @@ class CardObject {
     required this.cvv,
     required this.providerImgUrl,
   });
+
+  Map<String, dynamic> toJsonCards() {
+    return {
+      "ownerName": ownerName,
+      "cardNum": cardNum,
+      "monthOfExpiry": monthOfExpiry,
+      "dayofExpiry": dayofExpiry,
+      "cvv": cvv,
+      "providerImgUrl": providerImgUrl,
+    };
+  }
 }

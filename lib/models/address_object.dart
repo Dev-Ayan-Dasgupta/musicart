@@ -23,4 +23,19 @@ class AddressObject {
     required this.latitude,
     required this.longitude,
   });
+
+  Map<String, dynamic> toJsonAddresses() {
+    return {
+      "personName": personName,
+      "addressLine1": addressLine1,
+      "addressLine2": addressLine2,
+      "landmark": landmark,
+      "city": city,
+      "state": state,
+      "pinCode": pinCode,
+      "isCurrentAddress": isCurrentAddress,
+      "latitude": latitude,
+      "longitude": longitude,
+    };
+  }
 }

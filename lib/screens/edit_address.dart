@@ -1,11 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:musicart/models/address_object.dart';
+import 'package:provider/provider.dart';
 
 import '../global_variables/global_variables.dart';
 import '../lists/list_of_addresses.dart';
+import '../services/firebase_auth_methods.dart';
 import '../widgets/animated_bottom_bar.dart';
 import '../widgets/custom_appbar.dart';
 
@@ -16,7 +19,7 @@ class EditAddressScreen extends StatefulWidget {
     required this.editingIndex,
   }) : super(key: key);
 
-  final AddressObject editingAddress;
+  final Map editingAddress;
   final int editingIndex;
 
   @override
@@ -27,6 +30,8 @@ class _EditAddressScreenState extends State<EditAddressScreen> {
   final TextEditingController _searchBoxController = TextEditingController();
   final String _hintText = "Search instruments...";
   int _currentIndex = 3;
+
+  List customerAddresses = [];
 
   final TextEditingController _personNameController = TextEditingController();
   final TextEditingController _addressLine1Controller = TextEditingController();
@@ -67,15 +72,15 @@ class _EditAddressScreenState extends State<EditAddressScreen> {
         locationSettings:
             const LocationSettings(accuracy: LocationAccuracy.high));
 
-    _latlong =
-        LatLng(widget.editingAddress.latitude, widget.editingAddress.longitude);
+    _latlong = LatLng(
+        widget.editingAddress["latitude"], widget.editingAddress["longitude"]);
 
     setState(() {
       _googleMapController!.animateCamera(CameraUpdate.newCameraPosition(
           CameraPosition(target: _latlong, zoom: 15)));
       getAddress();
       print(
-          "${widget.editingAddress.latitude}, ${widget.editingAddress.longitude}");
+          "${widget.editingAddress["latitude"]}, ${widget.editingAddress["longitude"]}");
       print("${_latlong.latitude}, ${_latlong.longitude}");
     });
 
@@ -113,17 +118,18 @@ class _EditAddressScreenState extends State<EditAddressScreen> {
   void initState() {
     super.initState();
     getSavedLocation();
-    _personNameController.text = widget.editingAddress.personName;
-    _addressLine1Controller.text = widget.editingAddress.addressLine1;
-    _addressLine2Controller.text = widget.editingAddress.addressLine2;
-    _landmarkController.text = widget.editingAddress.landmark!;
-    _cityController.text = widget.editingAddress.city;
-    _stateController.text = widget.editingAddress.state;
-    _pinCodeController.text = widget.editingAddress.pinCode;
+    _personNameController.text = widget.editingAddress["personName"];
+    _addressLine1Controller.text = widget.editingAddress["addressLine1"];
+    _addressLine2Controller.text = widget.editingAddress["addressLine2"];
+    _landmarkController.text = widget.editingAddress["landmark"]!;
+    _cityController.text = widget.editingAddress["city"];
+    _stateController.text = widget.editingAddress["state"];
+    _pinCodeController.text = widget.editingAddress["pinCode"];
   }
 
   @override
   Widget build(BuildContext context) {
+    final currUser = context.read<FirebaseAuthMethods>().user;
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -453,10 +459,15 @@ class _EditAddressScreenState extends State<EditAddressScreen> {
                                 pinCode: _pinCodeController.text,
                                 isCurrentAddress:
                                     myAddresses[widget.editingIndex]
-                                        .isCurrentAddress,
+                                        ["isCurrentAddress"],
                                 latitude: _latlong.latitude,
                                 longitude: _latlong.longitude,
-                              );
+                              ).toJsonAddresses();
+                              customerAddresses = myAddresses;
+                              FirebaseFirestore.instance
+                                  .collection('customers')
+                                  .doc(currUser!.uid)
+                                  .update({"addresses": customerAddresses});
                               Navigator.pushNamed(context, "/select-address");
                             },
                             style: ElevatedButton.styleFrom(

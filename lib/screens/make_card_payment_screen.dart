@@ -13,7 +13,7 @@ class MakeCardPaymentScreen extends StatefulWidget {
     Key? key,
     required this.myCard,
   }) : super(key: key);
-  final CardObject myCard;
+  final Map myCard;
 
   @override
   State<MakeCardPaymentScreen> createState() => _MakeCardPaymentScreenState();
@@ -121,11 +121,11 @@ class _MakeCardPaymentScreenState extends State<MakeCardPaymentScreen> {
                   child: MakeCardPayment(
                     width: screenWidth * 0.95,
                     height: screenWidth * 0.95 * 0.618,
-                    cardProviderImgUrl: widget.myCard.providerImgUrl,
-                    ownerName: widget.myCard.ownerName,
-                    cardNumber: widget.myCard.cardNum,
-                    expiryMonth: widget.myCard.monthOfExpiry,
-                    expiryDay: widget.myCard.dayofExpiry,
+                    cardProviderImgUrl: widget.myCard["providerImgUrl"],
+                    ownerName: widget.myCard["ownerName"],
+                    cardNumber: widget.myCard["cardNum"],
+                    expiryMonth: widget.myCard["monthOfExpiry"],
+                    expiryDay: widget.myCard["dayofExpiry"],
                     cvvController: _cvvController,
                   ),
                 ),

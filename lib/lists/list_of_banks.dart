@@ -20,7 +20,7 @@ void populateSearchList(String search) {
   }
 }
 
-List<BankObject> myBanks = [];
+List myBanks = [];
 
 List<BankObject> popularBankList = [
   BankObject(

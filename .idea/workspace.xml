@@ -16,8 +16,19 @@
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/c075001b96339384a97db4862b8ab8db.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/c075001b96339384a97db4862b8ab8db.cache.dill.track.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/home_welcome_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home_welcome_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/instrument_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/instrument_detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lists/list_of_addresses.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/lists/list_of_addresses.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lists/list_of_banks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/lists/list_of_banks.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lists/list_of_cards.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/lists/list_of_cards.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/address_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/address_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/bank_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/bank_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/card_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/card_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/add_card_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/add_card_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/bank_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/bank_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/choose_address.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/choose_address.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/create_address.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/create_address.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/edit_address.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/edit_address.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/make_card_payment_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/make_card_payment_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/payments_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/payments_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

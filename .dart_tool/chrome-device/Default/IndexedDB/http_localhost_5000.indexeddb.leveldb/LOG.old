@@ -1,41 +1,13 @@
-2022/08/23-22:22:48.977 1028 Reusing MANIFEST C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.af967aee\flutter_tools_chrome_device.23ab5d1c\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/MANIFEST-000001
-2022/08/23-22:22:48.978 1028 Recovering log #86
-2022/08/23-22:22:48.979 1028 Reusing old log C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.af967aee\flutter_tools_chrome_device.23ab5d1c\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/000086.log 
-2022/08/23-22:22:48.980 1028 Delete type=0 #4
-2022/08/23-22:22:48.980 1028 Delete type=2 #5
-2022/08/23-22:22:48.980 1028 Delete type=2 #8
-2022/08/23-22:22:48.980 1028 Delete type=0 #10
-2022/08/23-22:22:48.980 1028 Delete type=2 #12
-2022/08/23-22:22:48.980 1028 Delete type=0 #14
-2022/08/23-22:22:48.980 1028 Delete type=2 #16
-2022/08/23-22:22:48.980 1028 Delete type=0 #18
-2022/08/23-22:22:48.980 1028 Delete type=2 #20
-2022/08/23-22:22:48.980 1028 Delete type=0 #22
-2022/08/23-22:22:48.980 1028 Delete type=2 #24
-2022/08/23-22:22:48.980 1028 Delete type=0 #26
-2022/08/23-22:22:48.980 1028 Delete type=2 #28
-2022/08/23-22:22:48.980 1028 Delete type=0 #30
-2022/08/23-22:22:48.980 1028 Delete type=2 #32
-2022/08/23-22:22:48.980 1028 Delete type=0 #34
-2022/08/23-22:22:48.980 1028 Delete type=2 #36
-2022/08/23-22:22:48.980 1028 Delete type=0 #38
-2022/08/23-22:22:48.980 1028 Delete type=2 #40
-2022/08/23-22:22:48.980 1028 Delete type=2 #48
-2022/08/23-22:22:48.980 1028 Delete type=0 #50
-2022/08/23-22:22:48.980 1028 Delete type=2 #52
-2022/08/23-22:22:48.980 1028 Delete type=0 #62
-2022/08/23-22:22:48.980 1028 Delete type=2 #64
-2022/08/23-22:22:48.980 1028 Delete type=0 #70
-2022/08/23-22:22:48.980 1028 Delete type=2 #72
-2022/08/23-22:22:48.980 1028 Delete type=0 #74
-2022/08/23-22:22:48.980 1028 Delete type=2 #76
-2022/08/23-22:22:49.373 620c Level-0 table #91: started
-2022/08/23-22:22:49.377 620c Level-0 table #91: 8889 bytes OK
-2022/08/23-22:22:49.379 620c Delete type=0 #86
-2022/08/23-22:22:49.379 620c Manual compaction at level-0 from '\x00\x19\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1a\x00\x00\x00' @ 0 : 0; will stop at (end)
-2022/08/23-22:23:27.843 1028 Compacting 1@1 + 1@2 files
-2022/08/23-22:23:27.849 1028 Generated table #92@1: 43 keys, 3017 bytes
-2022/08/23-22:23:27.849 1028 Compacted 1@1 + 1@2 files => 3017 bytes
-2022/08/23-22:23:27.851 1028 compacted to: files[ 0 0 1 0 0 0 0 ]
-2022/08/23-22:23:27.852 1028 Delete type=2 #88
-2022/08/23-22:23:27.852 1028 Delete type=2 #91
+2022/08/25-15:39:37.168 599c Reusing MANIFEST C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.1104d6ce\flutter_tools_chrome_device.24eb22bf\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/MANIFEST-000001
+2022/08/25-15:39:37.169 599c Recovering log #137
+2022/08/25-15:39:37.169 599c Reusing old log C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.1104d6ce\flutter_tools_chrome_device.24eb22bf\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/000137.log 
+2022/08/25-15:39:39.021 7174 Level-0 table #142: started
+2022/08/25-15:39:39.025 7174 Level-0 table #142: 3230 bytes OK
+2022/08/25-15:39:39.136 7174 Delete type=0 #137
+2022/08/25-15:39:39.138 7174 Manual compaction at level-0 from '\x00%\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00&\x00\x00\x00' @ 0 : 0; will stop at (end)
+2022/08/25-15:40:18.430 2844 Compacting 1@1 + 1@2 files
+2022/08/25-15:40:18.434 2844 Generated table #143@1: 42 keys, 2938 bytes
+2022/08/25-15:40:18.434 2844 Compacted 1@1 + 1@2 files => 2938 bytes
+2022/08/25-15:40:18.435 2844 compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/08/25-15:40:18.436 2844 Delete type=2 #139
+2022/08/25-15:40:18.436 2844 Delete type=2 #142
