@@ -120,7 +120,7 @@ class _MakeCardPaymentState extends State<MakeCardPayment> {
                       bottom: widget.height * 0.045,
                     ),
                     child: Text(
-                      widget.cardNumber,
+                      "${widget.cardNumber.substring(0, 4)} ${widget.cardNumber.substring(4, 8)} ${widget.cardNumber.substring(8, 12)} ${widget.cardNumber.substring(12, 16)}",
                       style: globalTextStyle.copyWith(
                         color: tertiaryColor,
                         fontSize: widget.width * 0.03,
