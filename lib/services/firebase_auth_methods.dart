@@ -39,9 +39,12 @@ class FirebaseAuthMethods {
         cartValue: 0.0,
         wish: [],
         orders: [],
+        // ordersMap: [],
+        // orderDate: [],
         cards: [],
         banks: [],
         addresses: [],
+        currAddress: [],
       );
 
       await FirebaseFirestore.instance
@@ -113,9 +116,12 @@ class FirebaseAuthMethods {
             cartValue: 0.0,
             wish: [],
             orders: [],
+            // ordersMap: [],
+            // orderDate: [],
             cards: [],
             banks: [],
             addresses: [],
+            currAddress: [],
           );
 
           await FirebaseFirestore.instance

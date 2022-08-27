@@ -438,9 +438,9 @@ List<dynamic> cartMap = [];
 double cartValue = 0;
 double myCartValue = 0;
 
-List<List<dynamic>> ordersList = [];
-Map<List<Map<String, dynamic>>, int> ordersDate = HashMap();
-List ordersMap = [];
+List ordersList = [];
+// Map<List<Map<String, dynamic>>, int> ordersDate = HashMap();
+// List ordersMap = [];
 
 class OrderDate {
   List<dynamic> order;

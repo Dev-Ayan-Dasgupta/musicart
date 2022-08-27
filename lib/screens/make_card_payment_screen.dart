@@ -1,10 +1,14 @@
 import 'package:animated_flip_counter/animated_flip_counter.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:musicart/models/card_object.dart';
+import 'package:musicart/models/orders_object.dart';
 import 'package:musicart/widgets/make_card_payment_widget.dart';
+import 'package:provider/provider.dart';
 
 import '../global_variables/global_variables.dart';
 import '../lists/list_of_addresses.dart';
+import '../services/firebase_auth_methods.dart';
 import '../widgets/animated_bottom_bar.dart';
 import '../widgets/custom_appbar.dart';
 
@@ -26,6 +30,22 @@ class _MakeCardPaymentScreenState extends State<MakeCardPaymentScreen> {
   int _currentIndex = 3;
   @override
   Widget build(BuildContext context) {
+    final currUser = context.read<FirebaseAuthMethods>().user;
+    // if (currUser != null) {
+    //   Future<List> generateFutureCustomerOrderlist() async {
+    //     return FirebaseFirestore.instance
+    //         .collection('customers')
+    //         .doc(currUser.uid)
+    //         .get()
+    //         .then((value) => value.get('orders'));
+    //   }
+
+    //   void generateCustomerOrderslist() async {
+    //     ordersList = await generateFutureCustomerOrderlist();
+    //   }
+
+    //   generateCustomerOrderslist();
+    // }
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -54,7 +74,7 @@ class _MakeCardPaymentScreenState extends State<MakeCardPaymentScreen> {
                                   left: screenWidth * 0.04,
                                 ),
                                 child: Text(
-                                  currentAddress!.addressLine1,
+                                  currentAddress[0]["addressLine1"],
                                   style: globalTextStyle.copyWith(
                                       color: primaryColor,
                                       fontSize: screenWidth * 0.015),
@@ -135,13 +155,46 @@ class _MakeCardPaymentScreenState extends State<MakeCardPaymentScreen> {
                   height: screenHeight * 0.05,
                   child: ElevatedButton(
                     onPressed: () {
-                      ordersList.add(cartList.toList());
-                      //ordersDate[cartList.toList()] = 10;
-                      orderDate.add(OrderDate(
-                          order: cartList.toList(), date: DateTime.now()));
-                      //ordersMap.add(Map.of(cartMap));
+                      ordersList.add(OrderObject(
+                              items: cartList,
+                              units: cartMap,
+                              dateTime: DateTime.now(),
+                              orderValue: myCartValue,
+                              addressOfOrder: currentAddress[0])
+                          .toJsonOrder());
+
+                      if (currUser != null) {
+                        FirebaseFirestore.instance
+                            .collection('customers')
+                            .doc(currUser.uid)
+                            .update({"orders": ordersList});
+                      }
+
                       cartList.clear();
                       cartMap.clear();
+                      myCartValue = 0;
+
+                      if (currUser != null) {
+                        FirebaseFirestore.instance
+                            .collection('customers')
+                            .doc(currUser.uid)
+                            .update({"cart": cartList});
+                        FirebaseFirestore.instance
+                            .collection('customers')
+                            .doc(currUser.uid)
+                            .update({"cartMap": cartMap});
+                        FirebaseFirestore.instance
+                            .collection('customers')
+                            .doc(currUser.uid)
+                            .update({"cartValue": myCartValue});
+                      }
+                      // ordersList.add(cartList.toList());
+                      // //ordersDate[cartList.toList()] = 10;
+                      // orderDate.add(OrderDate(
+                      //     order: cartList.toList(), date: DateTime.now()));
+                      // //ordersMap.add(Map.of(cartMap));
+                      // cartList.clear();
+                      // cartMap.clear();
                       Navigator.pushNamed(context, "/orders-history");
                     },
                     style: ElevatedButton.styleFrom(

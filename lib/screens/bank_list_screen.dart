@@ -53,21 +53,23 @@ class _BankListScreenState extends State<BankListScreen> {
   @override
   Widget build(BuildContext context) {
     final currUser = context.read<FirebaseAuthMethods>().user;
-    Future<List> generateFutureCustomerBanks() async {
-      return FirebaseFirestore.instance
-          .collection('customers')
-          .doc(currUser!.uid)
-          .get()
-          .then((value) => value.get('banks'));
-    }
+    if (currUser != null) {
+      Future<List> generateFutureCustomerBanks() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('banks'));
+      }
 
-    void generateCustomerBanks() async {
-      customerBanks = await generateFutureCustomerBanks();
-    }
+      void generateCustomerBanks() async {
+        myBanks = await generateFutureCustomerBanks();
+      }
 
-    generateCustomerBanks();
-    //myAddresses = customerAddresses;
-    myBanks = customerBanks;
+      generateCustomerBanks();
+      //myAddresses = customerAddresses;
+      customerBanks = myBanks;
+    }
 
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
@@ -123,10 +125,8 @@ class _BankListScreenState extends State<BankListScreen> {
                                       _launchUrl(popularBankList[index]
                                           .toJsonBank()["bankUrl"]);
                                       bool check = false;
-                                      for (int i = 0;
-                                          i < customerBanks.length;
-                                          i++) {
-                                        if (customerBanks[i] ==
+                                      for (int i = 0; i < myBanks.length; i++) {
+                                        if (myBanks[i] ==
                                             popularBankList[index]
                                                 .toJsonBank()) {
                                           check = true;
@@ -134,13 +134,15 @@ class _BankListScreenState extends State<BankListScreen> {
                                         }
                                       }
                                       if (check == false) {
-                                        customerBanks.add(popularBankList[index]
+                                        myBanks.add(popularBankList[index]
                                             .toJsonBank());
-                                        myBanks = customerBanks;
-                                        FirebaseFirestore.instance
-                                            .collection('customers')
-                                            .doc(currUser!.uid)
-                                            .update({"banks": customerBanks});
+                                        //myBanks = customerBanks;
+                                        if (currUser != null) {
+                                          FirebaseFirestore.instance
+                                              .collection('customers')
+                                              .doc(currUser.uid)
+                                              .update({"banks": myBanks});
+                                        }
                                       }
                                       // if (myBanks.contains(
                                       //         popularBankList[index]) ==
@@ -271,23 +273,23 @@ class _BankListScreenState extends State<BankListScreen> {
                                       _launchUrl(filteredBanks[index]
                                           .toJsonBank()["bankUrl"]);
                                       bool check = false;
-                                      for (int i = 0;
-                                          i < customerBanks.length;
-                                          i++) {
-                                        if (customerBanks[i] ==
+                                      for (int i = 0; i < myBanks.length; i++) {
+                                        if (myBanks[i] ==
                                             filteredBanks[index].toJsonBank()) {
                                           check = true;
                                           break;
                                         }
                                       }
                                       if (check == false) {
-                                        customerBanks.add(
+                                        myBanks.add(
                                             filteredBanks[index].toJsonBank());
-                                        myBanks = customerBanks;
-                                        FirebaseFirestore.instance
-                                            .collection('customers')
-                                            .doc(currUser!.uid)
-                                            .update({"banks": customerBanks});
+                                        //myBanks = customerBanks;
+                                        if (currUser != null) {
+                                          FirebaseFirestore.instance
+                                              .collection('customers')
+                                              .doc(currUser.uid)
+                                              .update({"banks": myBanks});
+                                        }
                                       }
                                       // if (myBanks
                                       //         .contains(filteredBanks[index]) ==
@@ -299,23 +301,23 @@ class _BankListScreenState extends State<BankListScreen> {
                                       _launchUrl(filteredBanks[index]
                                           .toJsonBank()["bankUrl"]);
                                       bool check = false;
-                                      for (int i = 0;
-                                          i < customerBanks.length;
-                                          i++) {
-                                        if (customerBanks[i] ==
+                                      for (int i = 0; i < myBanks.length; i++) {
+                                        if (myBanks[i] ==
                                             filteredBanks[index].toJsonBank()) {
                                           check = true;
                                           break;
                                         }
                                       }
                                       if (check == false) {
-                                        customerBanks.add(
+                                        myBanks.add(
                                             filteredBanks[index].toJsonBank());
-                                        myBanks = customerBanks;
-                                        FirebaseFirestore.instance
-                                            .collection('customers')
-                                            .doc(currUser!.uid)
-                                            .update({"banks": customerBanks});
+                                        //myBanks = customerBanks;
+                                        if (currUser != null) {
+                                          FirebaseFirestore.instance
+                                              .collection('customers')
+                                              .doc(currUser.uid)
+                                              .update({"banks": myBanks});
+                                        }
                                       }
                                       // if (myBanks
                                       //         .contains(filteredBanks[index]) ==

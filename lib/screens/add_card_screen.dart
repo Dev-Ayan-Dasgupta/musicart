@@ -45,20 +45,23 @@ class _AddCardScreenState extends State<AddCardScreen> {
   @override
   Widget build(BuildContext context) {
     final currUser = context.read<FirebaseAuthMethods>().user;
-    Future<List> generateFutureCustomerCards() async {
-      return FirebaseFirestore.instance
-          .collection('customers')
-          .doc(currUser!.uid)
-          .get()
-          .then((value) => value.get('cards'));
-    }
 
-    void generateCustomerCards() async {
-      customerCards = await generateFutureCustomerCards();
-    }
+    if (currUser != null) {
+      Future<List> generateFutureCustomerCards() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('cards'));
+      }
 
-    generateCustomerCards();
-    myCards = customerCards;
+      void generateCustomerCards() async {
+        myCards = await generateFutureCustomerCards();
+      }
+
+      generateCustomerCards();
+      customerCards = myCards;
+    }
 
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
@@ -116,7 +119,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
                   height: screenHeight * 0.05,
                   child: ElevatedButton(
                     onPressed: () {
-                      customerCards.add(
+                      myCards.add(
                         CardObject(
                           ownerName: _nameController.text,
                           cardNum: _cardNumController.text,
@@ -131,11 +134,14 @@ class _AddCardScreenState extends State<AddCardScreen> {
                           ),
                         ).toJsonCards(),
                       );
-                      myCards = customerCards;
-                      FirebaseFirestore.instance
-                          .collection('customers')
-                          .doc(currUser!.uid)
-                          .update({"cards": customerCards});
+                      //myCards = customerCards;
+                      if (currUser != null) {
+                        FirebaseFirestore.instance
+                            .collection('customers')
+                            .doc(currUser.uid)
+                            .update({"cards": myCards});
+                      }
+
                       Navigator.pushNamed(context, "/payments");
                     },
                     style: ElevatedButton.styleFrom(

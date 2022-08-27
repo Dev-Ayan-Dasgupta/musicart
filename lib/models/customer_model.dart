@@ -6,9 +6,12 @@ class Customer {
   double cartValue;
   List wish;
   List orders;
+  // List<List> ordersMap;
+  // List orderDate;
   List cards;
   List banks;
   List addresses;
+  List currAddress;
 
   Customer({
     required this.uid,
@@ -18,9 +21,12 @@ class Customer {
     required this.cartValue,
     required this.wish,
     required this.orders,
+    // required this.ordersMap,
+    // required this.orderDate,
     required this.cards,
     required this.banks,
     required this.addresses,
+    required this.currAddress,
   });
 
   Map<String, dynamic> toJson() {
@@ -32,9 +38,12 @@ class Customer {
       "cartValue": cartValue,
       "wish": wish,
       "orders": orders,
+      // "ordersMap": ordersMap,
+      // "orderDate": orderDate,
       "cards": cards,
       "banks": banks,
       "addresses": addresses,
+      "currAddress": currAddress,
     };
   }
 }

@@ -464,10 +464,23 @@ class _EditAddressScreenState extends State<EditAddressScreen> {
                                 longitude: _latlong.longitude,
                               ).toJsonAddresses();
                               customerAddresses = myAddresses;
-                              FirebaseFirestore.instance
-                                  .collection('customers')
-                                  .doc(currUser!.uid)
-                                  .update({"addresses": customerAddresses});
+
+                              if (widget.editingAddress["isCurrentAddress"]) {
+                                currentAddress[0] =
+                                    myAddresses[widget.editingIndex];
+                              }
+
+                              if (currUser != null) {
+                                FirebaseFirestore.instance
+                                    .collection('customers')
+                                    .doc(currUser.uid)
+                                    .update({"addresses": myAddresses});
+                                FirebaseFirestore.instance
+                                    .collection('customers')
+                                    .doc(currUser.uid)
+                                    .update({"currAddress": currentAddress});
+                              }
+
                               Navigator.pushNamed(context, "/select-address");
                             },
                             style: ElevatedButton.styleFrom(

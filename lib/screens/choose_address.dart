@@ -31,21 +31,23 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
   @override
   Widget build(BuildContext context) {
     final currUser = context.read<FirebaseAuthMethods>().user;
-    Future<List> generateFutureCustomerAddresses() async {
-      return FirebaseFirestore.instance
-          .collection('customers')
-          .doc(currUser!.uid)
-          .get()
-          .then((value) => value.get('addresses'));
-    }
+    if (currUser != null) {
+      Future<List> generateFutureCustomerAddresses() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('addresses'));
+      }
 
-    void generateCustomerAddresses() async {
-      myAddresses = await generateFutureCustomerAddresses();
-    }
+      void generateCustomerAddresses() async {
+        myAddresses = await generateFutureCustomerAddresses();
+      }
 
-    generateCustomerAddresses();
-    //myAddresses = customerAddresses;
-    customerAddresses = myAddresses;
+      generateCustomerAddresses();
+      //myAddresses = customerAddresses;
+      customerAddresses = myAddresses;
+    }
 
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
@@ -59,20 +61,20 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
               searchBoxController: _searchBoxController,
               hintText: _hintText,
             ),
-            ElevatedButton(
-              onPressed: () {
-                print(myAddresses.length);
-                print(myAddresses);
-                print(customerAddresses.length);
-                print(customerAddresses);
-              },
-              child: const Text("Test"),
-            ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     print(myAddresses.length);
+            //     print(myAddresses);
+            //     print(customerAddresses.length);
+            //     print(customerAddresses);
+            //   },
+            //   child: const Text("Test"),
+            // ),
             (cartList.isNotEmpty)
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      (currentAddress != null)
+                      (currentAddress.isNotEmpty)
                           ? InkWell(
                               onTap: () {
                                 Navigator.pushNamed(context, "/select-address");
@@ -82,7 +84,7 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
                                   left: screenWidth * 0.04,
                                 ),
                                 child: Text(
-                                  currentAddress!.addressLine1,
+                                  currentAddress[0]["addressLine1"],
                                   style: globalTextStyle.copyWith(
                                       color: primaryColor,
                                       fontSize: screenWidth * 0.015),
@@ -180,6 +182,22 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
                                           if (i == index) {
                                             myAddresses[index]
                                                 ["isCurrentAddress"] = true;
+                                            if (currentAddress.isEmpty) {
+                                              currentAddress
+                                                  .add(myAddresses[index]);
+                                            } else {
+                                              currentAddress[0] =
+                                                  myAddresses[index];
+                                            }
+
+                                            if (currUser != null) {
+                                              FirebaseFirestore.instance
+                                                  .collection('customers')
+                                                  .doc(currUser.uid)
+                                                  .update({
+                                                "currAddress": currentAddress
+                                              });
+                                            }
                                             customerAddresses = myAddresses;
                                           } else {
                                             myAddresses[i]["isCurrentAddress"] =
@@ -187,12 +205,13 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
                                             customerAddresses = myAddresses;
                                           }
                                         }
-                                        FirebaseFirestore.instance
-                                            .collection('customers')
-                                            .doc(currUser!.uid)
-                                            .update({
-                                          "addresses": customerAddresses
-                                        });
+                                        if (currUser != null) {
+                                          FirebaseFirestore.instance
+                                              .collection('customers')
+                                              .doc(currUser.uid)
+                                              .update(
+                                                  {"addresses": myAddresses});
+                                        }
 
                                         // setOtherAddressesToFalse(
                                         //     myAddresses[index]);
@@ -214,12 +233,15 @@ class _ChooseAddressScreenState extends State<ChooseAddressScreen> {
                                       setState(() {
                                         myAddresses.remove(myAddresses[index]);
                                         customerAddresses = myAddresses;
-                                        FirebaseFirestore.instance
-                                            .collection('customers')
-                                            .doc(currUser!.uid)
-                                            .update({
-                                          "addresses": customerAddresses
-                                        });
+                                        if (currUser != null) {
+                                          FirebaseFirestore.instance
+                                              .collection('customers')
+                                              .doc(currUser.uid)
+                                              .update({
+                                            "addresses": customerAddresses
+                                          });
+                                        }
+
                                         //myAddresses.remove(myAddresses[index]);
                                         count++;
                                       });

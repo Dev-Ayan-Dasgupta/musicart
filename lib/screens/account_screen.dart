@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:musicart/global_variables/global_variables.dart';
+import 'package:musicart/lists/list_of_addresses.dart';
+import 'package:musicart/lists/list_of_banks.dart';
+import 'package:musicart/lists/list_of_cards.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/account_screen_info_list.dart';
@@ -212,9 +215,21 @@ class _AccountScreenState extends State<AccountScreen> {
               onTap1: () {},
               onTap2: () {},
               onTap3: () {
-                (isSignedIn)
-                    ? {context.read<FirebaseAuthMethods>().signOut(context)}
-                    : Navigator.pushNamed(context, "/sign-in");
+                // (isSignedIn)
+                //     ? {context.read<FirebaseAuthMethods>().signOut(context)}
+                //     : Navigator.pushNamed(context, "/sign-in");
+                if (isSignedIn) {
+                  context.read<FirebaseAuthMethods>().signOut(context);
+                  wishList = [];
+                  cartList = [];
+                  myCartValue = 0;
+                  cartMap = [];
+                  myAddresses = [];
+                  myCards = [];
+                  myBanks = [];
+                } else {
+                  Navigator.pushNamed(context, "/sign-in");
+                }
               },
             )
           ],

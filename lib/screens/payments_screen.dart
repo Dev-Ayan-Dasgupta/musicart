@@ -43,37 +43,39 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
   @override
   Widget build(BuildContext context) {
     final currUser = context.read<FirebaseAuthMethods>().user;
-    Future<List> generateFutureCustomerCards() async {
-      return FirebaseFirestore.instance
-          .collection('customers')
-          .doc(currUser!.uid)
-          .get()
-          .then((value) => value.get('cards'));
+    if (currUser != null) {
+      Future<List> generateFutureCustomerCards() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('cards'));
+      }
+
+      void generateCustomerCards() async {
+        myCards = await generateFutureCustomerCards();
+      }
+
+      generateCustomerCards();
+      //myAddresses = customerAddresses;
+      customerCards = myCards;
+
+      Future<List> generateFutureCustomerBanks() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('banks'));
+      }
+
+      void generateCustomerBanks() async {
+        myBanks = await generateFutureCustomerBanks();
+      }
+
+      generateCustomerBanks();
+      //myAddresses = customerAddresses;
+      customerBanks = myBanks;
     }
-
-    void generateCustomerCards() async {
-      myCards = await generateFutureCustomerCards();
-    }
-
-    generateCustomerCards();
-    //myAddresses = customerAddresses;
-    customerCards = myCards;
-
-    Future<List> generateFutureCustomerBanks() async {
-      return FirebaseFirestore.instance
-          .collection('customers')
-          .doc(currUser!.uid)
-          .get()
-          .then((value) => value.get('banks'));
-    }
-
-    void generateCustomerBanks() async {
-      myBanks = await generateFutureCustomerBanks();
-    }
-
-    generateCustomerBanks();
-    //myAddresses = customerAddresses;
-    customerBanks = myBanks;
 
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
@@ -102,7 +104,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      (currentAddress != null)
+                      (currentAddress.isNotEmpty)
                           ? InkWell(
                               onTap: () {
                                 Navigator.pushNamed(context, "/select-address");
@@ -112,7 +114,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                                   left: screenWidth * 0.04,
                                 ),
                                 child: Text(
-                                  currentAddress!.addressLine1,
+                                  currentAddress[0]["addressLine1"],
                                   style: globalTextStyle.copyWith(
                                       color: primaryColor,
                                       fontSize: screenWidth * 0.015),
@@ -216,8 +218,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                               ),
                               SizedBox(
                                 width: screenWidth,
-                                height:
-                                    screenHeight * 0.06 * customerCards.length,
+                                height: screenHeight * 0.06 * myCards.length,
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
                                       horizontal: screenWidth * 0.025),
@@ -225,7 +226,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                                     children: [
                                       Expanded(
                                         child: ListView.builder(
-                                            itemCount: customerCards.length,
+                                            itemCount: myCards.length,
                                             itemBuilder: (BuildContext context,
                                                 int index) {
                                               return PaymentsScreenSubTile(
@@ -244,22 +245,26 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                                                   },
                                                   onIconTap: () {
                                                     setState(() {
-                                                      customerCards.remove(
-                                                          customerCards[index]);
-                                                      myCards = customerCards;
-                                                      FirebaseFirestore.instance
-                                                          .collection(
-                                                              'customers')
-                                                          .doc(currUser!.uid)
-                                                          .update({
-                                                        "cards": customerCards
-                                                      });
+                                                      myCards.remove(
+                                                          myCards[index]);
+                                                      //myCards = customerCards;
+                                                      if (currUser != null) {
+                                                        FirebaseFirestore
+                                                            .instance
+                                                            .collection(
+                                                                'customers')
+                                                            .doc(currUser.uid)
+                                                            .update({
+                                                          "cards": myCards
+                                                        });
+                                                      }
+
                                                       //myCards.remove(myCards[index]);
                                                     });
                                                   },
                                                   text:
-                                                      "XXXX XXXX XXXX ${customerCards[index]["cardNum"].substring(customerCards[index]["cardNum"].length - 4, customerCards[index]["cardNum"].length)}",
-                                                  imgUrl: customerCards[index]
+                                                      "XXXX XXXX XXXX ${myCards[index]["cardNum"].substring(myCards[index]["cardNum"].length - 4, myCards[index]["cardNum"].length)}",
+                                                  imgUrl: myCards[index]
                                                       ["providerImgUrl"],
                                                   iconData:
                                                       Icons.more_vert_rounded);
@@ -437,7 +442,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                                     children: [
                                       Expanded(
                                         child: ListView.builder(
-                                            itemCount: customerBanks.length,
+                                            itemCount: myBanks.length,
                                             itemBuilder: (BuildContext context,
                                                 int index) {
                                               return PaymentsScreenSubTile(
@@ -446,29 +451,32 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                                                   screenHeight:
                                                       screenHeight * 0.8,
                                                   onTap: () {
-                                                    _launchUrl(
-                                                        customerBanks[index]
-                                                            ["bankUrl"]);
+                                                    _launchUrl(myBanks[index]
+                                                        ["bankUrl"]);
                                                   },
                                                   onIconTap: () {
                                                     setState(() {
-                                                      customerBanks.remove(
-                                                          customerBanks[index]);
-                                                      myBanks = customerBanks;
-                                                      FirebaseFirestore.instance
-                                                          .collection(
-                                                              'customers')
-                                                          .doc(currUser!.uid)
-                                                          .update({
-                                                        "banks": customerBanks
-                                                      });
+                                                      myBanks.remove(
+                                                          myBanks[index]);
+                                                      //myBanks = customerBanks;
+                                                      if (currUser != null) {
+                                                        FirebaseFirestore
+                                                            .instance
+                                                            .collection(
+                                                                'customers')
+                                                            .doc(currUser.uid)
+                                                            .update({
+                                                          "banks": myBanks
+                                                        });
+                                                      }
+
                                                       // customerBanks
                                                       //     .remove(myBanks[index]);
                                                     });
                                                   },
-                                                  text: customerBanks[index]
+                                                  text: myBanks[index]
                                                       ["bankName"],
-                                                  imgUrl: customerBanks[index]
+                                                  imgUrl: myBanks[index]
                                                       ["bankImgUrl"],
                                                   iconData:
                                                       Icons.more_vert_rounded);

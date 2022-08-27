@@ -1,9 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 import 'package:musicart/widgets/custom_appbar.dart';
+import 'package:provider/provider.dart';
 
 import '../global_variables/global_variables.dart';
+import '../services/firebase_auth_methods.dart';
 import '../widgets/animated_bottom_bar.dart';
 
 class OrderHistoryScreen extends StatefulWidget {
@@ -18,9 +21,26 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
   final String _hintText = "Search instruments...";
   int _currentIndex = 3;
   int count = 0;
+  num totalItemsOrdered = 0;
 
   @override
   Widget build(BuildContext context) {
+    final currUser = context.read<FirebaseAuthMethods>().user;
+    if (currUser != null) {
+      Future<List> generateFutureCustomerOrderlist() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('orders'));
+      }
+
+      void generateCustomerOrderslist() async {
+        ordersList = await generateFutureCustomerOrderlist();
+      }
+
+      generateCustomerOrderslist();
+    }
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -67,7 +87,7 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                     ],
                   )
                 : SizedBox(
-                    width: screenWidth * 0.95,
+                    width: screenWidth,
                     height: screenHeight * 0.8,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,32 +97,23 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                             itemCount: ordersList.length,
                             itemBuilder: (BuildContext context, int index) {
                               return SizedBox(
-                                width: screenWidth * 0.95,
-                                height: screenHeight *
-                                    0.11 *
-                                    ordersList[index].length,
+                                width: screenWidth,
+                                height: (screenHeight *
+                                    0.125 *
+                                    ordersList[index]["items"].length),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    // Padding(
-                                    //   padding:
-                                    //       EdgeInsets.only(top: screenHeight * 0.01),
-                                    //   child: Text(
-                                    //     "${ordersDate[ordersList[index]]}",
-                                    //     style: globalTextStyle.copyWith(
-                                    //       color: Colors.grey,
-                                    //       fontSize: screenWidth * 0.03,
-                                    //       fontWeight: FontWeight.bold,
-                                    //     ),
-                                    //   ),
-                                    // ),
                                     Padding(
                                       padding: EdgeInsets.only(
                                           top: screenHeight * 0.01),
-                                      child: Text(
-                                        DateFormat.yMMMMEEEEd()
-                                            .format(orderDate[index].date),
+                                      child:
+                                          // Text("dateTime"),
+                                          Text(
+                                        DateFormat.yMMMMEEEEd().format(
+                                            ordersList[index]["dateTime"]
+                                                .toDate()),
                                         style: globalTextStyle.copyWith(
                                           color: Colors.grey,
                                           fontSize: screenWidth * 0.03,
@@ -112,13 +123,15 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                                     ),
                                     Expanded(
                                       child: ListView.builder(
-                                          itemCount: ordersList[index].length,
+                                          itemCount:
+                                              ordersList[index]["items"].length,
                                           itemBuilder: (BuildContext context,
                                               int index2) {
                                             return Padding(
                                               padding: EdgeInsets.only(
                                                   top: screenHeight * 0.01,
-                                                  left: screenWidth * 0.02),
+                                                  left: screenWidth * 0.025,
+                                                  right: screenWidth * 0.025),
                                               child: Container(
                                                 width: screenWidth * 0.95,
                                                 height: screenHeight * 0.08,
@@ -132,15 +145,18 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                                                     Radius.circular(10),
                                                   ),
                                                 ),
-                                                child: ListTile(
+                                                child:
+                                                    //Text("itemDetail"),
+                                                    ListTile(
                                                   leading: Image(
                                                       image: NetworkImage(
                                                           ordersList[index]
+                                                                      ["items"]
                                                                   [index2]
                                                               ["img-url"])),
                                                   title: Text(
-                                                    ordersList[index][index2]
-                                                        ["name"],
+                                                    ordersList[index]["items"]
+                                                        [index2]["name"],
                                                     style: globalTextStyle
                                                         .copyWith(
                                                       color: primaryColor,
@@ -149,14 +165,14 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                                                     ),
                                                   ),
                                                   subtitle: Text(
-                                                    "${ordersMap[index][ordersList[index][index2]].toString()} units",
+                                                    "${ordersList[index]["units"][index2].toString()} units",
                                                     style: globalTextStyle
                                                         .copyWith(
                                                       color: Colors.grey,
                                                     ),
                                                   ),
                                                   trailing: Text(
-                                                    "₹${ordersList[index][index2]["price"].toString()}",
+                                                    "₹ ${ordersList[index]["items"][index2]["price"].toString()}",
                                                     style: globalTextStyle
                                                         .copyWith(
                                                       color: primaryColor,
@@ -169,6 +185,46 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                                             );
                                           }),
                                     ),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: screenHeight * 0.01,
+                                        horizontal: screenWidth * 0.03,
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          //Text("addressOfOrder"),
+                                          Text(
+                                            ordersList[index]["addressOfOrder"]
+                                                ["addressLine1"],
+                                            style: globalTextStyle.copyWith(
+                                              color: Colors.grey,
+                                              fontSize: screenWidth * 0.025,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          //Text("orderValue"),
+                                          Text(
+                                            "₹ ${ordersList[index]["orderValue"].toString()}",
+                                            style: globalTextStyle.copyWith(
+                                              color: Colors.grey,
+                                              fontSize: screenWidth * 0.03,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    // const Divider(
+                                    //   color: Colors.grey,
+                                    //   height: 1,
+                                    //   indent: 20,
+                                    //   endIndent: 20,
+                                    // ),
+                                    // SizedBox(
+                                    //   height: screenHeight * 0.01,
+                                    // )
                                   ],
                                 ),
                               );

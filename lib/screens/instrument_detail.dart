@@ -27,10 +27,10 @@ class _InstrumentDetailState extends State<InstrumentDetail> {
 
   bool isButtonClicked = false;
 
-  List customerWishlist = [];
-  List customerCartlist = [];
-  List customerCartMap = [];
-  double customerCartValue = 0;
+  // List customerWishlist = [];
+  // List customerCartlist = [];
+  // List customerCartMap = [];
+  // double customerCartValue = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -41,70 +41,73 @@ class _InstrumentDetailState extends State<InstrumentDetail> {
     int unitsCarted = 0;
 
     final currUser = context.read<FirebaseAuthMethods>().user;
-    Future<List> generateFutureCustomerWishlist() async {
-      return FirebaseFirestore.instance
-          .collection('customers')
-          .doc(currUser!.uid)
-          .get()
-          .then((value) => value.get('wish'));
+
+    if (currUser != null) {
+      Future<List> generateFutureCustomerWishlist() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('wish'));
+      }
+
+      void generateCustomerWishList() async {
+        wishList = await generateFutureCustomerWishlist();
+      }
+
+      generateCustomerWishList();
+      //wishList = customerWishlist;
+
+      Future<List> generateFutureCustomerCartlist() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('cart'));
+      }
+
+      void generateCustomerCartList() async {
+        cartList = await generateFutureCustomerCartlist();
+      }
+
+      generateCustomerCartList();
+      //cartList = customerCartlist;
+
+      Future<List> generateFutureCustomerCartMap() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('cartMap'));
+      }
+
+      void generateCustomerCartMap() async {
+        cartMap = await generateFutureCustomerCartMap();
+      }
+
+      generateCustomerCartMap();
+      //cartMap = customerCartMap;
+
+      Future<double> generateFutureCustomerCartValue() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('cartValue'));
+      }
+
+      void generateCustomerCartValue() async {
+        myCartValue = await generateFutureCustomerCartValue();
+      }
+
+      generateCustomerCartValue();
+      //myCartValue = customerCartValue;
     }
-
-    void generateCustomerWishList() async {
-      customerWishlist = await generateFutureCustomerWishlist();
-    }
-
-    generateCustomerWishList();
-    //wishList = customerWishlist;
-
-    Future<List> generateFutureCustomerCartlist() async {
-      return FirebaseFirestore.instance
-          .collection('customers')
-          .doc(currUser!.uid)
-          .get()
-          .then((value) => value.get('cart'));
-    }
-
-    void generateCustomerCartList() async {
-      customerCartlist = await generateFutureCustomerCartlist();
-    }
-
-    generateCustomerCartList();
-    //cartList = customerCartlist;
-
-    Future<List> generateFutureCustomerCartMap() async {
-      return FirebaseFirestore.instance
-          .collection('customers')
-          .doc(currUser!.uid)
-          .get()
-          .then((value) => value.get('cartMap'));
-    }
-
-    void generateCustomerCartMap() async {
-      customerCartMap = await generateFutureCustomerCartMap();
-    }
-
-    generateCustomerCartMap();
-    //cartMap = customerCartMap;
-
-    Future<double> generateFutureCustomerCartValue() async {
-      return FirebaseFirestore.instance
-          .collection('customers')
-          .doc(currUser!.uid)
-          .get()
-          .then((value) => value.get('cartValue'));
-    }
-
-    void generateCustomerCartValue() async {
-      customerCartValue = await generateFutureCustomerCartValue();
-    }
-
-    generateCustomerCartValue();
-    //myCartValue = customerCartValue;
 
     double computeCartValue() {
       double cV = 0;
-      for (int i = 0; i < customerCartlist.length; i++) {
-        cV = cV + (customerCartlist[i]["price"] * customerCartMap[i]);
+      for (int i = 0; i < cartList.length; i++) {
+        cV = cV + (cartList[i]["price"] * cartMap[i]);
       }
       return cV;
     }
@@ -300,45 +303,49 @@ class _InstrumentDetailState extends State<InstrumentDetail> {
                             setState(() {
                               unitsCarted++;
                               if (!isCarted_) {
-                                customerCartlist.add(widget.instrument);
-                                customerCartMap.add(unitsCarted);
-                                customerCartValue = computeCartValue();
-                                myCartValue = customerCartValue;
-                                cartList = customerCartlist;
-                                cartMap = customerCartMap;
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser!.uid)
-                                    .update({"cart": customerCartlist});
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser.uid)
-                                    .update({"cartMap": customerCartMap});
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser.uid)
-                                    .update({"cartValue": customerCartValue});
+                                cartList.add(widget.instrument);
+                                cartMap.add(unitsCarted);
+                                myCartValue = computeCartValue();
+                                //myCartValue = customerCartValue;
+                                // cartList = customerCartlist;
+                                // cartMap = customerCartMap;
+                                if (currUser != null) {
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cart": cartList});
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cartMap": cartMap});
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cartValue": myCartValue});
+                                }
 
                                 isCarted = !isCarted;
                               } else {
                                 for (int i = 0; i < cartList.length; i++) {
                                   if (cartList[i]["iid"] ==
                                       widget.instrument["iid"]) {
-                                    customerCartMap[i] = unitsCarted;
+                                    cartMap[i] = unitsCarted;
                                     break;
                                   }
                                 }
-                                cartMap = customerCartMap;
-                                customerCartValue = computeCartValue();
-                                myCartValue = customerCartValue;
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser!.uid)
-                                    .update({"cartMap": customerCartMap});
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser.uid)
-                                    .update({"cartValue": customerCartValue});
+                                // cartMap = customerCartMap;
+                                myCartValue = computeCartValue();
+                                //myCartValue = customerCartValue;
+                                if (currUser != null) {
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cartMap": cartMap});
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cartValue": myCartValue});
+                                }
                               }
                               isButtonClicked = true;
                             });
@@ -348,58 +355,59 @@ class _InstrumentDetailState extends State<InstrumentDetail> {
                               if (unitsCarted > 0) {
                                 unitsCarted--;
                                 if (unitsCarted == 0) {
-                                  for (int i = 0;
-                                      i < customerCartlist.length;
-                                      i++) {
-                                    if (customerCartlist[i]["iid"] ==
+                                  for (int i = 0; i < cartList.length; i++) {
+                                    if (cartList[i]["iid"] ==
                                         widget.instrument["iid"]) {
-                                      customerCartlist
-                                          .remove(customerCartlist[i]);
-                                      customerCartMap.removeAt(i);
+                                      cartList.remove(cartList[i]);
+                                      cartMap.removeAt(i);
                                       break;
                                     }
                                   }
-                                  cartList = customerCartlist;
-                                  cartMap = customerCartMap;
-                                  customerCartValue = computeCartValue();
-                                  myCartValue = customerCartValue;
-                                  FirebaseFirestore.instance
-                                      .collection('customers')
-                                      .doc(currUser!.uid)
-                                      .update({"cart": customerCartlist});
-                                  FirebaseFirestore.instance
-                                      .collection('customers')
-                                      .doc(currUser.uid)
-                                      .update({"cartMap": customerCartMap});
-                                  FirebaseFirestore.instance
-                                      .collection('customers')
-                                      .doc(currUser.uid)
-                                      .update({"cartValue": customerCartValue});
+                                  // cartList = customerCartlist;
+                                  // cartMap = customerCartMap;
+                                  myCartValue = computeCartValue();
+                                  //myCartValue = customerCartValue;
+                                  if (currUser != null) {
+                                    FirebaseFirestore.instance
+                                        .collection('customers')
+                                        .doc(currUser.uid)
+                                        .update({"cart": cartList});
+                                    FirebaseFirestore.instance
+                                        .collection('customers')
+                                        .doc(currUser.uid)
+                                        .update({"cartMap": cartMap});
+                                    FirebaseFirestore.instance
+                                        .collection('customers')
+                                        .doc(currUser.uid)
+                                        .update({"cartValue": myCartValue});
+                                  }
+
                                   // cartList.remove(widget.instrument);
                                   // cartMap.remove(widget.instrument);
                                   isCarted = !isCarted;
                                 } else {
-                                  for (int i = 0;
-                                      i < customerCartlist.length;
-                                      i++) {
-                                    if (customerCartlist[i]["iid"] ==
+                                  for (int i = 0; i < cartList.length; i++) {
+                                    if (cartList[i]["iid"] ==
                                         widget.instrument["iid"]) {
-                                      customerCartMap[i] = unitsCarted;
+                                      cartMap[i] = unitsCarted;
                                       break;
                                     }
                                   }
 
-                                  cartMap = customerCartMap;
-                                  customerCartValue = computeCartValue();
-                                  myCartValue = customerCartValue;
-                                  FirebaseFirestore.instance
-                                      .collection('customers')
-                                      .doc(currUser!.uid)
-                                      .update({"cartMap": customerCartMap});
-                                  FirebaseFirestore.instance
-                                      .collection('customers')
-                                      .doc(currUser.uid)
-                                      .update({"cartValue": customerCartValue});
+                                  // cartMap = customerCartMap;
+                                  myCartValue = computeCartValue();
+                                  //myCartValue = customerCartValue;
+                                  if (currUser != null) {
+                                    FirebaseFirestore.instance
+                                        .collection('customers')
+                                        .doc(currUser.uid)
+                                        .update({"cartMap": cartMap});
+                                    FirebaseFirestore.instance
+                                        .collection('customers')
+                                        .doc(currUser.uid)
+                                        .update({"cartValue": myCartValue});
+                                  }
+
                                   // cartMap.update(widget.instrument,
                                   //     (value) => unitsCarted);
                                 }
@@ -428,30 +436,31 @@ class _InstrumentDetailState extends State<InstrumentDetail> {
                           onTap: () async {
                             if (isWished_) {
                               setState(() {
-                                for (int i = 0;
-                                    i < customerWishlist.length;
-                                    i++) {
-                                  if (customerWishlist[i]["iid"] ==
+                                for (int i = 0; i < wishList.length; i++) {
+                                  if (wishList[i]["iid"] ==
                                       widget.instrument["iid"]) {
-                                    customerWishlist
-                                        .remove(customerWishlist[i]);
+                                    wishList.remove(wishList[i]);
                                     break;
                                   }
                                 }
-                                wishList = customerWishlist;
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser!.uid)
-                                    .update({"wish": customerWishlist});
+                                //wishList = customerWishlist;
+                                if (currUser != null) {
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"wish": wishList});
+                                }
                               });
                             } else {
                               setState(() {
-                                customerWishlist.add(widget.instrument);
-                                wishList = customerWishlist;
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser!.uid)
-                                    .update({"wish": customerWishlist});
+                                wishList.add(widget.instrument);
+                                //wishList = customerWishlist;
+                                if (currUser != null) {
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"wish": wishList});
+                                }
                               });
                             }
                           },
@@ -482,58 +491,59 @@ class _InstrumentDetailState extends State<InstrumentDetail> {
                           onTap: () {
                             if (isCarted_) {
                               setState(() {
-                                for (int i = 0;
-                                    i < customerCartlist.length;
-                                    i++) {
-                                  if (customerCartlist[i]["iid"] ==
+                                for (int i = 0; i < cartList.length; i++) {
+                                  if (cartList[i]["iid"] ==
                                       widget.instrument["iid"]) {
-                                    customerCartlist
-                                        .remove(customerCartlist[i]);
-                                    customerCartMap.removeAt(i);
-                                    customerCartValue = computeCartValue();
-                                    myCartValue = customerCartValue;
+                                    cartList.remove(cartList[i]);
+                                    cartMap.removeAt(i);
+                                    myCartValue = computeCartValue();
+                                    //myCartValue = customerCartValue;
 
                                     break;
                                   }
                                 }
-                                cartList = customerCartlist;
-                                cartMap = customerCartMap;
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser!.uid)
-                                    .update({"cart": customerCartlist});
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser.uid)
-                                    .update({"cartMap": customerCartMap});
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser.uid)
-                                    .update({"cartValue": customerCartValue});
+                                // cartList = customerCartlist;
+                                // cartMap = customerCartMap;
+                                if (currUser != null) {
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cart": cartList});
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cartMap": cartMap});
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cartValue": myCartValue});
+                                }
                               });
                             } else {
                               setState(() {
-                                customerCartlist.add(widget.instrument);
-                                customerCartMap.add(1);
-                                customerCartValue = computeCartValue();
-                                myCartValue = customerCartValue;
-                                cartList = customerCartlist;
-                                cartMap = customerCartMap;
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser!.uid)
-                                    .update({"cart": customerCartlist});
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser.uid)
-                                    .update({"cartMap": customerCartMap});
-                                FirebaseFirestore.instance
-                                    .collection('customers')
-                                    .doc(currUser.uid)
-                                    .update({"cartValue": customerCartValue});
+                                cartList.add(widget.instrument);
+                                cartMap.add(1);
+                                myCartValue = computeCartValue();
+                                // myCartValue = customerCartValue;
+                                // cartList = customerCartlist;
+                                // cartMap = customerCartMap;
+                                if (currUser != null) {
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cart": cartList});
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cartMap": cartMap});
+                                  FirebaseFirestore.instance
+                                      .collection('customers')
+                                      .doc(currUser.uid)
+                                      .update({"cartValue": myCartValue});
+                                }
                               });
                             }
-                            print("Customer Cartlist: $customerCartlist");
+                            //print("Customer Cartlist: $customerCartlist");
                             print("Local Cartlist: $cartList");
                           },
                           child: Padding(

@@ -118,20 +118,22 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
   @override
   Widget build(BuildContext context) {
     final currUser = context.read<FirebaseAuthMethods>().user;
-    Future<List> generateFutureCustomerAddresses() async {
-      return FirebaseFirestore.instance
-          .collection('customers')
-          .doc(currUser!.uid)
-          .get()
-          .then((value) => value.get('addresses'));
-    }
+    if (currUser != null) {
+      Future<List> generateFutureCustomerAddresses() async {
+        return FirebaseFirestore.instance
+            .collection('customers')
+            .doc(currUser.uid)
+            .get()
+            .then((value) => value.get('addresses'));
+      }
 
-    void generateCustomerAddresses() async {
-      customerAddresses = await generateFutureCustomerAddresses();
-    }
+      void generateCustomerAddresses() async {
+        myAddresses = await generateFutureCustomerAddresses();
+      }
 
-    generateCustomerAddresses();
-    myAddresses = customerAddresses;
+      generateCustomerAddresses();
+      customerAddresses = myAddresses;
+    }
 
     double? screenWidth = MediaQuery.of(context).size.width;
     double? screenHeight = MediaQuery.of(context).size.height;
@@ -454,7 +456,7 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
                           height: screenHeight * 0.05,
                           child: ElevatedButton(
                             onPressed: () {
-                              customerAddresses.add(
+                              myAddresses.add(
                                 AddressObject(
                                   personName: _personNameController.text,
                                   addressLine1: _addressLine1Controller.text,
@@ -468,11 +470,14 @@ class _CreateAddressScreenState extends State<CreateAddressScreen> {
                                   longitude: _latlong.longitude,
                                 ).toJsonAddresses(),
                               );
-                              myAddresses = customerAddresses;
-                              FirebaseFirestore.instance
-                                  .collection('customers')
-                                  .doc(currUser!.uid)
-                                  .update({"addresses": customerAddresses});
+                              //myAddresses = customerAddresses;
+                              if (currUser != null) {
+                                FirebaseFirestore.instance
+                                    .collection('customers')
+                                    .doc(currUser.uid)
+                                    .update({"addresses": myAddresses});
+                              }
+
                               Navigator.pushNamed(context, "/select-address");
                             },
                             style: ElevatedButton.styleFrom(

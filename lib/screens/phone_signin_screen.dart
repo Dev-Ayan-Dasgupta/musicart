@@ -192,9 +192,12 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
                         cartValue: 0.0,
                         wish: [],
                         orders: [],
+                        // ordersMap: [],
+                        // orderDate: [],
                         cards: [],
                         banks: [],
                         addresses: [],
+                        currAddress: [],
                       );
 
                       await FirebaseFirestore.instance
@@ -226,17 +229,19 @@ class _PhoneSigninScreenState extends State<PhoneSigninScreen> {
                         ));
 
                         Customer customer = Customer(
-                          uid: cred.user!.uid,
-                          username: cred.user!.email!,
-                          cart: [],
-                          cartMap: [],
-                          cartValue: 0.0,
-                          wish: [],
-                          orders: [],
-                          cards: [],
-                          banks: [],
-                          addresses: [],
-                        );
+                            uid: cred.user!.uid,
+                            username: cred.user!.email!,
+                            cart: [],
+                            cartMap: [],
+                            cartValue: 0.0,
+                            wish: [],
+                            orders: [],
+                            // ordersMap: [],
+                            // orderDate: [],
+                            cards: [],
+                            banks: [],
+                            addresses: [],
+                            currAddress: []);
 
                         await FirebaseFirestore.instance
                             .collection('customers')

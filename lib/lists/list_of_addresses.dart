@@ -2,7 +2,7 @@ import '../models/address_object.dart';
 
 List myAddresses = [];
 
-AddressObject? currentAddress;
+List currentAddress = [];
 
 void setOtherAddressesToFalse(AddressObject addObj) {
   for (int i = 0; i < myAddresses.length; i++) {
