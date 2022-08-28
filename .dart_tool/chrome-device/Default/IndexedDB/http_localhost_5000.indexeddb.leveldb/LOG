@@ -1,58 +1,53 @@
-2022/08/26-12:33:25.889 7b58 Reusing MANIFEST C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.46c5c5d9\flutter_tools_chrome_device.dcd27d48\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/MANIFEST-000001
-2022/08/26-12:33:25.890 7b58 Recovering log #197
-2022/08/26-12:33:25.891 7b58 Reusing old log C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.46c5c5d9\flutter_tools_chrome_device.dcd27d48\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/000197.log 
-2022/08/26-12:33:25.891 7b58 Delete type=0 #4
-2022/08/26-12:33:25.891 7b58 Delete type=2 #5
-2022/08/26-12:33:25.891 7b58 Delete type=2 #8
-2022/08/26-12:33:25.891 7b58 Delete type=0 #10
-2022/08/26-12:33:25.891 7b58 Delete type=2 #12
-2022/08/26-12:33:25.891 7b58 Delete type=0 #14
-2022/08/26-12:33:25.892 7b58 Delete type=2 #16
-2022/08/26-12:33:25.892 7b58 Delete type=0 #18
-2022/08/26-12:33:25.892 7b58 Delete type=2 #20
-2022/08/26-12:33:25.892 7b58 Delete type=0 #22
-2022/08/26-12:33:25.892 7b58 Delete type=2 #24
-2022/08/26-12:33:25.892 7b58 Delete type=0 #26
-2022/08/26-12:33:25.892 7b58 Delete type=2 #28
-2022/08/26-12:33:25.892 7b58 Delete type=0 #30
-2022/08/26-12:33:25.892 7b58 Delete type=2 #32
-2022/08/26-12:33:25.892 7b58 Delete type=0 #34
-2022/08/26-12:33:25.892 7b58 Delete type=2 #36
-2022/08/26-12:33:25.892 7b58 Delete type=0 #38
-2022/08/26-12:33:25.892 7b58 Delete type=2 #40
-2022/08/26-12:33:25.892 7b58 Delete type=2 #48
-2022/08/26-12:33:25.892 7b58 Delete type=0 #50
-2022/08/26-12:33:25.892 7b58 Delete type=2 #52
-2022/08/26-12:33:25.892 7b58 Delete type=0 #62
-2022/08/26-12:33:25.892 7b58 Delete type=2 #64
-2022/08/26-12:33:25.892 7b58 Delete type=0 #70
-2022/08/26-12:33:25.892 7b58 Delete type=2 #72
-2022/08/26-12:33:25.892 7b58 Delete type=0 #74
-2022/08/26-12:33:25.892 7b58 Delete type=2 #76
-2022/08/26-12:33:25.892 7b58 Delete type=0 #86
-2022/08/26-12:33:25.892 7b58 Delete type=2 #88
-2022/08/26-12:33:25.892 7b58 Delete type=0 #90
-2022/08/26-12:33:25.892 7b58 Delete type=2 #92
-2022/08/26-12:33:25.892 7b58 Delete type=0 #94
-2022/08/26-12:33:25.892 7b58 Delete type=2 #96
-2022/08/26-12:33:25.892 7b58 Delete type=0 #98
-2022/08/26-12:33:25.892 7b58 Delete type=2 #100
-2022/08/26-12:33:25.892 7b58 Delete type=0 #102
-2022/08/26-12:33:25.892 7b58 Delete type=2 #104
-2022/08/26-12:33:25.892 7b58 Delete type=0 #106
-2022/08/26-12:33:25.892 7b58 Delete type=2 #108
-2022/08/26-12:33:25.892 7b58 Delete type=0 #145
-2022/08/26-12:33:25.892 7b58 Delete type=2 #147
-2022/08/26-12:33:25.892 7b58 Delete type=2 #166
-2022/08/26-12:33:25.892 7b58 Delete type=0 #168
-2022/08/26-12:33:25.892 7b58 Delete type=2 #170
-2022/08/26-12:33:26.339 7b58 Level-0 table #202: started
-2022/08/26-12:33:26.342 7b58 Level-0 table #202: 3281 bytes OK
-2022/08/26-12:33:26.344 7b58 Delete type=0 #197
-2022/08/26-12:33:26.345 7b58 Manual compaction at level-0 from '\x004\x00\x00\x00' @ 72057594037927935 : 1 .. '\x005\x00\x00\x00' @ 0 : 0; will stop at (end)
-2022/08/26-12:34:05.590 7b58 Compacting 1@1 + 1@2 files
-2022/08/26-12:34:05.593 7b58 Generated table #203@1: 42 keys, 3011 bytes
-2022/08/26-12:34:05.593 7b58 Compacted 1@1 + 1@2 files => 3011 bytes
-2022/08/26-12:34:05.593 7b58 compacted to: files[ 0 0 1 0 0 0 0 ]
-2022/08/26-12:34:05.594 7b58 Delete type=2 #199
-2022/08/26-12:34:05.594 7b58 Delete type=2 #202
+2022/08/28-12:07:31.904 6c8c Reusing MANIFEST C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.1d89df9e\flutter_tools_chrome_device.c82958eb\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/MANIFEST-000001
+2022/08/28-12:07:31.905 6c8c Recovering log #209
+2022/08/28-12:07:31.906 6c8c Reusing old log C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.1d89df9e\flutter_tools_chrome_device.c82958eb\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/000209.log 
+2022/08/28-12:07:31.906 6c8c Delete type=0 #4
+2022/08/28-12:07:31.906 6c8c Delete type=2 #5
+2022/08/28-12:07:31.906 6c8c Delete type=2 #8
+2022/08/28-12:07:31.906 6c8c Delete type=0 #10
+2022/08/28-12:07:31.906 6c8c Delete type=2 #12
+2022/08/28-12:07:31.906 6c8c Delete type=0 #14
+2022/08/28-12:07:31.907 6c8c Delete type=2 #16
+2022/08/28-12:07:31.907 6c8c Delete type=0 #18
+2022/08/28-12:07:31.907 6c8c Delete type=2 #20
+2022/08/28-12:07:31.907 6c8c Delete type=0 #22
+2022/08/28-12:07:31.907 6c8c Delete type=2 #24
+2022/08/28-12:07:31.907 6c8c Delete type=0 #26
+2022/08/28-12:07:31.907 6c8c Delete type=2 #28
+2022/08/28-12:07:31.907 6c8c Delete type=0 #30
+2022/08/28-12:07:31.907 6c8c Delete type=2 #32
+2022/08/28-12:07:31.907 6c8c Delete type=0 #34
+2022/08/28-12:07:31.907 6c8c Delete type=2 #36
+2022/08/28-12:07:31.907 6c8c Delete type=0 #38
+2022/08/28-12:07:31.907 6c8c Delete type=2 #40
+2022/08/28-12:07:31.907 6c8c Delete type=2 #48
+2022/08/28-12:07:31.907 6c8c Delete type=0 #50
+2022/08/28-12:07:31.907 6c8c Delete type=2 #52
+2022/08/28-12:07:31.907 6c8c Delete type=0 #62
+2022/08/28-12:07:31.907 6c8c Delete type=2 #64
+2022/08/28-12:07:31.907 6c8c Delete type=0 #70
+2022/08/28-12:07:31.907 6c8c Delete type=2 #72
+2022/08/28-12:07:31.907 6c8c Delete type=0 #74
+2022/08/28-12:07:31.907 6c8c Delete type=2 #76
+2022/08/28-12:07:31.907 6c8c Delete type=0 #86
+2022/08/28-12:07:31.907 6c8c Delete type=2 #88
+2022/08/28-12:07:31.907 6c8c Delete type=0 #90
+2022/08/28-12:07:31.907 6c8c Delete type=2 #92
+2022/08/28-12:07:31.907 6c8c Delete type=0 #94
+2022/08/28-12:07:31.907 6c8c Delete type=2 #96
+2022/08/28-12:07:31.907 6c8c Delete type=0 #98
+2022/08/28-12:07:31.907 6c8c Delete type=2 #100
+2022/08/28-12:07:31.907 6c8c Delete type=0 #102
+2022/08/28-12:07:31.907 6c8c Delete type=2 #104
+2022/08/28-12:07:31.907 6c8c Delete type=0 #106
+2022/08/28-12:07:31.907 6c8c Delete type=2 #108
+2022/08/28-12:07:31.907 6c8c Delete type=0 #145
+2022/08/28-12:07:31.907 6c8c Delete type=2 #147
+2022/08/28-12:07:31.907 6c8c Delete type=2 #166
+2022/08/28-12:07:31.907 6c8c Delete type=0 #168
+2022/08/28-12:07:31.907 6c8c Delete type=2 #170
+2022/08/28-12:07:31.907 6c8c Delete type=0 #197
+2022/08/28-12:07:31.907 6c8c Delete type=2 #199
+2022/08/28-12:07:31.907 6c8c Delete type=0 #201
+2022/08/28-12:07:31.907 6c8c Delete type=2 #203
+2022/08/28-12:07:32.396 6888 Manual compaction at level-0 from '\x007\x00\x00\x00' @ 72057594037927935 : 1 .. '\x008\x00\x00\x00' @ 0 : 0; will stop at (end)

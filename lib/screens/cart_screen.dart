@@ -2,7 +2,9 @@
 
 import 'package:animated_flip_counter/animated_flip_counter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:intl/intl.dart';
 import 'package:musicart/lists/list_of_addresses.dart';
 import 'package:musicart/screens/instrument_detail.dart';
@@ -15,6 +17,9 @@ import '../widgets/animated_bottom_bar.dart';
 import '../widgets/custom_appbar.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 //import 'package:intl/date_symbol_data_local.dart';
+
+final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
 
 class CartScreen extends StatefulWidget {
   const CartScreen({
@@ -38,6 +43,38 @@ class _CartScreenState extends State<CartScreen> {
   List customerCartlist = [];
   List customerCartMap = [];
   double customerCartValue = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      print("foreground message received");
+      RemoteNotification? notification = message.notification;
+      AndroidNotification? android = message.notification?.android;
+      if (notification != null && android != null) {
+        _flutterLocalNotificationsPlugin.show(
+          notification.hashCode,
+          notification.title,
+          notification.body,
+          NotificationDetails(
+            android: AndroidNotificationDetails(
+              channel.id,
+              channel.name,
+              channelDescription: channel.description,
+              color: Colors.blue,
+              playSound: true,
+              importance: Importance.high,
+              icon: "./assets/images/logo.png",
+            ),
+          ),
+        );
+      }
+    });
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      print("App opened");
+      Navigator.pushNamed(context, "/cart");
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -128,15 +165,25 @@ class _CartScreenState extends State<CartScreen> {
               searchBoxController: _searchBoxController,
               hintText: _hintText,
             ),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     print(currentAddress.length);
-            //     print(currentAddress);
-            //     print(myAddresses.length);
-            //     print(myAddresses);
-            //   },
-            //   child: const Text("Test"),
-            // ),
+            ElevatedButton(
+              onPressed: () {
+                _flutterLocalNotificationsPlugin.show(
+                    0,
+                    "This is your cart",
+                    "Cart Value: ",
+                    NotificationDetails(
+                      android: AndroidNotificationDetails(
+                        channel.id,
+                        channel.name,
+                        channelDescription: channel.description,
+                        importance: Importance.high,
+                        color: Colors.blue,
+                        playSound: true,
+                      ),
+                    ));
+              },
+              child: const Text("Test"),
+            ),
             (cartList.isEmpty)
                 ? Column(
                     children: [

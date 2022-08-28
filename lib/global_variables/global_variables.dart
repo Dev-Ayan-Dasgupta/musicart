@@ -1,7 +1,10 @@
 import 'dart:collection';
 
 //import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/animated_bottom_bar.dart';
@@ -20,6 +23,25 @@ String userName = "Guest";
 bool isSignedIn = false;
 
 bool isWishEmpty = true;
+
+//GLOBAL DECLARATIONS FOR FCM and FLUTTER LOCAL NOTIFICATIONS - START
+
+const AndroidNotificationChannel channel = AndroidNotificationChannel(
+  "high_importance_channel",
+  "high_importance_notifications,",
+  importance: Importance.high,
+  playSound: true,
+);
+
+final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
+
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  print("A bg message just showed up: ${message.messageId}");
+}
+
+//GLOBAL DECLARATIONS FOR FCM and FLUTTER LOCAL NOTIFICATIONS - END
 
 //final User user = FirebaseAuthMethods(FirebaseAuth.instance).user;
 

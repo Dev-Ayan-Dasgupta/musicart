@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:musicart/widgets/flip_counter.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../global_variables/global_variables.dart';
 import '../services/firebase_auth_methods.dart';
@@ -221,11 +222,11 @@ class _InstrumentDetailState extends State<InstrumentDetail> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {
-                                // print(customerWishlist);
-                                // print(wishList);
-                                // print(widget.instrument);
-                                // print(isWished_);
+                              onPressed: () async {
+                                const urlPreview =
+                                    "https://localhost:5000/#/home";
+                                await Share.share(
+                                    "Buy this instrument:\n\n$urlPreview");
                               },
                               icon: Icon(
                                 Icons.share_rounded,

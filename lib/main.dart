@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 //import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:musicart/firebase_options.dart';
 import 'package:musicart/screens/account_screen.dart';
 import 'package:musicart/screens/acoustic_guitars_screen.dart';
@@ -30,6 +32,25 @@ import 'screens/home_welcome_screen.dart';
 import 'screens/signin_screen.dart';
 import 'services/firebase_auth_methods.dart';
 
+//GLOBAL DECLARATIONS FOR FCM and FLUTTER LOCAL NOTIFICATIONS - START
+
+const AndroidNotificationChannel channel = AndroidNotificationChannel(
+  "high_importance_channel",
+  "high_importance_notifications,",
+  importance: Importance.high,
+  playSound: true,
+);
+
+final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
+
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  print("A bg message just showed up: ${message.messageId}");
+}
+
+//GLOBAL DECLARATIONS FOR FCM and FLUTTER LOCAL NOTIFICATIONS - END
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
@@ -42,6 +63,22 @@ void main() async {
 //   FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.instance
 // firebaseAppCheck.installAppCheckProviderFactory(
 //         SafetyNetAppCheckProviderFactory.getInstance());
+
+//HANDLING FIREBASE BACKGROUND NOTIFICATION - START
+
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  await _flutterLocalNotificationsPlugin
+      .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>()
+      ?.createNotificationChannel(channel);
+  await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
+    alert: true,
+    badge: true,
+    sound: true,
+  );
+
+  //HANDLING FIREBASE BACKGROUND NOTIFICATION - END
+
   runApp(const MyApp());
 }
 

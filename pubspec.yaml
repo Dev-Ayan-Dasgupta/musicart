@@ -54,6 +54,10 @@ dependencies:
   pinput: ^2.2.12
   firebase_app_check: ^0.0.6+20
   cloud_firestore: ^3.4.5
+  firebase_messaging: ^13.0.0
+  flutter_local_notifications: ^9.8.0+1
+  share_plus: ^4.0.10+1
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
