@@ -4,6 +4,23 @@
             "outputFile": "C:\\Flutter_Projects\\musicart\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-hr\\values-hr.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\1ef57eec9e43b3d8e5a7f4e2e2b93ce1\\transformed\\core-1.7.0\\res\\values-hr\\values-hr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "134",
+                        "startColumns": "4",
+                        "startOffsets": "12694",
+                        "endColumns": "100",
+                        "endOffsets": "12790"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\38e30c664341fe5bfcc1d9de04582443\\transformed\\browser-1.4.0\\res\\values-hr\\values-hr.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -105,23 +122,6 @@
                         "startOffsets": "6003,6109,6266,6396,6506,6663,6793,6908,7147,7297,7404,7561,7689,7836,7979,8047,8109",
                         "endColumns": "105,156,129,109,156,129,114,106,149,106,156,127,146,142,67,61,80",
                         "endOffsets": "6104,6261,6391,6501,6658,6788,6903,7010,7292,7399,7556,7684,7831,7974,8042,8104,8185"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\aa701b47cec244085d46a1a42fcc7fb9\\transformed\\core-1.6.0\\res\\values-hr\\values-hr.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "134",
-                        "startColumns": "4",
-                        "startOffsets": "12694",
-                        "endColumns": "100",
-                        "endOffsets": "12790"
                     }
                 }
             ]

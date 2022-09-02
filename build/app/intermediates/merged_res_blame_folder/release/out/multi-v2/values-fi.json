@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\1ef57eec9e43b3d8e5a7f4e2e2b93ce1\\transformed\\core-1.7.0\\res\\values-fi\\values-fi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "133",
+                        "startColumns": "4",
+                        "startOffsets": "12494",
+                        "endColumns": "100",
+                        "endOffsets": "12590"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\38e30c664341fe5bfcc1d9de04582443\\transformed\\browser-1.4.0\\res\\values-fi\\values-fi.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -88,23 +105,6 @@
                         "endLines": "5,33,34,35,36,79,80,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131",
                         "endColumns": "12,82,95,107,83,64,92,74,64,87,65,57,70,65,53,109,59,63,53,72,115,83,80,102,84,84,89,66,65,76,81,83,73,78,76,71,88,75,90,94,73,72,93,53,71,85,85,61,63,62,100,101,94,102,78",
                         "endOffsets": "268,3021,3117,3225,3309,8221,8314,8698,8763,8851,8917,8975,9046,9112,9166,9276,9336,9400,9454,9527,9643,9727,9808,9911,9996,10081,10171,10238,10304,10381,10463,10547,10621,10700,10777,10849,10938,11014,11105,11200,11274,11347,11441,11495,11567,11653,11739,11801,11865,11928,12029,12131,12226,12329,12408"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\aa701b47cec244085d46a1a42fcc7fb9\\transformed\\core-1.6.0\\res\\values-fi\\values-fi.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "133",
-                        "startColumns": "4",
-                        "startOffsets": "12494",
-                        "endColumns": "100",
-                        "endOffsets": "12590"
                     }
                 },
                 {

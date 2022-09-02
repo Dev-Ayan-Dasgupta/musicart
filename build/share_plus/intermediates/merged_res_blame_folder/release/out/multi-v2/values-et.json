@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Flutter_Projects\\musicart\\build\\share_plus\\intermediates\\merged_res\\release\\values-et\\values-et.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\1ef57eec9e43b3d8e5a7f4e2e2b93ce1\\transformed\\core-1.7.0\\res\\values-et\\values-et.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Flutter_Projects\\musicart\\build\\share_plus\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-et\\values-et.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\1ef57eec9e43b3d8e5a7f4e2e2b93ce1\\transformed\\core-1.7.0\\res\\values-et\\values-et.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\1ef57eec9e43b3d8e5a7f4e2e2b93ce1\\transformed\\core-1.7.0\\res\\values-ar\\values-ar.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "137",
+                        "startColumns": "4",
+                        "startOffsets": "12516",
+                        "endColumns": "100",
+                        "endOffsets": "12612"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\38e30c664341fe5bfcc1d9de04582443\\transformed\\browser-1.4.0\\res\\values-ar\\values-ar.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -105,23 +122,6 @@
                         "endLines": "9,37,38,39,40,83,84,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135",
                         "endColumns": "12,83,100,118,76,62,90,68,66,99,64,60,67,61,57,113,59,60,56,72,122,80,79,117,80,80,88,66,65,77,79,83,71,73,72,69,90,70,89,94,73,82,92,48,68,85,84,61,63,62,108,91,96,92,79",
                         "endOffsets": "465,3202,3303,3422,3499,8252,8343,8720,8787,8887,8952,9013,9081,9143,9201,9315,9375,9436,9493,9566,9689,9770,9850,9968,10049,10130,10219,10286,10352,10430,10510,10594,10666,10740,10813,10883,10974,11045,11135,11230,11304,11387,11480,11529,11598,11684,11769,11831,11895,11958,12067,12159,12256,12349,12429"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\aa701b47cec244085d46a1a42fcc7fb9\\transformed\\core-1.6.0\\res\\values-ar\\values-ar.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "137",
-                        "startColumns": "4",
-                        "startOffsets": "12516",
-                        "endColumns": "100",
-                        "endOffsets": "12612"
                     }
                 }
             ]

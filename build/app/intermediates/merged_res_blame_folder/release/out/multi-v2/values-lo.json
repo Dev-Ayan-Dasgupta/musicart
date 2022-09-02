@@ -21,23 +21,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\aa701b47cec244085d46a1a42fcc7fb9\\transformed\\core-1.6.0\\res\\values-lo\\values-lo.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "110",
-                        "startColumns": "4",
-                        "startOffsets": "9930",
-                        "endColumns": "100",
-                        "endOffsets": "10026"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\c0f3f20b388f4fd17719d5b4717873f3\\transformed\\appcompat-1.2.0\\res\\values-lo\\values-lo.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -71,6 +54,23 @@
                         "endLines": "5,33,34,35,36,56,57,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108",
                         "endColumns": "12,80,114,118,82,65,88,68,58,94,64,57,64,60,59,105,60,59,57,70,118,85,81,112,74,75,89,66,65,68,73,78,72,76,68,69,84,74,92,92,73,68,93,51,66,83,83,61,63,62,98,91,94,91,78",
                         "endOffsets": "269,3017,3132,3251,3334,5752,5841,6223,6282,6377,6442,6500,6565,6626,6686,6792,6853,6913,6971,7042,7161,7247,7329,7442,7517,7593,7683,7750,7816,7885,7959,8038,8111,8188,8257,8327,8412,8487,8580,8673,8747,8816,8910,8962,9029,9113,9197,9259,9323,9386,9485,9577,9672,9764,9843"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ayan Dasgupta\\.gradle\\caches\\transforms-3\\1ef57eec9e43b3d8e5a7f4e2e2b93ce1\\transformed\\core-1.7.0\\res\\values-lo\\values-lo.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "110",
+                        "startColumns": "4",
+                        "startOffsets": "9930",
+                        "endColumns": "100",
+                        "endOffsets": "10026"
                     }
                 },
                 {
