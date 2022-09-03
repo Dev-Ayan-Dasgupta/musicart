@@ -69,6 +69,9 @@ class CustomAnimatedBottomBar extends StatelessWidget {
                   if (index == 1) {
                     Navigator.pushNamed(context, "/categories");
                   }
+                  if (index == 2) {
+                    Navigator.pushNamed(context, "/orders-history");
+                  }
                   if (index == 3) {
                     Navigator.pushNamed(context, "/my-account");
                   }

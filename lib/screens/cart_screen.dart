@@ -165,25 +165,25 @@ class _CartScreenState extends State<CartScreen> {
               searchBoxController: _searchBoxController,
               hintText: _hintText,
             ),
-            ElevatedButton(
-              onPressed: () {
-                _flutterLocalNotificationsPlugin.show(
-                    0,
-                    "This is your cart",
-                    "Cart Value: ",
-                    NotificationDetails(
-                      android: AndroidNotificationDetails(
-                        channel.id,
-                        channel.name,
-                        channelDescription: channel.description,
-                        importance: Importance.high,
-                        color: Colors.blue,
-                        playSound: true,
-                      ),
-                    ));
-              },
-              child: const Text("Test"),
-            ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     _flutterLocalNotificationsPlugin.show(
+            //         0,
+            //         "This is your cart",
+            //         "Cart Value: ",
+            //         NotificationDetails(
+            //           android: AndroidNotificationDetails(
+            //             channel.id,
+            //             channel.name,
+            //             channelDescription: channel.description,
+            //             importance: Importance.high,
+            //             color: Colors.blue,
+            //             playSound: true,
+            //           ),
+            //         ));
+            //   },
+            //   child: const Text("Test"),
+            // ),
             (cartList.isEmpty)
                 ? Column(
                     children: [

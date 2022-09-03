@@ -6,6 +6,8 @@ import 'package:musicart/widgets/custom_passwordfield.dart';
 import 'package:musicart/widgets/custom_textfield.dart';
 import 'package:provider/provider.dart';
 
+import 'account_screen.dart';
+
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
 
@@ -62,151 +64,161 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     return SafeArea(
       child: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(
-                "./assets/images/sign_up.png",
-                width: screenWidth * 0.5,
-                height: screenWidth * 0.5,
-              ),
-              // SizedBox(
-              //   height: screenHeight * 0.02,
-              // ),
-              CustomTextField(
-                width: screenWidth * 0.8,
-                height: screenWidth * 0.8 / 6.8,
-                textEditingController: _emailController,
-                hintText: "Enter your email",
-                iconData: Icons.email_rounded,
-              ),
-              SizedBox(
-                height: screenHeight * 0.02,
-              ),
-              CustomPasswordField(
-                width: screenWidth * 0.8,
-                height: screenWidth * 0.8 / 6.8,
-                textEditingController: _passwordController,
-                hintText: "Enter a password",
-                isObscured: true,
-                onChanged: (p0) {
-                  setState(() {
-                    getPasswordStatus(p0);
-                  });
-                },
-              ),
-              SizedBox(
-                height: screenHeight * 0.01,
-              ),
-              Padding(
-                padding: EdgeInsets.only(right: screenWidth * 0.1),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      passwordStatus,
-                      style: globalTextStyle.copyWith(
-                          fontSize: screenWidth * 0.02,
-                          color: (passwordStrength == 2)
-                              ? Colors.green
-                              : Colors.orange),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: screenHeight * 0.02,
-              ),
-              CustomPasswordField(
-                width: screenWidth * 0.8,
-                height: screenWidth * 0.8 / 6.8,
-                textEditingController: _confirmPasswordController,
-                hintText: "Confirm password",
-                isObscured: true,
-                onChanged: (p0) {
-                  setState(() {
-                    passwordsMatch =
-                        doPasswordsMatch(p0, _passwordController.text);
-                    passwordsMatchStatus = (passwordsMatch)
-                        ? "Passwords match"
-                        : "Passwords do not match";
-                  });
-                },
-              ),
-              SizedBox(
-                height: screenHeight * 0.01,
-              ),
-              Padding(
-                padding: EdgeInsets.only(right: screenWidth * 0.1),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      passwordsMatchStatus,
-                      style: globalTextStyle.copyWith(
-                        fontSize: screenWidth * 0.02,
-                        color: (passwordsMatch) ? Colors.green : Colors.red,
-                      ),
+          body: StreamBuilder<User?>(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return const AccountScreen();
+                } else {
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "./assets/images/sign_up.png",
+                          width: screenWidth * 0.5,
+                          height: screenWidth * 0.5,
+                        ),
+                        // SizedBox(
+                        //   height: screenHeight * 0.02,
+                        // ),
+                        CustomTextField(
+                          width: screenWidth * 0.8,
+                          height: screenWidth * 0.8 / 6.8,
+                          textEditingController: _emailController,
+                          hintText: "Enter your email",
+                          iconData: Icons.email_rounded,
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.02,
+                        ),
+                        CustomPasswordField(
+                          width: screenWidth * 0.8,
+                          height: screenWidth * 0.8 / 6.8,
+                          textEditingController: _passwordController,
+                          hintText: "Enter a password",
+                          isObscured: true,
+                          onChanged: (p0) {
+                            setState(() {
+                              getPasswordStatus(p0);
+                            });
+                          },
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.01,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: screenWidth * 0.1),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                passwordStatus,
+                                style: globalTextStyle.copyWith(
+                                    fontSize: screenWidth * 0.02,
+                                    color: (passwordStrength == 2)
+                                        ? Colors.green
+                                        : Colors.orange),
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.02,
+                        ),
+                        CustomPasswordField(
+                          width: screenWidth * 0.8,
+                          height: screenWidth * 0.8 / 6.8,
+                          textEditingController: _confirmPasswordController,
+                          hintText: "Confirm password",
+                          isObscured: true,
+                          onChanged: (p0) {
+                            setState(() {
+                              passwordsMatch = doPasswordsMatch(
+                                  p0, _passwordController.text);
+                              passwordsMatchStatus = (passwordsMatch)
+                                  ? "Passwords match"
+                                  : "Passwords do not match";
+                            });
+                          },
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.01,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: screenWidth * 0.1),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                passwordsMatchStatus,
+                                style: globalTextStyle.copyWith(
+                                  fontSize: screenWidth * 0.02,
+                                  color: (passwordsMatch)
+                                      ? Colors.green
+                                      : Colors.red,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.02,
+                        ),
+                        SizedBox(
+                          width: screenWidth * 0.8,
+                          height: screenWidth * 0.8 / 6.8,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: primaryColor,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5))),
+                            onPressed: () {
+                              signUpUser();
+                            },
+                            child: Text(
+                              "Sign up",
+                              style: globalTextStyle.copyWith(
+                                color: tertiaryColor,
+                                fontSize: screenWidth * 0.03,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: screenHeight * 0.02,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Already have an account? ",
+                              style: globalTextStyle.copyWith(
+                                  color: Colors.grey,
+                                  fontSize: screenWidth * 0.03),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, "/sign-in");
+                              },
+                              child: Text(
+                                "Sign in.",
+                                style: globalTextStyle.copyWith(
+                                  color: Colors.black,
+                                  fontSize: screenWidth * 0.03,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: screenHeight * 0.02,
-              ),
-              SizedBox(
-                width: screenWidth * 0.8,
-                height: screenWidth * 0.8 / 6.8,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: primaryColor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5))),
-                  onPressed: () {
-                    signUpUser();
-                  },
-                  child: Text(
-                    "Sign up",
-                    style: globalTextStyle.copyWith(
-                      color: tertiaryColor,
-                      fontSize: screenWidth * 0.03,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: screenHeight * 0.02,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Already have an account? ",
-                    style: globalTextStyle.copyWith(
-                        color: Colors.grey, fontSize: screenWidth * 0.03),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/sign-in");
-                    },
-                    child: Text(
-                      "Sign in.",
-                      style: globalTextStyle.copyWith(
-                        color: Colors.black,
-                        fontSize: screenWidth * 0.03,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+                  );
+                }
+              })),
     );
   }
 }

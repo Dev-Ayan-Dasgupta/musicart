@@ -57,7 +57,7 @@ List<BottomNavyBarItem> navBarItems = [
     textAlign: TextAlign.center,
   ),
   BottomNavyBarItem(
-    icon: const Icon(Icons.category_rounded),
+    icon: const Icon(Icons.grid_view_rounded),
     title: Text(
       'Categories',
       style: globalTextStyle.copyWith(fontSize: 14, color: _activeColor),
@@ -67,9 +67,9 @@ List<BottomNavyBarItem> navBarItems = [
     textAlign: TextAlign.center,
   ),
   BottomNavyBarItem(
-    icon: const Icon(Icons.message),
+    icon: const Icon(Icons.border_outer_rounded),
     title: Text(
-      'Messages ',
+      'Orders ',
       style: globalTextStyle.copyWith(fontSize: 14, color: _activeColor),
     ),
     activeColor: _activeColor,
