@@ -1,62 +1,64 @@
-2022/09/03-13:02:34.999 5bc0 Reusing MANIFEST C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.eb096027\flutter_tools_chrome_device.85e7ee08\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/MANIFEST-000001
-2022/09/03-13:02:35.000 5bc0 Recovering log #209
-2022/09/03-13:02:35.001 5bc0 Reusing old log C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.eb096027\flutter_tools_chrome_device.85e7ee08\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/000209.log 
-2022/09/03-13:02:35.002 5bc0 Delete type=0 #4
-2022/09/03-13:02:35.002 5bc0 Delete type=2 #5
-2022/09/03-13:02:35.002 5bc0 Delete type=2 #8
-2022/09/03-13:02:35.002 5bc0 Delete type=0 #10
-2022/09/03-13:02:35.002 5bc0 Delete type=2 #12
-2022/09/03-13:02:35.002 5bc0 Delete type=0 #14
-2022/09/03-13:02:35.002 5bc0 Delete type=2 #16
-2022/09/03-13:02:35.002 5bc0 Delete type=0 #18
-2022/09/03-13:02:35.002 5bc0 Delete type=2 #20
-2022/09/03-13:02:35.002 5bc0 Delete type=0 #22
-2022/09/03-13:02:35.002 5bc0 Delete type=2 #24
-2022/09/03-13:02:35.002 5bc0 Delete type=0 #26
-2022/09/03-13:02:35.002 5bc0 Delete type=2 #28
-2022/09/03-13:02:35.002 5bc0 Delete type=0 #30
-2022/09/03-13:02:35.002 5bc0 Delete type=2 #32
-2022/09/03-13:02:35.002 5bc0 Delete type=0 #34
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #36
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #38
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #40
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #48
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #50
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #52
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #62
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #64
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #70
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #72
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #74
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #76
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #86
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #88
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #90
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #92
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #94
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #96
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #98
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #100
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #102
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #104
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #106
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #108
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #145
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #147
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #166
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #168
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #170
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #197
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #199
-2022/09/03-13:02:35.003 5bc0 Delete type=0 #201
-2022/09/03-13:02:35.003 5bc0 Delete type=2 #203
-2022/09/03-13:02:35.384 5bc0 Level-0 table #214: started
-2022/09/03-13:02:35.392 5bc0 Level-0 table #214: 9167 bytes OK
-2022/09/03-13:02:35.395 5bc0 Delete type=0 #209
-2022/09/03-13:02:35.396 5bc0 Manual compaction at level-0 from '\x008\x00\x00\x00' @ 72057594037927935 : 1 .. '\x009\x00\x00\x00' @ 0 : 0; will stop at (end)
-2022/09/03-13:03:13.034 24c Compacting 1@1 + 1@2 files
-2022/09/03-13:03:13.039 24c Generated table #215@1: 43 keys, 2943 bytes
-2022/09/03-13:03:13.039 24c Compacted 1@1 + 1@2 files => 2943 bytes
-2022/09/03-13:03:13.040 24c compacted to: files[ 0 0 1 0 0 0 0 ]
-2022/09/03-13:03:13.040 24c Delete type=2 #211
-2022/09/03-13:03:13.040 24c Delete type=2 #214
+2022/09/04-17:17:49.755 cd4 Reusing MANIFEST C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.8c1ecdd7\flutter_tools_chrome_device.bd3c3ace\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/MANIFEST-000001
+2022/09/04-17:17:49.757 cd4 Recovering log #213
+2022/09/04-17:17:49.759 cd4 Reusing old log C:\Users\AYANDA~1\AppData\Local\Temp\flutter_tools.8c1ecdd7\flutter_tools_chrome_device.bd3c3ace\Default\IndexedDB\http_localhost_5000.indexeddb.leveldb/000213.log 
+2022/09/04-17:17:49.761 cd4 Delete type=0 #4
+2022/09/04-17:17:49.761 cd4 Delete type=2 #5
+2022/09/04-17:17:49.761 cd4 Delete type=2 #8
+2022/09/04-17:17:49.761 cd4 Delete type=0 #10
+2022/09/04-17:17:49.761 cd4 Delete type=2 #12
+2022/09/04-17:17:49.761 cd4 Delete type=0 #14
+2022/09/04-17:17:49.761 cd4 Delete type=2 #16
+2022/09/04-17:17:49.762 cd4 Delete type=0 #18
+2022/09/04-17:17:49.762 cd4 Delete type=2 #20
+2022/09/04-17:17:49.762 cd4 Delete type=0 #22
+2022/09/04-17:17:49.762 cd4 Delete type=2 #24
+2022/09/04-17:17:49.762 cd4 Delete type=0 #26
+2022/09/04-17:17:49.762 cd4 Delete type=2 #28
+2022/09/04-17:17:49.762 cd4 Delete type=0 #30
+2022/09/04-17:17:49.762 cd4 Delete type=2 #32
+2022/09/04-17:17:49.762 cd4 Delete type=0 #34
+2022/09/04-17:17:49.762 cd4 Delete type=2 #36
+2022/09/04-17:17:49.762 cd4 Delete type=0 #38
+2022/09/04-17:17:49.762 cd4 Delete type=2 #40
+2022/09/04-17:17:49.762 cd4 Delete type=2 #48
+2022/09/04-17:17:49.762 cd4 Delete type=0 #50
+2022/09/04-17:17:49.762 cd4 Delete type=2 #52
+2022/09/04-17:17:49.762 cd4 Delete type=0 #62
+2022/09/04-17:17:49.762 cd4 Delete type=2 #64
+2022/09/04-17:17:49.762 cd4 Delete type=0 #70
+2022/09/04-17:17:49.762 cd4 Delete type=2 #72
+2022/09/04-17:17:49.762 cd4 Delete type=0 #74
+2022/09/04-17:17:49.762 cd4 Delete type=2 #76
+2022/09/04-17:17:49.762 cd4 Delete type=0 #86
+2022/09/04-17:17:49.762 cd4 Delete type=2 #88
+2022/09/04-17:17:49.762 cd4 Delete type=0 #90
+2022/09/04-17:17:49.762 cd4 Delete type=2 #92
+2022/09/04-17:17:49.762 cd4 Delete type=0 #94
+2022/09/04-17:17:49.762 cd4 Delete type=2 #96
+2022/09/04-17:17:49.762 cd4 Delete type=0 #98
+2022/09/04-17:17:49.762 cd4 Delete type=2 #100
+2022/09/04-17:17:49.762 cd4 Delete type=0 #102
+2022/09/04-17:17:49.762 cd4 Delete type=2 #104
+2022/09/04-17:17:49.762 cd4 Delete type=0 #106
+2022/09/04-17:17:49.762 cd4 Delete type=2 #108
+2022/09/04-17:17:49.762 cd4 Delete type=0 #145
+2022/09/04-17:17:49.762 cd4 Delete type=2 #147
+2022/09/04-17:17:49.762 cd4 Delete type=2 #166
+2022/09/04-17:17:49.762 cd4 Delete type=0 #168
+2022/09/04-17:17:49.762 cd4 Delete type=2 #170
+2022/09/04-17:17:49.762 cd4 Delete type=0 #197
+2022/09/04-17:17:49.762 cd4 Delete type=2 #199
+2022/09/04-17:17:49.762 cd4 Delete type=0 #201
+2022/09/04-17:17:49.762 cd4 Delete type=2 #203
+2022/09/04-17:17:49.762 cd4 Delete type=0 #209
+2022/09/04-17:17:49.762 cd4 Delete type=2 #211
+2022/09/04-17:17:51.053 6090 Level-0 table #218: started
+2022/09/04-17:17:51.069 6090 Level-0 table #218: 9258 bytes OK
+2022/09/04-17:17:51.071 6090 Delete type=0 #213
+2022/09/04-17:17:51.072 6090 Manual compaction at level-0 from '\x009\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00:\x00\x00\x00' @ 0 : 0; will stop at (end)
+2022/09/04-17:18:34.946 cd4 Compacting 1@1 + 1@2 files
+2022/09/04-17:18:34.955 cd4 Generated table #219@1: 43 keys, 3016 bytes
+2022/09/04-17:18:34.955 cd4 Compacted 1@1 + 1@2 files => 3016 bytes
+2022/09/04-17:18:34.957 cd4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/09/04-17:18:34.958 cd4 Delete type=2 #215
+2022/09/04-17:18:34.958 cd4 Delete type=2 #218

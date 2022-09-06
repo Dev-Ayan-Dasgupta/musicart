@@ -19,7 +19,7 @@ class OrderHistoryScreen extends StatefulWidget {
 class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
   final TextEditingController _searchBoxController = TextEditingController();
   final String _hintText = "Search instruments...";
-  int _currentIndex = 3;
+  int _currentIndex = 2;
   int count = 0;
   num totalItemsOrdered = 0;
 

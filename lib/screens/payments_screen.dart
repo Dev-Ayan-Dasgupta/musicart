@@ -117,7 +117,8 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                                   currentAddress[0]["addressLine1"],
                                   style: globalTextStyle.copyWith(
                                       color: primaryColor,
-                                      fontSize: screenWidth * 0.015),
+                                      fontSize: screenWidth * 0.025,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
                             )
