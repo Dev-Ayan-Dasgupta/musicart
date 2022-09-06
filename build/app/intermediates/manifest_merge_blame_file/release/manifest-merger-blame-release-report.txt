@@ -80,8 +80,8 @@
 39-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:18:9-42
 40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 40-->[androidx.core:core:1.7.0] C:\Users\Ayan Dasgupta\.gradle\caches\transforms-3\1ef57eec9e43b3d8e5a7f4e2e2b93ce1\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
-41        android:icon="@mipmap/launcher_icon"
-41-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:19:9-45
+41        android:icon="@mipmap/logo_launch"
+41-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:19:9-43
 42        android:label="musicart"
 42-->C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:17:9-33
 43        android:supportsRtl="true" >

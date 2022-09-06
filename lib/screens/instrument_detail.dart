@@ -211,17 +211,15 @@ class _InstrumentDetailState extends State<InstrumentDetail> {
                       Positioned(
                         top: screenHeight * 0.03,
                         right: screenWidth * 0.055,
-                        child: Stack(
-                          children: [
-                            Container(
-                              width: screenWidth * 0.09,
-                              height: screenWidth * 0.09,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white38,
-                              ),
-                            ),
-                            IconButton(
+                        child: Container(
+                          width: screenWidth * 0.09,
+                          height: screenWidth * 0.09,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white38,
+                          ),
+                          child: Center(
+                            child: IconButton(
                               onPressed: () async {
                                 const urlPreview =
                                     "https://localhost:5000/#/home";
@@ -230,11 +228,35 @@ class _InstrumentDetailState extends State<InstrumentDetail> {
                               },
                               icon: Icon(
                                 Icons.share_rounded,
-                                size: screenWidth * 0.055,
+                                size: screenWidth * 0.049,
                               ),
                             ),
-                          ],
+                          ),
                         ),
+                        // Stack(
+                        //   children: [
+                        //     Container(
+                        //       width: screenWidth * 0.09,
+                        //       height: screenWidth * 0.09,
+                        //       decoration: const BoxDecoration(
+                        //         shape: BoxShape.circle,
+                        //         color: Colors.white38,
+                        //       ),
+                        //     ),
+                        //     IconButton(
+                        //       onPressed: () async {
+                        //         const urlPreview =
+                        //             "https://localhost:5000/#/home";
+                        //         await Share.share(
+                        //             "Buy this instrument:\n\n$urlPreview");
+                        //       },
+                        //       icon: Icon(
+                        //         Icons.share_rounded,
+                        //         size: screenWidth * 0.055,
+                        //       ),
+                        //     ),
+                        //   ],
+                        // ),
                       )
                     ],
                   ),

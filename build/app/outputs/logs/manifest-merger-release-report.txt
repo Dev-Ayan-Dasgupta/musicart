@@ -96,7 +96,7 @@ MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\Ayan Dasg
 	android:label
 		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:17:9-33
 	android:icon
-		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:19:9-45
+		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:19:9-43
 	android:name
 		INJECTED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml
 		ADDED from C:\Flutter_Projects\musicart\android\app\src\main\AndroidManifest.xml:18:9-42

@@ -16,7 +16,7 @@
    <application
         android:label="musicart"
         android:name="${applicationName}"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/logo_launch">
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyBg7EhgUTy9ehFRh3dsF8T3R7PsBlQG1Hg"/>
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>

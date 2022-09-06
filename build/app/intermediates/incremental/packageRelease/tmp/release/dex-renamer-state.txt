@@ -1,4 +1,4 @@
-#Fri Sep 02 16:02:42 IST 2022
+#Tue Sep 06 19:37:31 IST 2022
 base.0=C\:\\Flutter_Projects\\musicart\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

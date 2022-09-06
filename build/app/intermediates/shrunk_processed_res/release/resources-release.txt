@@ -7643,6 +7643,7 @@ Marking attr:logo:2130903673 used because it matches string pool constant log
 Marking attr:logoAdjustViewBounds:2130903674 used because it matches string pool constant log
 Marking attr:logoDescription:2130903675 used because it matches string pool constant log
 Marking attr:logoScaleType:2130903676 used because it matches string pool constant log
+Marking mipmap:logo_launch:2131558402 used because it matches string pool constant log
 Marking attr:initialActivityCount:2130903538 used because it matches string pool constant initial
 Marking id:path:2131231057 used because it matches string pool constant path
 Marking attr:pathMotionArc:2130903800 used because it matches string pool constant path
@@ -12996,6 +12997,7 @@ Marking id:fragment_container_view_tag:2131230925 used because it matches string
 @menu/example_menu2 : reachable=true
 @mipmap/ic_launcher : reachable=true
 @mipmap/launcher_icon : reachable=true
+@mipmap/logo_launch : reachable=true
 @plurals/mtrl_badge_content_description : reachable=false
 @raw/keep : reachable=false
 @string/abc_action_bar_home_description : reachable=false
@@ -21947,6 +21949,7 @@ The root reachable resources are:
  menu:example_menu2:2131492865
  mipmap:ic_launcher:2131558400
  mipmap:launcher_icon:2131558401
+ mipmap:logo_launch:2131558402
  string:abc_action_bar_up_description:2131755009
  string:abc_menu_alt_shortcut_label:2131755016
  string:abc_menu_ctrl_shortcut_label:2131755017

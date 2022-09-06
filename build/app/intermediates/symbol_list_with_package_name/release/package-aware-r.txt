@@ -3254,6 +3254,7 @@ menu example_menu
 menu example_menu2
 mipmap ic_launcher
 mipmap launcher_icon
+mipmap logo_launch
 plurals mtrl_badge_content_description
 raw keep
 string abc_action_bar_home_description

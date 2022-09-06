@@ -38,7 +38,7 @@
     <application
         android:name="android.app.Application"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-        android:icon="@mipmap/launcher_icon"
+        android:icon="@mipmap/logo_launch"
         android:label="musicart"
         android:supportsRtl="true" >
         <meta-data
